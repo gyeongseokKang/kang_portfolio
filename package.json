@@ -5,11 +5,12 @@
   "dependencies": {
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
-    "@emotion/styled": "latest",
     "@emotion/server": "latest",
+    "@emotion/styled": "latest",
     "@mui/material": "latest",
     "clsx": "latest",
     "next": "latest",
+    "next-seo": "^4.28.1",
     "react": "latest",
     "react-dom": "latest"
   },
