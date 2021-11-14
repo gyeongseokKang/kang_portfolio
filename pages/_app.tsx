@@ -7,6 +7,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
+import { createTheme, useMediaQuery } from "@mui/material";
+import { ColorModeContext, getDesignTokens } from "../src/store/ThemeStore";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -17,6 +19,28 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const [mode, setMode] = React.useState<"light" | "dark">("dark");
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+      },
+      setLightMode: () => {
+        setMode("light");
+      },
+      setDarkMode: () => {
+        setMode("dark");
+      },
+      setSystemMode: () => {
+        setMode(prefersDarkMode ? "dark" : "light");
+      },
+    }),
+    []
+  );
+
+  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -44,11 +68,13 @@ export default function MyApp(props: MyAppProps) {
           site_name: "Kang's Portfolio",
         }}
       />
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </CacheProvider>
   );
 }
