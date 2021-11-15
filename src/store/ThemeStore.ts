@@ -1,6 +1,5 @@
-import { PaletteMode } from "@mui/material";
-import { amber, deepOrange, grey } from "@mui/material/colors";
 import React from "react";
+import { PaletteMode } from "@mui/material";
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
