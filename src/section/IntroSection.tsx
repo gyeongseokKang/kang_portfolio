@@ -2,7 +2,6 @@ import React from "react";
 import { CustomSection } from "./../component/CustomSection";
 import Typography from "@mui/material/Typography";
 import { CustomSectionTitle } from "src/component/SectionTitle";
-import useScrollFadeIn from "src/utils/customHook/useScrollFadeIn";
 
 const IntroSection = () => {
   const IntroSectionVAProp: IntroSectionVAProp = {};
@@ -11,7 +10,6 @@ const IntroSection = () => {
 
 interface IntroSectionVAProp {}
 const IntroSectionView = ({}: IntroSectionVAProp) => {
-  const animatedItem = useScrollFadeIn("up", 1, 0);
   return (
     <CustomSection
       id={"Intro"}
@@ -20,7 +18,6 @@ const IntroSectionView = ({}: IntroSectionVAProp) => {
         description: "Kang's Intro",
       }}
     >
-      {/* <div {...animatedItem}></div> */}
       <CustomSectionTitle title={"INTRO"} />
       <Typography variant="subtitle1" gutterBottom component="div">
         안녕하세요. <strong>강경석</strong>입니다. <br />
