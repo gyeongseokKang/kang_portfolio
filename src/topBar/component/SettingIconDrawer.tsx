@@ -22,7 +22,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   },
 }));
 
-const StyledIconButton = styled(IconButton)(({ theme }) => ({
+const StyledIconButton = styled(IconButton)(({}) => ({
   "&.MuiIconButton-root": {
     border: "1px solid",
     borderRadius: "15px",
