@@ -56,15 +56,8 @@ export default function SettingIconDrawer() {
   };
 
   return (
-    <div>
-      <StyledIconButton
-        size="medium"
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        sx={{ mr: 2 }}
-        onClick={toggleDrawer(true)}
-      >
+    <div style={{}}>
+      <StyledIconButton size="medium" edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
         <SettingsIcon />
       </StyledIconButton>
       <Drawer anchor={"right"} open={state} onClose={toggleDrawer(false)}>
