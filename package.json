@@ -10,6 +10,7 @@
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "latest",
     "clsx": "latest",
+    "lodash": "^4.17.21",
     "next": "latest",
     "next-seo": "^4.28.1",
     "react": "latest",
@@ -23,6 +24,7 @@
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.176",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
