@@ -9,7 +9,8 @@ const StyledSection = styled("section")({
   marginBlock: "1rem",
   position: "relative",
   "& > *": {
-    fontFamily: "Noto Sans CJK KR",
+    fontFamily:
+      "Noto Sans CJK KR,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important",
   },
 });
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { CustomSection } from "./../component/CustomSection";
 import Typography from "@mui/material/Typography";
+import { CustomSectionTitle } from "src/component/SectionTitle";
 
 const IntroSection = () => {
   const IntroSectionVAProp: IntroSectionVAProp = {};
@@ -16,9 +17,7 @@ const IntroSectionView = ({}: IntroSectionVAProp) => {
         description: "Kang's Intro",
       }}
     >
-      <Typography variant="h3" gutterBottom component="div" style={{ fontWeight: "bold" }}>
-        INTRO
-      </Typography>
+      <CustomSectionTitle title={"INTRO"} />
       <Typography variant="subtitle1" gutterBottom component="div">
         안녕하세요. <strong>강경석</strong>입니다. <br />
         친구들과 함께 창업한 것을 시작으로, 바쁘게 살고있는 3년차 개발자입니다. <br />
