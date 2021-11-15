@@ -8,6 +8,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "../src/createEmotionCache";
 import { createTheme, useMediaQuery } from "@mui/material";
 import { ColorModeContext, getDesignTokens } from "../src/store/ThemeStore";
+import "./index.css";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
