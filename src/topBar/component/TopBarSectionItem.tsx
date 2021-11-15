@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import * as React from "react";
-import Link from "@mui/material/Link";
+import { Link } from "react-scroll";
 
 interface TopBarSectionItemProp {
   to: string;
@@ -8,7 +8,6 @@ interface TopBarSectionItemProp {
 }
 
 export default function TopBarSectionItem({ to, onFocus }: TopBarSectionItemProp) {
-  const linkHref = `#${to}`;
   return (
     <Typography
       variant="subtitle1"
@@ -16,9 +15,11 @@ export default function TopBarSectionItem({ to, onFocus }: TopBarSectionItemProp
       sx={{ flexGrow: 1 }}
       style={{ minWidth: "75px", textAlign: "center" }}
     >
-      <Link href={linkHref} style={{ color: "#FFF" }}>
-        {to}
-      </Link>
+      <div style={{ cursor: "pointer" }}>
+        <Link to={to} spy={true} smooth={true} duration={500}>
+          {to}
+        </Link>
+      </div>
     </Typography>
   );
 }

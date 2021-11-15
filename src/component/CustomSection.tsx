@@ -15,6 +15,7 @@ const StyledSection = styled("section")({
 });
 
 interface SectionProp {
+  id: string;
   className?: string;
   children?: React.ReactNode;
   seo?: {
@@ -23,9 +24,9 @@ interface SectionProp {
   };
 }
 
-export const CustomSection = ({ children, className, seo }: SectionProp) => {
+export const CustomSection = ({ id, children, className, seo }: SectionProp) => {
   return (
-    <StyledSection className={className}>
+    <StyledSection className={className} id={id}>
       {seo && (
         <NextSeo
           title={seo.title}

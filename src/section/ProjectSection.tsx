@@ -1,27 +1,27 @@
 import React from "react";
-import { CustomSection } from "./../component/CustomSection";
+import { CustomSection } from "../component/CustomSection";
 import Typography from "@mui/material/Typography";
 import { CustomSectionTitle } from "src/component/SectionTitle";
-import useScrollFadeIn from "src/utils/customHook/useScrollFadeIn";
 
-const IntroSection = () => {
-  const IntroSectionVAProp: IntroSectionVAProp = {};
-  return <IntroSectionView {...IntroSectionVAProp} />;
+const ProjectSection = () => {
+  const ProjectSectionVAProp: ProjectSectionVAProp = {};
+  return <ProjectSectionView {...ProjectSectionVAProp} />;
 };
 
-interface IntroSectionVAProp {}
-const IntroSectionView = ({}: IntroSectionVAProp) => {
-  const animatedItem = useScrollFadeIn("up", 1, 0);
+interface ProjectSectionVAProp {}
+const ProjectSectionView = ({}: ProjectSectionVAProp) => {
   return (
     <CustomSection
-      id={"Intro"}
+      id={"Project"}
       seo={{
         title: `Kang's Intro`,
         description: "Kang's Intro",
       }}
     >
-      {/* <div {...animatedItem}></div> */}
-      <CustomSectionTitle title={"INTRO"} />
+      <CustomSectionTitle
+        title={"PROJECT"}
+        subTitle={"저는 깔끔한 코드, 읽기 쉬운 디자인패턴을 마음속에 담고 프로젝트를 끝까지 하기 위해 노력합니다."}
+      />
       <Typography variant="subtitle1" gutterBottom component="div">
         안녕하세요. <strong>강경석</strong>입니다. <br />
         친구들과 함께 창업한 것을 시작으로, 바쁘게 살고있는 3년차 개발자입니다. <br />
@@ -35,4 +35,4 @@ const IntroSectionView = ({}: IntroSectionVAProp) => {
   );
 };
 
-export default IntroSection;
+export default ProjectSection;

@@ -1,23 +1,34 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
 
 interface SectionTitleProp {
   title?: string;
   subTitle?: string;
 }
 
+const StyledTitle = styled(Typography)({
+  fontWeight: "500" as any,
+  marginBottom: "0.1rem",
+  letterSpacing: "-2px",
+});
+
+const StyledSubTitle = styled(Typography)({
+  fontWeight: "400" as any,
+});
+
 export const CustomSectionTitle = ({ title, subTitle }: SectionTitleProp) => {
   return (
     <>
       {title && (
-        <Typography variant="h4" gutterBottom component="div" style={{ fontWeight: "bold" }}>
+        <StyledTitle variant="h4" gutterBottom>
           {title}
-        </Typography>
+        </StyledTitle>
       )}
       {subTitle && (
-        <Typography variant="h5" gutterBottom component="div" style={{ fontWeight: "bold" }}>
+        <StyledSubTitle variant="subtitle2" gutterBottom>
           {subTitle}
-        </Typography>
+        </StyledSubTitle>
       )}
     </>
   );
