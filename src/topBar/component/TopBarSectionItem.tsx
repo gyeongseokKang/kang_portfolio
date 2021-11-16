@@ -16,7 +16,7 @@ export default function TopBarSectionItem({ to, onFocus }: TopBarSectionItemProp
       style={{ minWidth: "75px", textAlign: "center" }}
     >
       <div style={{ cursor: "pointer" }}>
-        <Link to={to} spy={true} smooth={true} duration={500}>
+        <Link to={to} spy={true} smooth={true} duration={500} offset={-100}>
           {to}
         </Link>
       </div>
