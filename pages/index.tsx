@@ -8,11 +8,11 @@ export default function Index() {
   return (
     <>
       <TopBar />
-      <ProjectSection />
-      <ProjectSection />
-      <ProjectSection />
-      <ProjectSection />
       <IntroSection />
+      <ProjectSection />
+      <ProjectSection />
+      <ProjectSection />
+      <ProjectSection />
       <ProjectSection />
       <ProjectSection />
       <ScrollToTopBtn />
