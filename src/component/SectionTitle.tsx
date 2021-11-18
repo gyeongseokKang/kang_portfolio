@@ -14,7 +14,8 @@ const StyledTitle = styled(Typography)({
 });
 
 const StyledSubTitle = styled(Typography)({
-  fontWeight: "400" as any,
+  paddingInlineStart: "0.5rem",
+  fontWeight: "500" as any,
 });
 
 export const CustomSectionTitle = ({ title, subTitle }: SectionTitleProp) => {

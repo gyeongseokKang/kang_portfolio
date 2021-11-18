@@ -13,7 +13,7 @@ const StyledSection = styled("section")({
   overflowY: "hidden",
   "& > *": {
     fontFamily:
-      "Noto Sans CJK KR,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important",
+      "Noto Sans CJK KR,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif",
   },
 });
 

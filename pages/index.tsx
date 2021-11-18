@@ -10,11 +10,6 @@ export default function Index() {
       <TopBar />
       <IntroSection />
       <ProjectSection />
-      <ProjectSection />
-      <ProjectSection />
-      <ProjectSection />
-      <ProjectSection />
-      <ProjectSection />
       <ScrollToTopBtn />
     </>
   );

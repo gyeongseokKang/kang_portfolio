@@ -19,4 +19,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           // palette values for dark mode
         }),
   },
+  typography: {
+    fontFamily: ["Noto Sans CJK KR", "Arial"].join(","),
+  },
 });
