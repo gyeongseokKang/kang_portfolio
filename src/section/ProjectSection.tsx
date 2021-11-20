@@ -29,9 +29,9 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           <CustomTableCell component="th" scope="row" align="center">
             GUI 기반 통계 플랫폼 : HyperData
           </CustomTableCell>
-          <CustomTableCell align="center">
+          <CustomTableCell>
             <div>[티맥스] 통계 플랫폼 : JUPYTER NOTEBOOK 상에서 동작하는 GUI 기반 통계,EDA 플랫폼</div>
-            <StackChip stackList={["Python", "Jupyter", "Html", "Javascript", "Css"]} />
+            <StackChip stackList={["Python", "Jupyter", "Html5", "Javascript", "Css3", "Gitlab"]} />
           </CustomTableCell>
           <CustomTableCell align="center">2</CustomTableCell>
           <CustomTableCell align="center">2</CustomTableCell>
@@ -40,7 +40,10 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           <CustomTableCell component="th" scope="row" align="center">
             데이터 시각화 서비스 : HyperData
           </CustomTableCell>
-          <CustomTableCell align="center">3</CustomTableCell>
+          <CustomTableCell>
+            <div>[티맥스] 통계 플랫폼 : [티맥스] 시각화 대시보드 : 오픈소스 라이브러리를 이용한 시각화 대시보드</div>
+            <StackChip stackList={["React", "SASS", "Typescript", "Github"]} />
+          </CustomTableCell>
           <CustomTableCell align="center">2</CustomTableCell>
           <CustomTableCell align="center">2</CustomTableCell>
         </CustomTableRow>

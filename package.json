@@ -9,6 +9,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "latest",
+    "@svgr/webpack": "^5.5.0",
     "clsx": "latest",
     "lodash": "^4.17.21",
     "next": "latest",
