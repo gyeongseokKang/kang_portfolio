@@ -7,12 +7,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 export const CustomTableCell = styled(TableCell)(({ theme }) => ({
   //   [`&.${tableCellClasses.head}`]: {
   //     backgroundColor: theme.palette.common.black,
   //     color: theme.palette.common.white,
   //   },
+  minWidth: "100px",
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
@@ -28,12 +30,21 @@ export const CustomTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "0.75rem",
+  padding: "0.5rem",
+}));
+
 interface CustomTableProp {
   header?: string[];
+  footer?: string;
   children?: React.ReactNode;
 }
 
-export default function CustomTable({ header = [], children }: CustomTableProp) {
+export default function CustomTable({ header = [], footer, children }: CustomTableProp) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -46,6 +57,7 @@ export default function CustomTable({ header = [], children }: CustomTableProp) 
         </TableHead>
         <TableBody>{children}</TableBody>
       </Table>
+      {footer && <StyledTypography>{footer}</StyledTypography>}
     </TableContainer>
   );
 }

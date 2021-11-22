@@ -4,14 +4,16 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
-  //   [`&.${tableCellClasses.head}`]: {
-  //     backgroundColor: theme.palette.common.black,
-  //     color: theme.palette.common.white,
-  //   },
-  padding: "0.2rem",
+const StyledStack = styled(Stack)(({ theme }) => ({
   borderRadius: "5px",
   background: theme.palette.background.paper,
+  padding: "0.2rem",
+  fontSize: "0.8rem",
+}));
+
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   fontSize: "0.8rem",
 }));
 
@@ -24,12 +26,10 @@ export const StackChip = ({ stackList }: StackChipProp) => {
     <Stack spacing={0.5} alignItems="center" direction="row">
       {stackList.map((stack) => (
         <>
-          <StyledTypography>
-            <Stack spacing={0.5} alignItems="center" direction="row">
-              <Image src={`/icons/${stack}.svg`} height={20} width={20} />
-              {stack}
-            </Stack>
-          </StyledTypography>
+          <StyledStack spacing={0.5} alignItems="center" direction="row">
+            <Image src={`/icons/${stack}.svg`} height={20} width={20} />
+            <StyledTypography>{stack}</StyledTypography>
+          </StyledStack>
         </>
       ))}
     </Stack>

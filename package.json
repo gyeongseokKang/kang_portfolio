@@ -10,7 +10,7 @@
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "latest",
     "@svgr/webpack": "^5.5.0",
-    "clsx": "latest",
+    "clsx": "^1.1.1",
     "lodash": "^4.17.21",
     "next": "latest",
     "next-seo": "^4.28.1",
