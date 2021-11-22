@@ -20,7 +20,7 @@ const IntroSectionView = ({}: IntroSectionVAProp) => {
     <CustomSection
       id={"Intro"}
       seo={{
-        title: `Kang's Intro`,
+        title: `Kang's Profolio`,
         description: "Kang's Intro",
       }}
     >
@@ -35,7 +35,7 @@ const IntroSectionView = ({}: IntroSectionVAProp) => {
           읽기 쉬운 코드를 쓰는 개발자, 사랑받는 서비스를 만들고 싶은 개발자가 <br />
           되고 싶어 오늘도 공부하고 있습니다.
         </Typography>
-        <CircleImage src={"/images/intro/myface.jpg"} width={250} height={250} />
+        <CircleImage src={"/images/intro/myface.jpg"} width={250} height={250} priority={true} />
       </div>
     </CustomSection>
   );

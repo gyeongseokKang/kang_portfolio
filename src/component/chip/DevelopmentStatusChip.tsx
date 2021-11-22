@@ -1,7 +1,7 @@
 import React from "react";
 import { styled, keyframes } from "@mui/material/styles";
 
-const StyledDiv = styled("div")<{ statusColor: string }>(({ theme, statusColor }) => ({
+const StyledDiv = styled("div")<{ statuscolor: string }>(({ theme, statuscolor }) => ({
   padding: "0.125rem 1rem",
   borderRadius: "7px",
   minWidth: "100px",
@@ -18,7 +18,7 @@ const StyledDiv = styled("div")<{ statusColor: string }>(({ theme, statusColor }
   )`,
   backgroundSize: "1rem 1rem",
   animation: `${wavy} 3s linear infinite`,
-  backgroundColor: statusColor,
+  backgroundColor: statuscolor,
 }));
 
 const wavy = keyframes`
@@ -35,25 +35,25 @@ interface DevelopmentStatusChipProp {
 }
 
 export const DevelopmentStatusChip = ({ status }: DevelopmentStatusChipProp) => {
-  let statusColor = "#0dcaf0";
+  let statuscolor = "#0dcaf0";
   let statusText = "개발중";
   switch (status) {
     case "progress": {
-      statusColor = "#0D6EFD";
+      statuscolor = "#0D6EFD";
       statusText = "개발중";
       break;
     }
     case "finish": {
-      statusColor = "#0dcaf0";
+      statuscolor = "#0dcaf0";
       statusText = "개발 완료";
       break;
     }
     case "stop": {
-      statusColor = "#F0FFE3";
+      statuscolor = "#cd2f2f";
       statusText = "개발 중단";
       break;
     }
   }
 
-  return <StyledDiv statusColor={statusColor}>{statusText}</StyledDiv>;
+  return <StyledDiv statuscolor={statuscolor}>{statusText}</StyledDiv>;
 };

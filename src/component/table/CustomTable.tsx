@@ -10,10 +10,10 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 export const CustomTableCell = styled(TableCell)(({ theme }) => ({
-  //   [`&.${tableCellClasses.head}`]: {
-  //     backgroundColor: theme.palette.common.black,
-  //     color: theme.palette.common.white,
-  //   },
+  // [`&.${tableCellClasses.head}`]: {
+  //   backgroundColor: theme.palette.common.black,
+  //   color: theme.palette.common.white,
+  // },
   minWidth: "100px",
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -27,6 +27,9 @@ export const CustomTableRow = styled(TableRow)(({ theme }) => ({
   // hide last border
   "&:last-child td, &:last-child th": {
     border: 0,
+  },
+  "&:hover": {
+    backgroundColor: theme.palette.custom.hover,
   },
 }));
 
@@ -50,8 +53,10 @@ export default function CustomTable({ header = [], footer, children }: CustomTab
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            {header.map((hearderItem) => (
-              <CustomTableCell align="center">{hearderItem}</CustomTableCell>
+            {header.map((headerItem) => (
+              <CustomTableCell key={headerItem} align="center">
+                {headerItem}
+              </CustomTableCell>
             ))}
           </TableRow>
         </TableHead>

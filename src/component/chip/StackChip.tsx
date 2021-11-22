@@ -23,10 +23,10 @@ interface StackChipProp {
 
 export const StackChip = ({ stackList }: StackChipProp) => {
   return (
-    <Stack spacing={0.5} alignItems="center" direction="row">
+    <Stack spacing={0.5} alignItems="center" direction="row" flexWrap={"wrap"}>
       {stackList.map((stack) => (
         <>
-          <StyledStack spacing={0.5} alignItems="center" direction="row">
+          <StyledStack key={stack} spacing={0.5} alignItems="center" direction="row">
             <Image src={`/icons/${stack}.svg`} height={20} width={20} />
             <StyledTypography>{stack}</StyledTypography>
           </StyledStack>

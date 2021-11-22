@@ -15,18 +15,13 @@ const ProjectSection = () => {
 interface ProjectSectionVAProp {}
 const ProjectSectionView = ({}: ProjectSectionVAProp) => {
   return (
-    <CustomSection
-      id={"Project"}
-      seo={{
-        title: `Kang's Intro`,
-        description: "Kang's Intro",
-      }}
-    >
+    <CustomSection id={"Project"}>
       <CustomSectionTitle
         title={"PROJECT"}
         subTitle={"저는 깔끔한 코드, 읽기 쉬운 디자인패턴을 마음속에 담고 프로젝트를 끝까지 하기 위해 노력합니다."}
       />
       <CustomTable
+        key="ProjectTable"
         header={["프로젝트", "소개", "개발 참여도", "추가정보"]}
         footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다"}
       >

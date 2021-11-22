@@ -13,10 +13,16 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     mode,
     ...(mode === "light"
       ? {
-          // palette values for light mode
+          // palette values for light modetheme
+          custom: {
+            hover: "#F1FFE3",
+          },
         }
       : {
           // palette values for dark mode
+          custom: {
+            hover: "#005521",
+          },
         }),
   },
   typography: {
