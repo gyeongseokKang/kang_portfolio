@@ -39,6 +39,7 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   justifyContent: "center",
   fontSize: "0.75rem",
   padding: "0.5rem",
+  fontWeight: "500" as any,
 }));
 
 interface CustomTableProp {

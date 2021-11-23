@@ -26,8 +26,8 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
       />
       <CustomTable
         key="ProjectTable"
-        header={["프로젝트", "소개", "개발 참여도", "추가정보"]}
-        footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다"}
+        header={["프로젝트", "소개 / 사용기술", "개발 참여도", "추가정보"]}
+        footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다. 실제 사용한 기술만 적었습니다."}
       >
         <CustomTableRow key={"GUI 기반 통계 플랫폼 : HyperData"}>
           <CustomTableCell component="th" scope="row" align="center">
