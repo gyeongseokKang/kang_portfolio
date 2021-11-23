@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CustomSection } from "../component/CustomSection";
 import IconButton from "@mui/material/IconButton";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
@@ -6,6 +6,8 @@ import { CustomSectionTitle } from "src/component/SectionTitle";
 import CustomTable, { CustomTableCell, CustomTableRow } from "src/component/table/CustomTable";
 import { StackChip } from "src/component/chip/StackChip";
 import { ParticipationChip } from "src/component/chip/ParticipationChip";
+import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
+import { Titleli } from "src/component/ul/Titleli";
 
 const ProjectSection = () => {
   const ProjectSectionVAProp: ProjectSectionVAProp = {};
@@ -66,9 +68,36 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
             <ParticipationChip date={"18/12 ~ 20/02"} status={"finish"} position={"안드로이드 앱"} />
           </CustomTableCell>
           <CustomTableCell align="center">
-            <IconButton aria-label="extra">
-              <DescriptionOutlinedIcon color="primary" />
-            </IconButton>
+            <ExtraInfoDialog dialogTitle={"통합 모빌리티 서비스 : 카찹"}>
+              <video controls width={"100%"} autoPlay={true}>
+                <source src={"/video/carchap_service.mp4"}></source>
+              </video>
+              <Titleli
+                title={"서비스 목표"}
+                list={[
+                  "다양한 모빌리티 정보를 제공하는 통합 플랫폼",
+                  "거리, 경로를 비교하여 최적의 경로를 추천하는 서비스 구현",
+                  "공공API, 회사API를 통합한 API 서비스",
+                ]}
+              />
+              <Titleli
+                direction="right"
+                title={"서비스 성과"}
+                list={[
+                  "안드로이드 다운로드 2만 달성(현재 총 13만)",
+                  "통합된 모빌리티 서비스에 대한 호평과 리뷰",
+                  "다양한 투자 유치 및 사업 확대",
+                ]}
+              />
+              <Titleli
+                title={"아쉬운 점"}
+                list={[
+                  "안드로이드앱단에서 대부분 로직을 수행하는 구조",
+                  "자바 언어의 숙련도 부족으로 인한 문제점들",
+                  "리소스를 매번 다운로드해야하는 동기화문제",
+                ]}
+              />
+            </ExtraInfoDialog>
           </CustomTableCell>
         </CustomTableRow>
       </CustomTable>
