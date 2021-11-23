@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   display: "flex",
@@ -12,6 +12,7 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   fontSize: "0.8rem",
   borderRadius: "5px",
   maxWidth: "100px",
+  color: theme.palette.text.primary,
   backgroundColor: theme.palette.action.hover,
   border: `1px solid ${theme.palette.custom.hover}`,
   "&:hover": {
@@ -26,9 +27,11 @@ interface UrlChipProp {
 }
 
 export const UrlChip = ({ title, url }: UrlChipProp) => {
-  const router = useRouter();
-  const openUrl = () => {
-    router.push(url);
-  };
-  return <StyledTypography onClick={openUrl}>{title}</StyledTypography>;
+  return (
+    <Link href={url}>
+      <a target="_blank" style={{ textDecoration: "none" }}>
+        <StyledTypography>{title}</StyledTypography>
+      </a>
+    </Link>
+  );
 };
