@@ -8,6 +8,8 @@ import { StackChip } from "src/component/chip/StackChip";
 import { ParticipationChip } from "src/component/chip/ParticipationChip";
 import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
 import { Titleli } from "src/component/ul/Titleli";
+import { Stack } from "@mui/material";
+import { UrlChip } from "src/component/chip/UrlChip";
 
 const ProjectSection = () => {
   const ProjectSectionVAProp: ProjectSectionVAProp = {};
@@ -81,7 +83,6 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                 ]}
               />
               <Titleli
-                direction="right"
                 title={"서비스 성과"}
                 list={[
                   "안드로이드 다운로드 2만 달성(현재 총 13만)",
@@ -97,6 +98,19 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                   "리소스를 매번 다운로드해야하는 동기화문제",
                 ]}
               />
+              <Stack direction={"row"} justifyContent={"center"}>
+                <UrlChip title={"홈페이지"} url={"https://www.carchapapp.com/"} />
+                <UrlChip
+                  title={"Play store"}
+                  url={"https://play.google.com/store/apps/details?id=org.techtown.carchap_v11&hl=ko&gl=US"}
+                />
+                <UrlChip
+                  title={"App store"}
+                  url={
+                    "https://apps.apple.com/us/app/%EC%B9%B4%EC%B0%B9-%EC%9D%B4%EB%8F%99%EC%88%98%EB%8B%A8-%ED%86%B5%ED%95%A9-%ED%94%8C%EB%9E%AB%ED%8F%BC/id1506198003"
+                  }
+                />
+              </Stack>
             </ExtraInfoDialog>
           </CustomTableCell>
         </CustomTableRow>
