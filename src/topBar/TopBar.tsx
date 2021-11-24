@@ -13,7 +13,7 @@ export default function TopBar() {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ top: 0, bottom: "auto" }}>
+      <AppBar position="sticky" sx={{ top: 0, bottom: "auto", opacity: "0.8" }}>
         <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6" component="div">
             KANG GYEONG SEOK

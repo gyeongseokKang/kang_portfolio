@@ -63,16 +63,16 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
         />
       </CustomTable>
       <Stack direction={"column"}>
-        <Stack direction={"row"} padding={1}>
-          <Typography sx={{ pr: 2 }}>Utilities</Typography>
+        <Stack direction={"row"} padding={0.5}>
+          <Typography sx={{ pr: 2 }}>Utilities :</Typography>
           <StackChip stackList={["Zeplin", "Figma", "Framer", "Storybook"]} />
         </Stack>
-        <Stack direction={"row"} padding={1}>
-          <Typography sx={{ pr: 2 }}>DataBase</Typography>
+        <Stack direction={"row"} padding={0.5}>
+          <Typography sx={{ pr: 2 }}>DataBase :</Typography>
           <StackChip stackList={["Firebase", "MySQL"]} />
         </Stack>
-        <Stack direction={"row"} padding={1}>
-          <Typography sx={{ pr: 2 }}>Deploy</Typography>
+        <Stack direction={"row"} padding={0.5}>
+          <Typography sx={{ pr: 2 }}>Deploy :</Typography>
           <StackChip stackList={["Amplify", "Githubpage"]} />
         </Stack>
       </Stack>
