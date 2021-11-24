@@ -7,6 +7,7 @@ import ToyProjectSection from "src/section/ToyProjectSection";
 import SkillSection from "src/section/SkillSection";
 import CertificateSection from "src/section/CertificateSection";
 import BlogSection from "src/section/BlogSection";
+import ContactSection from "src/section/ContactSection";
 
 export default function Index() {
   return (
@@ -18,6 +19,7 @@ export default function Index() {
       <SkillSection />
       <CertificateSection />
       <BlogSection />
+      <ContactSection />
       <ScrollToTopBtn />
     </>
   );
