@@ -24,10 +24,6 @@ export const CustomTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
-  "&:last-child td, &:last-child th": {
-    border: 0,
-  },
   "&:hover": {
     backgroundColor: theme.palette.custom.hover,
   },
@@ -50,7 +46,7 @@ interface CustomTableProp {
 
 export default function CustomTable({ header = [], footer, children }: CustomTableProp) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} elevation={3} style={{ margin: "0.1rem" }}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
