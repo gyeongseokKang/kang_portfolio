@@ -27,7 +27,7 @@ export const StackChip = ({ stackList }: StackChipProp) => {
       {stackList.map((stack) => (
         <>
           <StyledStack key={stack} spacing={0.5} alignItems="center" direction="row">
-            <Image src={`/icons/${stack}.svg`} height={20} width={20} />
+            <Image src={`/icons/${stack.toLowerCase()}.svg`} height={20} width={20} />
             <StyledTypography>{stack}</StyledTypography>
           </StyledStack>
         </>
