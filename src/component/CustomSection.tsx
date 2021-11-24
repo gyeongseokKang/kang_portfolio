@@ -2,8 +2,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { NextSeo } from "next-seo";
 import useIntersectionObserver from "src/utils/customHook/useIntersectionObserver";
-import Grow from "@mui/material/Grow";
-import { Slide } from "@mui/material";
+import Slide from "@mui/material/Slide";
 
 const StyledSection = styled("section")({
   maxWidth: "1200px",
@@ -28,7 +27,7 @@ interface SectionProp {
   };
 }
 
-export const CustomSection = ({ id, children, seo, direction = "up" }: SectionProp) => {
+export const CustomSection = ({ id, children, seo, direction = "down" }: SectionProp) => {
   const containerRef = React.useRef(null);
   const entry = useIntersectionObserver(containerRef, { threshold: 0.1 });
 
@@ -45,16 +44,10 @@ export const CustomSection = ({ id, children, seo, direction = "up" }: SectionPr
           }}
         />
       )}
-      <Slide in={entry?.isIntersecting} direction={direction} timeout={1000}>
+      <Slide in={entry?.isIntersecting} direction={direction} timeout={700}>
         <div> {children}</div>
       </Slide>
-      {/* <Grow
-        in={entry?.isIntersecting}
-        style={{ transformOrigin: "0 0 0" }}
-        {...(entry?.isIntersecting ? { timeout: 500 } : {})}
-      >
-        <div> {children}</div>
-      </Grow> */}
+
       <div style={{ minHeight: "10px" }}></div>
     </StyledSection>
   );
