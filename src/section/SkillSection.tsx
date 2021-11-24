@@ -6,6 +6,7 @@ import CustomTable, { CustomTableCell, CustomTableRow } from "src/component/tabl
 import Stack from "@mui/material/Stack";
 import Rating from "@mui/material/Rating";
 import { Typography } from "@mui/material";
+import { StackChip } from "src/component/chip/StackChip";
 
 const SkillSection = () => {
   const SkillSectionVAProp: SkillSectionVAProp = {};
@@ -61,6 +62,16 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
           careerNumber={1}
         />
       </CustomTable>
+      <Stack direction={"column"}>
+        <Stack direction={"row"} padding={1}>
+          <Typography sx={{ pr: 2 }}>Utilities</Typography>
+          <StackChip stackList={["Zeplin", "Figma", "Framer", "Storybook"]} />
+        </Stack>
+        <Stack direction={"row"} padding={1}>
+          <Typography sx={{ pr: 2 }}>Deploy</Typography>
+          <StackChip stackList={["Amplify", "Githubpage"]} />
+        </Stack>
+      </Stack>
     </CustomSection>
   );
 };
