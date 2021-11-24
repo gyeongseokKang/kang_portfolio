@@ -73,7 +73,7 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
         </Stack>
         <Stack direction={"row"} padding={0.5}>
           <Typography sx={{ pr: 2 }}>Deploy :</Typography>
-          <StackChip stackList={["Amplify", "Githubpage"]} />
+          <StackChip stackList={["Amplify", "Vercel", "Githubpage"]} />
         </Stack>
       </Stack>
     </CustomSection>

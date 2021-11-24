@@ -18,23 +18,8 @@ export default function TopBar() {
           <Typography variant="h6" component="div">
             KANG GYEONG SEOK
           </Typography>
-          {width > 900 ? (
-            <Stack direction={"row"} justifyContent={"flex-start"} flex={1} alignItems={"center"}>
-              <div style={{ display: "flex", flexGrow: 1, justifyContent: "flex-start" }}>
-                <div style={{ display: "flex" }}>
-                  <TopBarSectionItem to={"Intro"} />
-                  <TopBarSectionItem to={"Project"} />
-                  <TopBarSectionItem to={"Skill"} />
-                  <TopBarSectionItem to={"Award"} />
-                  <TopBarSectionItem to={"Certificate"} />
-                  <TopBarSectionItem to={"Blog"} />
-                  <TopBarSectionItem to={"Contact"} />
-                </div>
-              </div>
-              <SettingIconDrawer />
-            </Stack>
-          ) : (
-            <Stack direction={"row"} justifyContent={"flex-end"}>
+          {width < 900 ? (
+            <Stack justifyContent={"flex-end"} alignItems={"flex-end"} flex={1}>
               <TopBarMenu>
                 <TopBarSectionItem to={"Intro"} top={false} />
                 <TopBarSectionItem to={"Project"} top={false} />
@@ -44,9 +29,21 @@ export default function TopBar() {
                 <TopBarSectionItem to={"Blog"} top={false} />
                 <TopBarSectionItem to={"Contact"} top={false} />
               </TopBarMenu>
-              <SettingIconDrawer />
+            </Stack>
+          ) : (
+            <Stack direction={"row"} justifyContent={"flex-start"} flex={1}>
+              <div style={{ display: "flex" }}>
+                <TopBarSectionItem to={"Intro"} />
+                <TopBarSectionItem to={"Project"} />
+                <TopBarSectionItem to={"Skill"} />
+                <TopBarSectionItem to={"Award"} />
+                <TopBarSectionItem to={"Certificate"} />
+                <TopBarSectionItem to={"Blog"} />
+                <TopBarSectionItem to={"Contact"} />
+              </div>
             </Stack>
           )}
+          <SettingIconDrawer />
         </Toolbar>
       </AppBar>
     </>

@@ -35,20 +35,14 @@ const ToyProjectSectionView = ({}: ToyProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <div>[라운드인] 프로와 골린이를 연결해주는 레슨 플랫폼 서비스</div>
-            <StackChip stackList={["React", "Typescript", "Next", "Amplify", "Github"]} />
+            <StackChip stackList={["React", "Typescript", "Next", "Amplify", "MUI", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"21/09 ~ CURRENT"} status={"progress"} position={"프론트, 배포"} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ExtraInfoDialog dialogTitle={"골프 레슨 플랫폼 : 라운드인"}>
-              <iframe
-                src="https://www.roundin.kr/"
-                width={"100%"}
-                height={"100%"}
-                style={{ minHeight: "400px" }}
-                sandbox="allow-scripts"
-              />
+              <iframe src="https://www.roundin.kr/" width={"100%"} height={"100%"} style={{ minHeight: "400px" }} />
               <Titleli
                 title={"서비스 목표"}
                 list={["각종 골프 관련 서비스를 제공할 수 있는 플랫폼", "프로들과 유저들 사이의 1:1 간편 레슨 서비스"]}
@@ -60,9 +54,41 @@ const ToyProjectSectionView = ({}: ToyProjectSectionVAProp) => {
             </ExtraInfoDialog>
           </CustomTableCell>
         </CustomTableRow>
+        <CustomTableRow>
+          <CustomTableCell component="th" scope="row" align="center">
+            개발 포트폴리오
+          </CustomTableCell>
+          <CustomTableCell>
+            <div>[개발자] 이런 저런 기술을 가져다가 만들어보는 포트폴리오</div>
+            <StackChip stackList={["React", "Typescript", "Next", "Vercel", "MUI", "Github"]} />
+          </CustomTableCell>
+          <CustomTableCell align="center">
+            <ParticipationChip date={"20/03 ~ CURRENT"} status={"progress"} position={"프론트, 배포"} />
+          </CustomTableCell>
+          <CustomTableCell align="center">
+            <ExtraInfoDialog dialogTitle={"개발 포트폴리오"}>
+              <iframe
+                src="https://kang-portfolio.vercel.app/"
+                width={"100%"}
+                height={"100%"}
+                style={{ minHeight: "400px" }}
+                sandbox="allow-scripts"
+              />
+              <Titleli
+                title={"버전별 변화"}
+                list={["최신 : Next.js + react + vercel", "ver1 : js + css + html + githubPage"]}
+              />
+
+              <Stack direction={"row"} justifyContent={"center"}>
+                <UrlChip title={"홈페이지(최신)"} url={"https://kang-portfolio.vercel.app/"} />
+                <UrlChip title={"홈페이지(ver1)"} url={"https://gyeongseokkang.github.io/"} />
+              </Stack>
+            </ExtraInfoDialog>
+          </CustomTableCell>
+        </CustomTableRow>
         <CustomTableRow key={"Dr.폴리오"}>
           <CustomTableCell component="th" scope="row" align="center">
-            포트폴리오 추천 서비스 : Dr.폴리오
+            금융 포트폴리오 플랫폼
           </CustomTableCell>
           <CustomTableCell>
             <div>[Exfolio] 금융공학 모델 + AI를 이용한 최고의 포트폴리오 생성, 추천 서비스</div>
