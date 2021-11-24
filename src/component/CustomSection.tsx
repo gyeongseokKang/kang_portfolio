@@ -2,13 +2,12 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { NextSeo } from "next-seo";
 import useIntersectionObserver from "src/utils/customHook/useIntersectionObserver";
-import Slide from "@mui/material/Slide";
 
 const StyledSection = styled("section")({
   maxWidth: "1200px",
   padding: "0rem 1rem",
   margin: "auto",
-  marginBlock: "1rem",
+  marginBlock: "3rem",
   position: "relative",
   overflowY: "hidden",
   "& > *": {
@@ -29,7 +28,7 @@ interface SectionProp {
 
 export const CustomSection = ({ id, children, seo, direction = "down" }: SectionProp) => {
   const containerRef = React.useRef(null);
-  const entry = useIntersectionObserver(containerRef, { threshold: 0.1 });
+  const entry = useIntersectionObserver(containerRef, { threshold: 0.1, rootMargin: "100px" });
 
   return (
     <StyledSection id={id} ref={containerRef}>
@@ -44,11 +43,19 @@ export const CustomSection = ({ id, children, seo, direction = "down" }: Section
           }}
         />
       )}
-      <Slide in={entry?.isIntersecting} direction={direction} timeout={700}>
-        <div> {children}</div>
-      </Slide>
-
-      <div style={{ minHeight: "10px" }}></div>
+      <div
+        style={{
+          position: "relative",
+          opacity: entry?.isIntersecting ? 1 : 0.2,
+          transition: "opacity 0.6s ease-in-out, bottom 0.6s ease-in-out",
+          transitionDelay: "0.1s",
+          bottom: entry?.isIntersecting ? "0px" : "100px",
+        }}
+      >
+        {children}
+      </div>
+      {/* <Slide in={entry?.isIntersecting} container={containerRef.current} direction={direction} timeout={700}>
+      </Slide> */}
     </StyledSection>
   );
 };
