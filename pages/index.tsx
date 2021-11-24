@@ -5,6 +5,7 @@ import ProjectSection from "src/section/ProjectSection";
 import ScrollToTopBtn from "src/component/button/ScrollToTopBtn";
 import ToyProjectSection from "src/section/ToyProjectSection";
 import SkillSection from "src/section/SkillSection";
+import CertificateSection from "src/section/CertificateSection";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       <ProjectSection />
       <ToyProjectSection />
       <SkillSection />
+      <CertificateSection />
       <ScrollToTopBtn />
     </>
   );
