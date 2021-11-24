@@ -42,7 +42,13 @@ const ToyProjectSectionView = ({}: ToyProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell align="center">
             <ExtraInfoDialog dialogTitle={"골프 레슨 플랫폼 : 라운드인"}>
-              <iframe src="https://www.roundin.kr/" width={"100%"} height={"100%"} style={{ minHeight: "400px" }} />
+              <iframe
+                src="https://www.roundin.kr/"
+                width={"100%"}
+                height={"100%"}
+                style={{ minHeight: "400px" }}
+                sandbox="allow-scripts"
+              />
               <Titleli
                 title={"서비스 목표"}
                 list={["각종 골프 관련 서비스를 제공할 수 있는 플랫폼", "프로들과 유저들 사이의 1:1 간편 레슨 서비스"]}
