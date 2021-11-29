@@ -28,7 +28,7 @@ const AwardSectionView = ({}: AwardSectionVAProp) => {
           "갑작스럽게 만들고 싶었던 서비스를 검증하기 위해, 또는 주어진 일에 열심히 몰두하고 있을때 선물같은 느낌으로 다가옵니다. 그래서 상을 받는 건 저에겐 언제나 즐겁습니다."
         }
       />
-      <AwardSectionItem2 />
+      <AwardSectionItem />
     </CustomSection>
   );
 };
@@ -62,7 +62,7 @@ const AwardItem = ({ awardName, details, awardGrade, awardImg }: AwardItemProp) 
   );
 };
 
-const AwardSectionItem2 = () => {
+const AwardSectionItem = () => {
   return (
     <Timeline>
       <TimelineItem>

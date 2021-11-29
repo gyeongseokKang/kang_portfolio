@@ -4,7 +4,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import SettingIconDrawer from "./component/SettingIconDrawer";
+import SettingIcons from "./component/SettingIcons";
 import TopBarSectionItem from "./component/TopBarSectionItem";
 import useWindowDimensions from "src/utils/customHook/useWindowDimensions";
 import TopBarMenu from "./component/TopBarMenu";
@@ -29,7 +29,7 @@ export default function TopBar() {
             KANG GYEONG SEOK
           </Typography>
           {menuComponent}
-          <SettingIconDrawer />
+          <SettingIcons />
         </Toolbar>
       </AppBar>
     </>

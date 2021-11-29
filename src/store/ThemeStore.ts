@@ -6,6 +6,7 @@ export const ColorModeContext = React.createContext({
   setLightMode: () => {},
   setDarkMode: () => {},
   setSystemMode: () => {},
+  currentColormode: "light",
 });
 
 export const getDesignTokens = (mode: PaletteMode) => ({

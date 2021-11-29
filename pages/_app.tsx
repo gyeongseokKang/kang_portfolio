@@ -35,8 +35,9 @@ export default function MyApp(props: MyAppProps) {
       setSystemMode: () => {
         setMode(prefersDarkMode ? "dark" : "light");
       },
+      currentColormode: mode,
     }),
-    []
+    [mode]
   );
 
   React.useEffect(() => {
