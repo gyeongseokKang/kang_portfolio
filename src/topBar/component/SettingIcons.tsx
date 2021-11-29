@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import { IconButton } from "@mui/material";
+import { IconButton, Stack } from "@mui/material";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import Brightness2Icon from "@mui/icons-material/Brightness2";
 import Link from "next/link";
@@ -15,7 +15,6 @@ const StyledIconButton = styled(IconButton)(({}) => ({
   "&.MuiIconButton-root": {
     border: "1px solid",
     borderRadius: "15px",
-    marginInlineEnd: "1rem",
     color: "#ffffff",
   },
 }));
@@ -32,7 +31,7 @@ export default function SettingIcons() {
   };
 
   return (
-    <div>
+    <Stack direction={"row"} spacing={0.5}>
       <StyledIconButton
         size="medium"
         edge="start"
@@ -44,6 +43,13 @@ export default function SettingIcons() {
       </StyledIconButton>
       <StyledIconButton size="medium" edge="start" onClick={openI18nSnackBar}>
         <TranslateIcon />
+      </StyledIconButton>
+      <StyledIconButton size="medium" edge="start">
+        <Link href={"https://github.com/gyeongseokKang/kang_portfolio"}>
+          <a target="_blank" style={{ textDecoration: "none", color: "#ffffff", fontSize: "0.1rem" }}>
+            <GitHubIcon />
+          </a>
+        </Link>
       </StyledIconButton>
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
@@ -57,13 +63,6 @@ export default function SettingIcons() {
           </IconButton>
         }
       />
-      <Link href={"https://github.com/gyeongseokKang/kang_portfolio"}>
-        <a target="_blank" style={{ textDecoration: "none" }}>
-          <StyledIconButton size="medium" edge="start">
-            <GitHubIcon />
-          </StyledIconButton>
-        </a>
-      </Link>
-    </div>
+    </Stack>
   );
 }
