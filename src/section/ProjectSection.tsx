@@ -47,7 +47,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
             데이터 시각화 서비스 : HyperData
           </CustomTableCell>
           <CustomTableCell>
-            <div>[티맥스] 통계 플랫폼 : [티맥스] 시각화 대시보드 : 오픈소스 라이브러리를 이용한 시각화 대시보드</div>
+            <div>[티맥스] 시각화 대시보드 : 오픈소스 라이브러리를 이용한 시각화 대시보드</div>
             <StackChip stackList={["React", "SASS", "Typescript", "Github", "Plotly"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
