@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import debounce from "lodash/debounce";
 
 export function useScrollPositionY() {
-  const debounceDelay = 500;
+  const debounceDelay = 250;
   const [scrollY, setScrollY] = useState<number>(0);
 
   const listener = useCallback(() => {

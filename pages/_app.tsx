@@ -19,8 +19,8 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const [mode, setMode] = React.useState<"light" | "dark">("dark");
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const [mode, setMode] = React.useState<"light" | "dark">(prefersDarkMode ? "dark" : "light");
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {

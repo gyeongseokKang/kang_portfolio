@@ -7,11 +7,13 @@ interface SectionTitleProp {
   subTitle?: string;
 }
 
-const StyledTitle = styled(Typography)({
+const StyledTypography = styled(Typography)<{ textColor: string }>(({ theme, textColor }) => ({
+  display: "inline",
+  background: `linear-gradient(180deg, rgba(0,0,0,0) 50%, ${theme.palette.primary.light} 50%)`,
+  paddingInline: "2px",
   fontWeight: "500" as any,
-  marginBottom: "0.1rem",
   letterSpacing: "-2px",
-});
+}));
 
 const StyledSubTitle = styled(Typography)({
   paddingInlineStart: "0.5rem",
@@ -22,9 +24,9 @@ export const CustomSectionTitle = ({ title, subTitle }: SectionTitleProp) => {
   return (
     <>
       {title && (
-        <StyledTitle variant="h4" gutterBottom>
+        <StyledTypography variant="h4" gutterBottom textColor={"#FFFF59"}>
           {title}
-        </StyledTitle>
+        </StyledTypography>
       )}
       {subTitle && (
         <StyledSubTitle variant="subtitle2" gutterBottom>

@@ -8,6 +8,7 @@
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.1.0",
+    "@mui/lab": "^5.0.0-alpha.57",
     "@mui/material": "latest",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.1.1",
