@@ -64,7 +64,7 @@ const AwardItem = ({ awardName, details, awardGrade, awardImg }: AwardItemProp) 
 
 const AwardSectionItem = () => {
   return (
-    <Timeline>
+    <Timeline sx={{ minWidth: "500px" }}>
       <TimelineItem>
         <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>2021년</TimelineOppositeContent>
         <TimelineSeparator>

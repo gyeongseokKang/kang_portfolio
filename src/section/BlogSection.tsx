@@ -25,8 +25,8 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
         title={"Blog"}
         subTitle={"글을 쓰는 것을 즐깁니다. 공부한 것을 나누며, 취미를 기록하고 또 학습합니다."}
       />
-      <Stack direction={"row"}>
-        <ul style={{ flex: "1" }}>
+      <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"center"}>
+        <ul style={{ flex: "1", minWidth: "300px" }}>
           <li>
             <strong>Tistory</strong> 에는 코딩테스트부터 책에 대한 후기
           </li>
@@ -34,25 +34,27 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
             <strong>Velog</strong> 에는 딥한 내용의 개발글을 쓰려고 하고 있습니다.
           </li>
         </ul>
-        <Stack direction={"row"} alignItems={"center"}>
-          블로그 바로가기 <ArrowRightIcon />
-        </Stack>
+        <Stack direction={"row"}>
+          <Stack direction={"row"} alignItems={"center"}>
+            블로그 바로가기 <ArrowRightIcon />
+          </Stack>
 
-        <Stack direction={"row"} alignItems={"center"}>
-          <Link href={"https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"}>
-            <a target="_blank" style={{ textDecoration: "none" }}>
-              <IconButton>
-                <Image src={`/icons/tistory.svg`} height={40} width={40} />
-              </IconButton>
-            </a>
-          </Link>
-          <Link href={"https://velog.io/@kangkyeungseok"}>
-            <a target="_blank" style={{ textDecoration: "none" }}>
-              <IconButton>
-                <Image src={`/icons/velog.png`} height={40} width={40} />
-              </IconButton>
-            </a>
-          </Link>
+          <Stack direction={"row"} alignItems={"center"}>
+            <Link href={"https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"}>
+              <a target="_blank" style={{ textDecoration: "none" }}>
+                <IconButton>
+                  <Image src={`/icons/tistory.svg`} height={40} width={40} />
+                </IconButton>
+              </a>
+            </Link>
+            <Link href={"https://velog.io/@kangkyeungseok"}>
+              <a target="_blank" style={{ textDecoration: "none" }}>
+                <IconButton>
+                  <Image src={`/icons/velog.png`} height={40} width={40} />
+                </IconButton>
+              </a>
+            </Link>
+          </Stack>
         </Stack>
       </Stack>
       <iframe
