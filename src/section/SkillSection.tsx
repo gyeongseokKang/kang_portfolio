@@ -69,7 +69,7 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
         </Stack>
         <Stack direction={"row"} padding={0.5}>
           <Typography sx={{ pr: 2 }}>DataBase :</Typography>
-          <StackChip stackList={["Firebase", "MySQL"]} />
+          <StackChip stackList={["Firebase", "MySQL", "Oracle"]} />
         </Stack>
         <Stack direction={"row"} padding={0.5}>
           <Typography sx={{ pr: 2 }}>Deploy :</Typography>

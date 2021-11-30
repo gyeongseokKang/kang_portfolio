@@ -11,21 +11,21 @@ import { UrlChip } from "src/component/chip/UrlChip";
 import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
 import { Titleli } from "src/component/ul/Titleli";
 
-const ToyProjectSection = () => {
-  const ToyProjectSectionVAProp: ToyProjectSectionVAProp = {};
-  return <ToyProjectSectionView {...ToyProjectSectionVAProp} />;
+const SideProjectSection = () => {
+  const SideProjectSectionVAProp: SideProjectSectionVAProp = {};
+  return <SideProjectSectionView {...SideProjectSectionVAProp} />;
 };
 
-interface ToyProjectSectionVAProp {}
-const ToyProjectSectionView = ({}: ToyProjectSectionVAProp) => {
+interface SideProjectSectionVAProp {}
+const SideProjectSectionView = ({}: SideProjectSectionVAProp) => {
   return (
-    <CustomSection id={"ToyProject"}>
+    <CustomSection id={"SideProject"}>
       <CustomSectionTitle
-        title={"TOY PROJECT"}
+        title={"SIDE PROJECT"}
         subTitle={"배우고 싶은 기술, 언어를 사용해보고 좋은 것은 공유하고 적용합니다."}
       />
       <CustomTable
-        key="TopProjectTable"
+        key="SideProjectTable"
         header={["프로젝트", "소개 / 사용기술", "개발 참여도", "추가정보"]}
         footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다. 실제 사용한 기술만 적었습니다."}
       >
@@ -127,4 +127,4 @@ const ToyProjectSectionView = ({}: ToyProjectSectionVAProp) => {
   );
 };
 
-export default ToyProjectSection;
+export default SideProjectSection;
