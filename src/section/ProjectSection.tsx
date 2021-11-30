@@ -35,7 +35,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <div>[티맥스] 통계 플랫폼 : JUPYTER NOTEBOOK 상에서 동작하는 GUI 기반 통계,EDA 플랫폼</div>
-            <StackChip stackList={["Python", "Jupyter", "Html5", "Javascript", "Css3", "Gitlab"]} />
+            <StackChip stackList={["Python", "Jupyter", "Html5", "Javascript", "CSS3", "Gitlab"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"21/03 ~ CURRENT"} status={"progress"} position={"프론트, 파이썬 통계"} />
@@ -48,7 +48,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <div>[티맥스] 시각화 대시보드 : 오픈소스 라이브러리를 이용한 시각화 대시보드</div>
-            <StackChip stackList={["React", "SASS", "Typescript", "Github", "Plotly"]} />
+            <StackChip stackList={["React", "Typescript", "SASS", "Plotly", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"21/03 ~ CURRENT"} status={"progress"} position={"프론트, 파이썬 통계"} />
@@ -64,7 +64,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
               [카찹] 통합 모빌리티 서비스 : 다양하게 분산되어 있는 모빌리티 서비스를 한 곳에서 통합 검색 &gt; 결제 &gt;
               반납의 서비스를 제공합니다.
             </div>
-            <StackChip stackList={["Android", "Java", "Firebase", "GoogleMap"]} />
+            <StackChip stackList={["Android", "Java", "Firebase", "GoogleMap", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"18/12 ~ 20/02"} status={"finish"} position={"안드로이드 앱"} />

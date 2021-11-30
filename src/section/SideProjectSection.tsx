@@ -35,7 +35,7 @@ const SideProjectSectionView = ({}: SideProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <div>[라운드인] 프로와 골린이를 연결해주는 레슨 플랫폼 서비스</div>
-            <StackChip stackList={["React", "Typescript", "Next", "Amplify", "MUI", "Github"]} />
+            <StackChip stackList={["React", "Typescript", "Next", "MUI", "Amplify", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"21/09 ~ CURRENT"} status={"progress"} position={"프론트, 배포"} />
@@ -60,7 +60,7 @@ const SideProjectSectionView = ({}: SideProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <div>[개발자] 이런 저런 기술을 가져다가 만들어보는 포트폴리오</div>
-            <StackChip stackList={["React", "Typescript", "Next", "Vercel", "MUI", "Github"]} />
+            <StackChip stackList={["React", "Typescript", "Next", "MUI", "Vercel", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"20/03 ~ CURRENT"} status={"progress"} position={"프론트, 배포"} />
@@ -92,7 +92,9 @@ const SideProjectSectionView = ({}: SideProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <div>[Exfolio] 금융공학 모델 + AI를 이용한 최고의 포트폴리오 생성, 추천 서비스</div>
-            <StackChip stackList={["React", "Typescript", "Plotly", "MUI", "Babel", "Webpack", "Github"]} />
+            <StackChip
+              stackList={["React", "Typescript", "Plotly", "MUI", "Babel", "Webpack", "GithubPage", "Github"]}
+            />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"21/04 ~ 21/07"} status={"stop"} position={"프론트, 배포"} />
