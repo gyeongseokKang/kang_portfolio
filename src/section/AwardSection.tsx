@@ -107,11 +107,20 @@ const AwardSectionItem = () => {
               "STU_Award.png",
             ]}
           />
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>2018년</TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
           <AwardItem
             awardName={"한국통신학회 추계종합학술발표회"}
             awardGrade={"우수논문상"}
             details={"[UC-LAB] GAN모델과 DNN모델을 활용한 ANOMALY DETECTION에 관한 연구"}
-            awardImg={["poster.jpg"]}
+            awardImg={["bestPaper2018.jpg", "poster.jpg"]}
           />
         </TimelineContent>
       </TimelineItem>
