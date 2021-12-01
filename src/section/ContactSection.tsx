@@ -61,6 +61,13 @@ const ContactSectionView = ({}: ContactSectionVAProp) => {
                 </IconButton>
               </a>
             </Link>
+            <Link href={"https://open.kakao.com/o/sxdXxTMd"}>
+              <a target="_blank" style={{ textDecoration: "none" }}>
+                <IconButton>
+                  <Image src={`/icons/kakao.svg`} height={40} width={40} />
+                </IconButton>
+              </a>
+            </Link>
           </Stack>
         </StyledPaper>
       </Stack>
