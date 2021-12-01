@@ -13,6 +13,7 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import { Stack } from "@mui/material";
 import HorizontalLine from "../hr/HorizontalLine";
+import LaptopIcon from "@mui/icons-material/Laptop";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -24,7 +25,7 @@ const Transition = React.forwardRef(function Transition(
 });
 
 interface ExtraInfoDialogProp {
-  iconType?: "paper" | "prize";
+  iconType?: "paper" | "prize" | "contribution";
   dialogTitle: string;
   children: React.ReactNode;
 }
@@ -40,10 +41,27 @@ export default function ExtraInfoDialog({ iconType = "paper", dialogTitle, child
     setOpen(false);
   };
 
+  let Icon = <DescriptionOutlinedIcon color="primary" />;
+
+  switch (iconType) {
+    case "paper": {
+      Icon = <LaptopIcon color="primary" />;
+      break;
+    }
+    case "prize": {
+      Icon = <EmojiEventsIcon color="primary" />;
+      break;
+    }
+    case "contribution": {
+      Icon = <DescriptionOutlinedIcon color="primary" />;
+      break;
+    }
+  }
+
   return (
     <div>
       <IconButton aria-label="extra" onClick={handleClickOpen}>
-        {iconType === "paper" ? <DescriptionOutlinedIcon color="primary" /> : <EmojiEventsIcon color="primary" />}
+        {Icon}
       </IconButton>
       <Dialog
         open={open}
