@@ -60,9 +60,9 @@ export default function ExtraInfoDialog({ iconType = "paper", dialogTitle, child
             </IconButton>
           </Stack>
         </DialogTitle>
-        <HorizontalLine margin={"0px 0px 0px 0px"} color={"#AEAFBE"} width={"100%"} />
+        <HorizontalLine color={"#e1e1e1"} width={"90%"} />
         <DialogContent>{open && children}</DialogContent>
-        <HorizontalLine margin={"0px 0px 0px 0px"} color={"#AEAFBE"} width={"100%"} />
+        <HorizontalLine color={"#e1e1e1"} width={"90%"} />
         <DialogActions>
           <Button onClick={handleClose}>ClOSE</Button>
         </DialogActions>

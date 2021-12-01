@@ -2,17 +2,25 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import CheckIcon from "@mui/icons-material/Check";
 
 const StyledStack = styled(Stack)(({ theme }) => ({
   padding: "0.25rem",
   marginBlockEnd: "0.25rem",
   borderRadius: "7px",
-  border: `1px solid #12121a`,
+  // border: `1px solid #12121a`,
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
+  fontWeight: "400" as any,
+}));
+
+const ColoredTypography = styled(Typography)(({ theme }) => ({
+  display: "inline",
+  background: `linear-gradient(180deg, rgba(0,0,0,0) 50%, ${theme.palette.primary.light} 50%)`,
+  paddingInline: "5px 5px",
   fontWeight: "500" as any,
-  padding: "0.5rem",
+  minWidth: "100px",
 }));
 
 interface TitleliProp {
@@ -29,12 +37,15 @@ export const Titleli = ({ title, list, direction = "left" }: TitleliProp) => {
       direction={direction === "left" ? "row" : "row-reverse"}
       flexWrap={"wrap"}
     >
-      <StyledTypography>{title}</StyledTypography>
-      <ul style={{ flex: "1" }}>
+      <ColoredTypography># {title}</ColoredTypography>
+      <Stack flex={1} direction={"column"} spacing={0.1} sx={{ p: 2 }}>
         {list.map((item) => (
-          <li>{item}</li>
+          <Stack direction={"row"}>
+            <CheckIcon fontSize={"small"} />
+            <StyledTypography variant="subtitle2">{item}</StyledTypography>
+          </Stack>
         ))}
-      </ul>
+      </Stack>
     </StyledStack>
   );
 };
