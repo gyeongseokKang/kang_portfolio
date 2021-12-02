@@ -40,12 +40,35 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           <CustomTableCell align="center">
             <ParticipationChip date={"21/03 ~ CURRENT"} status={"progress"} position={"프론트, 파이썬 통계"} />
           </CustomTableCell>
-          <CustomTableCell align="center">-</CustomTableCell>
+          <CustomTableCell align="center">
+            <ExtraInfoDialog iconType={"contribution"} dialogTitle={"GUI 기반 통계 플랫폼 : HyperData"}>
+              <Titleli
+                title={"담당 업무"}
+                list={["No-code 기반 GUI 분석 플랫폼 구현", "통계 기법 함수 구현", "notebook extension 모듈화"]}
+              />
+              <Titleli
+                title={"기여도"}
+                list={[
+                  "필요한 기능 단위 선언 -> 내부 이벤트, 데이터를 바인딩해서 GUI 위젯으로 합쳐주는 구조 설계 및 구현",
+                  "5개의 카테고리별 20여종의 통계 기법 구현",
+                  "docker image 생성 및 관리",
+                ]}
+              />
+              <Titleli
+                title={"회고"}
+                list={[
+                  "데이터 분석에 필요한 통계 기법을 연구할 수 있었음",
+                  "docker, kubernetes에 대한 기초적인 학습을 할 수 있었음",
+                  "초기 구조 설계 및 구현으로 우수사원상을 받음",
+                ]}
+              />
+            </ExtraInfoDialog>
+          </CustomTableCell>
           <CustomTableCell align="center">-</CustomTableCell>
         </CustomTableRow>
         <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
           <CustomTableCell component="th" scope="row" align="center">
-            데이터 시각화 서비스 : HyperData
+            데이터 분석 플랫폼 : HyperData
           </CustomTableCell>
           <CustomTableCell>
             <div>[티맥스] 시각화 대시보드 : 오픈소스 라이브러리를 이용한 시각화 대시보드</div>
@@ -54,7 +77,27 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           <CustomTableCell align="center">
             <ParticipationChip date={"21/03 ~ CURRENT"} status={"progress"} position={"프론트, 파이썬 통계"} />
           </CustomTableCell>
-          <CustomTableCell align="center">-</CustomTableCell>
+          <CustomTableCell align="center">
+            <ExtraInfoDialog iconType={"contribution"} dialogTitle={"데이터 분석 플랫폼 : HyperData"}>
+              <Titleli title={"담당 업무"} list={["시각화 차트 개발", "시각화 대시보드 구현", "React 마이그레이션"]} />
+              <Titleli
+                title={"기여도"}
+                list={[
+                  "부족한 자사 차트 라이브러리 -> 오픈소스 차트(plotly, tabulator)로 변환",
+                  "사용자 요청에 따른 SQL 쿼리 생성기 설계 및 구현",
+                  "사용자와 인터렉티브한 대시보드 설계 및 구현",
+                ]}
+              />
+              <Titleli
+                title={"회고"}
+                list={[
+                  "React 전환작업을 하면서 JS와 React에 관한 깊은 공부를 할 수 있었음",
+                  "데이터 분석 시각화에 대한 연구 및 구현이 재밌었음",
+                  "대용량 시각화 차트에 대한 연구 부족이 아쉬움",
+                ]}
+              />
+            </ExtraInfoDialog>
+          </CustomTableCell>
           <CustomTableCell align="center">-</CustomTableCell>
         </CustomTableRow>
         <CustomTableRow key={"통합 모빌리티 서비스 : 카찹"}>

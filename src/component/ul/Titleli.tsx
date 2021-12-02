@@ -31,14 +31,9 @@ interface TitleliProp {
 
 export const Titleli = ({ title, list, direction = "left" }: TitleliProp) => {
   return (
-    <StyledStack
-      alignItems="center"
-      justifyContent="space-between"
-      direction={direction === "left" ? "row" : "row-reverse"}
-      flexWrap={"wrap"}
-    >
+    <StyledStack alignItems="flex-start" justifyContent="space-between" direction={"column"} flexWrap={"wrap"}>
       <ColoredTypography># {title}</ColoredTypography>
-      <Stack flex={1} direction={"column"} spacing={0.1} sx={{ p: 2 }}>
+      <Stack flex={1} direction={"column"} spacing={0.1} sx={{ p: 1.5 }}>
         {list.map((item) => (
           <Stack direction={"row"}>
             <CheckIcon fontSize={"small"} />
