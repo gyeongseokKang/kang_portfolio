@@ -37,8 +37,14 @@ export default function MyApp(props: MyAppProps) {
       },
       currentColormode: mode,
     }),
-    [mode]
+    [mode, prefersDarkMode]
   );
+
+  React.useEffect(() => {
+    setMode(prefersDarkMode ? "dark" : "light");
+  }, [prefersDarkMode]);
+
+  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode, prefersDarkMode]);
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -47,8 +53,6 @@ export default function MyApp(props: MyAppProps) {
       jssStyles.parentElement?.removeChild(jssStyles);
     }
   }, []);
-
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
     <CacheProvider value={emotionCache}>
