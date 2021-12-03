@@ -61,24 +61,18 @@ export default function MyApp(props: MyAppProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="google-site-verification" content="4Krut1DFj0ODK-gyhzjhbBSz-R9WtgvXE2Mndz9ZIRQ" />
+        <meta
+          name="keywords"
+          content="개발자,프로그래머,프론트엔드,포트폴리오,강경석,kang,programmer,portfolio,frontend,gyeongseok"
+        />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <DefaultSeo
-        description={"3년차 프론트앤드 개발자, 강경석의 포트폴리오 사이트"}
+        description={"React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석의 포트폴리오입니다."}
         openGraph={{
           type: "website",
-          // url: "https://www.roundin.kr/",
           title: "Kang's Portfolio",
-          description:
-            "안녕하세요. 강경석입니다. 사랑받는 서비스와 제대로 동작하는 프로그램을 만들고 싶은 프론트엔드 개발자입니다.",
-          // images: [
-          //   {
-          //     url: "https://www.roundin.kr/images/seo_bg.png",
-          //     width: 800,
-          //     height: 600,
-          //     alt: "Kang's Portfolio image",
-          //   },
-          // ],
+          description: "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석입니다.",
           site_name: "Kang's Portfolio",
         }}
       />
