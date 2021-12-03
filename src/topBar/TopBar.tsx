@@ -41,12 +41,12 @@ const VerticalMenu = () => {
     <Stack justifyContent={"flex-end"} alignItems={"flex-end"} flex={1}>
       <TopBarMenu>
         <TopBarSectionItem to={"Intro"} top={false} />
+        <TopBarSectionItem to={"Experience"} top={false} />
         <TopBarSectionItem to={"Project"} top={false} />
         <TopBarSectionItem to={"Skill"} top={false} />
         <TopBarSectionItem to={"Award"} top={false} />
         <TopBarSectionItem to={"Certificate"} top={false} />
         <TopBarSectionItem to={"Blog"} top={false} />
-        <TopBarSectionItem to={"Contact"} top={false} />
       </TopBarMenu>
     </Stack>
   );
@@ -57,12 +57,12 @@ const HorizontalMenu = () => {
     <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"flex-start"} flex={1}>
       <div style={{ display: "flex" }}>
         <TopBarSectionItem to={"Intro"} />
+        <TopBarSectionItem to={"Experience"} />
         <TopBarSectionItem to={"Project"} />
         <TopBarSectionItem to={"Skill"} />
         <TopBarSectionItem to={"Award"} />
         <TopBarSectionItem to={"Certificate"} />
         <TopBarSectionItem to={"Blog"} />
-        <TopBarSectionItem to={"Contact"} />
       </div>
     </Stack>
   );

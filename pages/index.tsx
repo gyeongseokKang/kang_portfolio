@@ -1,9 +1,9 @@
 import * as React from "react";
 import TopBar from "../src/topBar/TopBar";
 import IntroSection from "src/section/IntroSection";
-import ProjectSection from "src/section/ProjectSection";
+import ExperienceSection from "src/section/ExperienceSection";
 import ScrollToTopBtn from "src/component/button/ScrollToTopBtn";
-import SideProjectSection from "src/section/SideProjectSection";
+import ProjectSection from "src/section/ProjectSection";
 import SkillSection from "src/section/SkillSection";
 import CertificateSection from "src/section/CertificateSection";
 import BlogSection from "src/section/BlogSection";
@@ -15,8 +15,8 @@ export default function Index() {
     <>
       <TopBar />
       <IntroSection />
+      <ExperienceSection />
       <ProjectSection />
-      <SideProjectSection />
       <SkillSection />
       <AwardSection />
       <CertificateSection />

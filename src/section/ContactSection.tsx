@@ -53,22 +53,6 @@ const ContactSectionView = ({}: ContactSectionVAProp) => {
               <strong> "같이 일하는 싶은 동료가 되겠습니다"</strong>
             </Typography>
           </Stack>
-          <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>
-            <Link href={"https://www.linkedin.com/in/%EA%B2%BD%EC%84%9D-%EA%B0%95-5190751aa/"}>
-              <a target="_blank" style={{ textDecoration: "none" }}>
-                <IconButton>
-                  <Image src={`/icons/linkedin.svg`} height={40} width={40} />
-                </IconButton>
-              </a>
-            </Link>
-            <Link href={"https://open.kakao.com/o/sxdXxTMd"}>
-              <a target="_blank" style={{ textDecoration: "none" }}>
-                <IconButton>
-                  <Image src={`/icons/kakao.svg`} height={40} width={40} />
-                </IconButton>
-              </a>
-            </Link>
-          </Stack>
         </StyledPaper>
       </Stack>
     </CustomSection>

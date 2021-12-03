@@ -24,15 +24,15 @@ const ColoredTypography = styled(Typography)(({ theme }) => ({
 }));
 
 interface TitleliProp {
-  title: string;
-  list: string[];
+  title?: string;
+  list?: string[];
   direction?: "left" | "right";
 }
 
-export const Titleli = ({ title, list, direction = "left" }: TitleliProp) => {
+export const Titleli = ({ title, list = [], direction = "left" }: TitleliProp) => {
   return (
     <StyledStack alignItems="flex-start" justifyContent="space-between" direction={"column"} flexWrap={"wrap"}>
-      <ColoredTypography># {title}</ColoredTypography>
+      {title && <ColoredTypography># {title}</ColoredTypography>}
       <Stack flex={1} direction={"column"} spacing={0.1} sx={{ p: 1.5 }}>
         {list.map((item) => (
           <Stack direction={"row"}>

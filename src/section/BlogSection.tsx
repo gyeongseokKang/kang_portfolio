@@ -28,10 +28,10 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
       <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"center"}>
         <ul style={{ flex: "1", minWidth: "300px" }}>
           <li>
-            <strong>Tistory</strong> 에는 코딩테스트부터 책에 대한 후기
+            <strong>Tistory</strong> 에는 코딩테스트부터 책에 대한 후기 (일 평균 : 300, 현재 누적 13만)
           </li>
           <li>
-            <strong>Velog</strong> 에는 딥한 내용의 개발글을 쓰려고 하고 있습니다.
+            <strong>Velog</strong> 에는 딥한 내용의 개발글을 쓰려고 하고 있습니다 (산출하기 어려움).
           </li>
         </ul>
         <Stack direction={"row"}>

@@ -25,7 +25,7 @@ export const CustomSectionTitle = ({ title, subTitle }: SectionTitleProp) => {
     <>
       {title && (
         <StyledTypography variant="h4" gutterBottom>
-          {title}
+          {title.toLocaleUpperCase()}
         </StyledTypography>
       )}
       {subTitle && (
