@@ -20,29 +20,14 @@ interface SectionProp {
   id: string;
   direction?: "up" | "down" | "right" | "left";
   children?: React.ReactNode;
-  seo?: {
-    title: string;
-    description: string;
-  };
 }
 
-export const CustomSection = ({ id, children, seo, direction = "down" }: SectionProp) => {
+export const CustomSection = ({ id, children, direction = "down" }: SectionProp) => {
   const containerRef = React.useRef(null);
   const entry = useIntersectionObserver(containerRef, { threshold: 0.1, rootMargin: "100px" });
 
   return (
     <StyledSection id={id} ref={containerRef}>
-      {seo && (
-        <NextSeo
-          title={seo.title}
-          description={seo.description}
-          openGraph={{
-            type: "website",
-            title: seo.title,
-            description: seo.description,
-          }}
-        />
-      )}
       <div
         style={{
           position: "relative",

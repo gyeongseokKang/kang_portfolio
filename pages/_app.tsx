@@ -60,6 +60,7 @@ export default function MyApp(props: MyAppProps) {
         <title>Kang's Portfolio</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="google-site-verification" content="4Krut1DFj0ODK-gyhzjhbBSz-R9WtgvXE2Mndz9ZIRQ" />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <DefaultSeo

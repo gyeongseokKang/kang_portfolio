@@ -27,7 +27,7 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
       <CustomTable
         key="ExperienceTable"
         header={["회사", "업무", "세부 내용", "서비스 정보"]}
-        footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다. 실제 사용한 기술만 적었습니다."}
+        footer={"더욱 자세한 내용과 관심이 있으시면 경력기술서를 요청해주세요"}
       >
         <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
           <CustomTableCell component="th" scope="row" align="center">
