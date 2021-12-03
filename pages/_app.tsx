@@ -61,6 +61,7 @@ export default function MyApp(props: MyAppProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="google-site-verification" content="4Krut1DFj0ODK-gyhzjhbBSz-R9WtgvXE2Mndz9ZIRQ" />
+        <meta name="naver-site-verification" content="caf276500aef5508a9380ca9dad2f487f9a13c54" />
         <meta
           name="keywords"
           content="개발자,프로그래머,프론트엔드,포트폴리오,강경석,kang,programmer,portfolio,frontend,gyeongseok"
