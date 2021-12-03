@@ -1,0 +1,7 @@
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Naver Search
+User-agent: Yeti
+Allow: /

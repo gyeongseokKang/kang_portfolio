@@ -69,6 +69,7 @@ export default function MyApp(props: MyAppProps) {
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <DefaultSeo
+        canonical={"https://kang-portfolio.vercel.app/"}
         description={"React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석의 포트폴리오입니다."}
         openGraph={{
           type: "website",
