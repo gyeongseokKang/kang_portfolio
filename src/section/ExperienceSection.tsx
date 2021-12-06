@@ -104,7 +104,7 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
                 title={"What I regreted"}
                 list={[
                   "공통 디자인 패턴, 모듈없이 개별적으로 개발된 컴포넌트, 스크린",
-                  "서비스를 위한 부족한 알고리즘에 대한 고민과 개발",
+                  "비즈니스 알고리즘에 대한 부족한 고민과 개발",
                   "서버보다 앱단에서 수행되는 많은 비즈니스 로직들",
                 ]}
               />

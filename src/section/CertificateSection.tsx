@@ -31,7 +31,7 @@ const CertificateSectionView = ({}: CertificateSectionVAProp) => {
         <CertificateSectionItem
           name={"정보기기운용기능사"}
           difficulty={"하"}
-          text={`국방부에서 네트워크운용병으로 복무하였습니다. 수준읖 높이기 위해 취득했습니다.`}
+          text={`국방부에서 네트워크운용병으로 복무하면서, 전문성을 높이기 위해 취득했습니다.`}
           imagePath={["InformationEquipmentManagementTechnician"]}
         />
         <CertificateSectionItem

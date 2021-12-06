@@ -19,29 +19,25 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
     <CustomSection id={"Skill"}>
       <CustomSectionTitle
         title={"Skill"}
-        subTitle={
-          "다양한 프레임워크, 라이브러리, 솔루션 등을 사용해보면서 새로운 것을 익히는 것을 좋아합니다. 하지만 프론트앤드의 기본이 되는 기술을 주로 공부합니다."
-        }
+        subTitle={"참신하고 편리함을 주는 기술을 좋아하고 배우고 적용하고자 공부합니다."}
       />
       <CustomTable
         key="SKillTable"
         header={["기술", "로고", "사용 경험", "숙련도"]}
-        footer={"5개의 별은 부끄럽게도 평생을 공부해도 가질수 있을까 의문입니다만, 쟁취해보려고 합니다."}
+        footer={"5개의 별을 위해 끝까지 공부하겠습니다."}
       >
         <SkillSectionItem
           name={"Javascript"}
-          score={4}
-          experienceText={
-            "JAVASCRIPT, ECMASCRIPT, WEBPACK 과 BABEL등을 위주로 개발하며 모듈을 극대화한 자바스크립트 프로그래밍을 추구합니다. 최신 문법인 ES6부터 핵심이 되는 자바스크립트 코어까지 가장 깊게 공부하고 사용하고 있는 언어이기도 합니다."
-          }
+          score={3}
+          experienceText={`프론트엔드의 근간이 되는 언어라고 생각하고 최신버전도 꾸준히 트래킹하면서 배우고 있습니다.
+          가장 많이 사용한 언어이지만 아직도 전부다 이해하지못해 계속해서 공부하고 있는 언어이기도 합니다.`}
           careerNumber={3}
         />
         <SkillSectionItem
           name={"Typescript"}
           score={3}
-          experienceText={
-            "타입스크립트의 견고한 정적 분석을 통해 개발 유지보수성을 향상시키고 사이드이펙트가 없는 프로그램을 만들기 위해 도입하고 사용하고 있습니다. 자바스크립트의 슈퍼셋언어로서 다양한 기능과 장기적인 편의가 있어 자바스크립트와 함께 꾸준히 배워가고 있습니다."
-          }
+          experienceText={`타입스크립트의 정적 분석을 통해 개발 유지보수성을 향상시키고 사이드이펙트가 없는 프로그램을 만들기 위해 도입하고 사용하고 있습니다. 
+            한번 빠지면 자바스크립트를 돌아갈수 없다는 말처럼 저 또한 타입스크립트에 매료되었고 계속 사용하고 있습니다`}
           careerNumber={2}
         />
         <SkillSectionItem

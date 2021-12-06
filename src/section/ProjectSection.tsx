@@ -26,15 +26,15 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
       />
       <CustomTable
         key="ProjectTable"
-        header={["프로젝트", "소개 / 사용기술", "개발 참여도", "추가정보"]}
-        footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다. 실제 사용한 기술만 적었습니다."}
+        header={["프로젝트", "소개 / 사용기술", "개발 상황", "상세정보"]}
+        footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다. 제가 사용한 기술만 적었습니다."}
       >
-        <CustomTableRow key={"골프 레슨 플랫폼 : 라운드인"}>
+        <CustomTableRow key={"골프 조합 플랫폼 : 라운드인"}>
           <CustomTableCell component="th" scope="row" align="center">
-            골프 레슨 플랫폼 : 라운드인
+            골프 종합 플랫폼 : 라운드인
           </CustomTableCell>
           <CustomTableCell>
-            <div>[라운드인] 프로와 골린이를 연결해주는 레슨 플랫폼 서비스</div>
+            <div>[라운드인] 골프 관련 서비스를 통합하는 플랫폼</div>
             <StackChip stackList={["React", "Typescript", "Next", "MUI", "Amplify", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
@@ -42,12 +42,21 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell align="center">
             <ExtraInfoDialog dialogTitle={"골프 레슨 플랫폼 : 라운드인"}>
-              <iframe src="https://www.roundin.kr/" width={"100%"} height={"100%"} style={{ minHeight: "400px" }} />
+              <iframe
+                src="https://www.roundin.kr/"
+                width={"100%"}
+                height={"100%"}
+                style={{ minHeight: "400px", minWidth: "400px" }}
+              />
               <Titleli
                 title={"서비스 목표"}
                 list={["각종 골프 관련 서비스를 제공할 수 있는 플랫폼", "프로들과 유저들 사이의 1:1 간편 레슨 서비스"]}
               />
-
+              <Titleli title={"서비스 성과"} list={["런칭 첫달부터 매출 발생", "다양한 프로들과 협업 진행중"]} />
+              <Titleli
+                title={"내 기여도"}
+                list={["프론트엔드 개발 및 배포 담당", "서비스 기획 및 디자인", "웹뷰 기반 크로스플랫폼 유지보수"]}
+              />
               <Stack direction={"row"} justifyContent={"center"}>
                 <UrlChip title={"홈페이지"} url={"https://www.roundin.kr/"} />
               </Stack>
@@ -56,30 +65,34 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
         </CustomTableRow>
         <CustomTableRow>
           <CustomTableCell component="th" scope="row" align="center">
-            개발 포트폴리오
+            웹기반 개발포트폴리오
           </CustomTableCell>
           <CustomTableCell>
-            <div>[개발자] 이런 저런 기술을 가져다가 만들어보는 포트폴리오</div>
+            <div>[개발자] 다양한 라이브러리와 기술을 가지고 만들어보는 나만의 포트폴리오</div>
             <StackChip stackList={["React", "Typescript", "Next", "MUI", "Vercel", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"20/03 ~ CURRENT"} status={"progress"} position={"프론트, 배포"} />
           </CustomTableCell>
           <CustomTableCell align="center">
-            <ExtraInfoDialog dialogTitle={"개발 포트폴리오"}>
+            <ExtraInfoDialog dialogTitle={"개발 포트폴리오 ver2"}>
               <iframe
                 src="https://kang-portfolio.vercel.app/"
                 width={"100%"}
                 height={"100%"}
-                style={{ minHeight: "400px" }}
+                style={{ minHeight: "400px", minWidth: "400px" }}
+              />
+              <Titleli
+                title={"서비스 목표"}
+                list={["개발 포트폴리오의 템플릿을 목표로 함", "실제 구직시 사용할수 있도록 높은 퀄리티 유지"]}
               />
               <Titleli
                 title={"버전별 변화"}
-                list={["최신 : Next.js + react + vercel", "ver1 : js + css + html + githubPage"]}
+                list={["ver2 : Next.js + react + vercel", "ver1 : js + css + html + githubPage"]}
               />
 
               <Stack direction={"row"} justifyContent={"center"}>
-                <UrlChip title={"홈페이지(최신)"} url={"https://kang-portfolio.vercel.app/"} />
+                <UrlChip title={"홈페이지(ver2)"} url={"https://kang-portfolio.vercel.app/"} />
                 <UrlChip title={"홈페이지(ver1)"} url={"https://gyeongseokkang.github.io/"} />
               </Stack>
             </ExtraInfoDialog>
@@ -109,12 +122,8 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
               />
               <Titleli title={"서비스 성과"} list={["우리은행 해커톤 우수상 수상"]} />
               <Titleli
-                title={"아쉬운 점"}
-                list={[
-                  "팀원들의 이직으로 서비스 개발 중단",
-                  "MUI와 React를 이용한 첫번째 사이드프로젝트로 인한 코드 미숙",
-                  "테스트 코드 미작성",
-                ]}
+                title={"내 기여도"}
+                list={["프론트엔드 개발 및 배포 담당", "서비스 기획 및 디자인", "대화 참가를 위한 사전준비"]}
               />
               <Stack direction={"row"} justifyContent={"center"}>
                 <UrlChip title={"홈페이지(데모)"} url={"https://dr-folio.github.io/"} />
