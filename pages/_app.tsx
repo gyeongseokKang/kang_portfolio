@@ -74,6 +74,14 @@ export default function MyApp(props: MyAppProps) {
         openGraph={{
           type: "website",
           title: "Kang's Portfolio",
+          images: [
+            {
+              url: "/images/intro/character_white.png",
+              width: 800,
+              height: 600,
+              alt: "kang's image",
+            },
+          ],
           description: "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석입니다.",
           site_name: "Kang's Portfolio",
         }}

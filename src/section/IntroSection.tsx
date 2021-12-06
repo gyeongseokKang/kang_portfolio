@@ -56,7 +56,15 @@ const IntroSectionView = ({
   return (
     <CustomSection id={"Intro"}>
       <CustomSectionTitle title={"INTRO"} />
-      <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
+      <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"space-evenly"} sx={{ padding: "1rem" }}>
+        <CircleImage
+          src={"/images/intro/character_white.png"}
+          width={120}
+          height={120}
+          layout={"fixed"}
+          priority={true}
+          sx={{ backgroundColor: "#add8e6" }}
+        />
         <Typography variant="subtitle1" gutterBottom component="div">
           React & TypeScript 기반의 3년차 프론트엔드 개발자 <strong>강경석</strong>입니다. <br />
           누적 다운로드수 10만건의 카찹, 자동화된 BI툴의 하이퍼데이터 등의 서비스에서 프론트엔드 및 서비스에 필요한
@@ -76,8 +84,7 @@ const IntroSectionView = ({
           </StyledTypography>
           을 높이기 위한 다양한 디자인패턴, 유틸리티에 관심이 많습니다
         </Typography>
-        {/* <CircleImage src={"/images/intro/myface.jpg"} width={250} height={250} priority={true} /> */}
-      </div>
+      </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>
         <IconButton onClick={() => copyEmailToClipboard()}>
           <Image src={`/icons/gmail.svg`} height={40} width={40} />
