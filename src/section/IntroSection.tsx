@@ -59,8 +59,8 @@ const IntroSectionView = ({
       <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"space-evenly"} sx={{ padding: "1rem" }}>
         <CircleImage
           src={"/images/intro/character_white.png"}
-          width={120}
-          height={120}
+          width={150}
+          height={150}
           layout={"fixed"}
           priority={true}
           sx={{ backgroundColor: "#add8e6" }}
