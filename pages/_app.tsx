@@ -76,7 +76,7 @@ export default function MyApp(props: MyAppProps) {
           title: "Kang's Portfolio",
           images: [
             {
-              url: "/images/intro/character_white.png",
+              url: "/images/intro/character_op.png",
               width: 800,
               height: 600,
               alt: "kang's image",
