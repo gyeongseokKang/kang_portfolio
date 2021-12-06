@@ -35,13 +35,11 @@ export const StackChip = ({ title, stackList }: StackChipProp) => {
     <>
       {title && <ColoredTypography># {title}</ColoredTypography>}
       <Stack spacing={0.5} alignItems="center" direction="row" flexWrap={"wrap"}>
-        {stackList.map((stack) => (
-          <>
-            <StyledStack key={stack} spacing={0.5} alignItems="center" direction="row">
-              <Image src={`/icons/${stack.toLowerCase()}.svg`} height={20} width={20} />
-              <StyledTypography>{stack}</StyledTypography>
-            </StyledStack>
-          </>
+        {stackList.map((stack, index) => (
+          <StyledStack key={title + stack + index} spacing={0.5} alignItems="center" direction="row">
+            <Image src={`/icons/${stack.toLowerCase()}.svg`} height={20} width={20} />
+            <StyledTypography>{stack}</StyledTypography>
+          </StyledStack>
         ))}
       </Stack>
     </>

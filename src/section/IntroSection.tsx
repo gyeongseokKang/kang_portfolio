@@ -54,13 +54,7 @@ const IntroSectionView = ({
   closeCopySuccessSnackBar,
 }: IntroSectionVAProp) => {
   return (
-    <CustomSection
-      id={"Intro"}
-      seo={{
-        title: `Kang's Profolio`,
-        description: "Kang's Intro",
-      }}
-    >
+    <CustomSection id={"Intro"}>
       <CustomSectionTitle title={"INTRO"} />
       <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
         <Typography variant="subtitle1" gutterBottom component="div">

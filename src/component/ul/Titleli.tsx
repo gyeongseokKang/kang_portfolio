@@ -35,7 +35,7 @@ export const Titleli = ({ title, list = [], direction = "left" }: TitleliProp) =
       {title && <ColoredTypography># {title}</ColoredTypography>}
       <Stack flex={1} direction={"column"} spacing={0.1} sx={{ p: 1.5 }}>
         {list.map((item) => (
-          <Stack direction={"row"}>
+          <Stack key={item} direction={"row"}>
             <CheckIcon fontSize={"small"} />
             <StyledTypography variant="subtitle2">{item}</StyledTypography>
           </Stack>

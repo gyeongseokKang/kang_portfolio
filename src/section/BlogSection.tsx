@@ -62,7 +62,6 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
         width={"100%"}
         height={"100%"}
         style={{ minHeight: "400px" }}
-        sandbox="allow-scripts"
       />
     </CustomSection>
   );

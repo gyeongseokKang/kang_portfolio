@@ -72,7 +72,6 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                 width={"100%"}
                 height={"100%"}
                 style={{ minHeight: "400px" }}
-                sandbox="allow-scripts"
               />
               <Titleli
                 title={"버전별 변화"}
