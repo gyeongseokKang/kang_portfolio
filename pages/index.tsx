@@ -1,14 +1,16 @@
 import * as React from "react";
+import dynamic from "next/dynamic";
 import TopBar from "../src/topBar/TopBar";
 import IntroSection from "src/section/IntroSection";
 import ExperienceSection from "src/section/ExperienceSection";
 import ScrollToTopBtn from "src/component/button/ScrollToTopBtn";
-import ProjectSection from "src/section/ProjectSection";
-import SkillSection from "src/section/SkillSection";
-import CertificateSection from "src/section/CertificateSection";
-import BlogSection from "src/section/BlogSection";
-import ContactSection from "src/section/ContactSection";
-import AwardSection from "src/section/AwardSection";
+
+const DynamicLazyProjectSection = dynamic(() => import("src/section/ProjectSection"));
+const DynamicLazySkillSection = dynamic(() => import("src/section/SkillSection"));
+const DynamicLazyAwardSection = dynamic(() => import("src/section/AwardSection"));
+const DynamicLazyCertificateSection = dynamic(() => import("src/section/CertificateSection"));
+const DynamicLazyBlogSection = dynamic(() => import("src/section/BlogSection"));
+const DynamicLazyContactSection = dynamic(() => import("src/section/ContactSection"));
 
 export default function Index() {
   return (
@@ -16,12 +18,12 @@ export default function Index() {
       <TopBar />
       <IntroSection />
       <ExperienceSection />
-      <ProjectSection />
-      <SkillSection />
-      <AwardSection />
-      <CertificateSection />
-      <BlogSection />
-      <ContactSection />
+      <DynamicLazyProjectSection />
+      <DynamicLazySkillSection />
+      <DynamicLazyAwardSection />
+      <DynamicLazyCertificateSection />
+      <DynamicLazyBlogSection />
+      <DynamicLazyContactSection />
       <ScrollToTopBtn />
     </>
   );
