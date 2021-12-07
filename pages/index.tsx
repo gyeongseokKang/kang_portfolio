@@ -5,13 +5,26 @@ import IntroSection from "src/section/IntroSection";
 import ExperienceSection from "src/section/ExperienceSection";
 import ScrollToTopBtn from "src/component/button/ScrollToTopBtn";
 import useIntersectionObserver from "src/utils/customHook/useIntersectionObserver";
+import { Suspense } from "react";
 
-const DynamicLazyProjectSection = dynamic(() => import("src/section/ProjectSection"));
-const DynamicLazySkillSection = dynamic(() => import("src/section/SkillSection"));
-const DynamicLazyAwardSection = dynamic(() => import("src/section/AwardSection"));
-const DynamicLazyCertificateSection = dynamic(() => import("src/section/CertificateSection"));
-const DynamicLazyBlogSection = dynamic(() => import("src/section/BlogSection"));
-const DynamicLazyContactSection = dynamic(() => import("src/section/ContactSection"));
+const DynamicLazyProjectSection = dynamic(() => import("src/section/ProjectSection"), {
+  suspense: true,
+});
+const DynamicLazySkillSection = dynamic(() => import("src/section/SkillSection"), {
+  suspense: true,
+});
+const DynamicLazyAwardSection = dynamic(() => import("src/section/AwardSection"), {
+  suspense: true,
+});
+const DynamicLazyCertificateSection = dynamic(() => import("src/section/CertificateSection"), {
+  suspense: true,
+});
+const DynamicLazyBlogSection = dynamic(() => import("src/section/BlogSection"), {
+  suspense: true,
+});
+const DynamicLazyContactSection = dynamic(() => import("src/section/ContactSection"), {
+  suspense: true,
+});
 
 export default function Index() {
   const projectRef = React.useRef(null);
@@ -48,17 +61,27 @@ export default function Index() {
     freezeOnceVisible: true,
   });
 
+  console.log("projectEntry", projectEntry);
+  console.log("awardEntry", awardEntry);
   return (
     <>
       <TopBar />
       <IntroSection />
       <ExperienceSection />
-      <div ref={projectRef}>{projectEntry?.isIntersecting && <DynamicLazyProjectSection />}</div>
-      <div ref={skillRef}>{skillEntry?.isIntersecting && <DynamicLazySkillSection />}</div>
-      <div ref={awardRef}>{awardEntry?.isIntersecting && <DynamicLazyAwardSection />}</div>
-      <div ref={certificateRef}>{certificateEntry?.isIntersecting && <DynamicLazyCertificateSection />}</div>
-      <div ref={blogRef}>{blogEntry?.isIntersecting && <DynamicLazyBlogSection />}</div>
-      <div ref={contactRef}>{contactEntry?.isIntersecting && <DynamicLazyContactSection />}</div>
+      <Suspense fallback={`loading`}>
+        <DynamicLazyProjectSection />
+        <DynamicLazySkillSection />
+        <DynamicLazyAwardSection />
+        <DynamicLazyCertificateSection />
+        <DynamicLazyBlogSection />
+        <DynamicLazyContactSection />
+        {/* <div ref={projectRef}>{projectEntry?.isIntersecting && <DynamicLazyProjectSection />}</div>
+        <div ref={skillRef}>{skillEntry?.isIntersecting && <DynamicLazySkillSection />}</div>
+        <div ref={awardRef}>{awardEntry?.isIntersecting && <DynamicLazyAwardSection />}</div>
+        <div ref={certificateRef}>{certificateEntry?.isIntersecting && <DynamicLazyCertificateSection />}</div>
+        <div ref={blogRef}>{blogEntry?.isIntersecting && <DynamicLazyBlogSection />}</div>
+        <div ref={contactRef}>{contactEntry?.isIntersecting && <DynamicLazyContactSection />}</div> */}
+      </Suspense>
       <ScrollToTopBtn />
     </>
   );
