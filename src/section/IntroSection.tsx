@@ -76,13 +76,13 @@ const IntroSectionView = ({
           <StyledTypography variant="subtitle1" gutterBottom>
             기술 공유의 중요성
           </StyledTypography>
-          을 알기에 배운 것을 정리하고 작성하길 좋아해서 팀 내 세미나도 틈틈히 진행하고 있습니다. 블로그도 함께 합니다.
+          을 알기에 배운 것을 정리하고 작성하길 좋아하며 동료에게 공유하려고 노력합니다.
           <br />
           현재는
           <StyledTypography variant="subtitle1" gutterBottom>
             프론트엔드의 개발생산성
           </StyledTypography>
-          을 높이기 위한 다양한 디자인패턴, 유틸리티에 관심이 많습니다
+          을 높이기 위한 다양한 디자인패턴, 유틸리티에 관심이 많아 협업툴이나 테스팅도구들을 살펴보고 있습니다.
         </Typography>
       </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>

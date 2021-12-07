@@ -22,12 +22,12 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
     <CustomSection id={"Project"}>
       <CustomSectionTitle
         title={"PROJECT"}
-        subTitle={"업무 외 배우고 싶은 기술, 언어를 사용해보고 좋은 것은 공유하고 적용합니다."}
+        subTitle={"새로운 기술, 배우고 싶은 기술을 사용해보고 더 나아진 서비스를 위해 적용합니다"}
       />
       <CustomTable
         key="ProjectTable"
         header={["프로젝트", "소개 / 사용기술", "개발 상황", "상세정보"]}
-        footer={"프로젝트들은 최근 개발한 순으로 정렬되어 있습니다. 제가 사용한 기술만 적었습니다."}
+        footer={"프로젝트는 개발한 순으로 정렬되어 있습니다. 제가 사용한 기술만 적었습니다."}
       >
         <CustomTableRow key={"골프 조합 플랫폼 : 라운드인"}>
           <CustomTableCell component="th" scope="row" align="center">

@@ -24,9 +24,7 @@ const AwardSectionView = ({}: AwardSectionVAProp) => {
     <CustomSection id={"Award"}>
       <CustomSectionTitle
         title={"Award"}
-        subTitle={
-          "만들고 있던 서비스를 검증하기 위해, 주어진 일에 열심히 몰두하고 있을때 선물같은 느낌으로 다가옵니다. 그래서 상을 받는 건 저에겐 언제나 즐겁습니다."
-        }
+        subTitle={"만들고 있던 서비스를 검증하기 위해, 주어진 일에 열심히 몰두하고 있을때 선물처럼 다가옵니다."}
       />
       <AwardSectionItem />
     </CustomSection>

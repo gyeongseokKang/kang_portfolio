@@ -22,19 +22,15 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
     <CustomSection id={"Experience"}>
       <CustomSectionTitle
         title={"Experience"}
-        subTitle={"혁신적이고 가치있는 서비스를 개발하고, 또 이쁘고 제대로된 제품을 만들고 싶습니다."}
+        subTitle={"혁신적이고 가치있는 서비스를 개발하고, 의미있고 제대로된 제품을 만들고 있습니다."}
       />
-      <CustomTable
-        key="ExperienceTable"
-        header={["회사", "업무", "세부 내용", "서비스 정보"]}
-        footer={"더욱 자세한 내용과 관심이 있으시면 경력기술서를 요청해주세요"}
-      >
+      <CustomTable key="ExperienceTable" header={["회사", "업무", "세부 내용", "서비스 정보"]}>
         <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
           <CustomTableCell component="th" scope="row" align="center">
             <Companyli
               name={"티맥스티베로"}
               homepageUrl={"https://www.tmax.co.kr/hyperdata"}
-              position={"연구원 & 프론트엔드 개발자"}
+              position={"연구원"}
               period={"2020/02 ~ 현재"}
             />
           </CustomTableCell>

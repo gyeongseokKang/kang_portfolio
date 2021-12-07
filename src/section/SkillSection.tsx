@@ -19,7 +19,7 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
     <CustomSection id={"Skill"}>
       <CustomSectionTitle
         title={"Skill"}
-        subTitle={"참신하고 편리함을 주는 기술을 좋아하고 배우고 적용하고자 공부합니다."}
+        subTitle={"참신하고 편리함을 주는 기술을 배우고 프로젝트에 적용하고자 고민합니다."}
       />
       <CustomTable
         key="SKillTable"
@@ -60,15 +60,15 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
       </CustomTable>
       <Stack direction={"column"}>
         <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2 }}>Utilities :</Typography>
+          <Typography sx={{ pr: 2, minWidth: "100px" }}>Utilities :</Typography>
           <StackChip stackList={["Zeplin", "Figma", "Framer", "Storybook"]} />
         </Stack>
         <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2 }}>DataBase :</Typography>
+          <Typography sx={{ pr: 2, minWidth: "100px" }}>DataBase :</Typography>
           <StackChip stackList={["Firebase", "MySQL", "Oracle"]} />
         </Stack>
         <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2 }}>Deploy :</Typography>
+          <Typography sx={{ pr: 2, minWidth: "100px" }}>Deployment :</Typography>
           <StackChip stackList={["Amplify", "Vercel", "Githubpage"]} />
         </Stack>
       </Stack>

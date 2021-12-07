@@ -8,10 +8,6 @@ import { styled } from "@mui/material/styles";
 import { Stack } from "@mui/material";
 import Link from "next/link";
 
-const CircleImage = styled(Image)({
-  borderRadius: "100%",
-});
-
 const BlogSection = () => {
   const BlogSectionVAProp: BlogSectionVAProp = {};
   return <BlogSectionView {...BlogSectionVAProp} />;
@@ -21,17 +17,14 @@ interface BlogSectionVAProp {}
 const BlogSectionView = ({}: BlogSectionVAProp) => {
   return (
     <CustomSection id={"Blog"}>
-      <CustomSectionTitle
-        title={"Blog"}
-        subTitle={"글을 쓰는 것을 즐깁니다. 공부한 것을 나누며, 취미를 기록하고 또 학습합니다."}
-      />
+      <CustomSectionTitle title={"Blog"} subTitle={"글을 읽는 것을 좋아합니다. 그래서 쓰는 것도 즐겨보고자 합니다."} />
       <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"center"}>
         <ul style={{ flex: "1", minWidth: "300px" }}>
           <li>
-            <strong>Tistory</strong> 에는 코딩테스트부터 책에 대한 후기 (일 평균 : 300, 현재 누적 13만)
+            <strong>Tistory</strong> 는 가벼운 내용(책 후기, 코딩테스트 정리 등)의 글을 (일 평균 : 300, 현재 누적 13만)
           </li>
           <li>
-            <strong>Velog</strong> 에는 딥한 내용의 개발글을 쓰려고 하고 있습니다 (산출하기 어려움).
+            <strong>Velog</strong> 에는 무거운 내용의 개발글을 쓰고 있습니다. (산출하기 어려움).
           </li>
         </ul>
         <Stack direction={"row"}>
