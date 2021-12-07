@@ -39,8 +39,6 @@ export const CustomSection = ({ id, children, direction = "down" }: SectionProp)
       >
         {children}
       </div>
-      {/* <Slide in={entry?.isIntersecting} container={containerRef.current} direction={direction} timeout={700}>
-      </Slide> */}
     </StyledSection>
   );
 };
