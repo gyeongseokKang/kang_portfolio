@@ -95,7 +95,6 @@ const SkillSectionItem = ({ name, score, experienceText, careerNumber }: SkillSe
       <CustomTableCell align="center">{experienceText}</CustomTableCell>
       <CustomTableCell align="center">
         <Stack>
-          <Rating name="read-only" value={score} readOnly size="small" />
           <Typography>{careerNumber} years</Typography>
         </Stack>
       </CustomTableCell>
