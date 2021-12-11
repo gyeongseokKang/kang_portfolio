@@ -22,7 +22,7 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
     <CustomSection id={"Experience"}>
       <CustomSectionTitle
         title={"Experience"}
-        subTitle={"혁신적이고 가치있는 서비스를 개발하고, 의미있고 제대로된 제품을 만들고 있습니다."}
+        subTitle={"편리하고 가치있는 서비스를 개발하고, 제대로된 제품을 만들고 있습니다."}
       />
       <CustomTable key="ExperienceTable" header={["회사", "업무", "세부 내용", "서비스 정보"]}>
         <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
