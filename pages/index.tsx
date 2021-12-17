@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import TopBar from "../src/topBar/TopBar";
 import IntroSection from "src/section/IntroSection";
 import ExperienceSection from "src/section/ExperienceSection";
-import ScrollToTopBtn from "src/component/button/ScrollToTopBtn";
+import ScrollToTopBtn from "src/component/button/scrollToTopBtn/ScrollToTopBtn";
 import { Suspense } from "react";
 
 const DynamicLazyProjectSection = dynamic(() => import("src/section/ProjectSection"), {
