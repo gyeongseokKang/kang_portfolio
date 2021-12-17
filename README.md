@@ -34,10 +34,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<div style="display: flex;"> 
-    <img src="https://user-images.githubusercontent.com/61446585/108068840-f529bc80-70a5-11eb-88cb-288b3839e10f.png" width="400" height="600">
-    <img src="https://user-images.githubusercontent.com/61446585/108069634-f0193d00-70a6-11eb-8b7a-c978ea5ed0b4.png" width="400" height="600">
-</div>
+![GIF](https://user-images.githubusercontent.com/61446585/146512241-abf043c1-04fb-4b64-a594-7e6c3ba69f33.gif)
+
 
 ## Done 
 * migration next.js + react + mui + vercel(ver.2) (2021.11.24)
@@ -51,7 +49,7 @@
 
 ## Stack
 <p align='center'>
-  
+  Next.js + React + Typescript + MUI + Vercel
 <!--     <img src="https://img.shields.io/badge/Javscript-ES6-yellow?logo=javascript"/>
     <img src="https://img.shields.io/badge/Plotly.js-v1.58.4-blue?logo=plotly">
     <img src="https://img.shields.io/badge/Bootstrap-v3.3.2-violet?logo=bootstrap"> -->
