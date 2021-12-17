@@ -103,3 +103,28 @@ const SkillSectionItem = ({ name, score, experienceText, careerNumber }: SkillSe
 };
 
 export default SkillSection;
+
+// const ColoredDescriptionBodyContent = ({ text, regex }: { text: string; regex: RegExp }) => {
+//   const splitMatchedText = (content: string) => {
+//     return content.replace(regex, (match) => `<span style="color: white;background-color: #00AAD2">${match}</span>`);
+//   };
+
+//   return (
+//     <Typography className={classes.scenarioDescriptionBody}>
+//       <span dangerouslySetInnerHTML={{ __html: splitMatchedText(text) }}></span>
+//     </Typography>
+//   );
+// };
+
+//   const ColoredDescriptionBodyContent = ({ text }: { text: string }) => {
+//     const splitMatchedText = (content: string) => {
+//       const regExp = /(\[([^\]]+)\])/gi;
+//       return content.replace(regExp, (match) => `<span style="color: white;background-color: #00AAD2">${match}</span>`);
+//     };
+
+//     return (
+//       <Typography className={classes.scenarioDescriptionBody}>
+//         <span dangerouslySetInnerHTML={{ __html: splitMatchedText(text) }}></span>
+//       </Typography>
+//     );
+//   };

@@ -57,15 +57,21 @@ const IntroSectionView = ({
     <CustomSection id={"Intro"}>
       <CustomSectionTitle title={"INTRO"} />
       <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"space-evenly"} sx={{ padding: "1rem" }}>
-        <CircleImage
-          src={"/images/intro/character_white.png"}
-          width={150}
-          height={150}
-          layout={"fixed"}
-          priority={true}
-          sx={{ backgroundColor: "#add8e6" }}
-        />
+        <Stack justifyContent={"center"} alignItems={"center"}>
+          <CircleImage
+            src={"/images/intro/character_white.png"}
+            width={150}
+            height={150}
+            layout={"fixed"}
+            priority={true}
+            sx={{ backgroundColor: "#add8e6" }}
+          />
+        </Stack>
         <Typography variant="subtitle1" gutterBottom component="div">
+          <Typography variant="h5" gutterBottom component="div">
+            <strong>Handy | 편리함을 추구하는 개발자</strong>
+            <br />
+          </Typography>
           React & TypeScript 기반의 3년차 프론트엔드 개발자 <strong>강경석</strong>입니다. <br />
           누적 다운로드수 10만건의 카찹, 자동화된 BI툴의 하이퍼데이터 등의 서비스에서 프론트엔드 및 서비스에 필요한
           전반적인 업무를 담당해왔습니다.
