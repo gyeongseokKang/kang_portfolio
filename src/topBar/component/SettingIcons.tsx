@@ -26,13 +26,14 @@ export default function SettingIcons() {
   const openI18nSnackBar = () => {
     setI18nSnackBar(true);
   };
-  const closeI18nSnackBar = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+  const closeI18nSnackBar = (event?: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
     setI18nSnackBar(false);
   };
 
   return (
     <Stack direction={"row"} spacing={0.5}>
       <StyledIconButton
+        aria-label="dark mode button"
         size="medium"
         edge="start"
         onClick={() => {
@@ -41,10 +42,10 @@ export default function SettingIcons() {
       >
         {colorMode.currentColormode === "light" ? <WbSunnyIcon /> : <Brightness2Icon />}
       </StyledIconButton>
-      <StyledIconButton size="medium" edge="start" onClick={openI18nSnackBar}>
+      <StyledIconButton aria-label="translate button" size="medium" edge="start" onClick={openI18nSnackBar}>
         <TranslateIcon />
       </StyledIconButton>
-      <StyledIconButton size="medium" edge="start">
+      <StyledIconButton aria-label="github button" size="medium" edge="start">
         <Link href={"https://github.com/gyeongseokKang/kang_portfolio"}>
           <a target="_blank" style={{ textDecoration: "none", color: "#ffffff", fontSize: "0.1rem" }}>
             <GitHubIcon />
@@ -55,7 +56,9 @@ export default function SettingIcons() {
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         open={i18nSnackBar}
         autoHideDuration={5000}
-        onClose={closeI18nSnackBar}
+        onClose={() => {
+          closeI18nSnackBar();
+        }}
         message="Not Supported yet"
         action={
           <IconButton size="small" aria-label="close" color="inherit" onClick={closeI18nSnackBar}>

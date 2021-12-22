@@ -35,14 +35,14 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
           <Stack direction={"row"} alignItems={"center"}>
             <Link href={"https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"}>
               <a target="_blank" style={{ textDecoration: "none" }}>
-                <IconButton>
+                <IconButton aria-label="open tistory button">
                   <Image src={`/icons/tistory.svg`} height={40} width={40} />
                 </IconButton>
               </a>
             </Link>
             <Link href={"https://velog.io/@kangkyeungseok"}>
               <a target="_blank" style={{ textDecoration: "none" }}>
-                <IconButton>
+                <IconButton aria-label="open velog button">
                   <Image src={`/icons/velog.png`} height={40} width={40} />
                 </IconButton>
               </a>

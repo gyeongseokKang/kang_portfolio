@@ -92,19 +92,19 @@ const IntroSectionView = ({
         </Typography>
       </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>
-        <IconButton onClick={() => copyEmailToClipboard()}>
+        <IconButton aria-label="open gmail button" onClick={() => copyEmailToClipboard()}>
           <Image src={`/icons/gmail.svg`} height={40} width={40} />
         </IconButton>
         <Link href={"https://www.linkedin.com/in/%EA%B2%BD%EC%84%9D-%EA%B0%95-5190751aa/"}>
           <a target="_blank" style={{ textDecoration: "none" }}>
-            <IconButton>
+            <IconButton aria-label="open linkedin button">
               <Image src={`/icons/linkedin.svg`} height={40} width={40} />
             </IconButton>
           </a>
         </Link>
         <Link href={"https://open.kakao.com/o/sxdXxTMd"}>
           <a target="_blank" style={{ textDecoration: "none" }}>
-            <IconButton>
+            <IconButton aria-label="open kakao button">
               <Image src={`/icons/kakao.svg`} height={40} width={40} />
             </IconButton>
           </a>
