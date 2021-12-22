@@ -50,7 +50,7 @@ const AwardItem = ({ awardName, details, awardGrade, awardImg }: AwardItemProp) 
           <ExtraInfoDialog dialogTitle={`${awardName} 자격증`} iconType={"prize"}>
             <Stack spacing={1}>
               {awardImg.map((path) => (
-                <Image key={path} src={`/images/award/${path}`} height={"450px"} width={"300px"} />
+                <Image key={path} src={`/images/award/${path}`} height={"450px"} width={"300px"} alt={"award image"} />
               ))}
             </Stack>
           </ExtraInfoDialog>

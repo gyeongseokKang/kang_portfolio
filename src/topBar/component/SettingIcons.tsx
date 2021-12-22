@@ -47,7 +47,7 @@ export default function SettingIcons() {
       </StyledIconButton>
       <StyledIconButton aria-label="github button" size="medium" edge="start">
         <Link href={"https://github.com/gyeongseokKang/kang_portfolio"}>
-          <a target="_blank" style={{ textDecoration: "none", color: "#ffffff", fontSize: "0.1rem" }}>
+          <a target="_blank" style={{ textDecoration: "none", color: "#ffffff", fontSize: "0.1rem" }} title={"github"}>
             <GitHubIcon />
           </a>
         </Link>

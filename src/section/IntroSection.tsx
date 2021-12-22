@@ -59,6 +59,7 @@ const IntroSectionView = ({
       <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"space-evenly"} sx={{ padding: "1rem" }}>
         <Stack justifyContent={"center"} alignItems={"center"}>
           <CircleImage
+            alt={"face image"}
             src={"/images/intro/character_white.png"}
             width={150}
             height={150}
@@ -93,19 +94,19 @@ const IntroSectionView = ({
       </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>
         <IconButton aria-label="open gmail button" onClick={() => copyEmailToClipboard()}>
-          <Image src={`/icons/gmail.svg`} height={40} width={40} />
+          <Image src={`/icons/gmail.svg`} height={40} width={40} alt={"gmail"} />
         </IconButton>
         <Link href={"https://www.linkedin.com/in/%EA%B2%BD%EC%84%9D-%EA%B0%95-5190751aa/"}>
           <a target="_blank" style={{ textDecoration: "none" }}>
             <IconButton aria-label="open linkedin button">
-              <Image src={`/icons/linkedin.svg`} height={40} width={40} />
+              <Image src={`/icons/linkedin.svg`} height={40} width={40} alt={"linkedin"} />
             </IconButton>
           </a>
         </Link>
         <Link href={"https://open.kakao.com/o/sxdXxTMd"}>
           <a target="_blank" style={{ textDecoration: "none" }}>
             <IconButton aria-label="open kakao button">
-              <Image src={`/icons/kakao.svg`} height={40} width={40} />
+              <Image src={`/icons/kakao.svg`} height={40} width={40} alt={"kakao"} />
             </IconButton>
           </a>
         </Link>

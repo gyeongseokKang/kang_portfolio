@@ -64,7 +64,13 @@ const CertificateSectionItem = ({ name, difficulty, text, imagePath }: Certifica
         <ExtraInfoDialog dialogTitle={`${name} 자격증`}>
           <Stack spacing={1}>
             {imagePath.map((path) => (
-              <Image key={path} src={`/images/certificate/${path}.png`} height={"450px"} width={"300px"} />
+              <Image
+                key={path}
+                src={`/images/certificate/${path}.png`}
+                height={"450px"}
+                width={"300px"}
+                alt={"certificate image"}
+              />
             ))}
           </Stack>
         </ExtraInfoDialog>

@@ -90,7 +90,7 @@ const SkillSectionItem = ({ name, score, experienceText, careerNumber }: SkillSe
         {name}
       </CustomTableCell>
       <CustomTableCell align="center">
-        <Image src={`/icons/${name.toLowerCase()}.svg`} height={50} width={50} />
+        <Image src={`/icons/${name.toLowerCase()}.svg`} height={50} width={50} alt={name} />
       </CustomTableCell>
       <CustomTableCell align="center">{experienceText}</CustomTableCell>
       <CustomTableCell align="center">

@@ -36,14 +36,14 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
             <Link href={"https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"}>
               <a target="_blank" style={{ textDecoration: "none" }}>
                 <IconButton aria-label="open tistory button">
-                  <Image src={`/icons/tistory.svg`} height={40} width={40} />
+                  <Image src={`/icons/tistory.svg`} height={40} width={40} alt={"tistory icon"} />
                 </IconButton>
               </a>
             </Link>
             <Link href={"https://velog.io/@kangkyeungseok"}>
               <a target="_blank" style={{ textDecoration: "none" }}>
                 <IconButton aria-label="open velog button">
-                  <Image src={`/icons/velog.png`} height={40} width={40} />
+                  <Image src={`/icons/velog.png`} height={40} width={40} alt={"velog icon"} />
                 </IconButton>
               </a>
             </Link>
@@ -51,6 +51,7 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
         </Stack>
       </Stack>
       <iframe
+        title={"tistory blog"}
         src="https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"
         width={"100%"}
         height={"100%"}
