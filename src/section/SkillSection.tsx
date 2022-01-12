@@ -60,16 +60,21 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
       </CustomTable>
       <Stack direction={"column"}>
         <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2, minWidth: "100px" }}>Utilities :</Typography>
-          <StackChip stackList={["Zeplin", "Figma", "Framer", "Storybook"]} />
+          <Typography sx={{ pr: 2, minWidth: "100px" }}>UI library :</Typography>
+          <StackChip stackList={["MUI", "Tailwind", "StyledComponent"]} />
         </Stack>
         <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2, minWidth: "100px" }}>DataBase :</Typography>
-          <StackChip stackList={["Firebase", "MySQL", "Oracle"]} />
+          <Typography sx={{ pr: 2, minWidth: "100px" }}>Testing :</Typography>
+          <StackChip stackList={["Jest", "Storybook", "Framer"]} />
         </Stack>
         <Stack direction={"row"} padding={0.5}>
           <Typography sx={{ pr: 2, minWidth: "100px" }}>Deployment :</Typography>
           <StackChip stackList={["Amplify", "Vercel", "Githubpage"]} />
+        </Stack>
+
+        <Stack direction={"row"} padding={0.5}>
+          <Typography sx={{ pr: 2, minWidth: "100px" }}>DataBase :</Typography>
+          <StackChip stackList={["Firebase", "MySQL", "Oracle"]} />
         </Stack>
       </Stack>
     </CustomSection>
