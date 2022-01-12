@@ -74,10 +74,10 @@ const IntroSectionView = ({
             <br />
           </Typography>
           React & TypeScript 기반의 3년차 프론트엔드 개발자 <strong>강경석</strong>입니다. <br />
-          누적 다운로드수 10만건의 카찹, 자동화된 BI툴의 하이퍼데이터 등의 서비스에서 프론트엔드 및 서비스에 필요한
-          전반적인 업무를 담당해왔습니다.
+          누적 다운로드수 10만건의 모빌리티 서비스 카찹, BI툴의 하이퍼데이터 등의 프로젝트에서 프론트엔드 개발 및 연구를
+          하고 있습니다.
           <br />
-          현재는 연구원으로 팀내 서비스의 프론트엔드, 분석 통계 기법에 대한 설계 및 구현 등을 주요 업무로 하고 있습니다.
+          현재는 연구원으로 프론트엔드, 분석 통계 기법에 대한 설계 및 구현을 주로 하고 있습니다.
           <br />
           <br />
           <StyledTypography variant="subtitle1" gutterBottom>
@@ -89,7 +89,7 @@ const IntroSectionView = ({
           <StyledTypography variant="subtitle1" gutterBottom>
             프론트엔드의 개발생산성
           </StyledTypography>
-          을 높이기 위한 다양한 디자인패턴, 유틸리티에 관심이 많아 협업툴이나 테스팅도구들을 살펴보고 있습니다.
+          을 높이기 위한 다양한 디자인패턴, 유틸리티에 관심이 많아 디자인툴이나 테스팅도구들을 살펴보고 있습니다.
         </Typography>
       </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>

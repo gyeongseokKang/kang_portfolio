@@ -19,41 +19,35 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
     <CustomSection id={"Skill"}>
       <CustomSectionTitle
         title={"Skill"}
-        subTitle={"참신하고 편리함을 주는 기술을 배우고 프로젝트에 적용하고자 고민합니다."}
+        subTitle={"빠르게 편하는 최신 기술을 익히고 프로젝트에 적용하고자 고민합니다."}
       />
-      <CustomTable
-        key="SKillTable"
-        header={["기술", "로고", "사용 경험", "숙련도"]}
-        footer={"5개의 별을 위해 끝까지 공부하겠습니다."}
-      >
+      <CustomTable key="SKillTable" header={["기술", "로고", "사용 경험", "숙련도"]}>
         <SkillSectionItem
           name={"Javascript"}
           score={3}
-          experienceText={`프론트엔드의 근간이 되는 언어라고 생각하고 최신버전도 꾸준히 트래킹하면서 배우고 있습니다.
-          가장 많이 사용한 언어이지만 아직도 전부다 이해하지못해 계속해서 공부하고 있는 언어이기도 합니다.`}
+          experienceText={`ES6문법이 활발하게 적용될때 배워 이후 버젼도 꾸준히 공부하여 적용하고 있습니다. 
+          데이터 시각화 대시보드, 반응형 웹사이트 등을 만들며 활용하고 있습니다.`}
           careerNumber={3}
         />
         <SkillSectionItem
           name={"Typescript"}
           score={3}
-          experienceText={`타입스크립트의 정적 분석을 통해 개발 유지보수성을 향상시키고 사이드이펙트가 없는 프로그램을 만들기 위해 도입하고 사용하고 있습니다. 
-            한번 빠지면 자바스크립트를 돌아갈수 없다는 말처럼 저 또한 타입스크립트에 매료되었고 계속 사용하고 있습니다`}
+          experienceText={`정적 분석을 통해 개발 생산성과 유지보수성이 높아진 것을 실감하여 이후 진행하는 프로젝트 대부분에 적용하고 있습니다.`}
           careerNumber={2}
         />
         <SkillSectionItem
           name={"React"}
           score={3}
-          experienceText={`기존 프로젝트(JS+CSS+HTML)에서 REACT로 마이그레이션을 위해 사용했습니다.
-            클래스형 컴포넌트보다는 함수형 컴포넌트 + Hooks 조합을 좋아하고 적절한 최적화와 누구나 가져다 쓸수 있는 깔끔한 컴포넌트를 만들기 위해 고민합니다.
-            또한 STORYBOOK를 이용한 컴포넌트 테스트를 진행하며 다양한 상태관리툴을 도입해보고 공부합니다`}
+          experienceText={`클래스형 컴포넌트에서 함수형 컴포넌트로 대세가 변할때즘 접하고 이후 React의 Flux 패러다임에 매료되어 사용하고 있습니다.
+          최신 리액트를 빠르게 따라가고 적용하고 있으며 현재 React18를 도입하여 프로젝트에 사용중입니다.`}
           careerNumber={2}
         />
         <SkillSectionItem
           name={"Next"}
           score={2}
           experienceText={`
-            React 앱을 만드는 도중에 SEO와 SSR를 써야할 상황이 생겼습니다. React 라이브러리를 통한 우회방법을 고민하다 Next를 접하고 이후에 계속 사용하고 있습니다.
-            Next의 프레임워크다운 규칙과 철학이 마음에 들어 계속 공부하고 있습니다.
+            React가 최종적으로 가야할 프레임워크라 생각하고 있습니다. 웹뷰 기반, SEO 노출을 위해 Next.js를 도입해서 사용중이며 현재 Next12를 사용하여
+            SSR, ISG를 통해 빌드 프로세스를 구축하였습니다.
             `}
           careerNumber={1}
         />

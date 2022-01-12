@@ -37,11 +37,10 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
           <CustomTableCell>
             <Titleli
               list={[
-                "시각화 대시보드 설계 및 구현",
-                "오픈소스를 활용한 시각화 차트 개발",
-                "No-code 기반 GUI 분석 플랫폼 기획 및 구현",
-                "분석 추천 서비스을 위한 통계 기법 구현",
-                "React 마이그레이션 & 아키텍처 개선 등 개발 환경 구축",
+                "분석 추천 서비스를 위한 화면 설계 및 React 구현, 분석 시나리오 추천 엔진 개발",
+                "ipywidget를 활용한 No-code 통계 분석 툴 개발",
+                "기존 프로젝트 React SPA로의 전환",
+                "데이터 시각화를 위한 대시보드, 차트 기능 구현",
               ]}
             />
           </CustomTableCell>
@@ -76,13 +75,7 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <Titleli
-              list={[
-                "안드로이드 어플리케이션 단독 개발",
-                "다양한 모빌리티 관련 API 호출 시스템 기획 및 구현",
-                "데이터 수집, 버전업데이트 등을 위한 Config, Database용 FireBase 구축",
-                "배포 및 유지보수를 위한 환경 구축",
-                "서비스 기획 및 디자인",
-              ]}
+              list={["모빌리티 서비스를 위한 안드로이드 어플리케이션 기획, 개발", "서비스 목표 설정 및 전체 일정 조율"]}
             />
           </CustomTableCell>
           <CustomTableCell align="center">

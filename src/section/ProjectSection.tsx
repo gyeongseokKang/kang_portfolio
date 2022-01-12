@@ -29,13 +29,13 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
         header={["프로젝트", "소개 / 사용기술", "개발 상황", "상세정보"]}
         footer={"프로젝트는 개발한 순으로 정렬되어 있습니다. 제가 사용한 기술만 적었습니다."}
       >
-        <CustomTableRow key={"골프 조합 플랫폼 : 라운드인"}>
+        <CustomTableRow key={"골프 레슨 플랫폼 : 라운드인"}>
           <CustomTableCell component="th" scope="row" align="center">
-            골프 종합 플랫폼 : 라운드인
+            골프 레슨 플랫폼 : 라운드인
           </CustomTableCell>
           <CustomTableCell>
-            <div>[라운드인] 골프 관련 서비스를 통합하는 플랫폼</div>
-            <StackChip stackList={["React", "Typescript", "Next", "MUI", "Amplify", "Github"]} />
+            <div>[라운드인] 골프 레슨 서비스를 통합하는 플랫폼</div>
+            <StackChip stackList={["React", "Typescript", "Next", "MUI", "Tailwind", "Amplify", "Github"]} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ParticipationChip date={"21/09 ~ CURRENT"} status={"progress"} position={"프론트, 배포"} />
@@ -46,16 +46,24 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                 src="https://www.roundin.kr/"
                 width={"100%"}
                 height={"100%"}
-                style={{ minHeight: "400px", minWidth: "400px" }}
+                style={{ minHeight: "300px", minWidth: "500px" }}
               />
               <Titleli
                 title={"서비스 목표"}
                 list={["각종 골프 관련 서비스를 제공할 수 있는 플랫폼", "프로들과 유저들 사이의 1:1 간편 레슨 서비스"]}
               />
-              <Titleli title={"서비스 성과"} list={["런칭 첫달부터 매출 발생", "다양한 프로들과 협업 진행중"]} />
+              <Titleli
+                title={"서비스 성과"}
+                list={["레슨 신청 건수, 챌린치 프로그램등 유의미한 참여 증가", "다양한 프로들과 협업 진행중"]}
+              />
               <Titleli
                 title={"내 기여도"}
-                list={["프론트엔드 개발 및 배포 담당", "서비스 기획 및 디자인", "웹뷰 기반 크로스플랫폼 유지보수"]}
+                list={[
+                  "프론트엔드 개발 및 배포 담당",
+                  "웹뷰 기반 크로스플랫폼 유지보수",
+                  "Storybook를 통한 디자인시스템 구축",
+                  "새로운 서비스 기획 및 디자인",
+                ]}
               />
               <Stack direction={"row"} justifyContent={"center"}>
                 <UrlChip title={"홈페이지"} url={"https://www.roundin.kr/"} />
@@ -63,7 +71,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
             </ExtraInfoDialog>
           </CustomTableCell>
         </CustomTableRow>
-        <CustomTableRow>
+        {/* <CustomTableRow>
           <CustomTableCell component="th" scope="row" align="center">
             웹기반 개발포트폴리오
           </CustomTableCell>
@@ -97,7 +105,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
               </Stack>
             </ExtraInfoDialog>
           </CustomTableCell>
-        </CustomTableRow>
+        </CustomTableRow> */}
         <CustomTableRow key={"Dr.폴리오"}>
           <CustomTableCell component="th" scope="row" align="center">
             금융 포트폴리오 플랫폼
@@ -109,7 +117,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
             />
           </CustomTableCell>
           <CustomTableCell align="center">
-            <ParticipationChip date={"21/04 ~ 21/07"} status={"stop"} position={"프론트, 배포"} />
+            <ParticipationChip date={"21/03 ~ 21/06"} status={"finish"} position={"프론트, 배포"} />
           </CustomTableCell>
           <CustomTableCell align="center">
             <ExtraInfoDialog dialogTitle={"포트폴리오 추천 서비스 : Dr.폴리오"}>
