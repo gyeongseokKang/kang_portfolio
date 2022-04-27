@@ -1,17 +1,18 @@
-import React from "react";
+import { Divider, Typography } from "@mui/material";
+
 import { CustomSection } from "../component/CustomSection";
 import { CustomSectionTitle } from "src/component/SectionTitle";
-import Image from "next/image";
 import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
+import Image from "next/image";
+import React from "react";
 import Stack from "@mui/material/Stack";
 import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import { styled, Typography } from "@mui/material";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
 
 const AwardSection = () => {
   const AwardSectionVAProp: AwardSectionVAProp = {};
@@ -24,7 +25,9 @@ const AwardSectionView = ({}: AwardSectionVAProp) => {
     <CustomSection id={"Award"}>
       <CustomSectionTitle
         title={"Award"}
-        subTitle={"만들고 있던 서비스를 검증하기 위해, 주어진 일에 열심히 몰두하고 있을때 선물처럼 다가옵니다."}
+        subTitle={
+          "만들고 있던 서비스를 검증하기 위해, 주어진 일에 열심히 몰두하고 있을때 선물처럼 다가옵니다."
+        }
       />
       <AwardSectionItem />
     </CustomSection>
@@ -38,19 +41,53 @@ interface AwardItemProp {
   awardImg: string[];
 }
 
-const AwardItem = ({ awardName, details, awardGrade, awardImg }: AwardItemProp) => {
+const AwardItem = ({
+  awardName,
+  details,
+  awardGrade,
+  awardImg,
+}: AwardItemProp) => {
   return (
     <>
       <Typography>
         {awardName} - {awardGrade}
       </Typography>
       <Typography variant="subtitle2">
-        <Stack spacing={1} direction={"row"} alignItems={"center"} sx={{ pl: 1 }}>
+        <Stack
+          spacing={1}
+          direction={"row"}
+          alignItems={"center"}
+          sx={{ pl: 1 }}
+        >
           ㄴ{details}
-          <ExtraInfoDialog dialogTitle={`${awardName} 자격증`} iconType={"prize"}>
-            <Stack spacing={1}>
+          <ExtraInfoDialog
+            dialogTitle={`${awardName} 자격증`}
+            iconType={"prize"}
+          >
+            <Stack
+              spacing={1}
+              direction={"row"}
+              alignItems={"center"}
+              divider={<Divider orientation="vertical" flexItem />}
+            >
               {awardImg.map((path) => (
-                <Image key={path} src={`/images/award/${path}`} height={"450px"} width={"300px"} alt={"award image"} />
+                <div
+                  style={{
+                    width: "150px",
+                    height: "300px",
+                    minWidth: "300px",
+                    position: "relative",
+                  }}
+                >
+                  <Image
+                    key={path}
+                    src={`/images/award/${path}`}
+                    layout="fill"
+                    // height={"450px"}
+                    // width={"300px"}
+                    alt={"award image"}
+                  />
+                </div>
               ))}
             </Stack>
           </ExtraInfoDialog>
@@ -64,7 +101,9 @@ const AwardSectionItem = () => {
   return (
     <Timeline sx={{ minWidth: "500px" }}>
       <TimelineItem>
-        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>2021년</TimelineOppositeContent>
+        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
+          2021년
+        </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
@@ -79,13 +118,17 @@ const AwardSectionItem = () => {
           <AwardItem
             awardName={"우리은행 온택트 공모전"}
             awardGrade={"우수상"}
-            details={"[DR.폴리오] 금용공학 모델 + AI를 이용한 최적의 포트폴리오 생성, 추천 서비스"}
+            details={
+              "[DR.폴리오] 금용공학 모델 + AI를 이용한 최적의 포트폴리오 생성, 추천 서비스"
+            }
             awardImg={["wooribangAward.jpeg"]}
           />
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>2019년</TimelineOppositeContent>
+        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
+          2019년
+        </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
@@ -108,7 +151,9 @@ const AwardSectionItem = () => {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>2018년</TimelineOppositeContent>
+        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
+          2018년
+        </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
@@ -117,7 +162,9 @@ const AwardSectionItem = () => {
           <AwardItem
             awardName={"한국통신학회 추계종합학술발표회"}
             awardGrade={"우수논문상"}
-            details={"[UC-LAB] GAN모델과 DNN모델을 활용한 ANOMALY DETECTION에 관한 연구"}
+            details={
+              "[UC-LAB] GAN모델과 DNN모델을 활용한 ANOMALY DETECTION에 관한 연구"
+            }
             awardImg={["bestPaper2018.jpg", "poster.jpg"]}
           />
         </TimelineContent>

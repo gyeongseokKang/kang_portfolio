@@ -1,14 +1,17 @@
-import * as React from "react";
-import Head from "next/head";
-import { DefaultSeo } from "next-seo";
-import { AppProps } from "next/app";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import createEmotionCache from "../src/createEmotionCache";
-import { createTheme, useMediaQuery } from "@mui/material";
-import { ColorModeContext, getDesignTokens } from "../src/store/ThemeStore";
 import "./index.css";
+
+import * as React from "react";
+
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import { ColorModeContext, getDesignTokens } from "../src/store/ThemeStore";
+import { createTheme, useMediaQuery } from "@mui/material";
+
+import { AppProps } from "next/app";
+import CssBaseline from "@mui/material/CssBaseline";
+import { DefaultSeo } from "next-seo";
+import Head from "next/head";
+import { ThemeProvider } from "@mui/material/styles";
+import createEmotionCache from "../src/createEmotionCache";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -20,7 +23,9 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [mode, setMode] = React.useState<"light" | "dark">(prefersDarkMode ? "dark" : "light");
+  const [mode, setMode] = React.useState<"light" | "dark">(
+    prefersDarkMode ? "dark" : "light"
+  );
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -44,7 +49,10 @@ export default function MyApp(props: MyAppProps) {
     setMode(prefersDarkMode ? "dark" : "light");
   }, [prefersDarkMode]);
 
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode, prefersDarkMode]);
+  const theme = React.useMemo(
+    () => createTheme(getDesignTokens(mode)),
+    [mode, prefersDarkMode]
+  );
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -60,8 +68,14 @@ export default function MyApp(props: MyAppProps) {
         <title>Handy | 편리함을 추구하는 개발자 </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="google-site-verification" content="4Krut1DFj0ODK-gyhzjhbBSz-R9WtgvXE2Mndz9ZIRQ" />
-        <meta name="naver-site-verification" content="caf276500aef5508a9380ca9dad2f487f9a13c54" />
+        <meta
+          name="google-site-verification"
+          content="4Krut1DFj0ODK-gyhzjhbBSz-R9WtgvXE2Mndz9ZIRQ"
+        />
+        <meta
+          name="naver-site-verification"
+          content="caf276500aef5508a9380ca9dad2f487f9a13c54"
+        />
         <meta
           name="keywords"
           content="개발자,프로그래머,프론트엔드,포트폴리오,강경석,kang,handy,portfolio,frontend,gyeongseok"
@@ -70,7 +84,9 @@ export default function MyApp(props: MyAppProps) {
       </Head>
       <DefaultSeo
         canonical={"https://kang-portfolio.vercel.app/"}
-        description={"React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석의 포트폴리오입니다."}
+        description={
+          "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석의 포트폴리오입니다."
+        }
         openGraph={{
           type: "website",
           title: "Handy | 편리함을 추구하는 개발자",
@@ -82,7 +98,8 @@ export default function MyApp(props: MyAppProps) {
               alt: "kang's image",
             },
           ],
-          description: "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석입니다.",
+          description:
+            "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석입니다.",
           site_name: "Handy | 편리함을 추구하는 개발자",
         }}
       />
