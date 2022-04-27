@@ -78,7 +78,7 @@ export default function MyApp(props: MyAppProps) {
         />
         <meta
           name="keywords"
-          content="개발자,프로그래머,프론트엔드,포트폴리오,강경석,kang,handy,portfolio,frontend,gyeongseok"
+          content="개발자,프로그래머,프론트엔드,포트폴리오,강경석,핸디,handy,portfolio,frontend,gyeongseok"
         />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>

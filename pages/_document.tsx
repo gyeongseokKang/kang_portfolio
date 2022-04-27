@@ -1,7 +1,10 @@
 import * as React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import createEmotionServer from "@emotion/server/create-instance";
+
+import Document, { Head, Html, Main, NextScript } from "next/document";
+
+import GoogleAnalytis from "src/utils/GoogleAnalytis";
 import createEmotionCache from "../src/createEmotionCache";
+import createEmotionServer from "@emotion/server/create-instance";
 
 export default class MyDocument extends Document {
   render() {
@@ -11,6 +14,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <GoogleAnalytis />
         </body>
       </Html>
     );
@@ -25,7 +29,8 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
+      enhanceApp: (App: any) => (props) =>
+        <App emotionCache={cache} {...props} />,
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -40,6 +45,9 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-    styles: [...React.Children.toArray(initialProps.styles), ...emotionStyleTags],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      ...emotionStyleTags,
+    ],
   };
 };
