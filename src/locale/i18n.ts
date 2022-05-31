@@ -5,7 +5,7 @@ const getLocaleResource = (requireContext: __WebpackModuleApi.RequireContext) =>
   return requireContext.keys().map(requireContext);
 };
 
-const localeResource = getLocaleResource(require.context("../locale/", true, /.json$/));
+const localeResource = getLocaleResource(require.context("../locale/", true, /\.(json)$/));
 
 const resources: any = {
   en: {
@@ -22,14 +22,16 @@ const mergeLocaleResource = () => {
     const namespace = res.namespace;
     for (let key in res.locale) {
       const newLocale = res.locale[key];
-      resources[key] = {
-        translation: {
-          ...resources[key]?.translation,
-          ...{
-            [namespace]: { ...newLocale },
+      if (key in resources) {
+        resources[key] = {
+          translation: {
+            ...resources[key]?.translation,
+            ...{
+              [namespace]: { ...newLocale },
+            },
           },
-        },
-      };
+        };
+      }
     }
   });
 };
