@@ -1,15 +1,17 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
+
 import { IconButton, Stack } from "@mui/material";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
+
 import Brightness2Icon from "@mui/icons-material/Brightness2";
-import Link from "next/link";
 import { ColorModeContext } from "../../store/ThemeStore";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import Link from "next/link";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import TranslateIcon from "@mui/icons-material/Translate";
-import Snackbar from "@mui/material/Snackbar";
-import Button from "@mui/material/Button";
-import CloseIcon from "@mui/icons-material/Close";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import i18next from "src/locale/i18n";
+import { styled } from "@mui/material/styles";
 
 const StyledIconButton = styled(IconButton)(({}) => ({
   "&.MuiIconButton-root": {
@@ -21,13 +23,19 @@ const StyledIconButton = styled(IconButton)(({}) => ({
 
 export default function SettingIcons() {
   const colorMode = React.useContext(ColorModeContext);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const isLanguageMenuOpen = Boolean(anchorEl);
 
-  const [i18nSnackBar, setI18nSnackBar] = React.useState(false);
-  const openI18nSnackBar = () => {
-    setI18nSnackBar(true);
+  const changeLanguage = (lang: string) => {
+    i18next.changeLanguage(lang);
+    closeLanguageMenu();
   };
-  const closeI18nSnackBar = (event?: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
-    setI18nSnackBar(false);
+
+  const openLanguageMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const closeLanguageMenu = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -42,30 +50,92 @@ export default function SettingIcons() {
       >
         {colorMode.currentColormode === "light" ? <WbSunnyIcon /> : <Brightness2Icon />}
       </StyledIconButton>
-      <StyledIconButton aria-label="translate button" size="medium" edge="start" onClick={openI18nSnackBar}>
+      <StyledIconButton aria-label="translate button" size="medium" edge="start" onClick={openLanguageMenu}>
         <TranslateIcon />
       </StyledIconButton>
       <StyledIconButton aria-label="github button" size="medium" edge="start">
         <Link href={"https://github.com/gyeongseokKang/kang_portfolio"}>
-          <a target="_blank" style={{ textDecoration: "none", color: "#ffffff", fontSize: "0.1rem" }} title={"github"}>
+          <a
+            target="_blank"
+            style={{
+              textDecoration: "none",
+              color: "#ffffff",
+              fontSize: "0.1rem",
+            }}
+            title={"github"}
+          >
             <GitHubIcon />
           </a>
         </Link>
       </StyledIconButton>
-      <Snackbar
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        open={i18nSnackBar}
-        autoHideDuration={5000}
-        onClose={() => {
-          closeI18nSnackBar();
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={isLanguageMenuOpen}
+        onClose={closeLanguageMenu}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
         }}
-        message="Not Supported yet"
-        action={
-          <IconButton size="small" aria-label="close" color="inherit" onClick={closeI18nSnackBar}>
-            <CloseIcon fontSize="small" />
-          </IconButton>
-        }
-      />
+      >
+        <MenuItem
+          onClick={() => {
+            changeLanguage("ko");
+          }}
+        >
+          한국어
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            changeLanguage("en");
+          }}
+        >
+          English
+        </MenuItem>
+      </Menu>
     </Stack>
   );
 }
+
+const TopMenuIcon = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const isLanguageMenuOpen = Boolean(anchorEl);
+
+  const changeLanguage = (lang: string) => {
+    i18next.changeLanguage(lang);
+    closeLanguageMenu();
+  };
+
+  const openLanguageMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const closeLanguageMenu = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <Menu
+      id="basic-menu"
+      anchorEl={anchorEl}
+      open={isLanguageMenuOpen}
+      onClose={closeLanguageMenu}
+      MenuListProps={{
+        "aria-labelledby": "basic-button",
+      }}
+    >
+      <MenuItem
+        onClick={() => {
+          changeLanguage("ko");
+        }}
+      >
+        한국어
+      </MenuItem>
+      <MenuItem
+        onClick={() => {
+          changeLanguage("en");
+        }}
+      >
+        English
+      </MenuItem>
+    </Menu>
+  );
+};

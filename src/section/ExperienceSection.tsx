@@ -1,15 +1,18 @@
+import CustomTable, {
+  CustomTableCell,
+  CustomTableRow,
+} from "src/component/table/CustomTable";
 import React, { useState } from "react";
-import { CustomSection } from "../component/CustomSection";
 
-import { CustomSectionTitle } from "src/component/SectionTitle";
-import CustomTable, { CustomTableCell, CustomTableRow } from "src/component/table/CustomTable";
-import { StackChip } from "src/component/chip/StackChip";
-
-import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
-import { Titleli } from "src/component/ul/Titleli";
-import { Stack } from "@mui/material";
-import { UrlChip } from "src/component/chip/UrlChip";
 import { Companyli } from "src/component/ul/Companyli";
+import { CustomSection } from "../component/CustomSection";
+import { CustomSectionTitle } from "src/component/SectionTitle";
+import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
+import { Stack } from "@mui/material";
+import { StackChip } from "src/component/chip/StackChip";
+import { Titleli } from "src/component/ul/Titleli";
+import { UrlChip } from "src/component/chip/UrlChip";
+import { useTranslation } from "react-i18next";
 
 const ExperienceSection = () => {
   const ExperienceSectionVAProp: ExperienceSectionVAProp = {};
@@ -18,13 +21,20 @@ const ExperienceSection = () => {
 
 interface ExperienceSectionVAProp {}
 const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
+  const { t } = useTranslation("translation", { keyPrefix: "experience" });
+
   return (
     <CustomSection id={"Experience"}>
       <CustomSectionTitle
         title={"Experience"}
-        subTitle={"편리하고 가치있는 서비스를 개발하고, 제대로된 제품을 만들고 있습니다."}
+        subTitle={t(
+          `편리하고_가치있는_서비스를_개발하고_제대로된_제품을_만들고_있습니다`
+        )}
       />
-      <CustomTable key="ExperienceTable" header={["회사", "업무", "세부 내용", "서비스 정보"]}>
+      <CustomTable
+        key="ExperienceTable"
+        header={["회사", "업무", "세부 내용", "서비스 정보"]}
+      >
         <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
           <CustomTableCell component="th" scope="row" align="center">
             <Companyli
@@ -45,7 +55,10 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
             />
           </CustomTableCell>
           <CustomTableCell align="center">
-            <ExtraInfoDialog iconType={"contribution"} dialogTitle={"BI 툴 : HyperData"}>
+            <ExtraInfoDialog
+              iconType={"contribution"}
+              dialogTitle={"BI 툴 : HyperData"}
+            >
               <Titleli
                 title={"What I learned"}
                 list={[
@@ -55,10 +68,21 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
                   "모듈 재활용과 이를 위한 읽기 쉬운 코드의 중요성",
                 ]}
               />
-              <Titleli title={"What I regreted"} list={["후회되는 것들을 하나씩 지워나가고 있음"]} />
+              <Titleli
+                title={"What I regreted"}
+                list={["후회되는 것들을 하나씩 지워나가고 있음"]}
+              />
               <StackChip
                 title={"What I used"}
-                stackList={["React", "Typescript", "SASS", "Plotly", "Python", "Jupyter", "Github"]}
+                stackList={[
+                  "React",
+                  "Typescript",
+                  "SASS",
+                  "Plotly",
+                  "Python",
+                  "Jupyter",
+                  "Github",
+                ]}
               />
             </ExtraInfoDialog>
           </CustomTableCell>
@@ -75,11 +99,17 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
           </CustomTableCell>
           <CustomTableCell>
             <Titleli
-              list={["모빌리티 서비스를 위한 안드로이드 어플리케이션 기획, 개발", "서비스 목표 설정 및 전체 일정 조율"]}
+              list={[
+                "모빌리티 서비스를 위한 안드로이드 어플리케이션 기획, 개발",
+                "서비스 목표 설정 및 전체 일정 조율",
+              ]}
             />
           </CustomTableCell>
           <CustomTableCell align="center">
-            <ExtraInfoDialog iconType={"contribution"} dialogTitle={"통합 모빌리티 플랫폼 : 카찹"}>
+            <ExtraInfoDialog
+              iconType={"contribution"}
+              dialogTitle={"통합 모빌리티 플랫폼 : 카찹"}
+            >
               <Titleli
                 title={"What I learned"}
                 list={[
@@ -97,7 +127,16 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
                   "서버보다 앱단에서 수행되는 많은 비즈니스 로직들",
                 ]}
               />
-              <StackChip title={"What I used"} stackList={["Android", "Java", "Firebase", "GoogleMap", "Github"]} />
+              <StackChip
+                title={"What I used"}
+                stackList={[
+                  "Android",
+                  "Java",
+                  "Firebase",
+                  "GoogleMap",
+                  "Github",
+                ]}
+              />
             </ExtraInfoDialog>
           </CustomTableCell>
           <CustomTableCell align="center">
@@ -122,10 +161,15 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
                 ]}
               />
               <Stack direction={"row"} justifyContent={"center"}>
-                <UrlChip title={"홈페이지"} url={"https://www.carchapapp.com/"} />
+                <UrlChip
+                  title={"홈페이지"}
+                  url={"https://www.carchapapp.com/"}
+                />
                 <UrlChip
                   title={"Play store"}
-                  url={"https://play.google.com/store/apps/details?id=org.techtown.carchap_v11&hl=ko&gl=US"}
+                  url={
+                    "https://play.google.com/store/apps/details?id=org.techtown.carchap_v11&hl=ko&gl=US"
+                  }
                 />
                 <UrlChip
                   title={"App store"}
