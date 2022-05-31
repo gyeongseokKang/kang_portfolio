@@ -1,7 +1,11 @@
-import experienceLocale from "./section/experience";
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
-import introLocale from "./section/intro";
+
+const getLocaleResource = (requireContext: __WebpackModuleApi.RequireContext) => {
+  return requireContext.keys().map(requireContext);
+};
+
+const localeResource = getLocaleResource(require.context("../locale/", true, /.json$/));
 
 const resources: any = {
   en: {
@@ -12,9 +16,9 @@ const resources: any = {
   },
 };
 
-const unionLocalRes = () => {
-  const targetRes = [introLocale, experienceLocale];
-  targetRes.forEach((res) => {
+const mergeLocaleResource = () => {
+  const targetRes: any = [...localeResource];
+  targetRes.forEach((res: { namespace: string; locale: { [x: string]: any } }) => {
     const namespace = res.namespace;
     for (let key in res.locale) {
       const newLocale = res.locale[key];
@@ -29,7 +33,7 @@ const unionLocalRes = () => {
     }
   });
 };
-unionLocalRes();
+mergeLocaleResource();
 
 i18next.use(initReactI18next).init({
   resources,

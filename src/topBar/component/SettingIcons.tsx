@@ -48,18 +48,9 @@ export default function SettingIcons() {
           colorMode.toggleColorMode();
         }}
       >
-        {colorMode.currentColormode === "light" ? (
-          <WbSunnyIcon />
-        ) : (
-          <Brightness2Icon />
-        )}
+        {colorMode.currentColormode === "light" ? <WbSunnyIcon /> : <Brightness2Icon />}
       </StyledIconButton>
-      <StyledIconButton
-        aria-label="translate button"
-        size="medium"
-        edge="start"
-        onClick={openLanguageMenu}
-      >
+      <StyledIconButton aria-label="translate button" size="medium" edge="start" onClick={openLanguageMenu}>
         <TranslateIcon />
       </StyledIconButton>
       <StyledIconButton aria-label="github button" size="medium" edge="start">
@@ -104,3 +95,47 @@ export default function SettingIcons() {
     </Stack>
   );
 }
+
+const TopMenuIcon = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const isLanguageMenuOpen = Boolean(anchorEl);
+
+  const changeLanguage = (lang: string) => {
+    i18next.changeLanguage(lang);
+    closeLanguageMenu();
+  };
+
+  const openLanguageMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const closeLanguageMenu = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <Menu
+      id="basic-menu"
+      anchorEl={anchorEl}
+      open={isLanguageMenuOpen}
+      onClose={closeLanguageMenu}
+      MenuListProps={{
+        "aria-labelledby": "basic-button",
+      }}
+    >
+      <MenuItem
+        onClick={() => {
+          changeLanguage("ko");
+        }}
+      >
+        한국어
+      </MenuItem>
+      <MenuItem
+        onClick={() => {
+          changeLanguage("en");
+        }}
+      >
+        English
+      </MenuItem>
+    </Menu>
+  );
+};
