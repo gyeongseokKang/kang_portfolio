@@ -81,27 +81,27 @@ const IntroSectionView = ({
             <strong>Handy | {t(`intro.편리함을_추구하는_개발자`)}</strong>
             <br />
           </Typography>
-          React & TypeScript 기반의 3년차 프론트엔드 개발자{" "}
+          React & TypeScript 기반의 4년차 프론트엔드 개발자{" "}
           <strong>강경석</strong>입니다. <br />
-          누적 다운로드수 10만건의 모빌리티 서비스 카찹, BI툴의 하이퍼데이터
-          등의 프로젝트에서 프론트엔드 개발 및 연구를 하고 있습니다.
+          통합 모빌리티 서비스 카찹, BI툴의 하이퍼데이터 등의 프로젝트에서
+          프론트엔드 개발 및 연구를 하고 있습니다.
           <br />
-          현재는 연구원으로 프론트엔드, 분석 통계 기법에 대한 설계 및 구현을
+          현재는 시각화 대시보드, 차트, 분석 통계 기법에 대한 설계 및 구현을
           주로 하고 있습니다.
           <br />
           <br />
           <StyledTypography variant="subtitle1" gutterBottom>
             기술 공유의 중요성
           </StyledTypography>
-          을 알기에 배운 것을 정리하고 작성하길 좋아하며 동료에게 공유하려고
+          을 알기에 배운 것을 정리하고 문서화 좋아하며 동료에게 공유하려고
           노력합니다.
           <br />
-          현재는
+          현재는 단순 기능 구현을 넘어
           <StyledTypography variant="subtitle1" gutterBottom>
             프론트엔드의 개발생산성
           </StyledTypography>
-          을 높이기 위한 다양한 디자인패턴, 유틸리티에 관심이 많아 디자인툴이나
-          테스팅도구들을 살펴보고 있습니다.
+          을 높이기 위한 다양한 디자인패턴, 최적화에 관심이 많아 끊임없이
+          공부중입니다.
         </Typography>
       </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>
