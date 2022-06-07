@@ -3,6 +3,7 @@ import Popover from "@mui/material/Popover";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/system";
+import Stack from "@mui/material/Stack/Stack";
 
 interface TopBarMenuProp {
   children?: React.ReactNode;
@@ -30,7 +31,7 @@ export default function TopBarMenu({ children }: TopBarMenuProp) {
   const id = open ? "simple-popover" : undefined;
 
   return (
-    <div>
+    <Stack>
       <StyledIconButton
         aria-describedby={id}
         size="medium"
@@ -52,8 +53,8 @@ export default function TopBarMenu({ children }: TopBarMenuProp) {
           horizontal: "left",
         }}
       >
-        {children}
+        <Stack direction={"column"}>{children}</Stack>
       </Popover>
-    </div>
+    </Stack>
   );
 }

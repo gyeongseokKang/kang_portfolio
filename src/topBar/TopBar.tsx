@@ -8,13 +8,14 @@ import SettingIcons from "./component/SettingIcons";
 import TopBarSectionItem from "./component/TopBarSectionItem";
 import useWindowDimensions from "src/utils/customHook/useWindowDimensions";
 import TopBarMenu from "./component/TopBarMenu";
+import Container from "@mui/material/Container/Container";
 
 export default function TopBar() {
   const { width } = useWindowDimensions();
   const [menuComponent, setMenuComponent] = useState(<HorizontalMenu />);
 
   useEffect(() => {
-    if (width > 900) {
+    if (width > 1100) {
       setMenuComponent(<HorizontalMenu />);
     } else {
       setMenuComponent(<VerticalMenu />);
@@ -23,14 +24,16 @@ export default function TopBar() {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ top: 0, bottom: "auto", opacity: "0.8" }}>
-        <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography variant="h6" component="div">
-            KANG GYEONG SEOK
-          </Typography>
-          {menuComponent}
-          <SettingIcons />
-        </Toolbar>
+      <AppBar position="sticky" sx={{ top: 0, bottom: "auto" }}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Typography variant="h6" component="span">
+              KANG GYEONG SEOK
+            </Typography>
+            {menuComponent}
+            <SettingIcons />
+          </Toolbar>
+        </Container>
       </AppBar>
     </>
   );
@@ -55,15 +58,13 @@ const VerticalMenu = () => {
 const HorizontalMenu = () => {
   return (
     <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"flex-start"} flex={1}>
-      <div style={{ display: "flex" }}>
-        <TopBarSectionItem to={"Intro"} />
-        <TopBarSectionItem to={"Experience"} />
-        <TopBarSectionItem to={"Project"} />
-        <TopBarSectionItem to={"Skill"} />
-        <TopBarSectionItem to={"Award"} />
-        <TopBarSectionItem to={"Certificate"} />
-        <TopBarSectionItem to={"Blog"} />
-      </div>
+      <TopBarSectionItem to={"Intro"} />
+      <TopBarSectionItem to={"Experience"} />
+      <TopBarSectionItem to={"Project"} />
+      <TopBarSectionItem to={"Skill"} />
+      <TopBarSectionItem to={"Award"} />
+      <TopBarSectionItem to={"Certificate"} />
+      <TopBarSectionItem to={"Blog"} />
     </Stack>
   );
 };
