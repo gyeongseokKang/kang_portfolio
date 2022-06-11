@@ -85,7 +85,7 @@ export default function MyApp(props: MyAppProps) {
       <DefaultSeo
         canonical={"https://kang-portfolio.vercel.app/"}
         description={
-          "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석의 포트폴리오입니다."
+          "React & TypeScript 기반의 4년차 프론트엔드 개발자 강경석의 포트폴리오입니다."
         }
         openGraph={{
           type: "website",
@@ -99,7 +99,7 @@ export default function MyApp(props: MyAppProps) {
             },
           ],
           description:
-            "React & TypeScript 기반의 3년차 프론트엔드 개발자 강경석입니다.",
+            "React & TypeScript 기반의 4년차 프론트엔드 개발자 강경석입니다.",
           site_name: "Handy | 편리함을 추구하는 개발자",
         }}
       />
