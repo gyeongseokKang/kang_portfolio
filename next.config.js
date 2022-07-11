@@ -1,4 +1,7 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+
+const withTM = require("next-transpile-modules")(["@mui/material"]);
+module.exports = withTM({
   experimental: {
     scrollRestoration: true,
   },
@@ -17,4 +20,11 @@ module.exports = {
 
     return config;
   },
-};
+});
+
+// const nextConfig = {
+//   reactStrictMode: true,
+//   swcMinify: true,
+// };
+
+// module.exports = nextConfig;

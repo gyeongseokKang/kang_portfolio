@@ -49,8 +49,6 @@ const DynamicLazyContactSection = dynamic(
 export default function Index() {
   return (
     <>
-      <div>dddd</div>
-      <TopBar />
       <TopBar />
       <IntroSection />
       <ExperienceSection />
