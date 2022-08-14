@@ -38,10 +38,88 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
         <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
           <CustomTableCell component="th" scope="row" align="center">
             <Companyli
+              name={"가우디오랩"}
+              homepageUrl={"https://www.gaudiolab.com/ko/"}
+              position={"SOFTWARE ENGINEER | 프론트엔드 개발자"}
+              period={"2022/07 ~ 현재"}
+            />
+          </CustomTableCell>
+          <CustomTableCell>
+            <Titleli
+              list={[
+                "AI 모델을 활용한 웹앱 개발",
+                "오디오 데이터 ETL을 위한 내부 툴 개발",
+                "유저에게 편리한 오디오 경험을 주는 모든 서비스",
+              ]}
+            />
+          </CustomTableCell>
+          <CustomTableCell align="center">
+            <ExtraInfoDialog
+              iconType={"contribution"}
+              dialogTitle={"가우디오랩"}
+            >
+              <Titleli
+                title={"What I learn"}
+                list={[
+                  "React, Next, Typescript 기반의 깔끔한 웹 앱",
+                  "MSA 아키텍체와의 원활한 JSON 상하차",
+                  "Eslint부터 Stortbook, React-testing-library를 이용한 지속 가능한 소프트웨어",
+                  "오디오을 사용한 모던 웹사이트 개발 경험",
+                ]}
+              />
+              <Titleli
+                title={"What I extpect"}
+                list={[
+                  "가우디오랩의 핵심 코어가 될 오디어 관련 라이브러리 개발",
+                  "깔끔하고 직관적인 UI를 통한 편리한 UX 제공",
+                  "유저 데이터를 기반으로 한 의사 결정 및 기능 고도화",
+                ]}
+              />
+              <StackChip
+                title={"What I used"}
+                stackList={[
+                  "React",
+                  "Typescript",
+                  "Next",
+                  "StyledComponent",
+                  "MUI",
+                  "AWS",
+                ]}
+              />
+            </ExtraInfoDialog>
+          </CustomTableCell>
+          <CustomTableCell align="center">
+            <ExtraInfoDialog
+              dialogTitle={"AI 오디오 서비스 : 가우디오 스튜디오"}
+            >
+              <Titleli
+                title={"서비스 목표"}
+                list={[
+                  "AI를 활용한 음원 분리 기능 제공",
+                  "AI를 활용한 노래방 기능 제공",
+                  "사내에서 개발중 인 AI 기능 및 서비스의 런칭",
+                ]}
+              />
+              <Stack direction={"row"} justifyContent={"center"}>
+                <UrlChip
+                  title={"홈페이지"}
+                  url={"https://studio.gaudiolab.io/"}
+                />
+                <UrlChip
+                  title={"서비스 소개"}
+                  url={"https://www.youtube.com/watch?v=R_5wSIYxSuc"}
+                />
+              </Stack>
+            </ExtraInfoDialog>
+          </CustomTableCell>
+        </CustomTableRow>
+        <CustomTableRow key={"데이터 시각화 서비스 : HyperData"}>
+          <CustomTableCell component="th" scope="row" align="center">
+            <Companyli
               name={"티맥스티베로"}
               homepageUrl={"https://www.tmax.co.kr/hyperdata"}
               position={"연구원"}
-              period={"2020/02 ~ 현재"}
+              period={"2020/02 ~ 2022/06"}
             />
           </CustomTableCell>
           <CustomTableCell>
@@ -70,7 +148,11 @@ const ExperienceSectionView = ({}: ExperienceSectionVAProp) => {
               />
               <Titleli
                 title={"What I regreted"}
-                list={["후회되는 것들을 하나씩 지워나가고 있음"]}
+                list={[
+                  "디자인 시스템을 부족함으로 인한 개발자경험 및 유저경험의 저하",
+                  "부족한 테스트 커버리지 및 에러 처리",
+                  "애매한 코드 리뷰 및 문서화로 인한 온보딩 시스템 및 협업 시스템 부재",
+                ]}
               />
               <StackChip
                 title={"What I used"}
