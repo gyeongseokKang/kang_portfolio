@@ -8,6 +8,7 @@ import ScrollToTopBtn from "src/component/button/scrollToTopBtn/ScrollToTopBtn";
 import { Suspense } from "react";
 import TopBar from "../src/topBar/TopBar";
 import dynamic from "next/dynamic";
+import { getI18nFromGoogleSheet } from "src/utils/getI18nFromGoogleSheet";
 
 const DynamicLazyProjectSection = dynamic(
   () => import("src/section/ProjectSection"),
@@ -50,6 +51,7 @@ export default function Index() {
   return (
     <>
       <TopBar />
+      {/* <button onClick={getI18nFromGoogleSheet}>데이터 가져오기</button> */}
       <IntroSection />
       <ExperienceSection />
       <Suspense fallback={`loading`}>
