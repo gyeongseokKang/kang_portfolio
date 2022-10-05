@@ -27,12 +27,17 @@ const DynamicLazyContactSection = dynamic(() => import("src/section/ContactSecti
 });
 
 export default function Index() {
+  const handleClick = () => {
+    const url = "https://dev-studio.gaudiolab.io/";
+    window.open(url, "_system");
+  };
   return (
     <>
       <TopBar />
       <a href="intent://accounts.gaudiolab.io/auth/realms/gplatform/protocol/openid-connect/auth?client_id=webapp&scope=openid%20email%20profile&response_type=code&redirect_uri=https%3A%2F%2Fdev-studio.gaudiolab.io%2Fapi%2Fauth%2Fcallback%2Fkeycloak&studio_version=beta&state=W5ppcwiu_614yR7avuXyVNa75JGqziHmabZSTHB2Ggo&code_challenge=BwG1S-PqfI9NYQYZ45OAuNCQG8utXn2lKv9mdF86jdQ&code_challenge_method=S256#Intent;scheme=http;package=com.android.chrome;end">
         크롬 브라우저로 이동
       </a>
+      <div onClick={handleClick}>크롬 2</div>
       <IntroSection />
       <ExperienceSection />
       <Suspense fallback={`loading`}>
