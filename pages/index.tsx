@@ -30,7 +30,9 @@ export default function Index() {
   return (
     <>
       <TopBar />
-      <a href="https://www.google.com/intl/ko/chrome/">크롬 브라우저로 이동</a>
+      <a href="intent://kang-portfolio.vercel.app#Intent;scheme=http;package=com.android.chrome;end">
+        크롬 브라우저로 이동
+      </a>
       <IntroSection />
       <ExperienceSection />
       <Suspense fallback={`loading`}>
