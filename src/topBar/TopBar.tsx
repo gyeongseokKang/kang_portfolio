@@ -1,14 +1,13 @@
-import * as React from "react";
-import { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container/Container";
+import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import SettingIcons from "./component/SettingIcons";
-import TopBarSectionItem from "./component/TopBarSectionItem";
+import { useEffect, useState } from "react";
 import useWindowDimensions from "src/utils/customHook/useWindowDimensions";
+import SettingIcons from "./component/SettingIcons";
 import TopBarMenu from "./component/TopBarMenu";
-import Container from "@mui/material/Container/Container";
+import TopBarSectionItem from "./component/TopBarSectionItem";
 
 export default function TopBar() {
   const { width } = useWindowDimensions();
@@ -49,6 +48,7 @@ const VerticalMenu = () => {
         <TopBarSectionItem to={"Skill"} top={false} />
         <TopBarSectionItem to={"Award"} top={false} />
         <TopBarSectionItem to={"Certificate"} top={false} />
+        <TopBarSectionItem to={"Retrospective"} top={false} />
         <TopBarSectionItem to={"Blog"} top={false} />
       </TopBarMenu>
     </Stack>
@@ -64,6 +64,7 @@ const HorizontalMenu = () => {
       <TopBarSectionItem to={"Skill"} />
       <TopBarSectionItem to={"Award"} />
       <TopBarSectionItem to={"Certificate"} />
+      <TopBarSectionItem to={"Retrospective"} />
       <TopBarSectionItem to={"Blog"} />
     </Stack>
   );

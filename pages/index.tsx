@@ -25,6 +25,9 @@ const DynamicLazyBlogSection = dynamic(() => import("src/section/BlogSection"), 
 const DynamicLazyContactSection = dynamic(() => import("src/section/ContactSection"), {
   suspense: true,
 });
+const DynamicLazyRetrospectiveSection = dynamic(() => import("src/section/RetrospectiveSection"), {
+  suspense: true,
+});
 
 export default function Index() {
   return (
@@ -38,6 +41,7 @@ export default function Index() {
         <DynamicLazyAwardSection />
         <DynamicLazyCertificateSection />
         <DynamicLazyBlogSection />
+        <DynamicLazyRetrospectiveSection />
         <DynamicLazyContactSection />
       </Suspense>
       <ScrollToTopBtn />
