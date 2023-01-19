@@ -1,6 +1,5 @@
-import React from "react";
 import { styled } from "@mui/material/styles";
-import { NextSeo } from "next-seo";
+import React from "react";
 import useIntersectionObserver from "src/utils/customHook/useIntersectionObserver";
 
 const StyledSection = styled("section")({
@@ -18,11 +17,10 @@ const StyledSection = styled("section")({
 
 interface SectionProp {
   id: string;
-  direction?: "up" | "down" | "right" | "left";
   children?: React.ReactNode;
 }
 
-export const CustomSection = ({ id, children, direction = "down" }: SectionProp) => {
+export const CustomSection = ({ id, children }: SectionProp) => {
   const containerRef = React.useRef(null);
   const entry = useIntersectionObserver(containerRef, { threshold: 0.1, rootMargin: "100px" });
 
@@ -32,9 +30,9 @@ export const CustomSection = ({ id, children, direction = "down" }: SectionProp)
         style={{
           position: "relative",
           opacity: entry?.isIntersecting ? 1 : 0.2,
-          transition: "opacity 0.6s ease-in-out, bottom 0.6s ease-in-out",
+          transition: "opacity 0.6s ease-in-out, top 0.6s ease-in-out",
           transitionDelay: "0.1s",
-          bottom: entry?.isIntersecting ? "0px" : "100px",
+          top: entry?.isIntersecting ? "0px" : "50px",
         }}
       >
         {children}

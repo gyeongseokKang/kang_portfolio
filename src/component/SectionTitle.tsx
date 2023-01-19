@@ -1,6 +1,5 @@
-import React from "react";
-import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 interface SectionTitleProp {
   title?: string;
@@ -17,6 +16,7 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 
 const StyledSubTitle = styled(Typography)({
   paddingInlineStart: "0.5rem",
+  paddingBlockStart: "0.5rem",
   fontWeight: "500" as any,
 });
 
