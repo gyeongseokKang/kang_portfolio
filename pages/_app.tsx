@@ -10,6 +10,7 @@ import { AppProps } from "next/app";
 import CssBaseline from "@mui/material/CssBaseline";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import StructuredData from "src/utils/StructuredData";
 import { ThemeProvider } from "@mui/material/styles";
 import createEmotionCache from "../src/createEmotionCache";
 
@@ -113,29 +114,3 @@ export default function MyApp(props: MyAppProps) {
     </CacheProvider>
   );
 }
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: "Title of the blog post",
-  description: "Description of the blog post",
-  author: [
-    {
-      "@type": "Person",
-      name: "John Doe",
-    },
-  ],
-  datePublished: "2022-09-14T09:00:00.000Z",
-};
-
-const StructuredData = () => {
-  return (
-    <Head>
-      <script
-        key="structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-    </Head>
-  );
-};
