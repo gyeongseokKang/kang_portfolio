@@ -82,6 +82,7 @@ export default function MyApp(props: MyAppProps) {
         />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
+      <StructuredData />
       <DefaultSeo
         canonical={"https://kang-portfolio.vercel.app/"}
         description={
@@ -112,3 +113,29 @@ export default function MyApp(props: MyAppProps) {
     </CacheProvider>
   );
 }
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Title of the blog post",
+  description: "Description of the blog post",
+  author: [
+    {
+      "@type": "Person",
+      name: "John Doe",
+    },
+  ],
+  datePublished: "2022-09-14T09:00:00.000Z",
+};
+
+const StructuredData = () => {
+  return (
+    <Head>
+      <script
+        key="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+    </Head>
+  );
+};
