@@ -81,8 +81,8 @@ const IntroSectionView = ({
             <strong>Handy | {t(`intro.편리함을_추구하는_개발자`)}</strong>
             <br />
           </Typography>
-          React & TypeScript 기반의 4년차 프론트엔드 개발자
-          <strong>강경석</strong>입니다. <br />
+          React & TypeScript 기반의 4년차 프론트엔드 개발자 
+          <strong>Handy(핸디, 강경석)</strong>입니다. <br />
           통합 모빌리티 서비스 카찹, BI툴의 하이퍼데이터 등의 프로젝트에서
           프론트엔드 개발 및 연구를 하고 있습니다.
           <br />
