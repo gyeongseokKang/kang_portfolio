@@ -1,19 +1,18 @@
-import * as React from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import DescriptionIcon from "@mui/icons-material/Description";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import { Stack } from "@mui/material";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import { Stack } from "@mui/material";
+import * as React from "react";
 import HorizontalLine from "../hr/HorizontalLine";
-import LaptopIcon from "@mui/icons-material/Laptop";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -45,7 +44,7 @@ export default function ExtraInfoDialog({ iconType = "paper", dialogTitle, child
 
   switch (iconType) {
     case "paper": {
-      Icon = <LaptopIcon color="primary" />;
+      Icon = <DescriptionIcon color="primary" />;
       break;
     }
     case "prize": {
