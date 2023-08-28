@@ -3,14 +3,11 @@ import CustomTable, {
   CustomTableRow,
 } from "src/component/table/CustomTable";
 
-import { CustomSection } from "../component/CustomSection";
-import { CustomSectionTitle } from "src/component/SectionTitle";
-import Image from "next/image";
-import Rating from "@mui/material/Rating";
-import React from "react";
-import Stack from "@mui/material/Stack";
-import { StackChip } from "src/component/chip/StackChip";
 import { Typography } from "@mui/material";
+import Stack from "@mui/material/Stack";
+import Image from "next/image";
+import { CustomSectionTitle } from "src/component/SectionTitle";
+import { CustomSection } from "../component/CustomSection";
 
 const SkillSection = () => {
   const SkillSectionVAProp: SkillSectionVAProp = {};
@@ -24,7 +21,7 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
       <CustomSectionTitle
         title={"Skill"}
         subTitle={
-          "빠르게 편하는 최신 기술을 익히고 프로젝트에 적용하고자 고민합니다."
+          "T자형 스킬셋을 추가합니다. 현재는 깊게 하는것보다 넓게 하는게 더 재밌어요."
         }
       />
       <CustomTable
@@ -34,34 +31,39 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
         <SkillSectionItem
           name={"Javascript"}
           score={3}
-          experienceText={`ES6문법이 활발하게 적용될때 배워 이후 버젼도 꾸준히 공부하여 적용하고 있습니다. 
-          데이터 시각화 대시보드, 반응형 웹사이트 등을 만들며 활용하고 있습니다.`}
-          careerNumber={4}
+          experienceText={`프론트엔드 개발자의 기본기라 생각하고 끊임없이 공부하고 있습니다.`}
+          careerNumber={5}
         />
         <SkillSectionItem
           name={"Typescript"}
           score={3}
-          experienceText={`정적 분석을 통해 개발 생산성과 유지보수성이 높아진 것을 실감하여 이후 진행하는 프로젝트 대부분에 적용하고 있습니다.`}
-          careerNumber={3}
+          experienceText={`안 사용해본 사람은 있어도 한번만 사용한 사람은 없다에서, 한번만 사용한 사람은 없다를 담당하고 있습니다.`}
+          careerNumber={4}
         />
         <SkillSectionItem
           name={"React"}
           score={3}
-          experienceText={`클래스형 컴포넌트에서 함수형 컴포넌트로 대세가 변할때즘 접하고 이후 React의 Flux 패러다임에 매료되어 사용하고 있습니다.
-          최신 리액트를 빠르게 따라가고 적용하고 있으며 현재 React18를 도입하여 프로젝트에 사용중입니다.`}
+          experienceText={`프론트 4대장(React,Vue,Angular,Svelte)중에서 가장 많이 사용합니다. 협업을 하기위해선 리액트를 뺴놓수 없죠.`}
           careerNumber={4}
         />
         <SkillSectionItem
           name={"Next"}
           score={2}
           experienceText={`
-            React가 최종적으로 가야할 프레임워크라 생각하고 있습니다. 웹뷰 기반, SEO 노출을 위해 Next.js를 도입해서 사용중이며 현재 Next12를 사용하여
-            SSR, ISG를 통해 빌드 프로세스를 구축하였습니다.
+           프레임워크가 주는 컨벤션과 안정성, 그리고 편리함에 매료되어 사용하고 있습니다. 앞으로 어떻게 발전해나갈지 기대됩니다.
+            `}
+          careerNumber={3}
+        />
+        <SkillSectionItem
+          name={"Flutter"}
+          score={2}
+          experienceText={`
+            화면을 완전히 다룰수 있는 매력, 크로스플랫폼을 지원하는 장점에 빠져서 재밌게 사용하고 있습니다. 
             `}
           careerNumber={2}
         />
       </CustomTable>
-      <Stack direction={"column"}>
+      {/* <Stack direction={"column"}>
         <Stack direction={"row"} padding={0.5}>
           <Typography sx={{ pr: 2, minWidth: "100px" }}>
             UI library :
@@ -83,7 +85,7 @@ const SkillSectionView = ({}: SkillSectionVAProp) => {
           <Typography sx={{ pr: 2, minWidth: "100px" }}>DataBase :</Typography>
           <StackChip stackList={["Firebase", "MySQL", "Oracle"]} />
         </Stack>
-      </Stack>
+      </Stack> */}
     </CustomSection>
   );
 };

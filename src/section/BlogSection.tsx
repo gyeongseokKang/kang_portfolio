@@ -14,11 +14,15 @@ interface BlogSectionVAProp {}
 const BlogSectionView = ({}: BlogSectionVAProp) => {
   return (
     <CustomSection id={"Blog"}>
-      <CustomSectionTitle title={"Blog"} subTitle={"기억보다 기록을, 그리고 지식공유를 위해 하고 있습니다."} />
+      <CustomSectionTitle
+        title={"Blog"}
+        subTitle={"기억보다 기록을, 그리고 지식공유를 위해 하고 있습니다."}
+      />
       <Stack direction={"row"} flexWrap={"wrap"} justifyContent={"center"}>
         <ul style={{ flex: "1", minWidth: "300px" }}>
           <li>
-            <strong>Tistory</strong> 는 도서 리뷰부터 개발에 대한 모든 것을 씁니다.(월 평균 : 2만 | 총 40만(23.3 기준))
+            <strong>Tistory</strong> 는 도서 리뷰부터 개발에 대한 모든 것을
+            씁니다.(총 50만(23.8 기준))
           </li>
         </ul>
         <Stack direction={"row"}>
@@ -27,10 +31,19 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
           </Stack>
 
           <Stack direction={"row"} alignItems={"center"}>
-            <Link href={"https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"}>
+            <Link
+              href={
+                "https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"
+              }
+            >
               <a target="_blank" style={{ textDecoration: "none" }}>
                 <IconButton aria-label="open tistory button">
-                  <Image src={`/icons/tistory.svg`} height={40} width={40} alt={"tistory icon"} />
+                  <Image
+                    src={`/icons/tistory.svg`}
+                    height={40}
+                    width={40}
+                    alt={"tistory icon"}
+                  />
                 </IconButton>
               </a>
             </Link>

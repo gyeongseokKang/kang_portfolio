@@ -1,15 +1,15 @@
 import CloseIcon from "@mui/icons-material/Close";
-import { CustomSection } from "./../component/CustomSection";
-import { CustomSectionTitle } from "src/component/SectionTitle";
 import IconButton from "@mui/material/IconButton";
+import Snackbar from "@mui/material/Snackbar";
+import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Snackbar from "@mui/material/Snackbar";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
+import { CustomSectionTitle } from "src/component/SectionTitle";
+import { CustomSection } from "./../component/CustomSection";
 
 const CircleImage = styled(Image)({
   borderRadius: "100%",
@@ -81,14 +81,14 @@ const IntroSectionView = ({
             <strong>Handy | {t(`intro.편리함을_추구하는_개발자`)}</strong>
             <br />
           </Typography>
-          React & TypeScript 기반의 4년차 프론트엔드 개발자 
-          <strong>Handy(핸디, 강경석)</strong>입니다. <br />
-          통합 모빌리티 서비스 카찹, BI툴의 하이퍼데이터 등의 프로젝트에서
-          프론트엔드 개발 및 연구를 하고 있습니다.
+          Web과 App를 다루는 5년차 프론트엔드 개발자
+          <strong> 강경석(Handy)</strong>입니다. <br />
           <br />
-          현재는 오디오테크 스타트업 가우디오랩에서 프론트엔드 리더로 POC부터
-          제품 설계 및 구현을 주로 하고 있습니다.
+          오디오테크 가우디오랩에서 프론트엔드 리드로 POC부터 제품 설계 및
+          구현을 담당하고 있습니다..
           <br />
+          이전에는 통합 모빌리티 서비스 카찹을 창업하고, BI툴인
+          하이퍼데이터(티맥스소프트)를 만들었습니다.
           <br />
           <StyledTypography variant="subtitle1" gutterBottom>
             기술 공유의 중요성
@@ -96,12 +96,8 @@ const IntroSectionView = ({
           을 알기에 배운 것을 정리하고 문서화 좋아하며 동료에게 공유하려고
           노력합니다.
           <br />
-          현재는
-          <StyledTypography variant="subtitle1" gutterBottom>
-            서버스의 안전성
-          </StyledTypography>
-          을 높이기 위한 다양한 툴(cypress, jest, sentry)과 CI/CD에 관심을
-          가지고 도입하고 있습니다.
+          현재는 Web뿐만 아니라 다양한 프론트엔드 환경에서의 작업에 고민하고
+          있습니다.
         </Typography>
       </Stack>
       <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>

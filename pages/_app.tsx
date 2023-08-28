@@ -3,15 +3,15 @@ import "./index.css";
 import * as React from "react";
 
 import { CacheProvider, EmotionCache } from "@emotion/react";
-import { ColorModeContext, getDesignTokens } from "../src/store/ThemeStore";
 import { createTheme, useMediaQuery } from "@mui/material";
+import { ColorModeContext, getDesignTokens } from "../src/store/ThemeStore";
 
-import { AppProps } from "next/app";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
 import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
 import Head from "next/head";
 import StructuredData from "src/utils/StructuredData";
-import { ThemeProvider } from "@mui/material/styles";
 import createEmotionCache from "../src/createEmotionCache";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -87,7 +87,7 @@ export default function MyApp(props: MyAppProps) {
       <DefaultSeo
         canonical={"https://kang-portfolio.vercel.app/"}
         description={
-          "React & TypeScript 기반의 4년차 프론트엔드 개발자 강경석의 포트폴리오입니다."
+          "Web과 App를 다루는 5년차 프론트엔드 개발자 강경석(핸디)의 포트폴리오입니다."
         }
         openGraph={{
           type: "website",
@@ -101,7 +101,7 @@ export default function MyApp(props: MyAppProps) {
             },
           ],
           description:
-            "React & TypeScript 기반의 4년차 프론트엔드 개발자 강경석입니다.",
+            "Web과 App를 다루는 5년차 프론트엔드 개발자 강경석(핸디)의 포트폴리오입니다.",
           site_name: "Handy | 편리함을 추구하는 개발자",
         }}
       />
