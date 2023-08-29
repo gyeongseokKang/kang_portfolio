@@ -25,7 +25,7 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 
 const IntroSection = () => {
   const copyEmailToClipboard = () => {
-    navigator.clipboard.writeText("gyeongseok.kang@gmail.com");
+    navigator.clipboard.writeText("handy.kang.dev@gmail.com");
     openCopySuccessSnackBar();
   };
 
@@ -146,7 +146,7 @@ const IntroSectionView = ({
         open={copySuccessSnackBar}
         autoHideDuration={5000}
         onClose={closeCopySuccessSnackBar}
-        message="Copy gyeongseok.kang@gmail.com"
+        message="Copy handy.kang.dev@gmail.com"
         action={
           <IconButton
             size="small"
