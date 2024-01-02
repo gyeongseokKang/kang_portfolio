@@ -1,11 +1,5 @@
 import { Divider, Typography } from "@mui/material";
 
-import { CustomSection } from "../component/CustomSection";
-import { CustomSectionTitle } from "src/component/SectionTitle";
-import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
-import Image from "next/image";
-import React from "react";
-import Stack from "@mui/material/Stack";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -13,6 +7,11 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import Stack from "@mui/material/Stack";
+import Image from "next/image";
+import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
+import { CustomSectionTitle } from "src/component/SectionTitle";
+import { CustomSection } from "../component/CustomSection";
 
 const AwardSection = () => {
   const AwardSectionVAProp: AwardSectionVAProp = {};
@@ -38,7 +37,7 @@ interface AwardItemProp {
   awardName: string;
   details: string;
   awardGrade: string;
-  awardImg: string[];
+  awardImg?: string[];
 }
 
 const AwardItem = ({
@@ -70,7 +69,7 @@ const AwardItem = ({
               alignItems={"center"}
               divider={<Divider orientation="vertical" flexItem />}
             >
-              {awardImg.map((path) => (
+              {awardImg?.map((path) => (
                 <div
                   style={{
                     width: "150px",
@@ -100,6 +99,23 @@ const AwardItem = ({
 const AwardSectionItem = () => {
   return (
     <Timeline sx={{ minWidth: "500px" }}>
+      <TimelineItem>
+        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
+          2023년
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <AwardItem
+            awardName={"가우디오랩"}
+            awardGrade={"PIETTIC 중 Integrity 수상"}
+            details={"신뢰도 높은 협업, 높은 수준의 업무수행으로 인한 수상"}
+            // awardImg={["tmaxAward2021.jpg"]}
+          />
+        </TimelineContent>
+      </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
           2021년

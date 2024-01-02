@@ -157,6 +157,17 @@ const RetrospectivedSection2023Item = () => {
         </TimelineSeparator>
         <TimelineContent>
           <RetrospectivedItem
+            retrospectivedName={"4Q"}
+            oneLineTitle={"새로운 기술보단 기존 기술에 능숙함을 더하다"}
+            details={
+              "사용하는 기술이 정리되고, 기존 기술에 대한 이해도를 높이는데 집중했다."
+            }
+            extraDetail={[
+              "1. React, Next에 대한 이해도를 높이고, 기존 프로젝트를 리팩토링했다.",
+              "2. Flutter 프로젝트를 유지보수하며 안정도를 높이고 있다.",
+            ]}
+          />
+          <RetrospectivedItem
             retrospectivedName={"3Q"}
             oneLineTitle={"오디오 도메인 개발에 자신감이 붙었다."}
             details={

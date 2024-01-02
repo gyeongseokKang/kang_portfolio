@@ -81,7 +81,7 @@ const IntroSectionView = ({
             <strong>Handy | {t(`intro.편리함을_추구하는_개발자`)}</strong>
             <br />
           </Typography>
-          Web과 App를 다루는 5년차 프론트엔드 개발자
+          Web과 App를 다루는 6년차 프론트엔드 개발자
           <strong> 강경석(Handy)</strong>입니다. <br />
           <br />
           오디오테크 가우디오랩에서 프론트엔드 리드로 POC부터 제품 설계 및
