@@ -9,6 +9,7 @@ import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { CustomSectionTitle } from "src/component/SectionTitle";
+import getExperiencedYear from "src/utils/getExperiencedYear";
 import { CustomSection } from "./../component/CustomSection";
 
 const CircleImage = styled(Image)({
@@ -81,7 +82,7 @@ const IntroSectionView = ({
             <strong>Handy | {t(`intro.편리함을_추구하는_개발자`)}</strong>
             <br />
           </Typography>
-          Web과 App를 다루는 6년차 프론트엔드 개발자
+          Web과 App를 다루는 {getExperiencedYear().N년차} 프론트엔드 개발자
           <strong> 강경석(Handy)</strong>입니다. <br />
           <br />
           오디오테크 가우디오랩에서 프론트엔드 리드로 POC부터 제품 설계 및

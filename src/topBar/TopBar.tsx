@@ -27,7 +27,12 @@ export default function TopBar() {
 
   return (
     <>
-      <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+      <Navbar
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        shouldHideOnScroll
+        isBordered
+      >
         <NavbarContent
           className="sm:hidden"
           justify="start"
@@ -38,7 +43,7 @@ export default function TopBar() {
         <NavbarBrand>
           <p className="font-bold text-inherit"> KANG GYEONG SEOK</p>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarContent className="hidden gap-4 sm:flex" justify="center">
           {LinkList.map((link) => (
             <NavbarItem key={link}>
               <Link color="foreground" href={`#${link}`}>

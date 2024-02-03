@@ -21,6 +21,7 @@
     "autoprefixer": "^10.4.17",
     "axios": "^0.27.2",
     "core-js": "3",
+    "dayjs": "^1.11.10",
     "framer-motion": "^11.0.3",
     "next": "12.2.0",
     "next-themes": "^0.2.1",

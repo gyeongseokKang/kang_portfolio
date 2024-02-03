@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
@@ -14,10 +13,10 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   maxWidth: "100px",
   color: theme.palette.text.primary,
   backgroundColor: theme.palette.action.hover,
-  border: `1px solid ${theme.palette.custom.hover}`,
-  "&:hover": {
-    backgroundColor: theme.palette.custom.hover,
-  },
+  // border: `1px solid ${theme.palette.custom.hover}`,
+  // "&:hover": {
+  //   backgroundColor: theme.palette.custom.hover,
+  // },
   cursor: "pointer",
 }));
 

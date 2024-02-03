@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+import { Card } from "@nextui-org/react";
 import React from "react";
 import useIntersectionObserver from "src/utils/customHook/useIntersectionObserver";
 
@@ -28,19 +29,21 @@ export const CustomSection = ({ id, children }: SectionProp) => {
   });
 
   return (
-    <StyledSection id={id} ref={containerRef}>
-      <div
-        className="pt-20"
-        style={{
-          position: "relative",
-          opacity: entry?.isIntersecting ? 1 : 0.2,
-          transition: "opacity 0.6s ease-in-out, top 0.6s ease-in-out",
-          transitionDelay: "0.1s",
-          top: entry?.isIntersecting ? "0px" : "50px",
-        }}
-      >
-        {children}
-      </div>
-    </StyledSection>
+    <>
+      <div id={id}></div>
+      <Card ref={containerRef} className="container p-8 mt-4 mb-12">
+        <div
+          style={{
+            position: "relative",
+            opacity: entry?.isIntersecting ? 1 : 0.2,
+            transition: "opacity 0.6s ease-in-out, top 0.6s ease-in-out",
+            transitionDelay: "0.1s",
+            top: entry?.isIntersecting ? "0px" : "50px",
+          }}
+        >
+          {children}
+        </div>
+      </Card>
+    </>
   );
 };

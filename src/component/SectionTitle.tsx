@@ -1,38 +1,27 @@
-import { styled } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
+import { useTheme } from "next-themes";
+import { colors } from "src/styles/colors";
 
 interface SectionTitleProp {
   title?: string;
   subTitle?: string;
 }
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
-  display: "inline",
-  background: `linear-gradient(180deg, rgba(0,0,0,0) 50%, ${theme.palette.primary.light} 50%)`,
-  paddingInline: "5px 10px",
-  fontWeight: "500" as any,
-  letterSpacing: "-2px",
-}));
-
-const StyledSubTitle = styled(Typography)({
-  paddingInlineStart: "0.5rem",
-  paddingBlockStart: "0.5rem",
-  fontWeight: "500" as any,
-});
-
 export const CustomSectionTitle = ({ title, subTitle }: SectionTitleProp) => {
+  const { theme } = useTheme();
+  const bgColor = theme === "dark" ? colors.dark : colors.light;
   return (
-    <>
+    <div className="mb-4">
       {title && (
-        <StyledTypography variant="h4" gutterBottom>
+        <div
+          className="inline px-2 text-2xl font-bold"
+          style={{
+            background: `linear-gradient(180deg, rgba(0,0,0,0) 66%, ${bgColor} 33%)`,
+          }}
+        >
           {title.toLocaleUpperCase()}
-        </StyledTypography>
+        </div>
       )}
-      {subTitle && (
-        <StyledSubTitle variant="subtitle2" gutterBottom>
-          {subTitle}
-        </StyledSubTitle>
-      )}
-    </>
+      {subTitle && <div className="pt-2 text-sm font-semibold">{subTitle}</div>}
+    </div>
   );
 };
