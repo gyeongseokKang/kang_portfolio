@@ -37,7 +37,8 @@
 ![GIF](https://user-images.githubusercontent.com/61446585/146512241-abf043c1-04fb-4b64-a594-7e6c3ba69f33.gif)
 
 
-## Done 
+## Done
+* design update & component library change(mui -> next ui)  (2024.02.01)
 * migration next.js + react + mui + vercel(ver.2) (2021.11.24)
 * migration WebComponent ( 2021.09.27 )
 * Dark mode Support
