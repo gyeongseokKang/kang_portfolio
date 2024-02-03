@@ -22,11 +22,15 @@ interface SectionProp {
 
 export const CustomSection = ({ id, children }: SectionProp) => {
   const containerRef = React.useRef(null);
-  const entry = useIntersectionObserver(containerRef, { threshold: 0.1, rootMargin: "100px" });
+  const entry = useIntersectionObserver(containerRef, {
+    threshold: 0.1,
+    rootMargin: "100px",
+  });
 
   return (
     <StyledSection id={id} ref={containerRef}>
       <div
+        className="pt-20"
         style={{
           position: "relative",
           opacity: entry?.isIntersecting ? 1 : 0.2,

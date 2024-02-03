@@ -43,3 +43,8 @@ body {
     url("/fonts/NotoSansKR-Bold.woff") format("font-woff"),
     url("/fonts/NotoSansKR-Bold.otf") format("truetype");
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

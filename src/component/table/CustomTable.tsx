@@ -1,4 +1,4 @@
-import * as React from "react";
+import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -6,8 +6,8 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 export const CustomTableCell = styled(TableCell)(({ theme }) => ({
   // [`&.${tableCellClasses.head}`]: {
@@ -23,9 +23,6 @@ export const CustomTableCell = styled(TableCell)(({ theme }) => ({
 export const CustomTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
-  },
-  "&:hover": {
-    backgroundColor: theme.palette.custom.hover,
   },
 }));
 
@@ -44,9 +41,17 @@ interface CustomTableProp {
   children?: React.ReactNode;
 }
 
-export default function CustomTable({ header = [], footer, children }: CustomTableProp) {
+export default function CustomTable({
+  header = [],
+  footer,
+  children,
+}: CustomTableProp) {
   return (
-    <TableContainer component={Paper} elevation={3} style={{ margin: "0.1rem" }}>
+    <TableContainer
+      component={Paper}
+      elevation={3}
+      style={{ margin: "0.1rem" }}
+    >
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
