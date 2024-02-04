@@ -1,20 +1,83 @@
-import Stack from "@mui/material/Stack";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@nextui-org/react";
 import Image from "next/image";
 import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
 import { CustomSectionTitle } from "src/component/SectionTitle";
-import CustomTable, {
-  CustomTableCell,
-  CustomTableRow,
-} from "src/component/table/CustomTable";
 import { CustomSection } from "../component/CustomSection";
 
-const CertificateSection = () => {
-  const CertificateSectionVAProp: CertificateSectionVAProp = {};
-  return <CertificateSectionView {...CertificateSectionVAProp} />;
-};
+const rows = [
+  {
+    key: "1",
+    name: "Tony Reichert",
+    role: "CEO",
+    status: "Active",
+  },
+  {
+    key: "2",
+    name: "Zoey Lang",
+    role: "Technical Lead",
+    status: "Paused",
+  },
+  {
+    key: "3",
+    name: "Jane Fisher",
+    role: "Senior Developer",
+    status: "Active",
+  },
+  {
+    key: "4",
+    name: "William Howard",
+    role: "Community Manager",
+    status: "Vacation",
+  },
+];
 
-interface CertificateSectionVAProp {}
-const CertificateSectionView = ({}: CertificateSectionVAProp) => {
+const certificateItems = [
+  {
+    key: 1,
+    자격명: "정보처리기사 & 산업기사",
+    "취득 이유": `대학생활의 마무리를 위해 취득하였고, 컴퓨터공학에 대한 지식을 갈무리할 좋은 시험이었습니다.`,
+    자격증: [
+      "InformationProcessingEngineer",
+      "InformationProcessingIndustryEngineer",
+    ],
+  },
+  {
+    key: 2,
+    자격명: "정보기기운용기능사",
+    "취득 이유": `국방부에서 네트워크운용병으로 복무하면서, 전문성을 높이기 위해 취득했습니다.`,
+    자격증: ["InformationEquipmentManagementTechnician"],
+  },
+  {
+    key: 3,
+    자격명: "SQLD, ADSP",
+    "취득 이유": `데이터 분석 시각화와 자동화분석도구를 만들기 위한 업무를 위해 취득했습니다.`,
+    자격증: ["sqld", "adsp"],
+  },
+];
+
+const columns = [
+  {
+    key: "자격명",
+    label: "자격명",
+  },
+  {
+    key: "취득 이유",
+    label: "취득 이유",
+  },
+  {
+    key: "자격증",
+    label: "자격증",
+  },
+];
+
+const CertificateSection = () => {
   return (
     <CustomSection id={"Certificate"}>
       <CustomSectionTitle
@@ -23,66 +86,39 @@ const CertificateSectionView = ({}: CertificateSectionVAProp) => {
           "자격증이 실력의 척도가 될 수는 없습니다. 하지만 관심과 꾸준함에 대한 척도는 될 수 있다고 생각합니다."
         }
       />
-      <CustomTable
-        key="CertificateTable"
-        header={["자격명", "취득 이유", "자격증"]}
-      >
-        <CertificateSectionItem
-          name={"정보처리기사 & 산업기사"}
-          text={`대학생활의 마무리를 위해 취득하였고, 컴퓨터공학에 대한 지식을 갈무리할 좋은 시험이었습니다.`}
-          imagePath={[
-            "InformationProcessingEngineer",
-            "InformationProcessingIndustryEngineer",
-          ]}
-        />
-        <CertificateSectionItem
-          name={"정보기기운용기능사"}
-          text={`국방부에서 네트워크운용병으로 복무하면서, 전문성을 높이기 위해 취득했습니다.`}
-          imagePath={["InformationEquipmentManagementTechnician"]}
-        />
-        <CertificateSectionItem
-          name={"SQLD, ADSP"}
-          text={`데이터 분석 시각화와 자동화분석도구를 만들기 위한 업무를 위해 취득했습니다.`}
-          imagePath={["sqld", "adsp"]}
-        />
-      </CustomTable>
+      <Table aria-label="customized table">
+        <TableHeader columns={columns}>
+          {(column) => (
+            <TableColumn key={column.key}>{column.label}</TableColumn>
+          )}
+        </TableHeader>
+        <TableBody>
+          {certificateItems.map((row) => (
+            <TableRow key={row.key}>
+              <TableCell scope="row" align="center">
+                {row.자격명}
+              </TableCell>
+              <TableCell align="center">{row["취득 이유"]}</TableCell>
+              <TableCell align="center">
+                <ExtraInfoDialog dialogTitle={`자격증`}>
+                  <div className="flex justify-between gap-1 overflow-x-auto">
+                    {row.자격증.map((path) => (
+                      <Image
+                        key={path}
+                        src={`/images/certificate/${path}.png`}
+                        height={"450px"}
+                        width={"300px"}
+                        alt={"certificate image"}
+                      />
+                    ))}
+                  </div>
+                </ExtraInfoDialog>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </CustomSection>
-  );
-};
-
-interface CertificateSectionItemProp {
-  name: string;
-  text: string;
-  imagePath: string[];
-}
-
-const CertificateSectionItem = ({
-  name,
-  text,
-  imagePath,
-}: CertificateSectionItemProp) => {
-  return (
-    <CustomTableRow key={name}>
-      <CustomTableCell component="th" scope="row" align="center">
-        {name}
-      </CustomTableCell>
-      <CustomTableCell align="center">{text}</CustomTableCell>
-      <CustomTableCell align="center">
-        <ExtraInfoDialog dialogTitle={`${name} 자격증`}>
-          <Stack spacing={1}>
-            {imagePath.map((path) => (
-              <Image
-                key={path}
-                src={`/images/certificate/${path}.png`}
-                height={"450px"}
-                width={"300px"}
-                alt={"certificate image"}
-              />
-            ))}
-          </Stack>
-        </ExtraInfoDialog>
-      </CustomTableCell>
-    </CustomTableRow>
   );
 };
 

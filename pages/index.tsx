@@ -58,12 +58,12 @@ export default function Index() {
       <ExperienceSection />
       <Suspense fallback={`loading`}>
         <DynamicLazyProjectSection />
-        {/* <DynamicLazySkillSection />
+        <DynamicLazySkillSection />
         <DynamicLazyAwardSection />
         <DynamicLazyCertificateSection />
         <DynamicLazyBlogSection />
         <DynamicLazyRetrospectiveSection />
-        <DynamicLazyContactSection /> */}
+        <DynamicLazyContactSection />
       </Suspense>
       <ScrollToTopBtn />
     </div>

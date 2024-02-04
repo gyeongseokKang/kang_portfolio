@@ -22,7 +22,7 @@ export default function ExtraInfoDialog({
   dialogTitle,
   children,
 }: ExtraInfoDialogProp) {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   let Icon = <DescriptionOutlinedIcon color="primary" />;
 
@@ -46,7 +46,7 @@ export default function ExtraInfoDialog({
       <Button isIconOnly onPress={onOpen} variant="light" size="sm">
         {Icon}
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">
             {dialogTitle}

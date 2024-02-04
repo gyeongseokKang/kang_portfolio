@@ -12,7 +12,6 @@ import { useState } from "react";
 import SettingIcons from "./component/SettingIcons";
 
 const LinkList = [
-  "Intro",
   "Experience",
   "Project",
   "Skill",

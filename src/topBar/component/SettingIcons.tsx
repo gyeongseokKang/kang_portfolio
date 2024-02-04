@@ -18,7 +18,7 @@ export default function SettingIcons() {
   };
 
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex items-center gap-1">
       <ThemeSwitcher />
 
       <Dropdown>
@@ -31,6 +31,7 @@ export default function SettingIcons() {
           selectedKeys={[i18n.language]}
           aria-label="Static Actions"
           onAction={(key) => changeLanguage(key as string)}
+          disabledKeys={["en"]}
         >
           <DropdownItem
             key="ko"
