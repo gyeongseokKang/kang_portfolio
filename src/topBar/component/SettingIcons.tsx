@@ -1,141 +1,97 @@
-import * as React from "react";
-
-import { IconButton, Stack } from "@mui/material";
-
-import Brightness2Icon from "@mui/icons-material/Brightness2";
-import { ColorModeContext } from "../../store/ThemeStore";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import Link from "next/link";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import TranslateIcon from "@mui/icons-material/Translate";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { AiOutlineGithub } from "react-icons/ai";
+import { MdCheck, MdDarkMode, MdLanguage, MdLightMode } from "react-icons/md";
 import i18next from "src/locale/i18n";
-import { styled } from "@mui/material/styles";
-
-const StyledIconButton = styled(IconButton)(({}) => ({
-  "&.MuiIconButton-root": {
-    border: "1px solid",
-    borderRadius: "15px",
-    color: "#ffffff",
-  },
-}));
 
 export default function SettingIcons() {
-  const colorMode = React.useContext(ColorModeContext);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const isLanguageMenuOpen = Boolean(anchorEl);
-
+  const { i18n } = useTranslation();
   const changeLanguage = (lang: string) => {
     i18next.changeLanguage(lang);
-    closeLanguageMenu();
-  };
-
-  const openLanguageMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const closeLanguageMenu = () => {
-    setAnchorEl(null);
   };
 
   return (
-    <Stack direction={"row"} spacing={0.5}>
-      <StyledIconButton
-        aria-label="dark mode button"
-        size="medium"
-        edge="start"
-        onClick={() => {
-          colorMode.toggleColorMode();
-        }}
-      >
-        {colorMode.currentColormode === "light" ? <WbSunnyIcon /> : <Brightness2Icon />}
-      </StyledIconButton>
-      <StyledIconButton aria-label="translate button" size="medium" edge="start" onClick={openLanguageMenu}>
-        <TranslateIcon />
-      </StyledIconButton>
-      <StyledIconButton aria-label="github button" size="medium" edge="start">
-        <Link href={"https://github.com/gyeongseokKang/kang_portfolio"}>
-          <a
-            target="_blank"
-            style={{
-              textDecoration: "none",
-              color: "#ffffff",
-              fontSize: "0.1rem",
-            }}
-            title={"github"}
+    <div className="flex items-center gap-1">
+      <ThemeSwitcher />
+
+      <Dropdown>
+        <DropdownTrigger>
+          <Button variant="bordered" isIconOnly>
+            <MdLanguage size={20} />
+          </Button>
+        </DropdownTrigger>
+        <DropdownMenu
+          selectedKeys={[i18n.language]}
+          aria-label="Static Actions"
+          onAction={(key) => changeLanguage(key as string)}
+          disabledKeys={["en"]}
+        >
+          <DropdownItem
+            key="ko"
+            endContent={i18n.language === "ko" && <MdCheck />}
           >
-            <GitHubIcon />
-          </a>
-        </Link>
-      </StyledIconButton>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={isLanguageMenuOpen}
-        onClose={closeLanguageMenu}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
+            한국어(ko)
+          </DropdownItem>
+          <DropdownItem
+            key="en"
+            endContent={i18n.language === "en" && <MdCheck />}
+          >
+            English(en)
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+      <Button
+        variant="bordered"
+        isIconOnly
+        as={"a"}
+        target="_blank"
+        href={"https://github.com/gyeongseokKang/kang_portfolio"}
       >
-        <MenuItem
-          onClick={() => {
-            changeLanguage("ko");
-          }}
-        >
-          한국어
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            changeLanguage("en");
-          }}
-        >
-          English
-        </MenuItem>
-      </Menu>
-    </Stack>
+        <AiOutlineGithub size={20} />
+      </Button>
+    </div>
   );
 }
 
-const TopMenuIcon = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const isLanguageMenuOpen = Boolean(anchorEl);
+export const ThemeSwitcher = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  const changeLanguage = (lang: string) => {
-    i18next.changeLanguage(lang);
-    closeLanguageMenu();
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
   };
 
-  const openLanguageMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const closeLanguageMenu = () => {
-    setAnchorEl(null);
-  };
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
-    <Menu
-      id="basic-menu"
-      anchorEl={anchorEl}
-      open={isLanguageMenuOpen}
-      onClose={closeLanguageMenu}
-      MenuListProps={{
-        "aria-labelledby": "basic-button",
-      }}
-    >
-      <MenuItem
-        onClick={() => {
-          changeLanguage("ko");
-        }}
-      >
-        한국어
-      </MenuItem>
-      <MenuItem
-        onClick={() => {
-          changeLanguage("en");
-        }}
-      >
-        English
-      </MenuItem>
-    </Menu>
+    <Switch
+      isSelected={theme === "light"}
+      onClick={toggleTheme}
+      thumbIcon={({ isSelected, className }) =>
+        isSelected ? (
+          <MdLightMode className={className} />
+        ) : (
+          <MdDarkMode className={className} />
+        )
+      }
+    ></Switch>
   );
 };
+
+import { Switch } from "@nextui-org/react";
+import { useTranslation } from "react-i18next";

@@ -1,154 +1,119 @@
-import CustomTable, {
-  CustomTableCell,
-  CustomTableRow,
-} from "src/component/table/CustomTable";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
-import { Typography } from "@mui/material";
-import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import { CustomSectionTitle } from "src/component/SectionTitle";
+import { getExperiencedYearFrom } from "src/utils/getExperiencedYear";
 import { CustomSection } from "../component/CustomSection";
 
 const SkillSection = () => {
-  const SkillSectionVAProp: SkillSectionVAProp = {};
-  return <SkillSectionView {...SkillSectionVAProp} />;
-};
-
-interface SkillSectionVAProp {}
-const SkillSectionView = ({}: SkillSectionVAProp) => {
   return (
     <CustomSection id={"Skill"}>
       <CustomSectionTitle
-        title={"Skill"}
+        title={"Stack"}
         subTitle={
           "T자형 스킬셋을 추가합니다. 현재는 깊게 하는것보다 넓게 하는게 더 재밌어요."
         }
       />
-      <CustomTable
-        key="SKillTable"
-        header={["기술", "-", "사용 경험", "사용 기간"]}
-      >
-        <SkillSectionItem
-          name={"Javascript"}
-          score={3}
-          experienceText={`프론트엔드 개발자의 기본기라 생각하고 끊임없이 공부하고 있습니다.`}
-          careerNumber={5}
-        />
-        <SkillSectionItem
-          name={"Typescript"}
-          score={3}
-          experienceText={`안 사용해본 사람은 있어도 한번만 사용한 사람은 없다에서, 한번만 사용한 사람은 없다를 담당하고 있습니다.`}
-          careerNumber={4}
-        />
-        <SkillSectionItem
-          name={"React"}
-          score={3}
-          experienceText={`프론트 4대장(React,Vue,Angular,Svelte)중에서 가장 많이 사용합니다. 협업을 하기위해선 리액트를 뺴놓수 없죠.`}
-          careerNumber={4}
-        />
-        <SkillSectionItem
-          name={"Next"}
-          score={2}
-          experienceText={`
-           프레임워크가 주는 컨벤션과 안정성, 그리고 편리함에 매료되어 사용하고 있습니다. 앞으로 어떻게 발전해나갈지 기대됩니다.
-            `}
-          careerNumber={3}
-        />
-        <SkillSectionItem
-          name={"Flutter"}
-          score={2}
-          experienceText={`
-            화면을 완전히 다룰수 있는 매력, 크로스플랫폼을 지원하는 장점에 빠져서 재밌게 사용하고 있습니다. 
-            `}
-          careerNumber={2}
-        />
-      </CustomTable>
-      {/* <Stack direction={"column"}>
-        <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2, minWidth: "100px" }}>
-            UI library :
-          </Typography>
-          <StackChip stackList={["MUI", "Tailwind", "StyledComponent"]} />
-        </Stack>
-        <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2, minWidth: "100px" }}>Testing :</Typography>
-          <StackChip stackList={["Jest", "Storybook", "Framer"]} />
-        </Stack>
-        <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2, minWidth: "100px" }}>
-            Deployment :
-          </Typography>
-          <StackChip stackList={["Amplify", "Vercel", "Githubpage"]} />
-        </Stack>
-
-        <Stack direction={"row"} padding={0.5}>
-          <Typography sx={{ pr: 2, minWidth: "100px" }}>DataBase :</Typography>
-          <StackChip stackList={["Firebase", "MySQL", "Oracle"]} />
-        </Stack>
-      </Stack> */}
+      <Accordion variant="splitted" isCompact>
+        <AccordionItem
+          key="1"
+          aria-label="TS, JS"
+          startContent={
+            <div className="flex gap-2">
+              <Image
+                src={`/icons/${"Javascript".toLowerCase()}.svg`}
+                height={35}
+                width={35}
+              />
+              <Image
+                src={`/icons/${"Typescript".toLowerCase()}.svg`}
+                height={35}
+                width={35}
+              />
+            </div>
+          }
+          subtitle={`${getExperiencedYearFrom("2018/12/01").N년차}`}
+          title="Javascript, Typescript"
+        >
+          <div>
+            JS, TS의 트렌드를 따라가며 프론트엔드 개발자의 기본기라 생각하고
+            끊임없이 공부하고 있습니다.
+          </div>
+        </AccordionItem>
+        <AccordionItem
+          key="2"
+          aria-label="TS, JS"
+          startContent={
+            <div className="flex gap-2">
+              <Image
+                src={`/icons/${"next-js".toLowerCase()}.svg`}
+                height={35}
+                width={35}
+              />
+              <Image
+                src={`/icons/${"React".toLowerCase()}.svg`}
+                height={35}
+                width={35}
+              />
+            </div>
+          }
+          subtitle={`${getExperiencedYearFrom("2020/02/01").N년차}`}
+          title="Next, React"
+        >
+          <div>
+            한동안 프론트엔드는 Next,React의 독주 자체로 생각하고 열심히
+            따라가고 적용하고 있습니다. React가 주는 선언형 UI의 매력과 Next가
+            주는 마법같은 매력에 빠져있습니다.
+          </div>
+        </AccordionItem>
+        <AccordionItem
+          key="3"
+          aria-label="TS, JS"
+          startContent={
+            <div className="flex gap-2">
+              <Image
+                src={`/icons/${"flutter".toLowerCase()}.svg`}
+                height={35}
+                width={35}
+              />
+              <Image
+                src={`/icons/${"dart".toLowerCase()}.svg`}
+                height={35}
+                width={35}
+              />
+            </div>
+          }
+          subtitle={`${getExperiencedYearFrom("2021/02/01").N년차}`}
+          title="Flutter,Dart"
+        >
+          <div>
+            One Code, Multi Platform, 이것만큼 강력한 매력이 어디있을까요? 앱을
+            만들고 싶을때 주로 사용하나, 요샌 웹쪽도 한번 만들어볼까 싶네요
+          </div>
+        </AccordionItem>
+        <AccordionItem
+          key="4"
+          aria-label="TS, JS"
+          startContent={
+            <div className="flex gap-2">
+              <Image src={`/icons/graphql.svg`} height={35} width={35} />
+              <Image src={`/icons/prisma.svg`} height={35} width={35} />
+              <Image src={`/icons/postgresql.svg`} height={35} width={35} />
+              <Image src={`/icons/webassembly.svg`} height={35} width={35} />
+              <Image src={`/icons/aws.svg`} height={35} width={35} />
+            </div>
+          }
+          subtitle={`- years`}
+          title="Current Learning Stack"
+        >
+          <div>
+            상기한 기술들은 프론트엔드 업무를 하면서 계속 경험해보고 있는
+            기술들입니다. 언젠가 이것도 전문가의 영역으로 들어가길 바랍니다.
+          </div>
+        </AccordionItem>
+      </Accordion>
     </CustomSection>
   );
 };
 
-interface SkillSectionItemProp {
-  name: string;
-  score: number;
-  experienceText: string;
-  careerNumber: number;
-}
-
-const SkillSectionItem = ({
-  name,
-  score,
-  experienceText,
-  careerNumber,
-}: SkillSectionItemProp) => {
-  return (
-    <CustomTableRow key={name}>
-      <CustomTableCell component="th" scope="row" align="center">
-        {name}
-      </CustomTableCell>
-      <CustomTableCell align="center">
-        <Image
-          src={`/icons/${name.toLowerCase()}.svg`}
-          height={50}
-          width={50}
-          alt={name}
-        />
-      </CustomTableCell>
-      <CustomTableCell align="center">{experienceText}</CustomTableCell>
-      <CustomTableCell align="center">
-        <Stack>
-          <Typography>{careerNumber} years</Typography>
-        </Stack>
-      </CustomTableCell>
-    </CustomTableRow>
-  );
-};
-
 export default SkillSection;
-
-// const ColoredDescriptionBodyContent = ({ text, regex }: { text: string; regex: RegExp }) => {
-//   const splitMatchedText = (content: string) => {
-//     return content.replace(regex, (match) => `<span style="color: white;background-color: #00AAD2">${match}</span>`);
-//   };
-
-//   return (
-//     <Typography className={classes.scenarioDescriptionBody}>
-//       <span dangerouslySetInnerHTML={{ __html: splitMatchedText(text) }}></span>
-//     </Typography>
-//   );
-// };
-
-//   const ColoredDescriptionBodyContent = ({ text }: { text: string }) => {
-//     const splitMatchedText = (content: string) => {
-//       const regExp = /(\[([^\]]+)\])/gi;
-//       return content.replace(regExp, (match) => `<span style="color: white;background-color: #00AAD2">${match}</span>`);
-//     };
-
-//     return (
-//       <Typography className={classes.scenarioDescriptionBody}>
-//         <span dangerouslySetInnerHTML={{ __html: splitMatchedText(text) }}></span>
-//       </Typography>
-//     );
-//   };
