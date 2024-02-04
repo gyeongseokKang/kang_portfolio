@@ -34,6 +34,12 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+### latest version
+![포폴 리뉴얼](https://github.com/gyeongseokKang/kang_portfolio/assets/61446585/e1db7ffb-8f7b-4770-a5cb-1faee4894321)
+
+
+### previous version
 ![GIF](https://user-images.githubusercontent.com/61446585/146512241-abf043c1-04fb-4b64-a594-7e6c3ba69f33.gif)
 
 
@@ -50,7 +56,7 @@
 
 ## Stack
 <p align='center'>
-  Next.js + React + Typescript + MUI + Vercel
+  Next.js + React + Typescript + Next-ui + Vercel
 <!--     <img src="https://img.shields.io/badge/Javscript-ES6-yellow?logo=javascript"/>
     <img src="https://img.shields.io/badge/Plotly.js-v1.58.4-blue?logo=plotly">
     <img src="https://img.shields.io/badge/Bootstrap-v3.3.2-violet?logo=bootstrap"> -->
