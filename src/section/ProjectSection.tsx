@@ -1,10 +1,10 @@
-import { ParticipationChip } from "@component/chip/ParticipationChip";
 import { StackChip } from "@component/chip/StackChip";
 import { UrlChip } from "@component/chip/UrlChip";
 import ExtraInfoDialog from "@component/dialog/ExtraInfoDialog";
 import { Titleli } from "@component/ul/Titleli";
 import { Stack } from "@mui/material";
 import {
+  Image,
   Table,
   TableBody,
   TableCell,
@@ -26,59 +26,122 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
     <CustomSection id={"Project"}>
       <CustomSectionTitle
         title={"PROJECT"}
-        subTitle={
-          "새로운 기술, 배우고 싶은 기술을 사용해보고 더 나아진 서비스를 위해 적용합니다"
-        }
+        subTitle={"신기술 + 좋은 옛기술을 통해 프로젝트를 만들어갑니다."}
       />
-      <Table aria-label="customized table">
+      <Table
+        aria-label="customized table"
+        bottomContent={
+          <div className="flex justify-center w-full text-xs text-foreground-400">
+            공개할 수 있는 프로젝트만 공유합니다.
+          </div>
+        }
+      >
         <TableHeader>
-          {["프로젝트", "소개 / 사용기술", "개발 상황", "상세정보"].map(
-            (headerItem) => (
-              <TableColumn className="text-center">{headerItem}</TableColumn>
-            )
-          )}
+          {["프로젝트", "소개 / 사용기술", "상세정보"].map((headerItem) => (
+            <TableColumn>{headerItem}</TableColumn>
+          ))}
         </TableHeader>
         <TableBody>
-          <TableRow key={"골프 레슨 플랫폼 : 라운드인"}>
-            <TableCell>골프 레슨 플랫폼 : 라운드인</TableCell>
+          <TableRow key={"여행사 내부 솔루션"}>
+            <TableCell>여행사 사내솔루션(ERP+CRM)</TableCell>
             <TableCell>
-              <div>[라운드인] 골프 레슨 서비스를 통합하는 플랫폼</div>
+              <div>
+                MS의 Access로 관리하던 기존 시스템 마이그레이션 프로젝트
+              </div>
               <StackChip
                 stackList={[
                   "React",
                   "Typescript",
-                  "Next",
+                  "Next-js",
+                  "NextUI",
+                  "Tailwind",
+                  "Prisma",
+                  "graphql",
+                  "postgresql",
+                  "Amplify",
+                  "Github",
+                ]}
+              />
+            </TableCell>
+
+            <TableCell>
+              <ExtraInfoDialog dialogTitle={"여행사 사내솔루션(ERP+CRM)"}>
+                <Image src="/project/그린빈즈_31.gif" width={"100%"}></Image>
+                <Titleli
+                  title={"개발 목표"}
+                  list={[
+                    "MS Access로 관리하던 시스템을 웹으로 마이그레이션",
+                    "최소의 공수로 최대의 효과를 내는 내부툴 구축",
+                  ]}
+                />
+                <Titleli
+                  title={"개발 성과"}
+                  list={[
+                    "postgresql, prisma, graphql을 통한 데이터 관리",
+                    "상기 데이터 프로세스를 통한 typescript 및 graphql 생성 자동화",
+                    "NextUI를 통한 빠른 디자인 구축",
+                  ]}
+                />
+                <Titleli
+                  title={"내 기여도"}
+                  list={[
+                    "프론트엔드 개발 및 배포 담당",
+                    "prisma-graphql-typescript을 프로세스 구축",
+                  ]}
+                />
+              </ExtraInfoDialog>
+            </TableCell>
+          </TableRow>
+          <TableRow key={"골프 레슨 플랫폼 : 라운드인"}>
+            <TableCell>골프 레슨 플랫폼</TableCell>
+            <TableCell>
+              <div>골프 레슨 서비스 및 회원관리 플랫폼</div>
+              <StackChip
+                stackList={[
+                  "React",
+                  "Typescript",
+                  "Next-js",
                   "MUI",
+                  "flutter",
+                  "dart",
                   "Tailwind",
                   "Amplify",
                   "Github",
                 ]}
               />
             </TableCell>
-            <TableCell align="center">
-              <ParticipationChip
-                date={"21/09 ~ CURRENT"}
-                status={"finish"}
-                position={"프론트, 배포"}
-              />
-            </TableCell>
-            <TableCell align="center">
-              <ExtraInfoDialog dialogTitle={"골프 레슨 플랫폼 : 라운드인"}>
-                <iframe
-                  src="https://www.roundin.kr/"
-                  width={"100%"}
-                  height={"100%"}
-                  style={{ minHeight: "300px", minWidth: "500px" }}
-                />
+
+            <TableCell>
+              <ExtraInfoDialog
+                size="xl"
+                dialogTitle={"골프 레슨 플랫폼 : 라운드인"}
+              >
+                <div className="flex items-center justify-center w-full gap-1">
+                  <Image
+                    className="max-h-[30vh] overflow-y-auto"
+                    src="/project/라운드인_앱1.gif"
+                    width={"100%"}
+                  ></Image>
+                  <Image
+                    className="max-h-[30vh] overflow-y-auto"
+                    src="/project/라운드인_앱2.gif"
+                    width={"100%"}
+                  ></Image>
+                  <Image
+                    className="max-h-[30vh] overflow-y-auto"
+                    src="/project/라운드인_앱3.gif"
+                    width={"100%"}
+                  ></Image>
+                </div>
                 <Titleli
-                  title={"서비스 목표"}
+                  title={"개발 목표"}
                   list={[
                     "각종 골프 관련 서비스를 제공할 수 있는 플랫폼",
                     "프로들과 유저들 사이의 1:1 간편 레슨 서비스",
                   ]}
                 />
                 <Titleli
-                  title={"서비스 성과"}
+                  title={"개발 성과"}
                   list={[
                     "레슨 신청 수천건 진행",
                     "Android, IOS, 웹 모두 제공",
@@ -89,25 +152,17 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                   title={"내 기여도"}
                   list={[
                     "프론트엔드 개발 및 배포 담당",
-                    "웹뷰 기반 크로스플랫폼 유지보수",
-                    "Storybook를 통한 디자인시스템 구축",
-                    "새로운 서비스 기획 및 디자인",
+                    "Flutter + NextJS를 통한 하이브리드앱 구축",
                   ]}
                 />
-                <Stack direction={"row"} justifyContent={"center"}>
-                  <UrlChip title={"홈페이지"} url={"https://www.roundin.kr/"} />
-                </Stack>
               </ExtraInfoDialog>
             </TableCell>
           </TableRow>
           <TableRow key={"Dr.폴리오"}>
-            <TableCell scope="row" align="center">
-              금융 포트폴리오 플랫폼
-            </TableCell>
+            <TableCell scope="row">금융 포트폴리오 플랫폼</TableCell>
             <TableCell>
               <div>
-                [Exfolio] 금융공학 모델 + AI를 이용한 최고의 포트폴리오 생성,
-                추천 서비스
+                금융공학 모델 + AI를 이용한 최고의 포트폴리오 생성, 추천 서비스
               </div>
               <StackChip
                 stackList={[
@@ -122,14 +177,8 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                 ]}
               />
             </TableCell>
-            <TableCell align="center">
-              <ParticipationChip
-                date={"21/03 ~ 21/06"}
-                status={"finish"}
-                position={"프론트, 배포"}
-              />
-            </TableCell>
-            <TableCell align="center">
+
+            <TableCell>
               <ExtraInfoDialog
                 dialogTitle={"포트폴리오 추천 서비스 : Dr.폴리오"}
               >
@@ -137,15 +186,18 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                   <source src={"/video/dr.folio_service.mp4"}></source>
                 </video>
                 <Titleli
-                  title={"서비스 목표"}
+                  title={"개발 목표"}
                   list={[
                     "금융공학 + AI를 이용한 최적의 포트폴리오 추천 서비스",
-                    "포트폴리오를 통한 커뮤니티형 플랫폼",
+                    "사내 기술 습득을 위한 프로젝트",
                   ]}
                 />
                 <Titleli
                   title={"서비스 성과"}
-                  list={["우리은행 해커톤 우수상 수상"]}
+                  list={[
+                    "우리은행 해커톤 우수상 수상",
+                    "시계열 예측 모델을 실제 프로젝트에 적용",
+                  ]}
                 />
                 <Titleli
                   title={"내 기여도"}
@@ -157,7 +209,7 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
                 />
                 <Stack direction={"row"} justifyContent={"center"}>
                   <UrlChip
-                    title={"홈페이지(데모)"}
+                    title={"데모 사이트"}
                     url={"https://dr-folio.github.io/"}
                   />
                   <UrlChip

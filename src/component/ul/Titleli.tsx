@@ -1,27 +1,6 @@
-import React from "react";
-import { styled } from "@mui/material/styles";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import CheckIcon from "@mui/icons-material/Check";
-
-const StyledStack = styled(Stack)(({ theme }) => ({
-  padding: "0.25rem",
-  marginBlockEnd: "0.25rem",
-  borderRadius: "7px",
-  // border: `1px solid #12121a`,
-}));
-
-const StyledTypography = styled(Typography)(({ theme }) => ({
-  fontWeight: "400" as any,
-}));
-
-const ColoredTypography = styled(Typography)(({ theme }) => ({
-  display: "inline",
-  background: `linear-gradient(180deg, rgba(0,0,0,0) 50%, ${theme.palette.primary.light} 50%)`,
-  paddingInline: "5px 5px",
-  fontWeight: "500" as any,
-  minWidth: "100px",
-}));
+import { useTheme } from "next-themes";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { colors } from "src/styles/colors";
 
 interface TitleliProp {
   title?: string;
@@ -29,18 +8,33 @@ interface TitleliProp {
   direction?: "left" | "right";
 }
 
-export const Titleli = ({ title, list = [], direction = "left" }: TitleliProp) => {
+export const Titleli = ({
+  title,
+  list = [],
+  direction = "left",
+}: TitleliProp) => {
+  const { theme } = useTheme();
+  const bgColor = theme === "dark" ? colors.dark : colors.light;
   return (
-    <StyledStack alignItems="flex-start" justifyContent="space-between" direction={"column"} flexWrap={"wrap"}>
-      {title && <ColoredTypography># {title}</ColoredTypography>}
-      <Stack flex={1} direction={"column"} spacing={0.1} sx={{ p: 1.5 }}>
+    <div className="flex flex-col flex-wrap items-start justify-between">
+      {title && (
+        <span
+          className="inline px-2 font-bold"
+          style={{
+            background: `linear-gradient(180deg, rgba(0,0,0,0) 66%, ${bgColor} 33%)`,
+          }}
+        >
+          {title.toLocaleUpperCase()}
+        </span>
+      )}
+      <div className="flex flex-col flex-1 gap-1 p-2">
         {list.map((item) => (
-          <Stack key={item} direction={"row"}>
-            <CheckIcon fontSize={"small"} />
-            <StyledTypography variant="subtitle2">{item}</StyledTypography>
-          </Stack>
+          <div className="flex items-center gap-1">
+            <MdOutlineWorkOutline size={12} />
+            <span className="text-sm">{item}</span>
+          </div>
         ))}
-      </Stack>
-    </StyledStack>
+      </div>
+    </div>
   );
 };
