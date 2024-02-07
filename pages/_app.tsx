@@ -7,6 +7,7 @@ import { DefaultSeo } from "next-seo";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import "react-vertical-timeline-component/style.min.css";
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;

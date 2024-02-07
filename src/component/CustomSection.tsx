@@ -1,20 +1,6 @@
-import { styled } from "@mui/material/styles";
 import { Card } from "@nextui-org/react";
 import React from "react";
 import useIntersectionObserver from "src/utils/customHook/useIntersectionObserver";
-
-const StyledSection = styled("section")({
-  maxWidth: "1200px",
-  padding: "0rem 1rem",
-  margin: "auto",
-  marginBlock: "3rem",
-  position: "relative",
-  overflowY: "hidden",
-  "& > *": {
-    fontFamily:
-      "Noto Sans CJK KR,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif",
-  },
-});
 
 interface SectionProp {
   id: string;
@@ -29,9 +15,12 @@ export const CustomSection = ({ id, children }: SectionProp) => {
   });
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center w-full ">
       <div id={id}></div>
-      <Card ref={containerRef} className="container p-8 mt-4 mb-12">
+      <Card
+        ref={containerRef}
+        className="container max-w-[1200px] p-8  mt-4 mb-12"
+      >
         <div
           style={{
             position: "relative",
@@ -44,6 +33,6 @@ export const CustomSection = ({ id, children }: SectionProp) => {
           {children}
         </div>
       </Card>
-    </>
+    </div>
   );
 };

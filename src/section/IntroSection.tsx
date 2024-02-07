@@ -48,7 +48,7 @@ const IntroSection = () => {
   };
 
   return (
-    <div className="container py-8 mt-4 mb-12">
+    <div className="container py-8 mt-4">
       <div className="flex flex-wrap w-full min-h-[40rem]">
         <div className="flex flex-col items-center justify-center flex-1 gap-4 min-w-[20rem]">
           <Image
@@ -60,7 +60,7 @@ const IntroSection = () => {
             layout={"fixed"}
             priority={true}
           />
-          <div>
+          <div className="px-4">
             <div className="text-2xl font-semibold">
               편리함을 추구하는 개발자,
               <span className="text-blue-500">강경석</span>입니다
@@ -157,7 +157,7 @@ const IntroSection = () => {
           subTitle={"편리함을 추구하는 개발자 강경석(Handy)입니다"}
         />
         <div className="flex flex-col flex-wrap w-full justify-evenly">
-          <div className="font-normal text-md">
+          <div className="text-sm font-normal">
             <strong>
               가우디오랩에서 프론트엔드 리드 개발자로 일하고 있습니다
             </strong>
@@ -177,7 +177,7 @@ const IntroSection = () => {
             <br />
             <br />
             <strong>
-              Web과 App에 전문성울 두고, Backend, Devops를 경험하고 있습니다.
+              Web과 App에 전문성을 두고, Backend, Devops를 경험하고 있습니다.
             </strong>
           </div>
         </div>

@@ -1,14 +1,6 @@
-import { Divider, Typography } from "@mui/material";
-
 import ExtraInfoDialog from "@component/dialog/ExtraInfoDialog";
-import Timeline from "@mui/lab/Timeline";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import Stack from "@mui/material/Stack";
+import { CardContent } from "@mui/material";
+import { Card, CardHeader } from "@nextui-org/react";
 import { CustomSectionTitle } from "src/component/SectionTitle";
 import { CustomSection } from "../component/CustomSection";
 
@@ -27,8 +19,10 @@ const RetrospectivedSectionView = ({}: RetrospectivedSectionVAProp) => {
           "분기별 회고를 작성하며 지난 날을 반성하고 정리합니다.(2022부터 시작~)"
         }
       />
-      <RetrospectivedSection2023Item />
-      <RetrospectivedSection2022Item />
+      <div className="flex flex-col gap-2">
+        <RetrospectivedSection2023Item />
+        <RetrospectivedSection2022Item />
+      </div>
     </CustomSection>
   );
 };
@@ -48,114 +42,79 @@ const RetrospectivedItem = ({
 }: RetrospectivedItemProp) => {
   return (
     <>
-      <Typography sx={{ paddingBottom: 1 }} fontWeight={500}>
+      <div className="text-sm font-medium">
         {retrospectivedName} - {oneLineTitle}
-      </Typography>
-      <Typography variant="subtitle2">
-        <Stack
-          spacing={1}
-          direction={"row"}
-          alignItems={"center"}
-          sx={{ pl: 1, pb: 2 }}
-        >
+      </div>
+      <div className="flex flex-row items-center gap-1 pl-4 text-xs">
+        <>
           ㄴ{details}
           {extraDetail && (
             <ExtraInfoDialog dialogTitle={`세부 정보`} iconType={"paper"}>
-              <Stack
-                spacing={1}
-                alignItems={"flex-start"}
-                divider={<Divider orientation="vertical" flexItem />}
-              >
+              <div className="flex flex-col gap-1 pl-4 text-sm">
                 {extraDetail.map((detail) => {
-                  return (
-                    <Typography
-                      sx={{ paddingBottom: 1 }}
-                      fontWeight={500}
-                      fontSize={14}
-                    >
-                      {detail}
-                    </Typography>
-                  );
+                  return <span>{detail}</span>;
                 })}
-              </Stack>
+              </div>
             </ExtraInfoDialog>
           )}
-        </Stack>
-      </Typography>
+        </>
+      </div>
     </>
   );
 };
 
 const RetrospectivedSection2022Item = () => {
   return (
-    <Timeline sx={{ minWidth: "500px" }}>
-      <TimelineItem>
-        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
-          2022년
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <RetrospectivedItem
-            retrospectivedName={"4Q"}
-            oneLineTitle={
-              "가우디오랩의 다양한 서비스를 위한 기초 다지기를 시작했다"
-            }
-            details={"신뢰를 바탕으로 다양한 서비스 및 데모 사이트를 구현."}
-            extraDetail={[
-              "1. 오디오, 대용량 데이터에 대한 최적화 진행",
-              "2. 기존 웹사이트 모바일 지원을 위한 반응형 및 구조 변경",
-            ]}
-          />
-          <RetrospectivedItem
-            retrospectivedName={"3Q"}
-            oneLineTitle={"이직 후 믿을 수 있는 동료가 되기 위해 노력했다"}
-            details={
-              "기존 프로젝트 마이그레이션 및 기술 스택 익히기, 신뢰감를 얻은 중요했던 시기"
-            }
-            extraDetail={[
-              "1. 클래스형컴포넌트 -> 함수컴포넌트로 마이그레이션 완료",
-              "2. Next 도입, 데이터 페칭은 React-Query로 개선",
-            ]}
-          />
-          <RetrospectivedItem
-            retrospectivedName={"2Q"}
-            oneLineTitle={"이직을 준비했고, 프로젝트를 정리하며 마무리했다"}
-            details={
-              "포트폴리오를 최신화하고 면접을 보러다녔으며, 현재 회사의 업무를 마무리하고 문서화에 힘씀."
-            }
-          />
-          <RetrospectivedItem
-            retrospectivedName={"1Q"}
-            oneLineTitle={
-              "이직을 마음먹었고, Next.js, Recoil 등 최신 스택을 사용해봤다"
-            }
-            details={
-              "기존의 기술스택에서 벗어나 다양한 라이브러리, 프레임워크를 접하려고 노력했다."
-            }
-            extraDetail={[
-              "1. 최신 기술을 학습을 위한 사이드프로젝트 시작(Next.js)",
-            ]}
-          />
-        </TimelineContent>
-      </TimelineItem>
-    </Timeline>
+    <YearCard year={2022}>
+      <RetrospectivedItem
+        retrospectivedName={"4Q"}
+        oneLineTitle={
+          "가우디오랩의 다양한 서비스를 위한 기초 다지기를 시작했다"
+        }
+        details={"신뢰를 바탕으로 다양한 서비스 및 데모 사이트를 구현."}
+        extraDetail={[
+          "1. 오디오, 대용량 데이터에 대한 최적화 진행",
+          "2. 기존 웹사이트 모바일 지원을 위한 반응형 및 구조 변경",
+        ]}
+      />
+      <RetrospectivedItem
+        retrospectivedName={"3Q"}
+        oneLineTitle={"이직 후 믿을 수 있는 동료가 되기 위해 노력했다"}
+        details={
+          "기존 프로젝트 마이그레이션 및 기술 스택 익히기, 신뢰감를 얻은 중요했던 시기"
+        }
+        extraDetail={[
+          "1. 클래스형컴포넌트 -> 함수컴포넌트로 마이그레이션 완료",
+          "2. Next 도입, 데이터 페칭은 React-Query로 개선",
+        ]}
+      />
+      <RetrospectivedItem
+        retrospectivedName={"2Q"}
+        oneLineTitle={"이직을 준비했고, 프로젝트를 정리하며 마무리했다"}
+        details={
+          "포트폴리오를 최신화하고 면접을 보러다녔으며, 현재 회사의 업무를 마무리하고 문서화에 힘씀."
+        }
+      />
+      <RetrospectivedItem
+        retrospectivedName={"1Q"}
+        oneLineTitle={
+          "이직을 마음먹었고, Next.js, Recoil 등 최신 스택을 사용해봤다"
+        }
+        details={
+          "기존의 기술스택에서 벗어나 다양한 라이브러리, 프레임워크를 접하려고 노력했다."
+        }
+        extraDetail={[
+          "1. 최신 기술을 학습을 위한 사이드프로젝트 시작(Next.js)",
+        ]}
+      />
+    </YearCard>
   );
 };
 const RetrospectivedSection2023Item = () => {
   return (
-    <Timeline sx={{ minWidth: "500px" }}>
-      <TimelineItem>
-        <TimelineOppositeContent sx={{ flex: 0, minWidth: "100px" }}>
-          2023년
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
+    <YearCard year={2023}>
+      {
+        <>
           <RetrospectivedItem
             retrospectivedName={"4Q"}
             oneLineTitle={"새로운 기술보단 기존 기술에 능숙함을 더하다"}
@@ -200,9 +159,24 @@ const RetrospectivedSection2023Item = () => {
               "3. ChakraUI, Framer-motion, TailwindCSS 조합의 프로젝트 런칭",
             ]}
           />
-        </TimelineContent>
-      </TimelineItem>
-    </Timeline>
+        </>
+      }
+    </YearCard>
+  );
+};
+
+const YearCard = ({
+  year,
+  children,
+}: {
+  year: number;
+  children: React.ReactNode;
+}) => {
+  return (
+    <Card className="p-1">
+      <CardHeader>{year}</CardHeader>
+      <CardContent className="px-4 py-0">{children}</CardContent>
+    </Card>
   );
 };
 

@@ -14,12 +14,14 @@ import * as React from "react";
 interface ExtraInfoDialogProp {
   iconType?: "paper" | "prize" | "contribution";
   dialogTitle: string;
+  size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
   children: React.ReactNode;
 }
 
 export default function ExtraInfoDialog({
   iconType = "paper",
   dialogTitle,
+  size = "md",
   children,
 }: ExtraInfoDialogProp) {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -46,7 +48,7 @@ export default function ExtraInfoDialog({
       <Button isIconOnly onPress={onOpen} variant="light" size="sm">
         {Icon}
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} size={size}>
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">
             {dialogTitle}
