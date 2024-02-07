@@ -60,7 +60,7 @@ const IntroSection = () => {
             layout={"fixed"}
             priority={true}
           />
-          <div>
+          <div className="px-4">
             <div className="text-2xl font-semibold">
               편리함을 추구하는 개발자,
               <span className="text-blue-500">강경석</span>입니다

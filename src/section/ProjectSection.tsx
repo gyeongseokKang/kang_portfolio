@@ -32,7 +32,8 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
         aria-label="customized table"
         bottomContent={
           <div className="flex justify-center w-full text-xs text-foreground-400">
-            공개할 수 있는 프로젝트만 공유합니다.
+            이전 회사의 프로젝트 또는 개인프로젝트 중 공개할 수 있는 프로젝트만
+            공유합니다.
           </div>
         }
       >
@@ -42,6 +43,55 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
           ))}
         </TableHeader>
         <TableBody>
+          <TableRow key={"티맥스"}>
+            <TableCell>BI 솔루션</TableCell>
+            <TableCell>
+              <div>
+                다양한 유형의 데이터를 실시간으로 분석하여 비즈니스 의사결정을
+                돕는 빅데이터 플랫폼
+              </div>
+              <StackChip
+                stackList={[
+                  "React",
+                  "Typescript",
+                  "MUI",
+                  "SASS",
+                  "Oracle",
+                  "Github",
+                ]}
+              />
+            </TableCell>
+
+            <TableCell>
+              <ExtraInfoDialog dialogTitle={"BI 솔루션"}>
+                <Image src="/project/티맥스_1.gif" width={"100%"}></Image>
+                <Image src="/project/티맥스_2.gif" width={"100%"}></Image>
+                <Titleli
+                  title={"개발 목표"}
+                  list={[
+                    "기존 사내 프레임워크에서 리액트로 마이그레이션",
+                    "데이터 시각화 대시보드 구축",
+                    "자동화된 데이터 분석 및 리포팅 기능 제공",
+                  ]}
+                />
+                <Titleli
+                  title={"개발 성과"}
+                  list={[
+                    "5종 20개의 차트 및 옵션 기능 제공",
+                    "MUI, Styled Component를 통한 빠른 디자인 구축",
+                    "성공적인 마이그레이션, 배포 및 개발 속도 향상",
+                  ]}
+                />
+                <Titleli
+                  title={"내 기여도"}
+                  list={[
+                    "차트 기능 단톡 개발 및 대시보드간 연동 기능 개발",
+                    "리액트 공통 컴포넌트 개발 및 환경 구축 담당",
+                  ]}
+                />
+              </ExtraInfoDialog>
+            </TableCell>
+          </TableRow>
           <TableRow key={"여행사 내부 솔루션"}>
             <TableCell>여행사 사내솔루션(ERP+CRM)</TableCell>
             <TableCell>

@@ -15,11 +15,11 @@ export const CustomSection = ({ id, children }: SectionProp) => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex flex-col items-center justify-center w-full ">
       <div id={id}></div>
       <Card
         ref={containerRef}
-        className="container max-w-[1200px] p-8 mt-4 mb-12"
+        className="container max-w-[1200px] p-8  mt-4 mb-12"
       >
         <div
           style={{

@@ -1,5 +1,3 @@
-import { Divider, Typography } from "@mui/material";
-
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -7,19 +5,12 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import ExtraInfoDialog from "src/component/dialog/ExtraInfoDialog";
 import { CustomSectionTitle } from "src/component/SectionTitle";
 import { CustomSection } from "../component/CustomSection";
 
 const AwardSection = () => {
-  const AwardSectionVAProp: AwardSectionVAProp = {};
-  return <AwardSectionView {...AwardSectionVAProp} />;
-};
-
-interface AwardSectionVAProp {}
-const AwardSectionView = ({}: AwardSectionVAProp) => {
   return (
     <CustomSection id={"Award"}>
       <CustomSectionTitle
@@ -48,27 +39,14 @@ const AwardItem = ({
 }: AwardItemProp) => {
   return (
     <>
-      <Typography>
+      <div className="font-semibold">
         {awardName} - {awardGrade}
-      </Typography>
-      <Typography variant="subtitle2">
-        <Stack
-          spacing={1}
-          direction={"row"}
-          alignItems={"center"}
-          sx={{ pl: 1 }}
-        >
+      </div>
+      <div className="text-sm">
+        <div className="flex flex-row items-center gap-1 pl-4 text-sm">
           ㄴ{details}
-          <ExtraInfoDialog
-            dialogTitle={`${awardName} 자격증`}
-            iconType={"prize"}
-          >
-            <Stack
-              spacing={1}
-              direction={"row"}
-              alignItems={"center"}
-              divider={<Divider orientation="vertical" flexItem />}
-            >
+          <ExtraInfoDialog dialogTitle={`${awardName}`} iconType={"prize"}>
+            <div className="flex flex-row items-center gap-1 pl-4 text-sm">
               {awardImg?.map((path) => (
                 <div
                   style={{
@@ -82,16 +60,14 @@ const AwardItem = ({
                     key={path}
                     src={`/images/award/${path}`}
                     layout="fill"
-                    // height={"450px"}
-                    // width={"300px"}
                     alt={"award image"}
                   />
                 </div>
               ))}
-            </Stack>
+            </div>
           </ExtraInfoDialog>
-        </Stack>
-      </Typography>
+        </div>
+      </div>
     </>
   );
 };

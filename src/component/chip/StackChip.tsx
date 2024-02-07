@@ -4,9 +4,10 @@ import Image from "next/image";
 interface StackChipProp {
   title?: string;
   stackList: string[];
+  size?: number;
 }
 
-export const StackChip = ({ title, stackList }: StackChipProp) => {
+export const StackChip = ({ title, stackList, size = 25 }: StackChipProp) => {
   return (
     <div className="mt-2">
       {title && <span className="text-sm"># {title}</span>}
@@ -16,8 +17,8 @@ export const StackChip = ({ title, stackList }: StackChipProp) => {
             <div className="flex flex-row items-center gap-1">
               <Image
                 src={`/icons/${stack.toLowerCase()}.svg`}
-                height={25}
-                width={25}
+                height={size}
+                width={size}
                 alt={stack}
               />
             </div>
