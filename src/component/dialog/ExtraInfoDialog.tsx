@@ -48,12 +48,17 @@ export default function ExtraInfoDialog({
       <Button isIconOnly onPress={onOpen} variant="light" size="sm">
         {Icon}
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose} size={size}>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size={size}
+        onOpenChange={onOpenChange}
+      >
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">
             {dialogTitle}
           </ModalHeader>
-          <ModalBody>{children}</ModalBody>
+          <ModalBody className="p-6 pt-0">{children}</ModalBody>
         </ModalContent>
       </Modal>
     </>

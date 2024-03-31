@@ -20,6 +20,7 @@ const RetrospectivedSectionView = ({}: RetrospectivedSectionVAProp) => {
         }
       />
       <div className="flex flex-col gap-2">
+        <RetrospectivedSection2024Item />
         <RetrospectivedSection2023Item />
         <RetrospectivedSection2022Item />
       </div>
@@ -50,7 +51,7 @@ const RetrospectivedItem = ({
           ㄴ{details}
           {extraDetail && (
             <ExtraInfoDialog dialogTitle={`세부 정보`} iconType={"paper"}>
-              <div className="flex flex-col gap-1 pl-4 text-sm">
+              <div className="flex flex-col gap-1 text-sm">
                 {extraDetail.map((detail) => {
                   return <span>{detail}</span>;
                 })}
@@ -157,6 +158,28 @@ const RetrospectivedSection2023Item = () => {
               "1. Waveform-playlist 오디오 라이브러리 개선(TS/React 지원, 대용량 파일 최적화)",
               "2. AI모델을 위한 데이터 수집 자동화툴 구현(Puppeteer 활용) - 100GB 수집",
               "3. ChakraUI, Framer-motion, TailwindCSS 조합의 프로젝트 런칭",
+            ]}
+          />
+        </>
+      }
+    </YearCard>
+  );
+};
+const RetrospectivedSection2024Item = () => {
+  return (
+    <YearCard year={2024}>
+      {
+        <>
+          <RetrospectivedItem
+            retrospectivedName={"1Q"}
+            oneLineTitle={"좋은 개발자가 되기 위한 비개발적인 준비를 하다"}
+            details={
+              "코드리뷰를 시작하고, 좋은 사수가 되기 위한 공부를 하고, 책 출판을 준비하다"
+            }
+            extraDetail={[
+              "1. 신입 동료와 코드리뷰를 도입해보고, bit bucket를 통한 자동화를 적용해보았다.",
+              "2. 좋은 사수 개발자가 되기 위한 공부를 하고 있다.",
+              "3. 책 출판 제의가 들어와, 그에 대한 준비를 시작했다",
             ]}
           />
         </>
