@@ -39,10 +39,58 @@ const ProjectSectionView = ({}: ProjectSectionVAProp) => {
       >
         <TableHeader>
           {["프로젝트", "소개 / 사용기술", "상세정보"].map((headerItem) => (
-            <TableColumn>{headerItem}</TableColumn>
+            <TableColumn key={headerItem}>{headerItem}</TableColumn>
           ))}
         </TableHeader>
         <TableBody>
+          <TableRow key={"가우디오랩"}>
+            <TableCell>오디오 플랫폼</TableCell>
+            <TableCell>
+              <div>오디오 플랫폼을 통한 다양한 오디오 콘텐츠 제공 서비스</div>
+              <StackChip
+                stackList={[
+                  "React",
+                  "Typescript",
+                  "Next-js",
+                  "shadcn",
+                  "Tailwind",
+                  "AWS",
+                  "Github",
+                ]}
+              />
+            </TableCell>
+
+            <TableCell>
+              <ExtraInfoDialog dialogTitle={"오디오 솔루션"}>
+                <video controls width={"100%"} autoPlay={true}>
+                  <source src={"/video/gaudio_studio.mp4"}></source>
+                </video>
+
+                <Titleli
+                  title={"개발 목표"}
+                  list={[
+                    "다양한 미디어 파일 지원 및 스트리밍 서비스 제공",
+                    "웹 기반 플레이어, 에디터 기능 제공",
+                    "돈을 버는 서비스 구축",
+                  ]}
+                />
+                <Titleli
+                  title={"개발 성과"}
+                  list={[
+                    "무료서비스 -> 유료서비스 전환 성공",
+                    "MAU 20만 달성, 매출 N억 달성",
+                  ]}
+                />
+                <Titleli
+                  title={"내 기여도"}
+                  list={[
+                    "프론트엔드 단독개발 -> 프론트엔드 리드 담당",
+                    "코어 기능 개발(웹 오디오, 플레이어)",
+                  ]}
+                />
+              </ExtraInfoDialog>
+            </TableCell>
+          </TableRow>
           <TableRow key={"티맥스"}>
             <TableCell>BI 솔루션</TableCell>
             <TableCell>

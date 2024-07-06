@@ -171,6 +171,18 @@ const RetrospectivedSection2024Item = () => {
       {
         <>
           <RetrospectivedItem
+            retrospectivedName={"2Q"}
+            oneLineTitle={
+              "프론트엔드리드를 맡아, 시니어 개발자로 나아가고 있다"
+            }
+            details={"사람관리, 일정관리 힘쓰고, 전문화 분야를 찾아가고 있다."}
+            extraDetail={[
+              "1. 테스트코드, 코드리뷰를 하고 있고, 스터디도 진행중이다.",
+              "2. 웹 오디오 전문가의 길을 찾아보고 있다.",
+              "3. 다양한 사이드프로젝트에 도전하고 있다.",
+            ]}
+          />
+          <RetrospectivedItem
             retrospectivedName={"1Q"}
             oneLineTitle={"좋은 개발자가 되기 위한 비개발적인 준비를 하다"}
             details={

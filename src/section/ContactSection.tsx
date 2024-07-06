@@ -67,7 +67,7 @@ const ContactSectionView = ({}: ContactSectionVAProp) => {
           <br />
           <Stack justifyContent={"center"} alignItems={"center"}>
             <Typography variant="subtitle1" gutterBottom component="div">
-              <strong> "같이 일하는 싶은 동료가 되겠습니다"</strong>
+              <strong>유저에게 편리함을 주는 서비스를 만드는 개발자</strong>
             </Typography>
           </Stack>
 
