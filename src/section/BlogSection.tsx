@@ -22,7 +22,7 @@ const BlogSectionView = ({}: BlogSectionVAProp) => {
         <ul style={{ flex: "1", minWidth: "300px" }}>
           <li>
             <strong>Tistory</strong> 는 도서 리뷰부터 개발에 대한 모든 것을
-            씁니다.(총 50만(23.8 기준))
+            씁니다.(총 60만(24.9 기준))
           </li>
         </ul>
         <Stack direction={"row"}>
