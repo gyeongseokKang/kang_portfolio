@@ -157,91 +157,30 @@ const IntroSection = () => {
           subTitle={"편리함을 추구하는 개발자 강경석(Handy)입니다"}
         />
         <div className="flex flex-col flex-wrap w-full justify-evenly">
-          <div className="text-sm font-normal">
-            <strong>
-              가우디오랩에서 프론트엔드 리드 개발자로 일하고 있습니다
-            </strong>
-            <br />
-            가우디오랩에서 B2B, 또는 B2C, 그리고 내부툴을 만들고 있습니다.
-            <br />
-            이전에는 통합 모빌리티 서비스 카찹을 창업하고, BI툴인
-            하이퍼데이터(티맥스소프트)를 만들었습니다.
-            <br />
-            <br />
-            현재는 새로운 기술을 습득하기보다는
-            <strong> 기존 기술로 어떻게 더 편리하게 문제를 해결</strong> 할 수
-            있는지 고민을 하고 있습니다.
-            <br />
-            블로깅을 하는 것을 좋아하고, 기술을 깊게 탐구하고 공유하는 것을
-            좋아합니다.
-            <br />
-            <br />
-            <strong>
-              Web과 App에 전문성을 두고, Backend, Devops를 경험하고 있습니다.
-            </strong>
+          <div className="text-sm font-normal w-full flex flex-col gap-6">
+            <div>
+              가우디오랩에서 프론트엔드 리드로, 가우디오랩의 B2B, 또는 B2C,
+              그리고 내부툴을 만들고 있습니다.
+              <br />
+              이전에는 통합 모빌리티 서비스 카찹을 창업하고, BI툴인
+              하이퍼데이터(티맥스소프트)를 만들었습니다.
+            </div>
+            <div>
+              현재는 웹, 앱을 넘어 백엔드도 경험해보며 풀스택을 추구하고
+              있습니다.
+              <br />
+              이를 위해 supabase, prisma 같은 서비스를 경험해보며 함수형 언어인
+              Elixir도 빠르게 학습중입니다.
+            </div>
+
+            <div>
+              시니어 개발자로써 프로세스 정립에 힘쓰고, 자동화와 AI를 활용한
+              업무에 관심을 가지고 있습니다. <br /> 그와 함께 좋은 팀을 꾸려가는
+              것에 관심이 생기기 시작했네요.
+            </div>
           </div>
         </div>
-        {/* <div className="flex justify-center w-full px-2 ">
-          <Button
-            isIconOnly
-            aria-label="open gmail button"
-            onPress={() => copyEmailToClipboard()}
-          >
-            <Image
-              src={`/icons/gmail.svg`}
-              height={40}
-              width={40}
-              alt={"gmail"}
-            />
-          </Button>
-          <Link
-            href={
-              "https://www.linkedin.com/in/%EA%B2%BD%EC%84%9D-%EA%B0%95-5190751aa/"
-            }
-          >
-            <a target="_blank" style={{ textDecoration: "none" }}>
-              <Button isIconOnlyaria-label="open linkedin button">
-                <Image
-                  src={`/icons/linkedin.svg`}
-                  height={40}
-                  width={40}
-                  alt={"linkedin"}
-                />
-              </Button>
-            </a>
-          </Link>
-          <Link href={"https://open.kakao.com/o/sxdXxTMd"}>
-            <a target="_blank" style={{ textDecoration: "none" }}>
-              <Button isIconOnly aria-label="open kakao button">
-                <Image
-                  src={`/icons/kakao.svg`}
-                  height={40}
-                  width={40}
-                  alt={"kakao"}
-                />
-              </Button>
-            </a>
-          </Link>
-        </div> */}
       </CustomSection>
-      {/* 
-      <Snackbar
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        open={copySuccessSnackBar}
-        autoHideDuration={5000}
-        onClose={closeCopySuccessSnackBar}
-        message="Copy handy.kang.dev@gmail.com"
-        action={
-          <IconButton
-            size="small"
-            aria-label="close"
-            color="inherit"
-            onClick={closeCopySuccessSnackBar}
-          >
-            <CloseIcon fontSize="small" />
-          </IconButton>
-        }
-      /> */}
     </div>
   );
 };

@@ -171,6 +171,18 @@ const RetrospectivedSection2024Item = () => {
       {
         <>
           <RetrospectivedItem
+            retrospectivedName={"4Q"}
+            oneLineTitle={"리드로써 프로세스를 정리하다."}
+            details={
+              "합리적인 프로세스를 만들고, 반복되는 업무를 찾아내서 자동화에 힘쓰다"
+            }
+            extraDetail={[
+              "1. 개발 중인 브라우저 기반 미디어 편집툴을 바탕으로 내부 프로젝트를 진행했다",
+              "2. 코드 리뷰에 대한 프로세스를 확립하고, 지키기 위해 발버둥중이다.",
+              "3. 좋은 사수가 되기 위해 발버둥중이다",
+            ]}
+          />
+          <RetrospectivedItem
             retrospectivedName={"3Q"}
             oneLineTitle={"일정관리와 사람관리의 경계에서 길을 찾아가다"}
             details={
