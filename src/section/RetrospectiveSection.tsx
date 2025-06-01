@@ -20,6 +20,7 @@ const RetrospectivedSectionView = ({}: RetrospectivedSectionVAProp) => {
         }
       />
       <div className="flex flex-col gap-2">
+        <RetrospectivedSection2025Item />
         <RetrospectivedSection2024Item />
         <RetrospectivedSection2023Item />
         <RetrospectivedSection2022Item />
@@ -216,6 +217,38 @@ const RetrospectivedSection2024Item = () => {
               "1. 신입 동료와 코드리뷰를 도입해보고, bit bucket를 통한 자동화를 적용해보았다.",
               "2. 좋은 사수 개발자가 되기 위한 공부를 하고 있다.",
               "3. 책 출판 제의가 들어와, 그에 대한 준비를 시작했다",
+            ]}
+          />
+        </>
+      }
+    </YearCard>
+  );
+};
+const RetrospectivedSection2025Item = () => {
+  return (
+    <YearCard year={2025}>
+      {
+        <>
+          <RetrospectivedItem
+            retrospectivedName={"2Q"}
+            oneLineTitle={
+              "모노레포와 디자인시스템에 신경쓰다"
+            }
+            details={"프로젝트 레포 관리를 위해 모노레포를 도입하고 이를 디자인 시스템에 적용했다"}
+            extraDetail={[
+              "1. AWS CodeArtifact를 사내 패키지를 관리하기 시작했다.",
+              "2. PNPM Workspaces를 통해 모노레포 관리를 시작했다.",
+              "3. 디자인 시스템 구축을 준비하여 프로젝트를 병행진행중이다.",
+            ]}
+          />
+          <RetrospectivedItem
+            retrospectivedName={"1Q"}
+            oneLineTitle={"글쓰기에 힘쓰고, 새로운 기술 습득을 준비하다"}
+            details={
+              "책 퇴고를 마무리하고, 기술 습득(엘릭서) 학습을 본격적으로 시작했다"
+            }
+            extraDetail={[
+              "1. 엘릭서 세미나와 Exercism를 통해 엘릭서 언어를 흡수하고 있다.",
             ]}
           />
         </>
