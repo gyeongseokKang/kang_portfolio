@@ -48,13 +48,13 @@ export const SamplePlayerCard: FC<SamplePlayerCardProps> = ({
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-0">
                 <div className="text-sm font-semibold text-foreground/80">
-                  가우디오랩에서 근무중
+                  쿠팡플레이에서 근무중
                 </div>
                 <div className="mt-2 text-xs text-foreground/80">
-                  프론트엔드 리드
+                  시니어 프론트엔드 엔지니어
                 </div>
                 <div className="text-xs font-medium ">
-                  유저에게 소리를 전달하는 모든 일
+                  Monetization팀에서 글로벌팀과 협업중
                 </div>
               </div>
               <div className="animate-ping">

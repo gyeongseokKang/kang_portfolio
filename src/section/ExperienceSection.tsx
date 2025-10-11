@@ -35,6 +35,28 @@ const ExperienceSection = () => {
           ))}
         </TableHeader>
         <TableBody>
+          <TableRow key={"쿠팡플레이"}>
+            <TableCell>
+              <Companyli
+                name={"쿠팡플레이"}
+                homepageUrl={"https://www.coupangplay.com/"}
+                position={["시니어 프론트엔드 엔지니어"]}
+                period={{
+                  start: "2025/10",
+                  end: new Date(),
+                }}
+              />
+            </TableCell>
+            <TableCell>
+              <Titleli list={["쿠팡플레이 웹, 앱 개발 및 유지보수"]} />
+            </TableCell>
+            <TableCell align="center">
+              <div></div>
+            </TableCell>
+            <TableCell align="center">
+              <div></div>
+            </TableCell>
+          </TableRow>
           <TableRow key={"가우디오랩"}>
             <TableCell>
               <Companyli
@@ -43,7 +65,7 @@ const ExperienceSection = () => {
                 position={["프론트엔드 개발자", "프론트엔드 리드"]}
                 period={{
                   start: "2022/07",
-                  end: new Date(),
+                  end: "2025/09",
                 }}
               />
             </TableCell>

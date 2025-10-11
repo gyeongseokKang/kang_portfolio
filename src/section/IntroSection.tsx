@@ -89,6 +89,7 @@ const IntroSection = () => {
                   <BreadcrumbItem>카찹</BreadcrumbItem>
                   <BreadcrumbItem>티맥스</BreadcrumbItem>
                   <BreadcrumbItem>가우디오랩</BreadcrumbItem>
+                  <BreadcrumbItem>쿠팡플레이</BreadcrumbItem>
                 </Breadcrumbs>
               </Badge>
             </WaveCard>
@@ -159,11 +160,11 @@ const IntroSection = () => {
         <div className="flex flex-col flex-wrap w-full justify-evenly">
           <div className="text-sm font-normal w-full flex flex-col gap-6">
             <div>
-              가우디오랩에서 프론트엔드 리드로, 가우디오랩의 B2B, 또는 B2C,
-              그리고 내부툴을 만들고 있습니다.
+              쿠팡플레이에서 시니어 프론트엔드 엔지니어로 근무하고 있습니다.
               <br />
               이전에는 통합 모빌리티 서비스 카찹을 창업하고, BI툴인
-              하이퍼데이터(티맥스소프트)를 만들었습니다.
+              하이퍼데이터(티맥스소프트)를 만들었습니다. 또한 가우디오랩에서
+              프론트엔드 리드로 다양한 제품을 만들고 유지보수했습니다.
             </div>
             <div>
               현재는 웹, 앱을 넘어 백엔드도 경험해보며 풀스택을 추구하고

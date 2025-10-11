@@ -230,11 +230,23 @@ const RetrospectivedSection2025Item = () => {
       {
         <>
           <RetrospectivedItem
-            retrospectivedName={"2Q"}
-            oneLineTitle={
-              "모노레포와 디자인시스템에 신경쓰다"
+            retrospectivedName={"3Q"}
+            oneLineTitle={"API Developer 사이트를 만들어보다"}
+            details={
+              "기존 레거시를 청산하고, API를 제공하는 User, Admin 툴을 개발했다"
             }
-            details={"프로젝트 레포 관리를 위해 모노레포를 도입하고 이를 디자인 시스템에 적용했다"}
+            extraDetail={[
+              "1. 도규사우러스를 이용해 문서시스템에 대한 기초부터 배포까지 경험했다",
+              "2. 1차 디자인 시스템을 완성하고 이를 실제 프로젝트에 적용해보다",
+              "3. 이직을 마무리하고 업무를 정리했다",
+            ]}
+          />
+          <RetrospectivedItem
+            retrospectivedName={"2Q"}
+            oneLineTitle={"모노레포와 디자인시스템에 신경쓰다"}
+            details={
+              "프로젝트 레포 관리를 위해 모노레포를 도입하고 이를 디자인 시스템에 적용했다"
+            }
             extraDetail={[
               "1. AWS CodeArtifact를 사내 패키지를 관리하기 시작했다.",
               "2. PNPM Workspaces를 통해 모노레포 관리를 시작했다.",
