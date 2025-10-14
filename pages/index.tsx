@@ -31,8 +31,8 @@ const DynamicLazyCertificateSection = dynamic(
     suspense: true,
   }
 );
-const DynamicLazyBlogSection = dynamic(
-  () => import("src/section/BlogSection"),
+const DynamicLazyPublicationSection = dynamic(
+  () => import("src/section/PublicationSection"),
   {
     suspense: true,
   }
@@ -61,7 +61,7 @@ export default function Index() {
         <DynamicLazySkillSection />
         <DynamicLazyAwardSection />
         <DynamicLazyCertificateSection />
-        <DynamicLazyBlogSection />
+        <DynamicLazyPublicationSection />
         <DynamicLazyRetrospectiveSection />
         <DynamicLazyContactSection />
       </Suspense>

@@ -17,8 +17,8 @@ const LinkList = [
   "Skill",
   "Award",
   "Certificate",
+  "Publication",
   "Retrospective",
-  "Blog",
 ];
 
 export default function TopBar() {
