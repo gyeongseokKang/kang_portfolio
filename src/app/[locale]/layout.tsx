@@ -1,7 +1,11 @@
 import { routing } from "@/i18n/routing";
 
+import { AppSidebar } from "@/components/app-sidebar";
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
 import "../globals.css";
 
@@ -23,9 +27,28 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html className="h-full" lang={locale}>
-      <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+    <html className="h-full" lang={locale} suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className="size-full">
+        <ThemeProvider
+          storageKey="handy-portfolio-theme"
+          attribute={"class"}
+          defaultTheme="system"
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider>
+            <SidebarProvider>
+              <AppSidebar />
+              <main className="relative size-full">
+                <SidebarTrigger />
+                <LocaleSwitcher />
+                {children}
+              </main>
+            </SidebarProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
