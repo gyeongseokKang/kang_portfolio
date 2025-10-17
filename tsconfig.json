@@ -1,37 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "removeComments": true, // 컴파일 시 주석 제거
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
     "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@res/*": ["public/res/*"],
-      "@component/*": ["src/component/*"],
-      "@util/*": ["utils/*"]
-    },
-    "jsxImportSource": "@emotion/react", //  for emotion css
-    "types": ["node", "webpack-env"] // for locale에서 webpack, node의 디렉토리 순회
+      "@/*": ["./src/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/_document.tsx",
-    "pages/_app.tsx",
-    "pages/404.js",
-    "src"
-  ],
-  "exclude": ["node_modules", ".next", ".storybook", "storybook-static"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
