@@ -1,10 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { LinkIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import CompanyDetailInfoDialog from "./company-detail-info-dialog";
 
 type ExperienceItem = {
   name: string;
@@ -13,6 +15,7 @@ type ExperienceItem = {
   description: string;
   links?: { title: string; href: string }[];
   thumbnail?: string;
+  id: string;
 };
 
 const containerVariants = {
@@ -37,48 +40,49 @@ export default function ExperienceSection() {
 
   const experiences: ExperienceItem[] = [
     {
+      id: "coupang-play",
       name: t("coupang-play.name"),
       role: "Sr.Frontend Engineer",
       period: "2025.10 - current",
       description: t("coupang-play.description"),
-      links: [{ title: "홈페이지", href: "https://www.coupangplay.com/" }],
+      links: [{ title: "Homepage", href: "https://www.coupangplay.com/" }],
       thumbnail: "/images/company/coupang-play.jpg",
     },
     {
+      id: "gaudiolab",
       name: t("gaudiolab.name"),
       role: "Lead Frontend Engineer",
       period: "2022.07 - 2025.09",
       description: t("gaudiolab.description"),
       links: [
-        { title: "스튜디오", href: "https://studio.gaudiolab.io/" },
+        { title: "Homepage", href: "https://www.gaudiolab.com/" },
         {
-          title: "소개 영상",
-          href: "https://www.youtube.com/watch?v=R_5wSIYxSuc",
+          title: "Youtube",
+          href: "https://www.youtube.com/results?search_query=%EA%B0%80%EC%9A%B0%EB%94%94%EC%98%A4%EB%9E%A9",
         },
       ],
       thumbnail: "/images/company/gaudiolab.png",
     },
     {
+      id: "tmax",
       name: t("tmax.name"),
       role: "Research Engineer",
       period: "2020.02 - 2022.06",
       description: t("tmax.description"),
       thumbnail: "/images/company/tmax.png",
+      links: [{ title: "Homepage", href: "https://www.tmaxsoft.com/" }],
     },
     {
+      id: "carchap",
       name: t("carchap.name"),
       role: "CTO & Co-founder",
       period: "2018.12 - 2020.05",
       description: t("carchap.description"),
       links: [
-        { title: "홈페이지", href: "https://www.carchapapp.com/" },
+        { title: "Homepage", href: "https://www.carchapapp.com/" },
         {
-          title: "Play Store",
-          href: "https://play.google.com/store/apps/details?id=org.techtown.carchap_v11&hl=ko&gl=US",
-        },
-        {
-          title: "App Store",
-          href: "https://apps.apple.com/us/app/%EC%B9%B4%EC%B0%B9-%EC%9D%B4%EB%8F%99%EC%88%98%EB%8B%A8-%ED%86%B5%ED%95%A9-%ED%94%8C%EB%9E%AB%ED%8F%BC/id1506198003",
+          title: "Youtube",
+          href: "https://www.youtube.com/results?search_query=%EC%B9%B4%EC%B0%B9",
         },
       ],
       thumbnail: "/images/company/carchap.png",
@@ -93,7 +97,7 @@ export default function ExperienceSection() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <motion.div className="space-y-2" variants={itemVariants}>
-        <h2 className="text-3xl font-bold">{t("title")}</h2>
+        <h2 className="text-3xl font-bold">Experience</h2>
         <p className="text-muted-foreground">{t("subtitle")}</p>
       </motion.div>
 
@@ -108,6 +112,7 @@ export default function ExperienceSection() {
               <div className="rounded-xl border bg-card text-card-foreground overflow-hidden h-[140px] sm:h-[160px] flex items-center justify-center">
                 {item.thumbnail ? (
                   <Image
+                    quality={100}
                     src={item.thumbnail}
                     alt={item.name}
                     className="h-full w-full object-cover"
@@ -119,8 +124,8 @@ export default function ExperienceSection() {
                 )}
               </div>
 
-              <div className="space-y-2">
-                <div className="flex flex-wrap items-center gap-2">
+              <div className="space-y-2 flex flex-col justify-between h-full py-2">
+                <div className="flex flex-wrap items-baseline gap-2">
                   <h3 className="text-xl font-semibold leading-none">
                     {item.name}
                   </h3>
@@ -141,17 +146,19 @@ export default function ExperienceSection() {
                   {item.description}
                 </p>
 
-                {item.links && item.links.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {item.links.map((l) => (
-                      <Button key={l.href} asChild variant="outline" size="sm">
-                        <Link href={l.href} target="_blank" rel="noreferrer">
-                          {l.title}
-                        </Link>
-                      </Button>
-                    ))}
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-2 pt-2 mt-auto">
+                  {item.links?.map((l) => (
+                    <Button key={l.href} asChild variant="outline" size="sm">
+                      <Link href={l.href} target="_blank" rel="noreferrer">
+                        {l.title} <LinkIcon />
+                      </Link>
+                    </Button>
+                  ))}
+                  <CompanyDetailInfoDialog
+                    company={item.id}
+                    companyLabel={item.name}
+                  />
+                </div>
               </div>
             </div>
             {idx < experiences.length - 1 && <Separator className="mt-6" />}

@@ -3,8 +3,7 @@
     "title": "ㅎㅇ"
   },
   "Experience": {
-    "title": "경험",
-    "subtitle": "최근 경험과 작업들을 요약했어요.",
+    "subtitle": "편리함을 찾고, 불편함을 제거하는 제품을 만듭니다.",
     "coupang-play": {
       "name": "쿠팡플레이",
       "description": "쿠팡플레이 웹·앱 개발 및 유지보수"
@@ -20,6 +19,9 @@
     "carchap": {
       "name": "카찹",
       "description": "모빌리티 서비스를 위한 안드로이드 앱 기획·개발, 서비스 목표 수립과 일정 조율."
+    },
+    "detail": {
+      "description": "공개된 범위 내에서 작업의 결과물입니다."
     }
   }
 }

@@ -3,8 +3,7 @@
     "title": "Hello world!"
   },
   "Experience": {
-    "title": "Experience",
-    "subtitle": "Recently, I have been working on:",
+    "subtitle": "I make products that reduce inconvenience and find convenience.",
     "coupang-play": {
       "name": "Coupang Play",
       "description": "Development and maintenance of the Coupang Play web and app."
@@ -20,6 +19,9 @@
     "carchap": {
       "name": "Carchap",
       "description": "Planning and development of Android app for mobility services. Service goal setting and scheduling."
+    },
+    "detail": {
+      "description": "The results of the work are within the scope of disclosure."
     }
   }
 }
