@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Award,
   BookOpen,
@@ -20,7 +22,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useMajorSectionId } from "@/hooks/use-major-section-id";
+import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useMemo } from "react";
+import { AuroraText } from "./ui/aurora-text";
 
 const navItems = [
   { title: "Experience", url: "#Experience", icon: Briefcase },
@@ -33,10 +40,16 @@ const navItems = [
 ] as const;
 
 export function AppSidebar() {
+  const sectionIds = useMemo(
+    () => navItems.map((n) => n.url.replace(/^#/, "")),
+    []
+  );
+  const activeId = useMajorSectionId(sectionIds);
+
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-2 justify-evenly">
+        <div className="flex items-center gap-2 justify-evenly pt-2">
           <Image
             className="rounded-full"
             src="/images/intro/logo.jpeg"
@@ -55,16 +68,27 @@ export function AppSidebar() {
           <SidebarGroupLabel>Portfolio</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {navItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeId === item.url.slice(1);
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <Link href={item.url}>
+                        <item.icon
+                          className={cn(
+                            isActive && "text-primary font-semibold"
+                          )}
+                        />
+                        {isActive ? (
+                          <AuroraText>{item.title}</AuroraText>
+                        ) : (
+                          <span>{item.title}</span>
+                        )}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

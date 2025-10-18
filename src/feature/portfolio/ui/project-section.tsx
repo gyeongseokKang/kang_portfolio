@@ -11,7 +11,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Lens } from "@/components/ui/lens";
-import { Separator } from "@/components/ui/separator";
 import { LinkIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -181,8 +180,6 @@ export default function ProjectSection() {
           <CarouselNext />
         </Carousel>
       </div>
-
-      <Separator className="mt-4" />
     </motion.section>
   );
 }

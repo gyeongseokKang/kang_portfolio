@@ -90,6 +90,7 @@ export default function ExperienceSection() {
   ];
   return (
     <motion.section
+      id="Experience"
       className="space-y-8"
       variants={containerVariants}
       initial="hidden"
