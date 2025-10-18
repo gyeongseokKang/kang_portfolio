@@ -45,6 +45,11 @@
   },
   "Activity": {
     "subtitle": "오픈소스 / 출판 / 강의 등 외부 활동",
+    "blog": {
+      "description": "은 도서 리뷰부터 개발에 대한 모든 내용을 다룹니다.",
+      "cta": "블로그 바로가기",
+      "iframeTitle": "티스토리 블로그"
+    },
     "opensource": {
       "wavesurfer": "버그 수정 및 컨트리뷰션",
       "handy-snippets": "내부용 커스텀 스니펫 공개, VSCode Extension"
@@ -66,7 +71,8 @@
     "group": {
       "opensource": "OpenSource",
       "publication": "Publication",
-      "lecture": "Lecture"
+      "lecture": "Lecture",
+      "blog": "Dev Blog"
     }
   }
 }

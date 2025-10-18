@@ -45,6 +45,11 @@
   },
   "Activity": {
     "subtitle": "Open source, publication and lectures",
+    "blog": {
+      "description": "covers everything from book reviews to development topics.",
+      "cta": "Go to blog",
+      "iframeTitle": "tistory blog"
+    },
     "opensource": {
       "wavesurfer": "Bug fixing and contribution",
       "handy-snippets": "Custom snippets for internal use, VSCode Extension"
@@ -66,7 +71,8 @@
     "group": {
       "opensource": "OpenSource",
       "publication": "Publication",
-      "lecture": "Lecture"
+      "lecture": "Lecture",
+      "blog": "Dev Blog"
     }
   }
 }

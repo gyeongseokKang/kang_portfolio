@@ -102,7 +102,7 @@ export default function ExperienceSection() {
         <p className="text-muted-foreground">{t("subtitle")}</p>
       </motion.div>
 
-      <div className="space-y-10">
+      <div className="space-y-6">
         {experiences.map((item, idx) => (
           <motion.div
             key={item.name}
@@ -113,10 +113,11 @@ export default function ExperienceSection() {
               <div className="rounded-xl border bg-card text-card-foreground overflow-hidden h-[140px] sm:h-[160px] flex items-center justify-center">
                 {item.thumbnail ? (
                   <Image
-                    quality={100}
+                    unoptimized
+                    priority
                     src={item.thumbnail}
                     alt={item.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     width={220}
                     height={140}
                   />
@@ -125,7 +126,7 @@ export default function ExperienceSection() {
                 )}
               </div>
 
-              <div className="space-y-2 flex flex-col justify-between h-full py-2">
+              <div className="space-y-1 flex flex-col justify-between h-full py-2">
                 <div className="flex flex-wrap items-baseline gap-2">
                   <h3 className="text-xl font-semibold leading-none">
                     {item.name}

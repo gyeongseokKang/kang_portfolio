@@ -11,8 +11,7 @@ import {
   FileText,
   GitBranch,
   Link as LinkIcon,
-  MinusIcon,
-  PlusIcon,
+  Rss,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -71,6 +70,14 @@ export default function ActivitySection() {
     },
   ];
 
+  const blogs = [
+    {
+      title: "Tistory",
+      desc: t("blog.description"),
+      href: "https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C",
+    },
+  ];
+
   return (
     <motion.section
       id="Activity"
@@ -88,25 +95,17 @@ export default function ActivitySection() {
       <motion.div variants={itemVariants}>
         <Accordion
           className="w-full"
-          collapsible
-          defaultValue="opensource"
-          type="single"
+          defaultValue={["opensource", "publication"]}
+          type="multiple"
         >
-          <AccordionItem
-            value="opensource"
-            className="overflow-hidden border bg-background rounded-lg"
-          >
-            <AccordionTrigger className="group px-4 hover:no-underline [&>svg]:hidden">
+          <AccordionItem value="opensource">
+            <AccordionTrigger>
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-3">
                   <GitBranch className="size-4 text-muted-foreground" />
-                  <div className="text-left font-semibold">
+                  <div className="text-left font-semibold text-base">
                     {t("group.opensource")}
                   </div>
-                </div>
-                <div className="relative size-4 shrink-0">
-                  <PlusIcon className="absolute inset-0 size-4 text-muted-foreground transition-opacity duration-200 group-data-[state=open]:opacity-0" />
-                  <MinusIcon className="absolute inset-0 size-4 text-muted-foreground opacity-0 transition-opacity duration-200 group-data-[state=open]:opacity-100" />
                 </div>
               </div>
             </AccordionTrigger>
@@ -140,21 +139,14 @@ export default function ActivitySection() {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem
-            value="publication"
-            className="overflow-hidden border bg-background rounded-lg mt-4"
-          >
-            <AccordionTrigger className="group px-4 hover:no-underline [&>svg]:hidden">
+          <AccordionItem value="publication">
+            <AccordionTrigger>
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-3">
                   <FileText className="size-4 text-muted-foreground" />
-                  <div className="text-left font-semibold">
+                  <div className="text-left font-semibold text-base">
                     {t("group.publication")}
                   </div>
-                </div>
-                <div className="relative size-4 shrink-0">
-                  <PlusIcon className="absolute inset-0 size-4 text-muted-foreground transition-opacity duration-200 group-data-[state=open]:opacity-0" />
-                  <MinusIcon className="absolute inset-0 size-4 text-muted-foreground opacity-0 transition-opacity duration-200 group-data-[state=open]:opacity-100" />
                 </div>
               </div>
             </AccordionTrigger>
@@ -187,21 +179,14 @@ export default function ActivitySection() {
               </ul>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem
-            value="lecture"
-            className="overflow-hidden border bg-background rounded-lg mt-4"
-          >
-            <AccordionTrigger className="group px-4 hover:no-underline [&>svg]:hidden">
+          <AccordionItem value="lecture">
+            <AccordionTrigger>
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Clapperboard className="size-4 text-muted-foreground" />
-                  <div className="text-left font-semibold">
+                  <div className="text-left font-semibold text-base">
                     {t("group.lecture")}
                   </div>
-                </div>
-                <div className="relative size-4 shrink-0">
-                  <PlusIcon className="absolute inset-0 size-4 text-muted-foreground transition-opacity duration-200 group-data-[state=open]:opacity-0" />
-                  <MinusIcon className="absolute inset-0 size-4 text-muted-foreground opacity-0 transition-opacity duration-200 group-data-[state=open]:opacity-100" />
                 </div>
               </div>
             </AccordionTrigger>
@@ -232,6 +217,51 @@ export default function ActivitySection() {
                   </li>
                 ))}
               </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="blog">
+            <AccordionTrigger>
+              <div className="flex w-full items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Rss className="size-4 text-muted-foreground" />
+                  <div className="text-left font-semibold text-base">
+                    {t("group.blog")}
+                  </div>
+                </div>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="px-6 pb-4 space-y-4">
+              <ul className="list-disc pl-4 space-y-2">
+                {blogs.map((it) => (
+                  <li
+                    key={it.title}
+                    className="flex items-center gap-2 text-sm"
+                  >
+                    <span className="flex-1">
+                      <span className="font-medium">{it.title}</span>
+                      <span className="mx-2">|</span>
+                      <span className="text-secondary-foreground">
+                        {it.desc}
+                      </span>
+                    </span>
+                    {it.href && (
+                      <Link
+                        href={it.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-muted-foreground hover:text-foreground"
+                      >
+                        <LinkIcon className="size-4" />
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <iframe
+                title={t("blog.iframeTitle")}
+                src="https://all-dev-kang.tistory.com/category/%EA%B0%9C%EB%B0%9C"
+                className="w-full min-h-[400px] rounded-md border"
+              />
             </AccordionContent>
           </AccordionItem>
         </Accordion>

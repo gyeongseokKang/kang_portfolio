@@ -17,7 +17,7 @@ type StackChipProps = {
 export function StackChip({ stackList, size = 22, max = 5 }: StackChipProps) {
   const items = stackList.slice(0, max);
   return (
-    <div className="flex flex-row flex-wrap items-center gap-1.5 justify-between">
+    <div className="flex flex-row flex-wrap items-center gap-1.5 justify-start">
       <TooltipProvider>
         {items.map((stack) => (
           <Tooltip key={stack}>

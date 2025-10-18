@@ -33,7 +33,7 @@ const navItems = [
   { title: "Experience", url: "#Experience", icon: Briefcase },
   { title: "Project", url: "#Project", icon: FolderKanban },
   { title: "Activity", url: "#Activity", icon: Wrench },
-  { title: "Award", url: "#Award", icon: Trophy },
+  { title: "Achievements", url: "#Achievements", icon: Trophy },
   { title: "Certificate", url: "#Certificate", icon: Award },
   { title: "Publication", url: "#Publication", icon: BookOpen },
   { title: "Retrospective", url: "#Retrospective", icon: History },

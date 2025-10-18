@@ -14,7 +14,6 @@ import { Lens } from "@/components/ui/lens";
 import { LinkIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import Link from "next/link";
 
 export type ProjectItem = {
@@ -130,13 +129,13 @@ export default function ProjectSection() {
         <p className="text-muted-foreground">{t("subtitle")}</p>
       </motion.div>
 
-      <div className="relative">
-        <Carousel className="mx-auto w-full max-w-6xl">
-          <CarouselContent className="-ml-2 sm:-ml-4">
+      <div>
+        <Carousel className="mx-auto w-full ">
+          <CarouselContent>
             {projects.map((p) => (
               <CarouselItem
                 key={p.id}
-                className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3"
+                className="sm:basis-1/2 lg:basis-1/3 max-w-svw"
               >
                 <motion.div variants={itemVariants}>
                   <Card>
@@ -154,20 +153,20 @@ export default function ProjectSection() {
                         </Button>
                       )}
                     </CardHeader>
-                    <CardContent className="space-y-2">
+                    <CardContent className="space-y-2 w-full ">
                       <div className="overflow-hidden rounded-xl border bg-muted/20">
                         <Lens>
-                          <Image
+                          <img
                             src={p.thumbnail || "/icons/amplify.svg"}
                             alt={p.title}
                             className="w-full object-contain aspect-video"
-                            width={230}
-                            height={180}
                           />
                         </Lens>
                       </div>
-                      <div className="text-sm leading-relaxed min-h-20 text-secondary-foreground">
-                        {p.description}
+                      <div className="h-20 relative">
+                        <span className="w-full text-sm text-wrap text-secondary-foreground absolute top-0">
+                          {p.description}
+                        </span>
                       </div>
                       <StackChip stackList={p.stacks} max={6} />
                     </CardContent>
