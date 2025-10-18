@@ -1,6 +1,7 @@
 import { routing } from "@/i18n/routing";
 
 import { AppSidebar } from "@/components/app-sidebar";
+import { BottomDock } from "@/components/bottom-dock";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -56,6 +57,9 @@ export default async function LocaleLayout({
                 </div>
                 <SidebarTrigger />
                 <ScrollArea type="always">{children}</ScrollArea>
+                <div className="fixed bottom-2 right-2 z-50 flex gap-2 ">
+                  <BottomDock />
+                </div>
               </main>
             </SidebarProvider>
           </NextIntlClientProvider>
