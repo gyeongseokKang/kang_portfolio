@@ -2,6 +2,7 @@ import { routing } from "@/i18n/routing";
 
 import { AppSidebar } from "@/components/app-sidebar";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -43,7 +44,10 @@ export default async function LocaleLayout({
               <AppSidebar />
               <main className="relative size-full">
                 <SidebarTrigger />
-                <LocaleSwitcher />
+                <div className="absolute top-2 right-2 space-x-2">
+                  <AnimatedThemeToggler />
+                  <LocaleSwitcher />
+                </div>
                 {children}
               </main>
             </SidebarProvider>

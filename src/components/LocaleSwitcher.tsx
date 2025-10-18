@@ -17,25 +17,23 @@ export function LocaleSwitcher() {
   const locale = useLocale();
 
   return (
-    <div className="absolute top-2 right-2">
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">
-            <MdGTranslate />
-            <span className="capitalize">{locale}</span>
-            <span className="sr-only">Change language</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="max-w-20">
-          {LOCALES.map((item) => (
-            <Link href={item} className="capitalize" key={item}>
-              <DropdownMenuCheckboxItem checked={locale === item}>
-                {item}
-              </DropdownMenuCheckboxItem>
-            </Link>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline">
+          <MdGTranslate />
+          <span className="capitalize">{locale}</span>
+          <span className="sr-only">Change language</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="max-w-20">
+        {LOCALES.map((item) => (
+          <Link href={item} className="capitalize" key={item}>
+            <DropdownMenuCheckboxItem checked={locale === item}>
+              {item}
+            </DropdownMenuCheckboxItem>
+          </Link>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

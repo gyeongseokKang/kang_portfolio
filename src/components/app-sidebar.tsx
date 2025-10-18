@@ -1,11 +1,11 @@
 import {
-  Briefcase,
-  FolderKanban,
-  Wrench,
-  Trophy,
   Award,
   BookOpen,
+  Briefcase,
+  FolderKanban,
   History,
+  Trophy,
+  Wrench,
 } from "lucide-react";
 
 import {
@@ -20,7 +20,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 import Image from "next/image";
 
 const navItems = [
@@ -71,12 +70,9 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <div className="flex gap-2 justify-between">
-          <div className="text-xs text-muted-foreground">
-            copyright © {new Date().getFullYear()} Handy Kang. <br />
-            All rights reserved.
-          </div>
-          <ThemeSwitcher />
+        <div className="text-xs text-muted-foreground">
+          copyright © {new Date().getFullYear()} Handy Kang. <br />
+          All rights reserved.
         </div>
       </SidebarFooter>
     </Sidebar>
