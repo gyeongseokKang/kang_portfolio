@@ -23,5 +23,24 @@
     "detail": {
       "description": "공개된 범위 내에서 작업의 결과물입니다."
     }
+  },
+  "Project": {
+    "subtitle": "신기술 + 좋은 옛기술을 통해 프로젝트를 만들어갑니다.",
+    "portfolio-site": {
+      "name": "개인 포트폴리오 사이트",
+      "description": "Next.js + shadcn/ui 기반의 다국어 포트폴리오 사이트."
+    },
+    "travel-erp": {
+      "name": "여행사 ERP+CRM",
+      "description": "MS Access 기반 시스템의 웹 마이그레이션 + 예약 사이트 제공"
+    },
+    "golf-lesson-platform": {
+      "name": "골프 레슨 플랫폼",
+      "description": "골프 레슨 서비스 및 회원관리 플랫폼."
+    },
+    "dr-folio": {
+      "name": "금융 포트폴리오 플랫폼",
+      "description": "금융공학 모델 + AI를 이용한 최고의 포트폴리오 생성·추천 서비스."
+    }
   }
 }

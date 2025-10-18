@@ -23,5 +23,24 @@
     "detail": {
       "description": "The results of the work are within the scope of disclosure."
     }
+  },
+  "Project": {
+    "subtitle": "I create projects using new and good old technologies.",
+    "portfolio-site": {
+      "name": "Personal Portfolio Site",
+      "description": "Next.js + shadcn/ui based multilingual portfolio site."
+    },
+    "travel-erp": {
+      "name": "Travel Agency ERP+CRM",
+      "description": "Web migration of MS Access based system + Reservation site support"
+    },
+    "golf-lesson-platform": {
+      "name": "Golf Lesson Platform",
+      "description": "Golf lesson service and membership management platform."
+    },
+    "dr-folio": {
+      "name": "Financial Platform",
+      "description": "Financial engineering model + AI to create the best portfolio creation and recommendation"
+    }
   }
 }
