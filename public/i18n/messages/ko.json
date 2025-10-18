@@ -42,5 +42,31 @@
       "name": "금융 포트폴리오 플랫폼",
       "description": "금융공학 모델 + AI를 이용한 최고의 포트폴리오 생성·추천 서비스."
     }
+  },
+  "Activity": {
+    "subtitle": "오픈소스 / 출판 / 강의 등 외부 활동",
+    "opensource": {
+      "wavesurfer": "버그 수정 및 컨트리뷰션",
+      "handy-snippets": "내부용 커스텀 스니펫 공개, VSCode Extension"
+    },
+    "publication": {
+      "graduation-paper": {
+        "title": "GAN 모델과 DNN 모델을 활용한 Anomaly Detection 연구",
+        "desc": "졸업 논문"
+      },
+      "book": {
+        "title": "리액트, Next.js로 완성하는 프론트엔드",
+        "desc": "도서 출판"
+      }
+    },
+    "lecture": {
+      "title": "도서 출판 외 20가지 강의 시리즈",
+      "desc": "저자 직강"
+    },
+    "group": {
+      "opensource": "OpenSource",
+      "publication": "Publication",
+      "lecture": "Lecture"
+    }
   }
 }

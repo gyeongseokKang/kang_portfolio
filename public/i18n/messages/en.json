@@ -42,5 +42,31 @@
       "name": "Financial Platform",
       "description": "Financial engineering model + AI to create the best portfolio creation and recommendation"
     }
+  },
+  "Activity": {
+    "subtitle": "Open source, publication and lectures",
+    "opensource": {
+      "wavesurfer": "Bug fixing and contribution",
+      "handy-snippets": "Custom snippets for internal use, VSCode Extension"
+    },
+    "publication": {
+      "graduation-paper": {
+        "title": "Research on Anomaly Detection using GAN model and DNN model",
+        "desc": "Graduation thesis"
+      },
+      "book": {
+        "title": "리액트, Next.js로 완성하는 프론트엔드",
+        "desc": "Book publication"
+      }
+    },
+    "lecture": {
+      "title": "20 Lecture Series Excluding Textbook Publication",
+      "desc": "Lecture series"
+    },
+    "group": {
+      "opensource": "OpenSource",
+      "publication": "Publication",
+      "lecture": "Lecture"
+    }
   }
 }

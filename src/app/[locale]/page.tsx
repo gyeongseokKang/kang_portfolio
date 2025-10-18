@@ -1,3 +1,4 @@
+import ActivitySection from "@/feature/portfolio/ui/activity-section";
 import ExperienceSection from "@/feature/portfolio/ui/experience-section";
 import HeroSection from "@/feature/portfolio/ui/hero-section";
 import ProjectSection from "@/feature/portfolio/ui/project-section";
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <ExperienceSection />
       <ProjectSection />
+      <ActivitySection />
     </div>
   );
 }

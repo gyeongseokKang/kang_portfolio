@@ -32,7 +32,7 @@ import { AuroraText } from "./ui/aurora-text";
 const navItems = [
   { title: "Experience", url: "#Experience", icon: Briefcase },
   { title: "Project", url: "#Project", icon: FolderKanban },
-  { title: "Skill", url: "#Skill", icon: Wrench },
+  { title: "Activity", url: "#Activity", icon: Wrench },
   { title: "Award", url: "#Award", icon: Trophy },
   { title: "Certificate", url: "#Certificate", icon: Award },
   { title: "Publication", url: "#Publication", icon: BookOpen },
