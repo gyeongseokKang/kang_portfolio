@@ -74,5 +74,8 @@
       "lecture": "Lecture",
       "blog": "Dev Blog"
     }
+  },
+  "Achievements": {
+    "subtitle": "수상 및 자격증"
   }
 }

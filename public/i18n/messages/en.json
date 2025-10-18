@@ -74,5 +74,8 @@
       "lecture": "Lecture",
       "blog": "Dev Blog"
     }
+  },
+  "Achievements": {
+    "subtitle": "Awards & Certifications"
   }
 }
