@@ -39,7 +39,7 @@ export default function CompanyDetailInfoDialog({
     carchap: [
       {
         src: "/video/carchap_service.mp4",
-        alt: "Carchap - Detail 1 ",
+        alt: "Carchap - video ",
         tag: ["Carchap", "Mobile App", "Transportation"],
       },
       {
@@ -82,6 +82,11 @@ export default function CompanyDetailInfoDialog({
       },
     ],
     gaudiolab: [
+      {
+        src: "/video/gaudio_studio.mp4",
+        alt: "Gaudio Lab - video ",
+        tag: ["Gaudio Studio", "Web Media Editor", "Audio Processing"],
+      },
       {
         src: "/images/company/gaudiolab-detail-1.gif",
         alt: "Gaudio Lab - Detail 1 ",
@@ -146,6 +151,7 @@ export default function CompanyDetailInfoDialog({
                       controls
                       autoPlay
                       muted
+                      loop
                       width={400}
                     />
                   ) : (
