@@ -77,6 +77,7 @@ export const AnimatedThemeToggler = ({
       ref={buttonRef}
       onClick={toggleTheme}
       variant={"outline"}
+      size={"sm"}
       className={cn(className)}
       {...props}
     >

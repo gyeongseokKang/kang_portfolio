@@ -44,7 +44,7 @@ export default async function LocaleLayout({
             <SidebarProvider>
               <AppSidebar />
               <main className="relative size-full">
-                <div className="fixed top-2 right-2 z-50 space-x-2">
+                <div className="fixed top-2 right-2 z-50 flex gap-2 ">
                   <AnimatedThemeToggler />
                   <LocaleSwitcher />
                 </div>
