@@ -9,7 +9,16 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
+import { Metadata } from "next/types";
 import "../globals.css";
+
+export const metadata: Metadata = {
+  title: "Handy Portfolio",
+  description: "Handy Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -30,9 +39,6 @@ export default async function LocaleLayout({
 
   return (
     <html className="h-full" lang={locale} suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className="size-full">
         <ThemeProvider
           storageKey="handy-portfolio-theme"

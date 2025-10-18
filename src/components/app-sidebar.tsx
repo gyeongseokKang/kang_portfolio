@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Award,
-  BookOpen,
-  Briefcase,
-  FolderKanban,
-  History,
-  Trophy,
-  Wrench,
-} from "lucide-react";
+import { Briefcase, FolderKanban, History, Trophy, Wrench } from "lucide-react";
 
 import {
   Sidebar,
@@ -34,8 +26,6 @@ const navItems = [
   { title: "Project", url: "#Project", icon: FolderKanban },
   { title: "Activity", url: "#Activity", icon: Wrench },
   { title: "Achievements", url: "#Achievements", icon: Trophy },
-  { title: "Certificate", url: "#Certificate", icon: Award },
-  { title: "Publication", url: "#Publication", icon: BookOpen },
   { title: "Retrospective", url: "#Retrospective", icon: History },
 ] as const;
 
