@@ -71,7 +71,13 @@ export function AppSidebar() {
               {navItems.map((item) => {
                 const isActive = activeId === item.url.slice(1);
                 return (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuItem
+                    key={item.title}
+                    className={cn(
+                      "transition-all duration-300 ease-out will-change-transform",
+                      isActive ? "translate-x-2" : "translate-x-0"
+                    )}
+                  >
                     <SidebarMenuButton asChild>
                       <Link href={item.url}>
                         <item.icon
