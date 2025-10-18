@@ -3,6 +3,7 @@ import { routing } from "@/i18n/routing";
 import { AppSidebar } from "@/components/app-sidebar";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -48,7 +49,7 @@ export default async function LocaleLayout({
                   <AnimatedThemeToggler />
                   <LocaleSwitcher />
                 </div>
-                {children}
+                <ScrollArea type="always">{children}</ScrollArea>
               </main>
             </SidebarProvider>
           </NextIntlClientProvider>
