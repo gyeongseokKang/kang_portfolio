@@ -1,5 +1,25 @@
 {
   "HomePage": {
     "title": "ㅎㅇ"
+  },
+  "Experience": {
+    "title": "경험",
+    "subtitle": "최근 경험과 작업들을 요약했어요.",
+    "coupang-play": {
+      "name": "쿠팡플레이",
+      "description": "쿠팡플레이 웹·앱 개발 및 유지보수"
+    },
+    "gaudiolab": {
+      "name": "가우디오랩",
+      "description": "AI 모델을 활용한 웹앱 및 오디오 데이터 툴 개발. 사용자를 위한 오디오 경험 제공 서비스."
+    },
+    "tmax": {
+      "name": "티맥스티베로",
+      "description": "분석 추천 화면/엔진 개발, No-code 통계 분석 툴, 대시보드/차트 등 데이터 시각화 구현."
+    },
+    "carchap": {
+      "name": "카찹",
+      "description": "모빌리티 서비스를 위한 안드로이드 앱 기획·개발, 서비스 목표 수립과 일정 조율."
+    }
   }
 }
