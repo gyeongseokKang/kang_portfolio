@@ -16,6 +16,7 @@ import {
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import SectionLayout from "./section-layout";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -79,19 +80,7 @@ export default function ActivitySection() {
   ];
 
   return (
-    <motion.section
-      id="Activity"
-      className="space-y-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <motion.div className="space-y-2" variants={itemVariants}>
-        <h2 className="text-3xl font-bold">{"Activity"}</h2>
-        <p className="text-muted-foreground">{t("subtitle")}</p>
-      </motion.div>
-
+    <SectionLayout id="Activity" title="Activity" description={t("subtitle")}>
       <motion.div variants={itemVariants}>
         <Accordion
           className="w-full"
@@ -266,6 +255,6 @@ export default function ActivitySection() {
           </AccordionItem>
         </Accordion>
       </motion.div>
-    </motion.section>
+    </SectionLayout>
   );
 }

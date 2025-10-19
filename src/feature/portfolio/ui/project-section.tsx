@@ -15,6 +15,7 @@ import { LinkIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import SectionLayout from "./section-layout";
 
 export type ProjectItem = {
   id: string;
@@ -24,14 +25,6 @@ export type ProjectItem = {
   stacks: string[]; // can be many, UI shows top 5
   detailUrl?: string;
   link?: string;
-};
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
-  },
 };
 
 const itemVariants = {
@@ -116,19 +109,7 @@ export default function ProjectSection() {
   ];
 
   return (
-    <motion.section
-      id="Project"
-      className="space-y-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <motion.div className="space-y-2" variants={itemVariants}>
-        <h2 className="text-3xl font-bold">Projects</h2>
-        <p className="text-muted-foreground">{t("subtitle")}</p>
-      </motion.div>
-
+    <SectionLayout id="Project" title="Project" description={t("subtitle")}>
       <div>
         <Carousel className="mx-auto w-full ">
           <CarouselContent>
@@ -179,6 +160,6 @@ export default function ProjectSection() {
           <CarouselNext />
         </Carousel>
       </div>
-    </motion.section>
+    </SectionLayout>
   );
 }

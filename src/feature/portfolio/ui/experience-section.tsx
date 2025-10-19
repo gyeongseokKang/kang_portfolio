@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import CompanyDetailInfoDialog from "./company-detail-info-dialog";
+import SectionLayout from "./section-layout";
 
 type ExperienceItem = {
   name: string;
@@ -16,14 +17,6 @@ type ExperienceItem = {
   links?: { title: string; href: string }[];
   thumbnail?: string;
   id: string;
-};
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
-  },
 };
 
 const itemVariants = {
@@ -89,19 +82,11 @@ export default function ExperienceSection() {
     },
   ];
   return (
-    <motion.section
+    <SectionLayout
       id="Experience"
-      className="space-y-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      title="Experience"
+      description={t("subtitle")}
     >
-      <motion.div className="space-y-2" variants={itemVariants}>
-        <h2 className="text-3xl font-bold">Experience</h2>
-        <p className="text-muted-foreground">{t("subtitle")}</p>
-      </motion.div>
-
       <div className="space-y-6">
         {experiences.map((item, idx) => (
           <motion.div
@@ -167,6 +152,6 @@ export default function ExperienceSection() {
           </motion.div>
         ))}
       </div>
-    </motion.section>
+    </SectionLayout>
   );
 }

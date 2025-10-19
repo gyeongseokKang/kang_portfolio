@@ -21,26 +21,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { BadgeCheck, Image as ImageIcon, Trophy } from "lucide-react";
-import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, easing: [0.22, 1, 0.36, 1] },
-  },
-};
+import SectionLayout from "./section-layout";
 
 export default function AchievementsSection() {
   const t = useTranslations("Achievements");
@@ -133,181 +116,169 @@ export default function AchievementsSection() {
   ];
 
   return (
-    <motion.section
+    <SectionLayout
       id="Achievements"
-      className="space-y-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      title="Achievements"
+      description={t("subtitle")}
     >
-      <motion.div className="space-y-2" variants={itemVariants}>
-        <h2 className="text-3xl font-bold">Achievements</h2>
-        <p className="text-muted-foreground">{t("subtitle")}</p>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <Accordion className="w-full" defaultValue={["awards"]} type="multiple">
-          <AccordionItem value="awards">
-            <AccordionTrigger>
-              <div className="flex w-full items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Trophy className="size-4 text-muted-foreground" />
-                  <div className="text-left font-semibold text-base">
-                    Awards
-                  </div>
-                </div>
+      <Accordion className="w-full" defaultValue={["awards"]} type="multiple">
+        <AccordionItem value="awards">
+          <AccordionTrigger>
+            <div className="flex w-full items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Trophy className="size-4 text-muted-foreground" />
+                <div className="text-left font-semibold text-base">Awards</div>
               </div>
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-4 space-y-6">
-              {awards.map((year) => (
-                <div key={year.year} className="space-y-2">
-                  <div className="text-sm font-semibold text-muted-foreground">
-                    {year.year}
-                  </div>
-                  <ul className="list-disc pl-4 space-y-2">
-                    {year.entries.map((e, idx) => (
-                      <li key={idx} className="text-sm">
-                        <div className="flex items-start justify-between gap-2">
-                          <div className="flex-1">
-                            <span className="font-medium">{e.name}</span>
-                            <span className="mx-2">-</span>
-                            <span className="font-medium">{e.grade}</span>
-                            <div className="pl-4 text-secondary-foreground">
-                              ㄴ {e.details}
-                            </div>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent className="px-6 pb-4 space-y-6">
+            {awards.map((year) => (
+              <div key={year.year} className="space-y-2">
+                <div className="text-sm font-semibold text-muted-foreground">
+                  {year.year}
+                </div>
+                <ul className="list-disc pl-4 space-y-2">
+                  {year.entries.map((e, idx) => (
+                    <li key={idx} className="text-sm">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex-1">
+                          <span className="font-medium">{e.name}</span>
+                          <span className="mx-2">-</span>
+                          <span className="font-medium">{e.grade}</span>
+                          <div className="pl-4 text-secondary-foreground">
+                            ㄴ {e.details}
                           </div>
-                          {e.images && e.images.length > 0 && (
-                            <Dialog>
-                              <DialogTrigger className="inline-flex items-center text-muted-foreground hover:text-foreground text-xs px-2 py-1 border rounded-md">
-                                <ImageIcon className="size-4" />
-                                <span className="ml-1">View</span>
-                              </DialogTrigger>
-                              <DialogContent className="sm:max-w-[520px] ">
-                                <DialogHeader>
-                                  <DialogTitle>{e.name}</DialogTitle>
-                                </DialogHeader>
-                                {e.images.length > 1 ? (
-                                  <div className="w-full flex justify-center">
-                                    <Carousel className="w-10/12">
-                                      <CarouselContent>
-                                        {e.images.map((img) => (
-                                          <CarouselItem
-                                            key={img}
-                                            className="w-10/12"
-                                          >
-                                            <div className="relative  aspect-[4/3]">
-                                              <Image
-                                                src={`/images/award/${img}`}
-                                                alt={e.name}
-                                                fill
-                                                className="object-contain"
-                                                sizes="(max-width: 768px) 90vw, 700px"
-                                              />
-                                            </div>
-                                          </CarouselItem>
-                                        ))}
-                                      </CarouselContent>
-                                      <CarouselPrevious />
-                                      <CarouselNext />
-                                    </Carousel>
-                                  </div>
-                                ) : (
-                                  <div className="relative w-full aspect-[4/3]">
-                                    <Image
-                                      src={`/images/award/${e.images[0]}`}
-                                      alt={e.name}
-                                      fill
-                                      className="object-contain"
-                                      sizes="(max-width: 640px) 90vw, 560px"
-                                    />
-                                  </div>
-                                )}
-                              </DialogContent>
-                            </Dialog>
-                          )}
                         </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </AccordionContent>
-          </AccordionItem>
+                        {e.images && e.images.length > 0 && (
+                          <Dialog>
+                            <DialogTrigger className="inline-flex items-center text-muted-foreground hover:text-foreground text-xs px-2 py-1 border rounded-md">
+                              <ImageIcon className="size-4" />
+                              <span className="ml-1">View</span>
+                            </DialogTrigger>
+                            <DialogContent className="sm:max-w-[520px] ">
+                              <DialogHeader>
+                                <DialogTitle>{e.name}</DialogTitle>
+                              </DialogHeader>
+                              {e.images.length > 1 ? (
+                                <div className="w-full flex justify-center">
+                                  <Carousel className="w-10/12">
+                                    <CarouselContent>
+                                      {e.images.map((img) => (
+                                        <CarouselItem
+                                          key={img}
+                                          className="w-10/12"
+                                        >
+                                          <div className="relative  aspect-[4/3]">
+                                            <Image
+                                              src={`/images/award/${img}`}
+                                              alt={e.name}
+                                              fill
+                                              className="object-contain"
+                                              sizes="(max-width: 768px) 90vw, 700px"
+                                            />
+                                          </div>
+                                        </CarouselItem>
+                                      ))}
+                                    </CarouselContent>
+                                    <CarouselPrevious />
+                                    <CarouselNext />
+                                  </Carousel>
+                                </div>
+                              ) : (
+                                <div className="relative w-full aspect-[4/3]">
+                                  <Image
+                                    src={`/images/award/${e.images[0]}`}
+                                    alt={e.name}
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 640px) 90vw, 560px"
+                                  />
+                                </div>
+                              )}
+                            </DialogContent>
+                          </Dialog>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </AccordionContent>
+        </AccordionItem>
 
-          <AccordionItem value="certs">
-            <AccordionTrigger>
-              <div className="flex w-full items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <BadgeCheck className="size-4 text-muted-foreground" />
-                  <div className="text-left font-semibold text-base">
-                    Certifications
-                  </div>
+        <AccordionItem value="certs">
+          <AccordionTrigger>
+            <div className="flex w-full items-center justify-between">
+              <div className="flex items-center gap-3">
+                <BadgeCheck className="size-4 text-muted-foreground" />
+                <div className="text-left font-semibold text-base">
+                  Certifications
                 </div>
               </div>
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-4">
-              <ul className="list-disc pl-4 space-y-2">
-                {certifications.map((c) => (
-                  <li key={c.title} className="text-sm">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex-1">
-                        <span className="font-medium">{c.title}</span>
-                      </div>
-                      {c.images && c.images.length > 0 && (
-                        <Dialog>
-                          <DialogTrigger className="inline-flex items-center text-muted-foreground hover:text-foreground text-xs px-2 py-1 border rounded-md">
-                            <ImageIcon className="size-4" />
-                            <span className="ml-1">View</span>
-                          </DialogTrigger>
-                          <DialogContent className="sm:max-w-[520px]">
-                            <DialogHeader>
-                              <DialogTitle>{c.title}</DialogTitle>
-                            </DialogHeader>
-                            {c.images.length > 1 ? (
-                              <div className="w-full flex justify-center">
-                                <Carousel className="w-10/12">
-                                  <CarouselContent>
-                                    {c.images.map((img) => (
-                                      <CarouselItem key={img}>
-                                        <div className="relative w-full aspect-[4/3]">
-                                          <Image
-                                            src={`/images/certificate/${img}`}
-                                            alt={c.title}
-                                            fill
-                                            className="object-contain"
-                                            sizes="(max-width: 768px) 90vw, 700px"
-                                          />
-                                        </div>
-                                      </CarouselItem>
-                                    ))}
-                                  </CarouselContent>
-                                  <CarouselPrevious />
-                                  <CarouselNext />
-                                </Carousel>
-                              </div>
-                            ) : (
-                              <div className="relative w-full aspect-[4/3]">
-                                <Image
-                                  src={`/images/certificate/${c.images[0]}`}
-                                  alt={c.title}
-                                  fill
-                                  className="object-contain"
-                                  sizes="(max-width: 640px) 90vw, 560px"
-                                />
-                              </div>
-                            )}
-                          </DialogContent>
-                        </Dialog>
-                      )}
+            </div>
+          </AccordionTrigger>
+          <AccordionContent className="px-6 pb-4">
+            <ul className="list-disc pl-4 space-y-2">
+              {certifications.map((c) => (
+                <li key={c.title} className="text-sm">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex-1">
+                      <span className="font-medium">{c.title}</span>
                     </div>
-                  </li>
-                ))}
-              </ul>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </motion.div>
-    </motion.section>
+                    {c.images && c.images.length > 0 && (
+                      <Dialog>
+                        <DialogTrigger className="inline-flex items-center text-muted-foreground hover:text-foreground text-xs px-2 py-1 border rounded-md">
+                          <ImageIcon className="size-4" />
+                          <span className="ml-1">View</span>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[520px]">
+                          <DialogHeader>
+                            <DialogTitle>{c.title}</DialogTitle>
+                          </DialogHeader>
+                          {c.images.length > 1 ? (
+                            <div className="w-full flex justify-center">
+                              <Carousel className="w-10/12">
+                                <CarouselContent>
+                                  {c.images.map((img) => (
+                                    <CarouselItem key={img}>
+                                      <div className="relative w-full aspect-[4/3]">
+                                        <Image
+                                          src={`/images/certificate/${img}`}
+                                          alt={c.title}
+                                          fill
+                                          className="object-contain"
+                                          sizes="(max-width: 768px) 90vw, 700px"
+                                        />
+                                      </div>
+                                    </CarouselItem>
+                                  ))}
+                                </CarouselContent>
+                                <CarouselPrevious />
+                                <CarouselNext />
+                              </Carousel>
+                            </div>
+                          ) : (
+                            <div className="relative w-full aspect-[4/3]">
+                              <Image
+                                src={`/images/certificate/${c.images[0]}`}
+                                alt={c.title}
+                                fill
+                                className="object-contain"
+                                sizes="(max-width: 640px) 90vw, 560px"
+                              />
+                            </div>
+                          )}
+                        </DialogContent>
+                      </Dialog>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </SectionLayout>
   );
 }
