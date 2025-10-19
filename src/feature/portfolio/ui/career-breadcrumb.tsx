@@ -9,8 +9,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { SimpleTooltip } from "@/components/ui/tooltip";
-import { Pickaxe } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export const CareerBreadcrumb = () => {
@@ -68,17 +66,8 @@ export const CareerBreadcrumb = () => {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
-            <HoverCardTrigger>
+            <HoverCardTrigger className="space-x-2 text-primary">
               {t("coupang-play")}
-              <SimpleTooltip
-                content={t("current")}
-                alwaysOpen
-                side="top"
-                align="start"
-                hiddenArrow
-              >
-                <Pickaxe className="size-3 ml-1 mt-1 animate-bounce" />
-              </SimpleTooltip>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
               <CareerInfo

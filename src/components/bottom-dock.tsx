@@ -99,19 +99,17 @@ export function BottomDock() {
               <DropdownMenuContent>
                 <DropdownMenuItem
                   onClick={() => {
-                    // /resume/handykang-resume-ko.pdf download
                     window.open("/resume/handykang-resume-ko.pdf", "_blank");
                   }}
                 >
-                  Resume-KO <FileDown />
+                  CV-KO <FileDown />
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => {
-                    // /resume/handykang-resume-en.pdf download
                     window.open("/resume/handykang-resume-en.pdf", "_blank");
                   }}
                 >
-                  Resume-EN <FileDown />
+                  CV-EN <FileDown />
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
