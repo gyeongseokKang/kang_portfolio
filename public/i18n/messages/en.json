@@ -77,5 +77,113 @@
   },
   "Achievements": {
     "subtitle": "Awards & Certifications"
+  },
+  "Retrospective": {
+    "subtitle": "Quarterly retrospectives organized as a timeline. (since 2022)",
+    "2025": {
+      "3Q": {
+        "title": "Tried building an API Developer site",
+        "details": "Cleared legacy and developed user/admin tools providing APIs",
+        "extra1": "1. Experienced documentation system from basics to deployment using Docusaurus",
+        "extra2": "2. Completed the first design system and applied it to a real project",
+        "extra3": "3. Completed a job change and wrapped up tasks"
+      },
+      "2Q": {
+        "title": "Focused on monorepo and design system",
+        "details": "Introduced a monorepo for repository management and applied it to the design system",
+        "extra1": "1. Started managing internal packages with AWS CodeArtifact.",
+        "extra2": "2. Began managing a monorepo via PNPM Workspaces.",
+        "extra3": "3. Prepared a design system and progressed projects in parallel."
+      },
+      "1Q": {
+        "title": "Focused on writing and prepared to learn new tech",
+        "details": "Finished manuscript revision and began learning Elixir in earnest",
+        "extra1": "1. Absorbing Elixir through seminars and Exercism."
+      }
+    },
+    "2024": {
+      "4Q": {
+        "title": "As a lead, organized processes.",
+        "details": "Built rational processes and put effort into automating repetitive tasks",
+        "extra1": "1. Conducted internal projects based on a browser-based media editor in development",
+        "extra2": "2. Established code review processes and striving to enforce them.",
+        "extra3": "3. Doing my best to be a good mentor"
+      },
+      "3Q": {
+        "title": "Finding a path between schedule and people management",
+        "details": "Learning lead responsibilities from my lead and working to become a good lead",
+        "extra1": "1. Developing a browser-based media editor (open source)",
+        "extra2": "2. Building backend knowledge using Supabase, etc.",
+        "extra3": "3. Striving to become a good mentor or lead"
+      },
+      "2Q": {
+        "title": "Took frontend lead, moving towards senior developer",
+        "details": "Working on people and schedule management, seeking specialization",
+        "extra1": "1. Writing tests, doing code reviews, and running a study.",
+        "extra2": "2. Exploring the path to become a web audio expert.",
+        "extra3": "3. Challenging various side projects."
+      },
+      "1Q": {
+        "title": "Non-technical prep to become a better developer",
+        "details": "Started code reviews, studied to be a good mentor, and prepared for book publication",
+        "extra1": "1. Introduced code reviews with a junior colleague and applied automation via Bitbucket.",
+        "extra2": "2. Studying to become a good mentor developer.",
+        "extra3": "3. Received a book publication offer and started preparing."
+      }
+    },
+    "2023": {
+      "4Q": {
+        "title": "Added proficiency in existing tech rather than new ones",
+        "details": "Focused on organizing the stack and deepening understanding of existing tech.",
+        "extra1": "1. Deepened understanding of React and Next, and refactored existing projects.",
+        "extra2": "2. Maintaining a Flutter project to improve stability."
+      },
+      "3Q": {
+        "title": "Gained confidence in audio domain development.",
+        "details": "Completed internalization of the core library (Waveform-playlist) and became an open-source contributor (wavesurfer).",
+        "extra1": "1. Completed internalization of Waveform-playlist and proceeding with added features and advancements.",
+        "extra2": "2. Became an open-source contributor to Wavesurfer.",
+        "extra3": "3. Launched a service with Flutter and improving it based on user feedback."
+      },
+      "2Q": {
+        "title": "Tried many fire-starting attempts to survive the winter.",
+        "details": "A very busy quarter from planning to implementation and launch",
+        "extra1": "1. Launched Gaudio Studio-pro. A service I built started earning money.",
+        "extra2": "2. Picked up Flutter again for a side project."
+      },
+      "1Q": {
+        "title": "Entered wintering, challenged to survive with technology",
+        "details": "Started developing a core library (Web Audio) and handled large files in the browser.",
+        "extra1": "1. Improved Waveform-playlist library (TS/React support, large file optimization)",
+        "extra2": "2. Implemented automated data collection tools for AI models (using Puppeteer) - collected 100GB",
+        "extra3": "3. Launched a project with ChakraUI, Framer Motion, and TailwindCSS"
+      }
+    },
+    "2022": {
+      "4Q": {
+        "title": "Started laying the groundwork for various services at Gaudio Lab",
+        "details": "Implemented various services and demo sites based on trust.",
+        "extra1": "1. Performed optimizations for audio and large data.",
+        "extra2": "2. Made structure changes and responsive support for the existing website for mobile."
+      },
+      "3Q": {
+        "title": "Worked to become a trustworthy colleague after changing jobs",
+        "details": "Migrated existing projects and learned the tech stack; a critical time to earn trust",
+        "extra1": "1. Completed migration from class components to function components",
+        "extra2": "2. Introduced Next and improved data fetching with React Query"
+      },
+      "2Q": {
+        "title": "Prepared to change jobs and wrapped up projects",
+        "details": "Updated portfolio, went to interviews, finished current work and focused on documentation.",
+        "extra1": "1. Moved from Tmax to Gaudio Lab",
+        "extra2": "2. Wrapped up handover and organized work"
+      },
+      "1Q": {
+        "title": "Decided to change jobs and tried modern stacks like Next.js and Recoil",
+        "details": "Tried to step out of the old stack and explore various libraries and frameworks.",
+        "extra1": "1. Started a side project to learn modern tech (Next.js)",
+        "extra2": "2. Prepared for job change, updated portfolio, and prepared for interviews"
+      }
+    }
   }
 }
