@@ -14,7 +14,7 @@ import { Pickaxe } from "lucide-react";
 
 export const CareerBreadcrumb = () => {
   return (
-    <Breadcrumb>
+    <Breadcrumb className="border rounded-lg p-2">
       <BreadcrumbList>
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
