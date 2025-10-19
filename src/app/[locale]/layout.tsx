@@ -5,7 +5,7 @@ import { BottomDock } from "@/components/bottom-dock";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
@@ -48,14 +48,13 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
-            <SidebarProvider>
+            <SidebarProvider open>
               <AppSidebar />
               <main className="relative size-full">
                 <div className="fixed top-2 right-2 z-50 flex gap-2 ">
                   <AnimatedThemeToggler />
                   <LocaleSwitcher />
                 </div>
-                <SidebarTrigger />
                 <ScrollArea type="always">{children}</ScrollArea>
                 <div className="fixed bottom-2 right-2 z-50 flex gap-2 ">
                   <BottomDock />
