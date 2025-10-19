@@ -11,14 +11,16 @@ import {
 } from "@/components/ui/hover-card";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { Pickaxe } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const CareerBreadcrumb = () => {
+  const t = useTranslations("hero");
   return (
     <Breadcrumb className="border rounded-lg p-2">
       <BreadcrumbList>
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
-            <HoverCardTrigger>카찹</HoverCardTrigger>
+            <HoverCardTrigger>{t("carchap")}</HoverCardTrigger>
             <HoverCardContent className="w-80">
               <CareerInfo
                 position="CTO & Co-founder"
@@ -34,7 +36,7 @@ export const CareerBreadcrumb = () => {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
-            <HoverCardTrigger>티맥스</HoverCardTrigger>
+            <HoverCardTrigger>{t("tmax")}</HoverCardTrigger>
             <HoverCardContent className="w-80">
               <CareerInfo
                 position="Research Engineer"
@@ -50,7 +52,7 @@ export const CareerBreadcrumb = () => {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
-            <HoverCardTrigger>가우디오랩</HoverCardTrigger>
+            <HoverCardTrigger>{t("gaudiolab")}</HoverCardTrigger>
             <HoverCardContent className="w-80">
               <CareerInfo
                 position="Lead Frontend Engineer"
@@ -67,9 +69,9 @@ export const CareerBreadcrumb = () => {
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
             <HoverCardTrigger>
-              쿠팡플레이
+              {t("coupang-play")}
               <SimpleTooltip
-                content="재직중"
+                content={t("current")}
                 alwaysOpen
                 side="top"
                 align="start"

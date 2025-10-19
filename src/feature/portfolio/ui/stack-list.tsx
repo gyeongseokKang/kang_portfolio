@@ -2,6 +2,12 @@
 
 import { StackChip } from "@/components/stack-chip";
 import { AnimatedList } from "@/components/ui/animated-list";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 type Group = {
   title: string;
@@ -43,30 +49,22 @@ const groups: Group[] = [
 
 const GroupCard = ({ title, chips, summary }: Group) => {
   return (
-    <figure
+    <Card
       className={cn(
-        "relative mx-auto min-h-fit w-full max-w-[520px] cursor-pointer overflow-hidden rounded-2xl p-4",
-        "transition-all duration-200 ease-in-out hover:scale-[103%]",
-        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-        "transform-gpu dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)]"
+        "relative mx-auto min-h-fit w-full max-w-md cursor-pointer overflow-hidden rounded-2xl p-4",
+        "transition-all duration-200 ease-in-out hover:scale-[103%]"
       )}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex-1">
-          <div className="flex items-center justify-between">
-            <figcaption className="text-base sm:text-lg font-semibold dark:text-white">
-              {title}
-            </figcaption>
-            <div className="shrink-0">
-              <StackChip stackList={chips} size={22} max={chips.length} />
-            </div>
+      <CardHeader className="px-0">
+        <CardTitle className="flex items-center justify-between">
+          {title}
+          <div className="shrink-0">
+            <StackChip stackList={chips} size={22} max={chips.length} />
           </div>
-          <p className="mt-1 text-sm text-muted-foreground dark:text-white/60">
-            {summary}
-          </p>
-        </div>
-      </div>
-    </figure>
+        </CardTitle>
+        <CardDescription>{summary}</CardDescription>
+      </CardHeader>
+    </Card>
   );
 };
 
@@ -74,7 +72,7 @@ export function StackList({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative flex h-[500px] w-full flex-col overflow-hidden p-2",
+        "relative flex h-[500px] w-full flex-col overflow-hidden p-2 max-w-md",
         className
       )}
     >
@@ -83,8 +81,6 @@ export function StackList({ className }: { className?: string }) {
           <GroupCard key={g.title + idx} {...g} />
         ))}
       </AnimatedList>
-
-      <div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t"></div>
     </div>
   );
 }

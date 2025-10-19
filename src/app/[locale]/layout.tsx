@@ -7,19 +7,31 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 import "../globals.css";
 
-export const metadata: Metadata = {
-  title: "Handy Portfolio",
-  description: "Handy Portfolio",
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("seo");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: "/images/intro/character_op.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
