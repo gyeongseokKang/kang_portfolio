@@ -15,7 +15,7 @@ export default function IntroCard() {
   return (
     <Card className={"min-w-[80vw] sm:min-w-92"}>
       <CardHeader>
-        <CardTitle>Hi, I'm Handy</CardTitle>
+        <CardTitle>{"Hi, I'm Handy"}</CardTitle>
         <CardDescription>
           <div>
             <p>{t("intro.description_1")}</p>
