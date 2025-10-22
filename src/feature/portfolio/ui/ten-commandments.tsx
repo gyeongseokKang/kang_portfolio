@@ -26,8 +26,8 @@ export default function TenCommandments() {
   ];
 
   return (
-    <CometCard>
-      <Card className="w-full max-w-xl">
+    <CometCard className="max-w-sm">
+      <Card className="w-full">
         <CardHeader>
           <CardTitle>{t("ten-commandments.title")}</CardTitle>
           <CardDescription>{t("ten-commandments.description")}</CardDescription>
@@ -38,7 +38,7 @@ export default function TenCommandments() {
               <li key={i} className="group">
                 <div className="flex items-center gap-1 py-1">
                   <Badge variant={"secondary"}> {i + 1}</Badge>
-                  <p className="text-sm leading-relaxed">{text}</p>
+                  <p className="text-xs leading-relaxed">{text}</p>
                 </div>
               </li>
             ))}

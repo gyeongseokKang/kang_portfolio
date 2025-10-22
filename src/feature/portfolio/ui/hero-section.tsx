@@ -13,7 +13,9 @@ import WorkingDayCard from "./working-day-card";
 export default function HeroSection() {
   const t = useTranslations("hero");
   return (
-    <section className={cn("space-y-4 mx-auto flex flex-col")}>
+    <section
+      className={cn("space-y-4 mx-auto flex flex-col items-center mb-20")}
+    >
       <div className="text-2xl lg:text-5xl font-semibold text-center py-4 lg:py-16">
         <AuroraText>{t("intro.title")}</AuroraText>
       </div>
@@ -34,7 +36,6 @@ export default function HeroSection() {
         <StackList />
 
         <BookCard />
-
         <TenCommandments />
         <div className="mx-auto">
           <Image

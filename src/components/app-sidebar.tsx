@@ -1,6 +1,13 @@
 "use client";
 
-import { Briefcase, FolderKanban, History, Trophy, Wrench } from "lucide-react";
+import {
+  Book,
+  Briefcase,
+  FolderKanban,
+  History,
+  Trophy,
+  Wrench,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -85,6 +92,23 @@ export function AppSidebar() {
                   </SidebarMenuItem>
                 );
               })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Blog</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link
+                    href="https://all-dev-kang.tistory.com/"
+                    target="_blank"
+                  >
+                    <Book /> <span>Dev Blog</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
