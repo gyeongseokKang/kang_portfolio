@@ -6,6 +6,7 @@ import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
@@ -52,6 +53,16 @@ export default async function LocaleLayout({
 
   return (
     <html className="h-full" lang={locale} suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="4Krut1DFj0ODK-gyhzjhbBSz-R9WtgvXE2Mndz9ZIRQ"
+        />
+        <meta
+          name="naver-site-verification"
+          content="caf276500aef5508a9380ca9dad2f487f9a13c54"
+        />
+      </head>
       <body className="size-full">
         <ThemeProvider
           storageKey="handy-portfolio-theme"
@@ -76,6 +87,7 @@ export default async function LocaleLayout({
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-BCKCVEJ9LW" />
     </html>
   );
 }
