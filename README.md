@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kang's Portfolio
 
-## Getting Started
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/gyeongseokKang/gyeongseokKang.github.io">
+    <img src="https://user-images.githubusercontent.com/61446585/136156853-333c68c0-aebe-497f-925a-eebea33f53d1.png" alt="Logo" width="100" height="100">
+  </a>
 
-First, run the development server:
+  <h3 align="center">Kang's portfolio</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <p align="center">
+    An awesome Portfolio size that uses various Web API & library
+  </p>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Version History View
+### v3
+<img width="1652" height="975" alt="image" src="https://github.com/user-attachments/assets/0f283597-972e-4447-a4f7-dbc1dd08d680" />
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### v2
+![포폴 리뉴얼](https://github.com/gyeongseokKang/kang_portfolio/assets/61446585/e1db7ffb-8f7b-4770-a5cb-1faee4894321)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### v1
+![GIF](https://user-images.githubusercontent.com/61446585/146512241-abf043c1-04fb-4b64-a594-7e6c3ba69f33.gif)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Change Log
+* version 2 -> 3 update ( 2025.10.22 )
+  * Next.15, React 19, Tailwind 4, Shadcn-ui
+  * support i18n(ko, en)
+* version 1 -> 2 update ( 2021.11.24 )
+  * design update & component library change(mui -> next ui)  (2024.02.01)
+  * migration next.js + react + mui + vercel(ver.2) (2021.11.24)
+* version 1
+  * WebComponent ( 2021.09.27 )
+  * Dark mode Support
+
+
+## Stack
+* Next.15, React 19, Tailwind 4, Shadcn-ui, Vercel
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
