@@ -7,6 +7,7 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
@@ -88,6 +89,7 @@ export default async function LocaleLayout({
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-BCKCVEJ9LW" />
+      <Analytics />
     </html>
   );
 }
