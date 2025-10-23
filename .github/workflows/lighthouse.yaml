@@ -1,6 +1,7 @@
 permissions:
   contents: read
   pull-requests: write
+  issues: write
   statuses: write
 
 name: Lighthouse CI
@@ -111,3 +112,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           msg: ${{ steps.format_lighthouse_score.outputs.comments }}
+          delete_prev_regex_msg: 'true'
+          duplicate_msg_pattern: '^⚡️ Lighthouse report!'
