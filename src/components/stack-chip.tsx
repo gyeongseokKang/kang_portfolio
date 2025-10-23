@@ -6,18 +6,30 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type StackChipProps = {
   stackList: string[];
   size?: number;
   max?: number; // default 5
+  className?: string;
 };
 
-export function StackChip({ stackList, size = 20, max = 5 }: StackChipProps) {
+export function StackChip({
+  stackList,
+  size = 20,
+  max = 5,
+  className,
+}: StackChipProps) {
   const items = stackList.slice(0, max);
   return (
-    <div className="flex flex-row flex-wrap items-center gap-1.5 justify-start border rounded-sm px-2">
+    <div
+      className={cn(
+        "flex flex-row flex-wrap items-center gap-1.5 justify-start border rounded-sm px-2",
+        className
+      )}
+    >
       <TooltipProvider>
         {items.map((stack) => (
           <Tooltip key={stack}>

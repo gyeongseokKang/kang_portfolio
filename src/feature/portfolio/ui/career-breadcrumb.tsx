@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
 export const CareerBreadcrumb = () => {
   const t = useTranslations("hero");
   return (
-    <Breadcrumb className="border rounded-lg px-6 py-3 drop-shadow">
+    <Breadcrumb className="border rounded-lg px-6 py-3 shadow">
       <BreadcrumbList>
         <BreadcrumbItem>
           <HoverCard openDelay={0}>
