@@ -106,7 +106,6 @@ jobs:
             core.setOutput('comments', comments);
 
       - name: Comment PR with Lighthouse report
-        if: github.event_name == 'pull_request' && steps.format_lighthouse_score.outputs.comments != ''
         uses: unsplash/comment-on-pr@v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
