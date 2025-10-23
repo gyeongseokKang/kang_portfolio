@@ -18,27 +18,19 @@ type Group = {
 const groups: Group[] = [
   {
     title: "Frontend",
-    chips: [
-      "typescript",
-      "javascript",
-      "react",
-      "next",
-      "flutter",
-      "tailwind",
-      "shadcn",
-    ],
-    summary: "TypeScript · JavaScript · React · Next.js · Flutter",
+    chips: ["typescript", "javascript", "react", "next", "flutter", "dart"],
+    summary: "TS · JS · React · Next · Flutter · Dart",
   },
 
   {
     title: "Backend / Infra",
-    chips: ["firebase", "supabase", "docker", "aws", "argocd", "graphql"],
-    summary: "Firebase · Supabase · Docker · AWS · ArgoCD · GraphQL",
+    chips: ["supabase", "docker", "aws", "argocd", "graphql"],
+    summary: "Supabase · Docker · AWS · ArgoCD · GraphQL",
   },
   {
     title: "Tooling & CI/CD",
-    chips: ["git", "github", "vercel", "jest", "cypress", "circleci"],
-    summary: "Git · GitHub Actions · Vercel · Jest · Cypress · CircleCI",
+    chips: ["git", "github", "jest", "cypress", "circleci"],
+    summary: "Git · GitHub · Jest · Cypress · CircleCI",
   },
   {
     title: "Others",
@@ -59,7 +51,12 @@ const GroupCard = ({ title, chips, summary }: Group) => {
         <CardTitle className="flex items-center justify-between">
           {title}
           <div className="shrink-0">
-            <StackChip stackList={chips} size={22} max={chips.length} />
+            <StackChip
+              className="shadow"
+              stackList={chips}
+              size={22}
+              max={chips.length}
+            />
           </div>
         </CardTitle>
         <CardDescription>{summary}</CardDescription>
