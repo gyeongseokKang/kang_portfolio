@@ -12,19 +12,10 @@ export function useMajorSectionId(sectionIds: string[]): string | null {
   const pendingRef = useRef(false);
 
   useEffect(() => {
-    if (!sectionIds?.length) return;
-
-    const sections = sectionIds
-      .map((id) => {
-        const el = document.getElementById(id);
-        return el ? { id, el } : null;
-      })
-      .filter((s): s is { id: string; el: HTMLElement } => s !== null);
-
-    if (sections.length === 0) return;
-
     const compute = () => {
       pendingRef.current = false;
+      const sections = getSectionElements(sectionIds);
+      if (sections.length === 0) return;
       const vh = window.innerHeight || document.documentElement.clientHeight;
       let maxVisible = -1;
       let maxId: string | null = null;
@@ -62,3 +53,18 @@ export function useMajorSectionId(sectionIds: string[]): string | null {
 
   return activeId;
 }
+
+type SectionEntry = { id: string; el: HTMLElement };
+
+const getSectionElements = (ids?: string[]): SectionEntry[] => {
+  if (ids && ids.length > 0) {
+    return ids
+      .map((id) => {
+        const el = document.getElementById(id);
+        return el ? { id, el } : null;
+      })
+      .filter((s): s is SectionEntry => s !== null);
+  }
+  const nodeList = document.querySelectorAll<HTMLElement>("section");
+  return Array.from(nodeList).map((el) => ({ id: el.id, el }));
+};
