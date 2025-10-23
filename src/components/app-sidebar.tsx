@@ -48,7 +48,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <div className="flex items-center gap-2 justify-evenly pt-2">
           <Image
-            className="rounded-full"
+            className="rounded-xl"
             src="/images/intro/logo.jpeg"
             alt="Handy Kang"
             width={48}
