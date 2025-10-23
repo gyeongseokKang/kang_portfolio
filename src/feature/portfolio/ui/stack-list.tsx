@@ -51,7 +51,7 @@ const GroupCard = ({ title, chips, summary }: Group) => {
   return (
     <Card
       className={cn(
-        "relative mx-auto min-h-fit w-full max-w-md cursor-pointer overflow-hidden rounded-2xl p-4",
+        "relative mx-auto min-h-fit w-full max-w-md cursor-pointer overflow-hidden rounded-xl p-4",
         "transition-all duration-200 ease-in-out hover:scale-[103%]"
       )}
     >

@@ -149,7 +149,9 @@ export default function ProjectSection() {
                           {p.description}
                         </span>
                       </div>
-                      <StackChip stackList={p.stacks} max={6} />
+                      <div className="flex justify-end">
+                        <StackChip stackList={p.stacks} max={6} />
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
