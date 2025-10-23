@@ -29,9 +29,6 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Verify pnpm
-        run: pnpm --version
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -43,3 +40,75 @@ jobs:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
           pnpm dlx @lhci/cli@0.13.x autorun
+
+      - name: Format lighthouse score
+        id: format_lighthouse_score
+        uses: actions/github-script@v7
+        env:
+          REPORT_DIR: ${{ github.workspace }}/lhci_reports
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const reportDir = process.env.REPORT_DIR;
+            const manifestPath = path.join(reportDir, 'manifest.json');
+            if (!fs.existsSync(manifestPath)) {
+              core.warning(`manifest.json not found at ${manifestPath}. Skipping comment.`);
+              core.setOutput('comments', '');
+              return;
+            }
+
+            const results = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+            let comments = '';
+
+            const scoreEmoji = (n)=> n >= 90 ? '🟢' : n >= 50 ? '🟠' : '🔴';
+            const pct = (v)=> Math.round((v ?? 0) * 100);
+
+            for (const result of results) {
+              const { summary, jsonPath } = result;
+              const details = JSON.parse(fs.readFileSync(path.isAbsolute(jsonPath) ? jsonPath : path.join(reportDir, jsonPath), 'utf8'));
+              const audits = details.audits || {};
+
+              const perf = pct(summary.performance);
+              const a11y = pct(summary.accessibility);
+              const bp = pct(summary['best-practices']);
+              const seo = pct(summary.seo);
+              const pwa = summary.pwa != null ? pct(summary.pwa) : null;
+
+              const header = [
+                '⚡️ Lighthouse report!','',
+                '| Category | Score |',
+                '| --- | --- |',
+                `| ${scoreEmoji(perf)} Performance | ${perf} |`,
+                `| ${scoreEmoji(a11y)} Accessibility | ${a11y} |`,
+                `| ${scoreEmoji(bp)} Best practices | ${bp} |`,
+                `| ${scoreEmoji(seo)} SEO | ${seo} |`,
+                pwa === null ? null : `| ${scoreEmoji(pwa)} PWA | ${pwa} |`,
+                ''
+              ].filter(Boolean).join('\n');
+
+              const rows = [
+                '| Category | Score |',
+                '| --- | --- |',
+                `| ${scoreEmoji(pct(audits['first-contentful-paint']?.score*100/100))} First Contentful Paint | ${audits['first-contentful-paint']?.displayValue ?? '-'} |`,
+                `| ${scoreEmoji(pct(audits['interactive']?.score*100/100))} Time to Interactive | ${audits['interactive']?.displayValue ?? '-'} |`,
+                `| ${scoreEmoji(pct(audits['speed-index']?.score*100/100))} SpeedIndex | ${audits['speed-index']?.displayValue ?? '-'} |`,
+                `| ${scoreEmoji(pct(audits['total-blocking-time']?.score*100/100))} Total Blocking Time | ${audits['total-blocking-time']?.displayValue ?? '-'} |`,
+                `| ${scoreEmoji(pct(audits['largest-contentful-paint']?.score*100/100))} Largest Contentful Paint | ${audits['largest-contentful-paint']?.displayValue ?? '-'} |`,
+                `| ${scoreEmoji(pct(audits['cumulative-layout-shift']?.score*100/100))} Cumulative Layout Shift | ${audits['cumulative-layout-shift']?.displayValue ?? '-'} |`,
+                ''
+              ].join('\n');
+
+              comments += header + '\n\n' + rows + '\n';
+            }
+
+            core.setOutput('comments', comments);
+
+      - name: Comment PR with Lighthouse report
+        if: github.event_name == 'pull_request' && steps.format_lighthouse_score.outputs.comments != ''
+        uses: unsplash/comment-on-pr@v1.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          msg: ${{ steps.format_lighthouse_score.outputs.comments }}
