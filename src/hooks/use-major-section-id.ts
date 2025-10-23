@@ -8,7 +8,8 @@ import { useEffect, useRef, useState } from "react";
  */
 export function useMajorSectionId(sectionIds: string[]): string | null {
   const [activeId, setActiveId] = useState<string | null>(null);
-  const ratiosRef = useRef<Record<string, number>>({});
+  const rafRef = useRef<number | null>(null);
+  const pendingRef = useRef(false);
 
   useEffect(() => {
     if (!sectionIds?.length) return;
@@ -22,29 +23,41 @@ export function useMajorSectionId(sectionIds: string[]): string | null {
 
     if (sections.length === 0) return;
 
-    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const id = (entry.target as HTMLElement).id;
-          ratiosRef.current[id] = entry.intersectionRatio;
+    const compute = () => {
+      pendingRef.current = false;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      let maxVisible = -1;
+      let maxId: string | null = null;
+      for (const { id, el } of sections) {
+        const rect = el.getBoundingClientRect();
+        const visible = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+        const clamped = Math.min(visible, rect.height);
+        if (clamped > maxVisible) {
+          maxVisible = clamped;
+          maxId = id;
         }
-        let maxId: string | null = null;
-        let maxRatio = 0;
-        for (const id of sectionIds) {
-          const r = ratiosRef.current[id] ?? 0;
-          if (r > maxRatio) {
-            maxRatio = r;
-            maxId = id;
-          }
-        }
-        setActiveId(maxId);
-      },
-      { root: null, threshold: thresholds }
-    );
+      }
+      setActiveId(maxId);
+    };
 
-    sections.forEach(({ el }) => observer.observe(el));
-    return () => observer.disconnect();
+    const schedule = () => {
+      if (pendingRef.current) return;
+      pendingRef.current = true;
+      rafRef.current = window.requestAnimationFrame(compute);
+    };
+
+    compute();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", schedule as EventListener);
+      window.removeEventListener("resize", schedule as EventListener);
+      if (rafRef.current != null) {
+        window.cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
   }, [sectionIds]);
 
   return activeId;
