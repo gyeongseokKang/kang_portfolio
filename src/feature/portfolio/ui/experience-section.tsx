@@ -102,7 +102,7 @@ export default function ExperienceSection() {
                     priority
                     src={item.thumbnail}
                     alt={item.name}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain bg-white"
                     width={220}
                     height={140}
                   />
