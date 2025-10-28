@@ -11,10 +11,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Lens } from "@/components/ui/lens";
+import Autoplay from "embla-carousel-autoplay";
 import { LinkIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useRef } from "react";
 import SectionLayout from "./section-layout";
 
 export type ProjectItem = {
@@ -36,8 +38,16 @@ const itemVariants = {
   },
 };
 
+const AUTOPLAY_OPTIONS = {
+  delay: 5000,
+  stopOnInteraction: false,
+  stopOnMouseEnter: true,
+} as const;
+
 export default function ProjectSection() {
   const t = useTranslations("Project");
+  const plugin = useRef(Autoplay(AUTOPLAY_OPTIONS));
+
   const projects: ProjectItem[] = [
     {
       id: "portfolio-site",
@@ -111,7 +121,7 @@ export default function ProjectSection() {
   return (
     <SectionLayout id="Project" title="Project" description={t("subtitle")}>
       <div>
-        <Carousel className="mx-auto w-full ">
+        <Carousel className="mx-auto w-full " plugins={[plugin.current]}>
           <CarouselContent>
             {projects.map((p) => (
               <CarouselItem
