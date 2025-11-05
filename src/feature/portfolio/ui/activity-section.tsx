@@ -1,12 +1,6 @@
 "use client";
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   Clapperboard,
   FileText,
   GitBranch,
@@ -14,17 +8,15 @@ import {
   Rss,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import SectionLayout from "./section-layout";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
-  },
-};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },

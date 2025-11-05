@@ -1,8 +1,8 @@
 import HeroSection from "@/feature/portfolio/ui/hero-section";
+import AchievementsSectionLazy from "@/feature/portfolio/ui/lazy/achievements-section-lazy";
+import ActivitySectionLazy from "@/feature/portfolio/ui/lazy/activity-section-lazy";
 import ExperienceSectionLazy from "@/feature/portfolio/ui/lazy/experience-section-lazy";
 import ProjectSectionLazy from "@/feature/portfolio/ui/lazy/project-section-lazy";
-import ActivitySectionLazy from "@/feature/portfolio/ui/lazy/activity-section-lazy";
-import AchievementsSectionLazy from "@/feature/portfolio/ui/lazy/achievements-section-lazy";
 import RetrospectiveSectionLazy from "@/feature/portfolio/ui/lazy/retrospective-section-lazy";
 
 export default function Home() {

@@ -11,8 +11,7 @@ import { getExperiencedYear } from "@/lib/dayUtils";
 export default function WorkingDayCard() {
   const { N년차, coupangPlayDays } = getExperiencedYear();
 
-  const coupangPlayDaysText =
-    coupangPlayDays.toString() + " workdays in Coupang Play";
+  const coupangPlayDaysText = `${coupangPlayDays.toString()} workdays in Coupang Play`;
   return (
     <Card className={"w-68"}>
       <CardHeader>

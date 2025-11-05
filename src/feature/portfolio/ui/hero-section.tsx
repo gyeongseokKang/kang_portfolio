@@ -1,7 +1,7 @@
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { BlogInfoItem } from "./blog-info-item";
 import BookCard from "./book-card";
 import { CareerBreadcrumb } from "./career-breadcrumb";
@@ -24,7 +24,7 @@ export default function HeroSection() {
         className={cn(
           "2xl:grid-cols-3",
           "lg:grid-cols-2",
-          "grid grid-cols-1 items-center gap-8"
+          "grid grid-cols-1 items-center gap-8",
         )}
       >
         <IntroCard />

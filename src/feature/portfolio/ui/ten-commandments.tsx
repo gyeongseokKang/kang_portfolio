@@ -34,14 +34,17 @@ export default function TenCommandments() {
         </CardHeader>
         <CardContent>
           <ol className="space-y-0 divide-y divide-border">
-            {items.map((text, i) => (
-              <li key={i} className="group">
-                <div className="flex items-center gap-1 py-1">
-                  <Badge variant={"secondary"}> {i + 1}</Badge>
-                  <p className="text-xs leading-relaxed">{text}</p>
-                </div>
-              </li>
-            ))}
+            {items.map((text, i) => {
+              const key = `${i}-${text}`;
+              return (
+                <li key={key} className="group">
+                  <div className="flex items-center gap-1 py-1">
+                    <Badge variant={"secondary"}> {i + 1}</Badge>
+                    <p className="text-xs leading-relaxed">{text}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
         </CardContent>
       </Card>

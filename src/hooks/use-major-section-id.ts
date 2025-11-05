@@ -21,7 +21,10 @@ export function useMajorSectionId(sectionIds: string[]): string | null {
       let maxId: string | null = null;
       for (const { id, el } of sections) {
         const rect = el.getBoundingClientRect();
-        const visible = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+        const visible = Math.max(
+          0,
+          Math.min(rect.bottom, vh) - Math.max(rect.top, 0),
+        );
         const clamped = Math.min(visible, rect.height);
         if (clamped > maxVisible) {
           maxVisible = clamped;

@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -10,8 +12,6 @@ import {
 import { Label } from "@/components/ui/label";
 import { Marquee } from "@/components/ui/marquee";
 import { Switch } from "@/components/ui/switch";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
 import SectionLayout from "./section-layout";
 
 type RetrospectiveItem = {
@@ -39,8 +39,8 @@ function Item({ item }: { item: RetrospectiveItem }) {
       <CardContent className="px-6 py-2">
         {item.extra && item.extra.length > 0 && (
           <ul className="list-disc pl-5 mt-2 space-y-1 text-xs">
-            {item.extra.map((e, idx) => (
-              <li key={idx}>{e}</li>
+            {item.extra.map((e) => (
+              <li key={e}>{e}</li>
             ))}
           </ul>
         )}

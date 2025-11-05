@@ -2,11 +2,10 @@
 
 import { AtSign, FileDown, FileUser, Home } from "lucide-react";
 import Link from "next/link";
-
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SimpleTooltip, TooltipProvider } from "@/components/ui/tooltip";
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { Dock, DockIcon } from "./ui/dock";
 import {
   DropdownMenu,

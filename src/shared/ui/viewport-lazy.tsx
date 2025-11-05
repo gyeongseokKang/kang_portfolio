@@ -30,7 +30,7 @@ export default function ViewportLazy({
           observer.disconnect();
         }
       },
-      { root: null, rootMargin, threshold: 0.01 }
+      { root: null, rootMargin, threshold: 0.01 },
     );
 
     observer.observe(el);

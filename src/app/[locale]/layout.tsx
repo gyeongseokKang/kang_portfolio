@@ -1,18 +1,17 @@
-import { routing } from "@/i18n/routing";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next/types";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ThemeProvider } from "next-themes";
 import { AppSidebar } from "@/components/app-sidebar";
 import { BottomDock } from "@/components/bottom-dock";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/next";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ThemeProvider } from "next-themes";
-import { notFound } from "next/navigation";
-import { Metadata } from "next/types";
+import { routing } from "@/i18n/routing";
 import "../globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {

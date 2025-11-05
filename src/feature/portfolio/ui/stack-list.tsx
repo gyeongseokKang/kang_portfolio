@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+
 type Group = {
   title: string;
   chips: string[]; // icon keys for StackChip
@@ -44,7 +45,7 @@ const GroupCard = ({ title, chips, summary }: Group) => {
     <Card
       className={cn(
         "relative mx-auto min-h-fit w-full max-w-md cursor-pointer overflow-hidden rounded-xl p-4",
-        "transition-all duration-200 ease-in-out hover:scale-[103%]"
+        "transition-all duration-200 ease-in-out hover:scale-[103%]",
       )}
     >
       <CardHeader className="px-0">
@@ -70,12 +71,12 @@ export function StackList({ className }: { className?: string }) {
     <div
       className={cn(
         "relative flex h-[500px] w-full flex-col overflow-hidden p-2 max-w-md",
-        className
+        className,
       )}
     >
       <AnimatedList delay={800}>
-        {groups.map((g, idx) => (
-          <GroupCard key={g.title + idx} {...g} />
+        {groups.map((g) => (
+          <GroupCard key={g.title} {...g} />
         ))}
       </AnimatedList>
     </div>

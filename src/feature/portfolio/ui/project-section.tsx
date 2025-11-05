@@ -1,5 +1,11 @@
 "use client";
 
+import Autoplay from "embla-carousel-autoplay";
+import { LinkIcon } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { useRef } from "react";
 import { StackChip } from "@/components/stack-chip";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,12 +17,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Lens } from "@/components/ui/lens";
-import Autoplay from "embla-carousel-autoplay";
-import { LinkIcon } from "lucide-react";
-import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { useRef } from "react";
 import SectionLayout from "./section-layout";
 
 export type ProjectItem = {
@@ -147,11 +147,17 @@ export default function ProjectSection() {
                     <CardContent className="space-y-2 w-full ">
                       <div className="overflow-hidden rounded-xl border bg-muted/20">
                         <Lens>
-                          <img
-                            src={p.thumbnail || "/icons/amplify.svg"}
-                            alt={p.title}
-                            className="w-full object-contain aspect-video"
-                          />
+                          <picture>
+                            <source
+                              srcSet={p.thumbnail || "/icons/amplify.svg"}
+                              type="image/svg+xml"
+                            />
+                            <img
+                              src={p.thumbnail || "/icons/amplify.svg"}
+                              alt={p.title}
+                              className="w-full object-contain aspect-video"
+                            />
+                          </picture>
                         </Lens>
                       </div>
                       <div className="h-20 relative">
