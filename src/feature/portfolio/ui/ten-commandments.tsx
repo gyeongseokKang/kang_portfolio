@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -8,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CometCard } from "@/components/ui/comet-card";
-import { useTranslations } from "next-intl";
 
 export default function TenCommandments() {
   const t = useTranslations("hero");

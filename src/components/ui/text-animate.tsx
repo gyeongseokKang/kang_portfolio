@@ -3,8 +3,8 @@
 import type { TargetAndTransition, Transition } from "motion/react";
 import {
   AnimatePresence,
-  motion,
   type MotionProps,
+  motion,
   type Variants,
 } from "motion/react";
 import { memo } from "react";
