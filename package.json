@@ -9,7 +9,7 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "ci:lint": "biome ci ."
+    "ci:lint": "biome ci --reporter=github ."
   },
   "dependencies": {
     "@next/third-parties": "^16.0.0",
