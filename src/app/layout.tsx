@@ -1,5 +1,5 @@
-import { Metadata } from "next/types";
-import { ReactNode } from "react";
+import type { Metadata } from "next/types";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Handy Portfolio",

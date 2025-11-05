@@ -1,9 +1,9 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { LOCALES } from "@/i18n/constant";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { useLocale } from "next-intl";
 import { Button } from "./ui/button";
 import { ButtonGroup } from "./ui/button-group";
 
@@ -20,7 +20,7 @@ export function LocaleSwitcher() {
                 href={item}
                 className={cn(
                   "uppercase text-xs",
-                  locale === item && "!text-primary"
+                  locale === item && "!text-primary",
                 )}
               >
                 {item}

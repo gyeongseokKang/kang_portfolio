@@ -1,5 +1,8 @@
 "use client";
 
+import { BadgeCheck, Image as ImageIcon, Trophy } from "lucide-react";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 import {
   Accordion,
   AccordionContent,
@@ -20,9 +23,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { BadgeCheck, Image as ImageIcon, Trophy } from "lucide-react";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
 import SectionLayout from "./section-layout";
 
 export default function AchievementsSection() {
@@ -138,8 +138,8 @@ export default function AchievementsSection() {
                   {year.year}
                 </div>
                 <ul className="list-disc pl-4 space-y-2">
-                  {year.entries.map((e, idx) => (
-                    <li key={idx} className="text-sm">
+                  {year.entries.map((e) => (
+                    <li key={e.name} className="text-sm">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1">
                           <span className="font-medium">{e.name}</span>

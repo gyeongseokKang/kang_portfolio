@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Tooltip,
   TooltipContent,
@@ -7,7 +8,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 type StackChipProps = {
   stackList: string[];
@@ -27,7 +27,7 @@ export function StackChip({
     <div
       className={cn(
         "flex flex-row flex-wrap items-center gap-1.5 justify-start border rounded-sm px-2",
-        className
+        className,
       )}
     >
       <TooltipProvider>

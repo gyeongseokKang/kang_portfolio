@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,7 +10,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { useTranslations } from "next-intl";
 
 export const CareerBreadcrumb = () => {
   const t = useTranslations("hero");

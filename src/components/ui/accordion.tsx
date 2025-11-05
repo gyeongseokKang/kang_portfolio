@@ -2,7 +2,7 @@
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { MinusIcon, PlusIcon } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -21,7 +21,7 @@ function AccordionItem({
       data-slot="accordion-item"
       className={cn(
         "border-b overflow-hidden border bg-background rounded-lg mt-4",
-        className
+        className,
       )}
       {...props}
     />
@@ -39,7 +39,7 @@ function AccordionTrigger({
         data-slot="accordion-trigger"
         className={cn(
           "group px-4 hover:cursor-pointer focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
-          className
+          className,
         )}
         {...props}
       >

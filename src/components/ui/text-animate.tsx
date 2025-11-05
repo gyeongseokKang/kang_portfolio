@@ -1,7 +1,12 @@
 "use client";
 
 import type { TargetAndTransition, Transition } from "motion/react";
-import { AnimatePresence, motion, MotionProps, Variants } from "motion/react";
+import {
+  AnimatePresence,
+  type MotionProps,
+  motion,
+  type Variants,
+} from "motion/react";
 import { memo } from "react";
 
 import { cn } from "@/lib/utils";
@@ -328,7 +333,6 @@ const TextAnimateBase = ({
     case "line":
       segments = children.split("\n");
       break;
-    case "text":
     default:
       segments = [children];
       break;
@@ -357,44 +361,45 @@ const TextAnimateBase = ({
         item: variants,
       }
     : animation
-    ? {
-        container: {
-          ...defaultItemAnimationVariants[animation].container,
-          show: {
-            ...defaultItemAnimationVariants[animation].container.show,
-            transition: {
-              delayChildren: delay,
-              staggerChildren: duration / segments.length,
-            },
-          },
-          exit: {
-            ...defaultItemAnimationVariants[animation].container.exit,
-            transition: {
-              staggerChildren: duration / segments.length,
-              staggerDirection: -1,
-            },
-          },
-        },
-        item: (() => {
-          const baseItem = defaultItemAnimationVariants[animation]
-            .item as Variants & { show?: TargetAndTransition };
-          const baseShow = (baseItem.show ?? {}) as TargetAndTransition;
-          const baseShowTransition = (baseShow.transition ?? {}) as Transition;
-          return {
-            ...baseItem,
+      ? {
+          container: {
+            ...defaultItemAnimationVariants[animation].container,
             show: {
-              ...baseShow,
+              ...defaultItemAnimationVariants[animation].container.show,
               transition: {
-                ...baseShowTransition,
-                ...(repeat
-                  ? { repeat: Infinity, repeatDelay: repeatDelay }
-                  : {}),
+                delayChildren: delay,
+                staggerChildren: duration / segments.length,
               },
             },
-          };
-        })(),
-      }
-    : { container: defaultContainerVariants, item: defaultItemVariants };
+            exit: {
+              ...defaultItemAnimationVariants[animation].container.exit,
+              transition: {
+                staggerChildren: duration / segments.length,
+                staggerDirection: -1,
+              },
+            },
+          },
+          item: (() => {
+            const baseItem = defaultItemAnimationVariants[animation]
+              .item as Variants & { show?: TargetAndTransition };
+            const baseShow = (baseItem.show ?? {}) as TargetAndTransition;
+            const baseShowTransition = (baseShow.transition ??
+              {}) as Transition;
+            return {
+              ...baseItem,
+              show: {
+                ...baseShow,
+                transition: {
+                  ...baseShowTransition,
+                  ...(repeat
+                    ? { repeat: Infinity, repeatDelay: repeatDelay }
+                    : {}),
+                },
+              },
+            };
+          })(),
+        }
+      : { container: defaultContainerVariants, item: defaultItemVariants };
 
   return (
     <AnimatePresence mode="popLayout">
@@ -410,21 +415,24 @@ const TextAnimateBase = ({
         {...props}
       >
         {accessible && <span className="sr-only">{children}</span>}
-        {segments.map((segment, i) => (
-          <motion.span
-            key={`${by}-${segment}-${i}`}
-            variants={finalVariants.item}
-            custom={i * staggerTimings[by]}
-            className={cn(
-              by === "line" ? "block" : "inline-block whitespace-pre",
-              by === "character" && "",
-              segmentClassName
-            )}
-            aria-hidden={accessible ? true : undefined}
-          >
-            {segment}
-          </motion.span>
-        ))}
+        {segments.map((segment, i) => {
+          const key = `${by}-${segment}-${i}`;
+          return (
+            <motion.span
+              key={key}
+              variants={finalVariants.item}
+              custom={i * staggerTimings[by]}
+              className={cn(
+                by === "line" ? "block" : "inline-block whitespace-pre",
+                by === "character" && "",
+                segmentClassName,
+              )}
+              aria-hidden={accessible ? true : undefined}
+            >
+              {segment}
+            </motion.span>
+          );
+        })}
       </motion.p>
     </AnimatePresence>
   );

@@ -8,7 +8,8 @@ import {
   Trophy,
   Wrench,
 } from "lucide-react";
-
+import Image from "next/image";
+import { useMemo } from "react";
 import {
   Sidebar,
   SidebarContent,
@@ -24,8 +25,6 @@ import {
 import { useMajorSectionId } from "@/hooks/use-major-section-id";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { useMemo } from "react";
 import { AuroraText } from "./ui/aurora-text";
 
 const navItems = [
@@ -39,7 +38,7 @@ const navItems = [
 export function AppSidebar() {
   const sectionIds = useMemo(
     () => navItems.map((n) => n.url.replace(/^#/, "")),
-    []
+    [],
   );
   const activeId = useMajorSectionId(sectionIds);
 
@@ -72,14 +71,14 @@ export function AppSidebar() {
                     key={item.title}
                     className={cn(
                       "transition-all duration-300 ease-out will-change-transform",
-                      isActive ? "translate-x-2" : "translate-x-0"
+                      isActive ? "translate-x-2" : "translate-x-0",
                     )}
                   >
                     <SidebarMenuButton asChild>
                       <Link href={item.url}>
                         <item.icon
                           className={cn(
-                            isActive && "text-primary font-semibold"
+                            isActive && "text-primary font-semibold",
                           )}
                         />
                         {isActive ? (

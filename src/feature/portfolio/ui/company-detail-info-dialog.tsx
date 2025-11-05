@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,8 +21,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 interface CompanyDetailInfoDialogProps {
   company: string;
@@ -142,8 +142,8 @@ export default function CompanyDetailInfoDialog({
         <div className="w-full flex justify-center">
           <Carousel>
             <CarouselContent className="max-w-[70vw] sm:max-w-[400px]">
-              {targetCompanyDetailInfo?.map((item, idx) => (
-                <CarouselItem key={idx}>
+              {targetCompanyDetailInfo?.map((item) => (
+                <CarouselItem key={item.src}>
                   {item.src.endsWith(".mp4") ? (
                     <video
                       className="select-none object-contain w-full aspect-video"
@@ -166,7 +166,7 @@ export default function CompanyDetailInfoDialog({
 
                   {item.tag && (
                     <div className="flex gap-1 mt-1 flex-wrap">
-                      {item.tag.map((tag, idx) => (
+                      {item.tag.map((tag) => (
                         <Badge key={tag} variant="outline">
                           #{tag}
                         </Badge>

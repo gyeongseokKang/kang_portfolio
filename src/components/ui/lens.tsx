@@ -1,7 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionTemplate } from "motion/react";
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import type React from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 interface Position {
   /** The x coordinate of the lens */
@@ -71,9 +72,7 @@ export function Lens({
     if (e.key === "Escape") setIsHovering(false);
   }, []);
 
-  const maskImage = useMotionTemplate`radial-gradient(circle ${
-    lensSize / 2
-  }px at ${currentPosition.x}px ${
+  const maskImage = useMotionTemplate`radial-gradient(circle ${lensSize / 2}px at ${currentPosition.x}px ${
     currentPosition.y
   }px, ${lensColor} 100%, transparent 100%)`;
 
@@ -105,27 +104,19 @@ export function Lens({
         </div>
       </motion.div>
     );
-  }, [
-    currentPosition,
-    lensSize,
-    lensColor,
-    zoomFactor,
-    children,
-    duration,
-    maskImage,
-  ]);
+  }, [currentPosition, zoomFactor, children, duration, maskImage]);
 
   return (
-    <div
+    <section
       ref={containerRef}
       className="relative z-20 overflow-hidden rounded-xl"
+      aria-label={ariaLabel}
+      onFocus={() => setIsHovering(true)}
+      onBlur={() => setIsHovering(false)}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}
       onKeyDown={handleKeyDown}
-      role="region"
-      aria-label={ariaLabel}
-      tabIndex={0}
     >
       {children}
       {isStatic || defaultPosition ? (
@@ -135,6 +126,6 @@ export function Lens({
           {isHovering && LensContent}
         </AnimatePresence>
       )}
-    </div>
+    </section>
   );
 }
