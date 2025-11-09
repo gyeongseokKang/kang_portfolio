@@ -4,7 +4,7 @@ import { ArrowUp } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { useMajorSectionId } from "@/hooks/use-major-section-id";
-import { NAV_ITEMS_ID } from "@/shared/ui/app-sidebar";
+import { FIRST_NAV_ITEM_ID } from "@/shared/ui/app-sidebar";
 
 export function ScrollToTop() {
   const activeId = useMajorSectionId();
@@ -13,7 +13,7 @@ export function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const isHidden = activeId === NAV_ITEMS_ID[0];
+  const isHidden = !FIRST_NAV_ITEM_ID || activeId === FIRST_NAV_ITEM_ID;
 
   return (
     <AnimatePresence initial={false}>

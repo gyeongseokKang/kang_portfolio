@@ -36,6 +36,8 @@ export const NAV_ITEMS = [
 
 export const NAV_ITEMS_ID = NAV_ITEMS.map((n) => n.url.replace(/^#/, ""));
 
+export const FIRST_NAV_ITEM_ID = NAV_ITEMS_ID[0];
+
 export function AppSidebar() {
   const activeId = useMajorSectionId();
 
