@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { NAV_ITEMS_ID } from "@/shared/ui/app-sidebar";
 
 /**
  * Observe the given section IDs and return the ID of the section that currently
  * occupies the largest portion of the viewport.
  */
-export function useMajorSectionId(sectionIds: string[]): string | null {
+export function useMajorSectionId(): string | null {
   const [activeId, setActiveId] = useState<string | null>(null);
   const rafRef = useRef<number | null>(null);
   const pendingRef = useRef(false);
@@ -14,7 +15,8 @@ export function useMajorSectionId(sectionIds: string[]): string | null {
   useEffect(() => {
     const compute = () => {
       pendingRef.current = false;
-      const sections = getSectionElements(sectionIds);
+
+      const sections = getSectionElements(NAV_ITEMS_ID);
       if (sections.length === 0) return;
       const vh = window.innerHeight || document.documentElement.clientHeight;
       let maxVisible = -1;
@@ -52,7 +54,7 @@ export function useMajorSectionId(sectionIds: string[]): string | null {
         rafRef.current = null;
       }
     };
-  }, [sectionIds]);
+  }, []);
 
   return activeId;
 }
