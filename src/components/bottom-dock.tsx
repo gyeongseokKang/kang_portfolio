@@ -15,7 +15,7 @@ import {
 } from "./ui/dropdown-menu";
 
 const DATA = {
-        contact: {
+  contact: {
     social: {
       GitHub: {
         name: "GitHub",
