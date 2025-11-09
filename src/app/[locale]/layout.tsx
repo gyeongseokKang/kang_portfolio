@@ -5,14 +5,15 @@ import type { Metadata } from "next/types";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
-import { AppSidebar } from "@/components/app-sidebar";
 import { BottomDock } from "@/components/bottom-dock";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { routing } from "@/i18n/routing";
+import { AppSidebar } from "@/shared/ui/app-sidebar";
 import "../globals.css";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("seo");
@@ -79,8 +80,9 @@ export default async function LocaleLayout({
                   <LocaleSwitcher />
                 </div>
                 <ScrollArea type="always">{children}</ScrollArea>
-                <div className="fixed bottom-2 right-2 z-50 flex gap-2 ">
+                <div className="fixed bottom-2 right-2 z-50 flex gap-2 items-end">
                   <BottomDock />
+                  <ScrollToTop />
                 </div>
               </main>
             </SidebarProvider>

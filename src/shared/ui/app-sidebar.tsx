@@ -9,7 +9,6 @@ import {
   Wrench,
 } from "lucide-react";
 import Image from "next/image";
-import { useMemo } from "react";
 import {
   Sidebar,
   SidebarContent,
@@ -25,9 +24,9 @@ import {
 import { useMajorSectionId } from "@/hooks/use-major-section-id";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { AuroraText } from "./ui/aurora-text";
+import { AuroraText } from "../../components/ui/aurora-text";
 
-const navItems = [
+export const NAV_ITEMS = [
   { title: "Experience", url: "#Experience", icon: Briefcase },
   { title: "Project", url: "#Project", icon: FolderKanban },
   { title: "Activity", url: "#Activity", icon: Wrench },
@@ -35,12 +34,12 @@ const navItems = [
   { title: "Retrospective", url: "#Retrospective", icon: History },
 ] as const;
 
+export const NAV_ITEMS_ID = NAV_ITEMS.map((n) => n.url.replace(/^#/, ""));
+
+export const FIRST_NAV_ITEM_ID = NAV_ITEMS_ID[0];
+
 export function AppSidebar() {
-  const sectionIds = useMemo(
-    () => navItems.map((n) => n.url.replace(/^#/, "")),
-    [],
-  );
-  const activeId = useMajorSectionId(sectionIds);
+  const activeId = useMajorSectionId();
 
   return (
     <Sidebar>
@@ -64,7 +63,7 @@ export function AppSidebar() {
           <SidebarGroupLabel>Portfolio</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {navItems.map((item) => {
+              {NAV_ITEMS.map((item) => {
                 const isActive = activeId === item.url.slice(1);
                 return (
                   <SidebarMenuItem
