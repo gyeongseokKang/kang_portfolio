@@ -4,20 +4,24 @@ import { ArrowUp } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { useMajorSectionId } from "@/hooks/use-major-section-id";
+import { useScrollPosition } from "@/hooks/use-scroll-position";
 import { FIRST_NAV_ITEM_ID } from "@/shared/ui/app-sidebar";
+
+const MIN_HEIGHT = 1024;
 
 export function ScrollToTop() {
   const activeId = useMajorSectionId();
+  const { scrollY } = useScrollPosition();
 
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const isHidden = !FIRST_NAV_ITEM_ID || activeId === FIRST_NAV_ITEM_ID;
+  const isVisible = checkScrollButtonVisibility(activeId, scrollY);
 
   return (
     <AnimatePresence initial={false}>
-      {!isHidden && (
+      {isVisible && (
         <motion.div
           key="scroll-to-top"
           className="origin-bottom-right"
@@ -39,4 +43,24 @@ export function ScrollToTop() {
       )}
     </AnimatePresence>
   );
+}
+
+function checkScrollButtonVisibility(activeId: string, scrollY: number) {
+  return (
+    checkCurrentSectionIsNotFirst(activeId) ||
+    checkScrollThresholdIsOverflow(scrollY)
+  );
+}
+
+function checkScrollThresholdIsOverflow(scrollY: number) {
+  const windowHeight = getWindowHeight();
+  return scrollY > windowHeight;
+}
+
+function checkCurrentSectionIsNotFirst(activeId: string) {
+  return activeId !== FIRST_NAV_ITEM_ID;
+}
+
+function getWindowHeight() {
+  return window?.innerHeight || MIN_HEIGHT;
 }
