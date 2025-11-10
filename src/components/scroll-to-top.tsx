@@ -14,7 +14,9 @@ export function ScrollToTop() {
   const { scrollY } = useScrollPosition();
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const isVisible = checkScrollButtonVisibility(activeId, scrollY);
@@ -62,5 +64,5 @@ function checkCurrentSectionIsNotFirst(activeId: string) {
 }
 
 function getWindowHeight() {
-  return window?.innerHeight || MIN_HEIGHT;
+  return typeof window !== "undefined" ? window.innerHeight : MIN_HEIGHT;
 }
