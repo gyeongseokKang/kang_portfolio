@@ -102,6 +102,13 @@
   "Retrospective": {
     "subtitle": "Quarterly retrospectives organized as a timeline. (since 2022)",
     "2025": {
+      "4Q": {
+        "title": "Joined Coupang Play and started fresh as a Senior Engineer",
+        "details": "Focused on adapting to an English-speaking environment, earning team trust, and learning the work process",
+        "extra1": "Onboarded at Coupang Play as a Senior Engineer in a new environment",
+        "extra2": "Adapted to English-driven meetings, documentation, and code reviews to strengthen communication skills",
+        "extra3": "Studied the team's existing codebase and processes, working to become a trusted team member"
+      },
       "3Q": {
         "title": "Tried building an API Developer site",
         "details": "Cleared legacy and developed user/admin tools providing APIs",

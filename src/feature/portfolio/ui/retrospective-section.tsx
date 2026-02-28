@@ -58,6 +58,16 @@ export default function RetrospectiveSection() {
       year: 2025,
       items: [
         {
+          quarter: "4Q",
+          title: t("2025.4Q.title"),
+          details: t("2025.4Q.details"),
+          extra: [
+            t("2025.4Q.extra1"),
+            t("2025.4Q.extra2"),
+            t("2025.4Q.extra3"),
+          ],
+        },
+        {
           quarter: "3Q",
           title: t("2025.3Q.title"),
           details: t("2025.3Q.details"),
