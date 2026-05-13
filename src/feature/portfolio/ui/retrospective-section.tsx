@@ -55,6 +55,21 @@ export default function RetrospectiveSection() {
 
   const DATA: RetrospectiveYear[] = [
     {
+      year: 2026,
+      items: [
+        {
+          quarter: "1Q",
+          title: t("2026.1Q.title"),
+          details: t("2026.1Q.details"),
+          extra: [
+            t("2026.1Q.extra1"),
+            t("2026.1Q.extra2"),
+            t("2026.1Q.extra3"),
+          ],
+        },
+      ],
+    },
+    {
       year: 2025,
       items: [
         {
