@@ -52,6 +52,10 @@
       "name": "Personal Portfolio Site",
       "description": "Next.js + shadcn/ui based multilingual portfolio site."
     },
+    "chulgang25": {
+      "name": "ChulgangEO",
+      "description": "Platform connecting organizations with on-site workshop providers."
+    },
     "travel-erp": {
       "name": "Travel Agency ERP+CRM",
       "description": "Web migration of MS Access based system + Reservation site support"

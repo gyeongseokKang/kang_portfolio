@@ -52,6 +52,10 @@
       "name": "개인 포트폴리오 사이트",
       "description": "Next.js + shadcn/ui 기반의 다국어 포트폴리오 사이트."
     },
+    "chulgang25": {
+      "name": "출강이오",
+      "description": "기업·기관과 출강 업체를 연결하는 플랫폼."
+    },
     "travel-erp": {
       "name": "여행사 ERP+CRM",
       "description": "MS Access 기반 시스템의 웹 마이그레이션 + 예약 사이트 제공"

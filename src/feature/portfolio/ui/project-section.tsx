@@ -1,11 +1,5 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
-import { LinkIcon } from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { useRef } from "react";
 import { StackChip } from "@/components/stack-chip";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,6 +11,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Lens } from "@/components/ui/lens";
+import Autoplay from "embla-carousel-autoplay";
+import { LinkIcon } from "lucide-react";
+import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useRef } from "react";
 import SectionLayout from "./section-layout";
 
 export type ProjectItem = {
@@ -65,6 +65,21 @@ export default function ProjectSection() {
       ],
     },
     {
+      id: "chulgang25",
+      title: t("chulgang25.name"),
+      description: t("chulgang25.description"),
+      thumbnail: "/images/project/출강이오.gif",
+      link: "https://www.chulgang25.com/",
+      stacks: [
+        "React",
+        "Typescript",
+        "Next-js",
+        "shadcn",
+        "Tailwind",
+        "Github",
+      ],
+    },
+    {
       id: "travel-erp",
       title: t("travel-erp.name"),
       description: t("travel-erp.description"),
@@ -92,7 +107,6 @@ export default function ProjectSection() {
         "Typescript",
         "Next-js",
         "Tailwind",
-        "Amplify",
         "MUI",
         "flutter",
         "dart",
@@ -166,7 +180,7 @@ export default function ProjectSection() {
                         </span>
                       </div>
                       <div className="flex justify-end">
-                        <StackChip stackList={p.stacks} max={6} />
+                        <StackChip stackList={p.stacks} max={8} />
                       </div>
                     </CardContent>
                   </Card>
