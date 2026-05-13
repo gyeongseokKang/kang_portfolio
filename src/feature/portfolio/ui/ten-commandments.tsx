@@ -15,6 +15,7 @@ export default function TenCommandments() {
   const items = [
     t("ten-commandments.commandment1"),
     t("ten-commandments.commandment2"),
+    t("ten-commandments.commandment3"),
     "",
     "",
     "",

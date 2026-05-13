@@ -20,7 +20,8 @@
       "title": "10 Commandments of Development",
       "description": "Still being worked on",
       "commandment1": "Seeking convenience and removing inconvenience",
-      "commandment2": "Automate if it is repeated, but final confirmation is by a Human"
+      "commandment2": "When it repeats, automate it.",
+      "commandment3": "I am responsible for every change."
     }
   },
   "Experience": {

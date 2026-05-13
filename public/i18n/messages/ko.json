@@ -20,7 +20,8 @@
       "title": "개발 10계명",
       "description": "아직 채워나가는 중입니다.",
       "commandment1": "편리함을 추구하고 불편함을 제거한다",
-      "commandment2": "반복돠면 자동화한다, 하지만 최종확인은 사람이"
+      "commandment2": "반복되면 자동화한다.",
+      "commandment3": "모든 변경사항에 대한 책임은 나에게 있다"
     }
   },
   "Experience": {
