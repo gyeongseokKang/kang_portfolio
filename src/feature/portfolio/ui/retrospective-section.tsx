@@ -1,6 +1,7 @@
 "use client";
+
+import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -9,10 +10,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Marquee } from "@/components/ui/marquee";
-import { Switch } from "@/components/ui/switch";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 import SectionLayout from "./section-layout";
+
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+const yearListVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.04 },
+  },
+};
+
+const blockVariants = {
+  hidden: { opacity: 0, y: 12 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.42, ease: easeOut },
+  },
+};
 
 type RetrospectiveItem = {
   quarter: string;
@@ -28,17 +53,21 @@ type RetrospectiveYear = {
 
 function Item({ item }: { item: RetrospectiveItem }) {
   return (
-    <Card className="gap-2">
+    <Card className="h-full gap-2">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-base">
-          <Badge variant={"secondary"}>{item.quarter}</Badge>
-          {item.title}
+        <CardTitle className="flex flex-wrap items-center gap-2 text-base leading-snug">
+          <Badge variant="secondary" className="shrink-0 font-mono text-xs">
+            {item.quarter}
+          </Badge>
+          <span>{item.title}</span>
         </CardTitle>
-        <CardDescription>{item.details}</CardDescription>
+        <CardDescription className="text-pretty">
+          {item.details}
+        </CardDescription>
       </CardHeader>
       <CardContent className="px-6 py-2">
         {item.extra && item.extra.length > 0 && (
-          <ul className="list-disc pl-5 mt-2 space-y-1 text-xs">
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             {item.extra.map((e) => (
               <li key={e}>{e}</li>
             ))}
@@ -51,7 +80,7 @@ function Item({ item }: { item: RetrospectiveItem }) {
 
 export default function RetrospectiveSection() {
   const t = useTranslations("Retrospective");
-  const [isMarquee, setIsMarquee] = useState(true);
+  const prefersReducedMotion = useReducedMotion();
 
   const DATA: RetrospectiveYear[] = [
     {
@@ -230,33 +259,56 @@ export default function RetrospectiveSection() {
       description={t("subtitle")}
       fullWidth
     >
-      <div className="flex items-center justify-end space-x-2">
-        <Switch
-          id="airplane-mode"
-          onCheckedChange={(checked) => setIsMarquee(checked)}
-          checked={isMarquee}
-        />
-        <Label htmlFor="airplane-mode">Marquee Mode</Label>
-      </div>
-      <div className="flex flex-col gap-4 w-full overflow-hidden">
-        {DATA.map((year, idx) => {
-          const isReverse = idx % 2 === 0;
-          return (
-            <div key={year.year}>
-              <p className="text-xl font-bold">{year.year}</p>
-              <Marquee
-                pauseOnHover
-                stopAnimation={!isMarquee}
-                className="[--duration:60s] "
-                reverse={isReverse}
+      <div className="flex w-full flex-col gap-12 md:gap-14">
+        {DATA.map((year) => (
+          <motion.div
+            key={year.year}
+            role="group"
+            aria-labelledby={`retro-year-${year.year}`}
+            className="space-y-5 md:space-y-6"
+            variants={yearListVariants}
+            initial={prefersReducedMotion ? false : "hidden"}
+            whileInView={prefersReducedMotion ? undefined : "show"}
+            viewport={{ once: true, amount: 0.12 }}
+          >
+            <motion.div variants={blockVariants}>
+              <h3
+                id={`retro-year-${year.year}`}
+                className="text-2xl font-bold tracking-tight tabular-nums"
               >
-                {year.items.map((it, idx) => (
-                  <Item key={`${year.year}-${idx}`} item={it} />
-                ))}
-              </Marquee>
-            </div>
-          );
-        })}
+                {year.year}
+              </h3>
+            </motion.div>
+
+            <motion.div
+              variants={blockVariants}
+              className={cn("relative w-full", "px-10 sm:px-12 md:px-14")}
+            >
+              <Carousel
+                opts={{ align: "start", slidesToScroll: 1 }}
+                className="w-full"
+                aria-label={`${year.year} retrospective quarters`}
+              >
+                <CarouselContent>
+                  {year.items.map((it) => (
+                    <CarouselItem
+                      key={`${year.year}-${it.quarter}`}
+                      className={
+                        year.items.length === 1
+                          ? "basis-full max-w-3xl"
+                          : "basis-[min(100%,22rem)] sm:basis-[72%] md:basis-1/2 lg:basis-[46%] xl:basis-[40%]"
+                      }
+                    >
+                      <Item item={it} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-0 sm:left-1" />
+                <CarouselNext className="right-0 sm:right-1" />
+              </Carousel>
+            </motion.div>
+          </motion.div>
+        ))}
       </div>
     </SectionLayout>
   );
