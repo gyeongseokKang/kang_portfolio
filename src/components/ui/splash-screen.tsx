@@ -100,7 +100,7 @@ function Wordmark() {
         transition={{ duration: 0.6, delay: 1.35, ease: "easeOut" }}
         className="mt-4 text-[11px] uppercase tracking-[0.4em] text-white/60 md:text-xs"
       >
-        A Frontend Engineer Original
+        A Software Engineer Original
       </motion.p>
     </div>
   );

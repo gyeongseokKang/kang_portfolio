@@ -16,7 +16,7 @@ export default function WorkingDayCard() {
     <Card className={"w-68"}>
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
-          +{N년차} Frontend Engineer
+          +{N년차} Software Engineer
         </CardTitle>
         <CardDescription>
           <TextAnimate animation="slideUp" by="word" repeat duration={3}>
