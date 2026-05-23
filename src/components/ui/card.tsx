@@ -2,16 +2,49 @@ import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+function CardBadge({
+  children,
+  className,
+  variant = "section",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  variant?: "title" | "section";
+}) {
+  return (
+    <span
+      className={cn(
+        "absolute rounded-md border border-border/60 bg-card font-semibold text-primary/80",
+        variant === "title"
+          ? "-top-3 left-6 px-3 py-1 text-sm tracking-wide text-primary"
+          : "-top-2.5 left-6 px-2 py-0.5 text-[11px] uppercase tracking-[0.14em]",
+        className,
+      )}
+    >
+      {children}
+    </span>
+  );
+}
+
+function Card({
+  className,
+  badgeTitle,
+  children,
+  ...props
+}: React.ComponentProps<"div"> & { badgeTitle?: string }) {
   return (
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-3 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground relative flex flex-col gap-3 rounded-xl border py-6 shadow-sm",
+        badgeTitle && "pt-9",
         className,
       )}
       {...props}
-    />
+    >
+      {badgeTitle ? <CardBadge variant="title">{badgeTitle}</CardBadge> : null}
+      {children}
+    </div>
   );
 }
 
@@ -84,6 +117,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 export {
   Card,
   CardAction,
+  CardBadge,
   CardContent,
   CardDescription,
   CardFooter,

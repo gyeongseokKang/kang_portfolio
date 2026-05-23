@@ -1,29 +1,26 @@
 "use client";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
+import { useTranslations } from "next-intl";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { getExperiencedYear } from "@/lib/dayUtils";
+import { LabeledSection } from "./labeled-section";
 
 export default function WorkingDayCard() {
+  const t = useTranslations("hero");
   const { N년차, coupangPlayDays } = getExperiencedYear();
 
-  const coupangPlayDaysText = `${coupangPlayDays.toString()} workdays in Coupang Play`;
   return (
-    <Card className={"w-68"}>
-      <CardHeader>
-        <CardTitle className="flex items-center justify-between">
-          +{N년차} Software Engineer
-        </CardTitle>
-        <CardDescription>
+    <LabeledSection label={t("experience.label")} className="w-full max-w-xs">
+      <div className="text-center">
+        <p className="m-0 text-base font-semibold">
+          {t("experience.title", { years: N년차 })}
+        </p>
+        <p className="m-0 mt-1 text-sm text-muted-foreground">
           <TextAnimate animation="slideUp" by="word" repeat duration={3}>
-            {coupangPlayDaysText}
+            {t("experience.workdays", { days: coupangPlayDays })}
           </TextAnimate>
-        </CardDescription>
-      </CardHeader>
-    </Card>
+        </p>
+      </div>
+    </LabeledSection>
   );
 }

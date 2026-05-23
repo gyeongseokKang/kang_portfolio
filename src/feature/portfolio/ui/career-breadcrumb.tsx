@@ -10,79 +10,82 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { LabeledSection } from "./labeled-section";
 
 export const CareerBreadcrumb = () => {
   const t = useTranslations("hero");
   return (
-    <Breadcrumb className="border rounded-lg px-6 py-3 shadow">
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <HoverCard openDelay={0}>
-            <HoverCardTrigger>{t("carchap")}</HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <CareerInfo
-                position="CTO & Co-founder"
-                period={{
-                  start: "2018.12",
-                  end: "2020.05",
-                }}
-                team="Business Intelligence Platform"
-              />
-            </HoverCardContent>
-          </HoverCard>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <HoverCard openDelay={0}>
-            <HoverCardTrigger>{t("tmax")}</HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <CareerInfo
-                position="Research Engineer"
-                period={{
-                  start: "2020.02",
-                  end: "2022.06",
-                }}
-                team="Business Intelligence Platform"
-              />
-            </HoverCardContent>
-          </HoverCard>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <HoverCard openDelay={0}>
-            <HoverCardTrigger>{t("gaudiolab")}</HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <CareerInfo
-                position="Lead Frontend Engineer"
-                period={{
-                  start: "2022.07",
-                  end: "2025.09",
-                }}
-                team="Service & AI"
-              />
-            </HoverCardContent>
-          </HoverCard>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <HoverCard openDelay={0}>
-            <HoverCardTrigger className="space-x-2 text-primary">
-              {t("coupang-play")}
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <CareerInfo
-                position="Sr.Frontend Engineer"
-                period={{
-                  start: "2025.10",
-                  end: "current",
-                }}
-                team="CoupangPlay Monetization"
-              />
-            </HoverCardContent>
-          </HoverCard>
-        </BreadcrumbItem>
-      </BreadcrumbList>
-    </Breadcrumb>
+    <LabeledSection label={t("careerPath.label")} className="w-full max-w-xs">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <HoverCard openDelay={0}>
+              <HoverCardTrigger>{t("carchap")}</HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <CareerInfo
+                  position="CTO & Co-founder"
+                  period={{
+                    start: "2018.12",
+                    end: "2020.05",
+                  }}
+                  team="Business Intelligence Platform"
+                />
+              </HoverCardContent>
+            </HoverCard>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <HoverCard openDelay={0}>
+              <HoverCardTrigger>{t("tmax")}</HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <CareerInfo
+                  position="Research Engineer"
+                  period={{
+                    start: "2020.02",
+                    end: "2022.06",
+                  }}
+                  team="Business Intelligence Platform"
+                />
+              </HoverCardContent>
+            </HoverCard>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <HoverCard openDelay={0}>
+              <HoverCardTrigger>{t("gaudiolab")}</HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <CareerInfo
+                  position="Lead Frontend Engineer"
+                  period={{
+                    start: "2022.07",
+                    end: "2025.09",
+                  }}
+                  team="Service & AI"
+                />
+              </HoverCardContent>
+            </HoverCard>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <HoverCard openDelay={0}>
+              <HoverCardTrigger className="space-x-2 text-primary">
+                {t("coupang-play")}
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <CareerInfo
+                  position="Sr.Frontend Engineer"
+                  period={{
+                    start: "2025.10",
+                    end: "current",
+                  }}
+                  team="CoupangPlay Monetization"
+                />
+              </HoverCardContent>
+            </HoverCard>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </LabeledSection>
   );
 };
 

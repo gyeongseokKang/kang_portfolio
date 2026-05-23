@@ -1,42 +1,34 @@
 import { ChevronRightIcon, Rss } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
-import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item";
 import { Link } from "@/i18n/navigation";
+import { LabeledSection } from "./labeled-section";
 
 export function BlogInfoItem() {
+  const t = useTranslations("hero");
+
   return (
-    <div className="flex w-full max-w-xs flex-col gap-6">
-      <Item variant="outline" size="sm" asChild>
-        <Link
-          href="https://all-dev-kang.tistory.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group"
-        >
-          <ItemMedia>
-            <Rss className="size-4" />
-          </ItemMedia>
-          <ItemContent>
-            <ItemTitle>편리함을 추구하는 핸디의 지식 블로그</ItemTitle>
-            <ItemDescription className="space-x-1">
-              <Badge variant="secondary">#Blog</Badge>
-              <Badge variant="secondary">#0.7M View</Badge>
-              <Badge variant="secondary">#400 posts</Badge>
-            </ItemDescription>
-          </ItemContent>
-          <ItemActions>
-            <ChevronRightIcon className="size-4 group-hover:translate-x-2 transition-all group-hover:size-5" />
-          </ItemActions>
-        </Link>
-      </Item>
-    </div>
+    <LabeledSection label={t("blog.label")} className="w-full max-w-xs">
+      <Link
+        href="https://all-dev-kang.tistory.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-3"
+      >
+        <Rss className="size-4 shrink-0 text-muted-foreground" />
+        <div className="min-w-0 flex-1">
+          <p className="m-0 text-sm font-medium leading-snug">
+            {t("blog.title")}
+          </p>
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            <Badge variant="secondary">#Blog</Badge>
+            <Badge variant="secondary">#0.7M View</Badge>
+            <Badge variant="secondary">#400 posts</Badge>
+          </div>
+        </div>
+        <ChevronRightIcon className="size-4 shrink-0 transition-all group-hover:translate-x-1 group-hover:size-5" />
+      </Link>
+    </LabeledSection>
   );
 }

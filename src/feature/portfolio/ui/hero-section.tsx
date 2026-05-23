@@ -1,16 +1,13 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { AuroraText } from "@/components/ui/aurora-text";
-import { CometCard } from "@/components/ui/comet-card";
 import { cn } from "@/lib/utils";
 import { BlogInfoItem } from "./blog-info-item";
-import BookCard from "./book-card";
 import { CareerBreadcrumb } from "./career-breadcrumb";
-import IntroCard from "./intro-card";
-import { StackList } from "./stack-list";
+import ProfileSummaryCard from "./profile-summary-card";
+import TechStackCard from "./tech-stack-card";
 import TenCommandments from "./ten-commandments";
 import WorkingDayCard from "./working-day-card";
 
@@ -60,7 +57,7 @@ export default function HeroSection() {
         )}
       >
         <motion.div variants={item}>
-          <IntroCard />
+          <ProfileSummaryCard />
         </motion.div>
         <motion.div
           variants={item}
@@ -71,24 +68,10 @@ export default function HeroSection() {
           <WorkingDayCard />
         </motion.div>
         <motion.div variants={item}>
-          <StackList />
-        </motion.div>
-        <motion.div variants={item}>
-          <BookCard />
+          <TechStackCard />
         </motion.div>
         <motion.div variants={item}>
           <TenCommandments />
-        </motion.div>
-        <motion.div variants={item} className="mx-auto">
-          <CometCard rotateDepth={12} translateDepth={14}>
-            <Image
-              className="rounded-xl"
-              src="/images/Handy2.jpg"
-              alt="Handy"
-              width={240}
-              height={300}
-            />
-          </CometCard>
         </motion.div>
       </motion.div>
     </section>

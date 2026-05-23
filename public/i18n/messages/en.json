@@ -10,22 +10,37 @@
     "coupang-play": "Coupang Play",
     "current": "current",
     "intro": {
+      "card_label": "1-Min Summary",
       "title": "Handy Kang, a software engineer who designs for convenience",
       "label_1": "Now",
-      "label_2": "Background",
+      "label_2": "Strengths",
       "label_3": "Approach",
       "label_4": "Focus",
-      "description_1": "I work as a Senior Software Engineer at Coupang Play, owning usability and performance across the product.",
-      "description_2": "Previously, I co-founded an integrated mobility service and at TmaxSoft built BI-based HyperData. I also led product engineering at Gaudio Lab, designing and maintaining various products.",
-      "description_3": "I solve problems from a full-stack perspective, extending experience beyond web and app into backend, infrastructure, and APIs.",
-      "description_4": "I'm focusing on growing to Staff level as an IC—expanding org and product impact through clear goals and priorities, a healthy review culture, and improved collaboration processes."
+      "description_1": "As a Senior Software Engineer at Coupang Play, I own payment flows and monetization on the Monetization team.",
+      "description_2": "I'm strong at maintaining legacy projects and improving them step by step. I also have experience leading teams and collaborating across groups.",
+      "description_3": "Beyond web and apps, I'm expanding into backend, infrastructure, and APIs—and using AI to actively solve problems for myself and my team.",
+      "description_4": "As an IC, I focus on building services that create positive impact for my team and organization."
     },
-    "ten-commandments": {
-      "title": "10 Commandments of Development",
-      "description": "Still being worked on",
+    "careerPath": {
+      "label": "Career"
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Handy's knowledge blog pursuing convenience"
+    },
+    "experience": {
+      "label": "Experience",
+      "title": "+{years} Years Software Engineer",
+      "workdays": "{days} workdays in Coupang Play"
+    },
+    "philosophy": {
+      "label": "Development Philosophy",
       "commandment1": "Seeking convenience and removing inconvenience",
       "commandment2": "When it repeats, automate it.",
       "commandment3": "I am responsible for every change."
+    },
+    "techStack": {
+      "card_label": "Tech Stack"
     }
   },
   "Career": {

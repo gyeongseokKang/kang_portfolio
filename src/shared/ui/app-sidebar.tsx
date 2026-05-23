@@ -2,9 +2,11 @@
 
 import {
   Book,
+  BookOpen,
   Briefcase,
   FolderKanban,
   History,
+  Newspaper,
   Trophy,
   Wrench,
 } from "lucide-react";
@@ -94,7 +96,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Blog</SidebarGroupLabel>
+          <SidebarGroupLabel>Writing</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
@@ -104,6 +106,26 @@ export function AppSidebar() {
                     target="_blank"
                   >
                     <Book /> <span>Dev Blog</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link
+                    href="https://product.kyobobook.co.kr/detail/S000218081064"
+                    target="_blank"
+                  >
+                    <BookOpen /> <span>Book</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link
+                    href="https://yozm.wishket.com/magazine/@rkdrudtjr159/"
+                    target="_blank"
+                  >
+                    <Newspaper /> <span>Articles</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
