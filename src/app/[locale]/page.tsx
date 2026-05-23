@@ -1,10 +1,10 @@
 import SplashScreen from "@/components/ui/splash-screen";
+import AchievementsSection from "@/feature/portfolio/ui/achievements-section";
+import ActivitySection from "@/feature/portfolio/ui/activity-section";
+import CareerSection from "@/feature/portfolio/ui/career-section";
+import ExperienceSection from "@/feature/portfolio/ui/experience-section";
 import HeroSection from "@/feature/portfolio/ui/hero-section";
-import AchievementsSectionLazy from "@/feature/portfolio/ui/lazy/achievements-section-lazy";
-import ActivitySectionLazy from "@/feature/portfolio/ui/lazy/activity-section-lazy";
-import CareerSectionLazy from "@/feature/portfolio/ui/lazy/career-section-lazy";
-import ExperienceSectionLazy from "@/feature/portfolio/ui/lazy/experience-section-lazy";
-import ProjectSectionLazy from "@/feature/portfolio/ui/lazy/project-section-lazy";
+import ProjectSection from "@/feature/portfolio/ui/project-section";
 
 export default function Home() {
   return (
@@ -12,11 +12,11 @@ export default function Home() {
       <SplashScreen />
       <div className="mx-auto p-8 justify-center flex flex-col gap-10 mb-20">
         <HeroSection />
-        <CareerSectionLazy />
-        <ProjectSectionLazy />
-        <ActivitySectionLazy />
-        <AchievementsSectionLazy />
-        <ExperienceSectionLazy />
+        <CareerSection />
+        <ProjectSection />
+        <ActivitySection />
+        <AchievementsSection />
+        <ExperienceSection />
       </div>
     </>
   );
