@@ -1,4 +1,7 @@
 {
+  "footer": {
+    "lastUpdated": "Last updated"
+  },
   "seo": {
     "title": "Handy Kang's Portfolio",
     "description": "Portfolio of Handy Kang, a Software Engineer spanning web, app, and backend. Senior engineer at Coupang Play, responsible for product usability and performance, with a full-stack perspective and leadership mindset."
@@ -123,8 +126,8 @@
   "Achievements": {
     "subtitle": "Awards & Certifications"
   },
-  "Retrospective": {
-    "subtitle": "Quarterly retrospectives organized as a timeline. (since 2022)",
+  "Experience": {
+    "subtitle": "Quarterly experiences organized as a timeline. (since 2022)",
     "2026": {
       "1Q": {
         "title": "Raised delivery density at Coupang Play with tooling and shared modules",

@@ -1,5 +1,6 @@
 "use client";
 
+import dayjs from "dayjs";
 import {
   Book,
   BookOpen,
@@ -11,6 +12,7 @@ import {
   Wrench,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import {
   Sidebar,
   SidebarContent,
@@ -33,15 +35,18 @@ export const NAV_ITEMS = [
   { title: "Project", url: "#Project", icon: FolderKanban },
   { title: "Activity", url: "#Activity", icon: Wrench },
   { title: "Achievements", url: "#Achievements", icon: Trophy },
-  { title: "Retrospective", url: "#Retrospective", icon: History },
+  { title: "Experience", url: "#Experience", icon: History },
 ] as const;
 
 export const NAV_ITEMS_ID = NAV_ITEMS.map((n) => n.url.replace(/^#/, ""));
 
 export const FIRST_NAV_ITEM_ID = NAV_ITEMS_ID[0];
 
+const lastUpdated = process.env.NEXT_PUBLIC_LAST_UPDATED;
+
 export function AppSidebar() {
   const activeId = useMajorSectionId();
+  const t = useTranslations("footer");
 
   return (
     <Sidebar>
@@ -135,6 +140,12 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <div className="text-xs text-muted-foreground">
+          {lastUpdated && (
+            <>
+              {t("lastUpdated")}: {dayjs(lastUpdated).format("YYYY.MM.DD")}
+              <br />
+            </>
+          )}
           copyright © {new Date().getFullYear()} Handy Kang. <br />
           All rights reserved.
         </div>

@@ -39,19 +39,19 @@ const blockVariants = {
   },
 };
 
-type RetrospectiveItem = {
+type ExperienceItem = {
   quarter: string;
   title: string;
   details: string;
   extra?: string[];
 };
 
-type RetrospectiveYear = {
+type ExperienceYear = {
   year: number;
-  items: RetrospectiveItem[];
+  items: ExperienceItem[];
 };
 
-function Item({ item }: { item: RetrospectiveItem }) {
+function Item({ item }: { item: ExperienceItem }) {
   return (
     <Card className="h-full gap-2">
       <CardHeader>
@@ -78,11 +78,11 @@ function Item({ item }: { item: RetrospectiveItem }) {
   );
 }
 
-export default function RetrospectiveSection() {
-  const t = useTranslations("Retrospective");
+export default function ExperienceSection() {
+  const t = useTranslations("Experience");
   const prefersReducedMotion = useReducedMotion();
 
-  const DATA: RetrospectiveYear[] = [
+  const DATA: ExperienceYear[] = [
     {
       year: 2026,
       items: [
@@ -254,8 +254,8 @@ export default function RetrospectiveSection() {
 
   return (
     <SectionLayout
-      id="Retrospective"
-      title="Retrospective"
+      id="Experience"
+      title="Experience"
       description={t("subtitle")}
       fullWidth
     >
@@ -264,7 +264,7 @@ export default function RetrospectiveSection() {
           <motion.div
             key={year.year}
             role="group"
-            aria-labelledby={`retro-year-${year.year}`}
+            aria-labelledby={`experience-year-${year.year}`}
             className="space-y-5 md:space-y-6"
             variants={yearListVariants}
             initial={prefersReducedMotion ? false : "hidden"}
@@ -273,7 +273,7 @@ export default function RetrospectiveSection() {
           >
             <motion.div variants={blockVariants}>
               <h3
-                id={`retro-year-${year.year}`}
+                id={`experience-year-${year.year}`}
                 className="text-2xl font-bold tracking-tight tabular-nums"
               >
                 {year.year}
@@ -287,7 +287,7 @@ export default function RetrospectiveSection() {
               <Carousel
                 opts={{ align: "start", slidesToScroll: 1 }}
                 className="w-full"
-                aria-label={`${year.year} retrospective quarters`}
+                aria-label={`${year.year} experience quarters`}
               >
                 <CarouselContent>
                   {year.items.map((it) => (
