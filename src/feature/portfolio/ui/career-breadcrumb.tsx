@@ -28,7 +28,7 @@ export const CareerBreadcrumb = () => {
                     start: "2018.12",
                     end: "2020.05",
                   }}
-                  team="Business Intelligence Platform"
+                  team="Integrated Mobility"
                 />
               </HoverCardContent>
             </HoverCard>
