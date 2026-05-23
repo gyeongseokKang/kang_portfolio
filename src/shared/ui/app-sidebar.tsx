@@ -27,7 +27,7 @@ import { cn } from "@/lib/utils";
 import { AuroraText } from "../../components/ui/aurora-text";
 
 export const NAV_ITEMS = [
-  { title: "Experience", url: "#Experience", icon: Briefcase },
+  { title: "Career", url: "#Career", icon: Briefcase },
   { title: "Project", url: "#Project", icon: FolderKanban },
   { title: "Activity", url: "#Activity", icon: Wrench },
   { title: "Achievements", url: "#Achievements", icon: Trophy },

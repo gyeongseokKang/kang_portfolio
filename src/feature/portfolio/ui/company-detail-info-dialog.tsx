@@ -31,7 +31,7 @@ export default function CompanyDetailInfoDialog({
   company,
   companyLabel,
 }: CompanyDetailInfoDialogProps) {
-  const t = useTranslations("Experience");
+  const t = useTranslations("Career");
   const companyDetailInfo: Record<
     string,
     { src: string; alt: string; tag?: string[] }[]

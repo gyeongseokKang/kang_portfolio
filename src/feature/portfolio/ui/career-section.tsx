@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import CompanyDetailInfoDialog from "./company-detail-info-dialog";
 import SectionLayout from "./section-layout";
 
-type ExperienceItem = {
+type CareerItem = {
   name: string;
   role?: string | string[];
   period?: string;
@@ -28,10 +28,10 @@ const itemVariants = {
   },
 };
 
-export default function ExperienceSection() {
-  const t = useTranslations("Experience");
+export default function CareerSection() {
+  const t = useTranslations("Career");
 
-  const experiences: ExperienceItem[] = [
+  const careers: CareerItem[] = [
     {
       id: "coupang-play",
       name: t("coupang-play.name"),
@@ -82,13 +82,9 @@ export default function ExperienceSection() {
     },
   ];
   return (
-    <SectionLayout
-      id="Experience"
-      title="Experience"
-      description={t("subtitle")}
-    >
+    <SectionLayout id="Career" title="Career" description={t("subtitle")}>
       <div className="space-y-6">
-        {experiences.map((item, idx) => (
+        {careers.map((item, idx) => (
           <motion.div
             key={item.name}
             className="space-y-4"
@@ -148,7 +144,7 @@ export default function ExperienceSection() {
                 </div>
               </div>
             </div>
-            {idx < experiences.length - 1 && <Separator className="mt-6" />}
+            {idx < careers.length - 1 && <Separator className="mt-6" />}
           </motion.div>
         ))}
       </div>

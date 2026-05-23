@@ -31,7 +31,7 @@ export default function IntroCard() {
           onClick={(e) => {
             e.preventDefault();
             document
-              .getElementById("Experience")
+              .getElementById("Career")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
         >
