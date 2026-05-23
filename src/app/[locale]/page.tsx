@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <SplashScreen />
-      <div className="mx-auto p-8 justify-center flex flex-col gap-10">
+      <div className="mx-auto p-8 justify-center flex flex-col gap-10 mb-20">
         <HeroSection />
         <ExperienceSectionLazy />
         <ProjectSectionLazy />
