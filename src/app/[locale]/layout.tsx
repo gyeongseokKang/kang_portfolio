@@ -74,12 +74,19 @@ export default async function LocaleLayout({
           <NextIntlClientProvider>
             <SidebarProvider open>
               <AppSidebar />
-              <main className="relative size-full">
+              <main className="relative size-full min-w-0 overflow-x-clip">
                 <div className="fixed top-2 right-2 z-50 flex gap-2 ">
                   <AnimatedThemeToggler />
                   <LocaleSwitcher />
                 </div>
-                <ScrollArea type="always">{children}</ScrollArea>
+                <ScrollArea
+                  type="always"
+                  className="size-full min-w-0 overflow-x-clip"
+                >
+                  <div className="min-w-0 max-w-full overflow-x-clip">
+                    {children}
+                  </div>
+                </ScrollArea>
                 <div className="fixed bottom-2 right-2 z-50 flex gap-2 items-end">
                   <BottomDock />
                   <ScrollToTop />

@@ -1,7 +1,7 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 import { LabeledSection } from "./labeled-section";
 
 const INTRO_SECTIONS = [
@@ -15,10 +15,7 @@ export default function ProfileSummaryCard() {
   const t = useTranslations("hero");
 
   return (
-    <Card
-      badgeTitle={t("intro.card_label")}
-      className="min-w-[80vw] sm:min-w-[28rem]"
-    >
+    <Card badgeTitle={t("intro.card_label")} className="w-full ">
       <CardContent className="space-y-5 pt-2">
         {INTRO_SECTIONS.map(({ labelKey, descriptionKey }) => (
           <LabeledSection key={descriptionKey} label={t(labelKey)}>

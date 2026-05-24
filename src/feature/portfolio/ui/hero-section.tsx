@@ -32,13 +32,15 @@ export default function HeroSection() {
   const t = useTranslations("hero");
   return (
     <section
-      className={cn("space-y-4 mx-auto flex flex-col items-center mb-20")}
+      className={cn(
+        "mx-auto mb-20 flex w-full min-w-0 max-w-full flex-col items-center space-y-4",
+      )}
     >
       <motion.div
         initial="hidden"
         animate="show"
         variants={container}
-        className="text-2xl lg:text-5xl font-semibold text-center py-4 lg:py-16"
+        className="w-full max-w-full overflow-hidden px-1 py-4 text-center text-2xl font-semibold lg:py-16 lg:text-5xl"
       >
         <motion.div variants={item}>
           <AuroraText>{t("intro.title")}</AuroraText>
@@ -51,26 +53,26 @@ export default function HeroSection() {
         viewport={{ once: true, amount: 0.1 }}
         variants={container}
         className={cn(
-          "2xl:grid-cols-3",
+          "grid w-full min-w-0 grid-cols-1 items-center gap-8",
           "lg:grid-cols-2",
-          "grid grid-cols-1 items-center gap-8",
+          "2xl:grid-cols-3",
         )}
       >
-        <motion.div variants={item}>
+        <motion.div variants={item} className="w-full min-w-0">
           <ProfileSummaryCard />
         </motion.div>
         <motion.div
           variants={item}
-          className="flex flex-col items-center gap-8"
+          className="flex w-full min-w-0 flex-col items-center gap-8"
         >
           <CareerBreadcrumb />
           <BlogInfoItem />
           <WorkingDayCard />
         </motion.div>
-        <motion.div variants={item}>
+        <motion.div variants={item} className="w-full min-w-0">
           <TechStackCard />
         </motion.div>
-        <motion.div variants={item}>
+        <motion.div variants={item} className="w-full min-w-0">
           <TenCommandments />
         </motion.div>
       </motion.div>

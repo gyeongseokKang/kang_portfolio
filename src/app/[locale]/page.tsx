@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <SplashScreen />
-      <div className="mx-auto p-8 justify-center flex flex-col gap-10 mb-20">
+      <div className="mx-auto mb-20 box-border flex w-full min-w-0 max-w-full flex-col justify-center gap-10 overflow-x-clip px-4 py-8 sm:px-8">
         <HeroSection />
         <CareerSection />
         <ProjectSection />

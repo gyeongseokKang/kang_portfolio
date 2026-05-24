@@ -1,7 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
-import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -18,6 +16,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { motion, useReducedMotion } from "motion/react";
+import { useTranslations } from "next-intl";
 import SectionLayout from "./section-layout";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -282,7 +282,7 @@ export default function ExperienceSection() {
 
             <motion.div
               variants={blockVariants}
-              className={cn("relative w-full", "px-10 sm:px-12 md:px-14")}
+              className={cn("relative w-full px-4 md:px-14")}
             >
               <Carousel
                 opts={{ align: "start", slidesToScroll: 1 }}
@@ -303,8 +303,8 @@ export default function ExperienceSection() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-0 sm:left-1" />
-                <CarouselNext className="right-0 sm:right-1" />
+                <CarouselPrevious className="-left-10 sm:-left-12 md:-left-14" />
+                <CarouselNext className="-right-10 sm:-right-12 md:-right-14" />
               </Carousel>
             </motion.div>
           </motion.div>

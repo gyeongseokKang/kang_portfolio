@@ -134,16 +134,19 @@ export default function ProjectSection() {
 
   return (
     <SectionLayout id="Project" title="Project" description={t("subtitle")}>
-      <div>
-        <Carousel className="mx-auto w-full " plugins={[plugin.current]}>
+      <div className="min-w-0 overflow-hidden">
+        <Carousel
+          className="mx-auto w-full min-w-0 overflow-hidden"
+          plugins={[plugin.current]}
+        >
           <CarouselContent>
             {projects.map((p) => (
               <CarouselItem
                 key={p.id}
-                className="sm:basis-1/2 lg:basis-1/3 max-w-svw"
+                className="min-w-0 max-w-full sm:basis-1/2 lg:basis-1/3"
               >
-                <motion.div variants={itemVariants}>
-                  <Card>
+                <motion.div variants={itemVariants} className="min-w-0">
+                  <Card className="min-w-0">
                     <CardHeader className="py-0 flex justify-between items-center h-8">
                       <CardTitle>{p.title}</CardTitle>
                       {p.link && (
@@ -158,9 +161,9 @@ export default function ProjectSection() {
                         </Button>
                       )}
                     </CardHeader>
-                    <CardContent className="space-y-2 w-full ">
+                    <CardContent className="min-w-0 w-full space-y-2">
                       <div className="overflow-hidden rounded-xl border bg-muted/20">
-                        <Lens>
+                        <Lens zoomFactor={3}>
                           <picture>
                             <source
                               srcSet={p.thumbnail || "/icons/amplify.svg"}
@@ -179,8 +182,12 @@ export default function ProjectSection() {
                           {p.description}
                         </span>
                       </div>
-                      <div className="flex justify-end">
-                        <StackChip stackList={p.stacks} max={8} />
+                      <div className="flex min-w-0 justify-end overflow-hidden">
+                        <StackChip
+                          stackList={p.stacks}
+                          max={8}
+                          className="min-w-0 max-w-full"
+                        />
                       </div>
                     </CardContent>
                   </Card>

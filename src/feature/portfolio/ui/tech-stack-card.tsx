@@ -38,19 +38,16 @@ export default function TechStackCard() {
   const t = useTranslations("hero");
 
   return (
-    <Card
-      badgeTitle={t("techStack.card_label")}
-      className="min-w-[80vw] sm:min-w-[28rem]"
-    >
+    <Card badgeTitle={t("techStack.card_label")} className="w-full ">
       <CardContent className="space-y-5 pt-2">
         {groups.map(({ title, chips, summary }) => (
           <LabeledSection key={title} label={title}>
-            <div className="flex items-start justify-between gap-3">
-              <p className="m-0 text-pretty text-sm leading-6 text-foreground/90">
+            <div className="flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <p className="m-0 min-w-0 flex-1 text-pretty text-sm leading-6 text-foreground/90">
                 {summary}
               </p>
               <StackChip
-                className="shrink-0 shadow"
+                className="w-full shrink-0 shadow sm:w-auto"
                 stackList={chips}
                 size={22}
                 max={chips.length}
