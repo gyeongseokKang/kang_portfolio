@@ -1,7 +1,7 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { useTranslations } from "next-intl";
 import { LabeledSection } from "./labeled-section";
 
 const INTRO_SECTIONS = [

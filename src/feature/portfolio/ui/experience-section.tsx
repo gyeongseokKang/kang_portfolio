@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, useReducedMotion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -16,8 +18,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { motion, useReducedMotion } from "motion/react";
-import { useTranslations } from "next-intl";
 import SectionLayout from "./section-layout";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
