@@ -7,13 +7,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { BottomDock } from "@/components/bottom-dock";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { routing } from "@/i18n/routing";
 import { AppSidebar } from "@/shared/ui/app-sidebar";
 import "../globals.css";
-import { ScrollToTop } from "@/components/scroll-to-top";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("seo");
@@ -53,7 +53,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html className="h-full" lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta
           name="google-site-verification"
@@ -64,7 +64,7 @@ export default async function LocaleLayout({
           content="caf276500aef5508a9380ca9dad2f487f9a13c54"
         />
       </head>
-      <body className="size-full">
+      <body>
         <ThemeProvider
           storageKey="handy-portfolio-theme"
           attribute={"class"}
@@ -74,19 +74,15 @@ export default async function LocaleLayout({
           <NextIntlClientProvider>
             <SidebarProvider open>
               <AppSidebar />
-              <main className="relative size-full min-w-0 overflow-x-clip">
+              <main className="relative min-w-0 w-full overflow-x-clip">
+                <ScrollProgress />
                 <div className="fixed top-2 right-2 z-50 flex gap-2 ">
                   <AnimatedThemeToggler />
                   <LocaleSwitcher />
                 </div>
-                <ScrollArea
-                  type="always"
-                  className="size-full min-w-0 overflow-x-clip"
-                >
-                  <div className="min-w-0 max-w-full overflow-x-clip">
-                    {children}
-                  </div>
-                </ScrollArea>
+                <div className="min-w-0 max-w-full overflow-x-clip">
+                  {children}
+                </div>
                 <div className="fixed bottom-2 right-2 z-50 flex gap-2 items-end">
                   <BottomDock />
                   <ScrollToTop />
