@@ -130,11 +130,11 @@
     "subtitle": "Quarterly experiences organized as a timeline. (since 2022)",
     "2026": {
       "2Q": {
-        "title": "AI creates, and I improve the quality by cutting",
-        "details": "As AI becomes increasingly integrated into developers' workflows, I am thinking about how to produce better code and better designs. For now, I am trying the things I can do right away.",
-        "extra1": "I am creating various skills to automate tasks and implementing them so that agents can execute them repeatedly.",
-        "extra2": "To establish my own coding rules, I am reading renowned books such as Refactoring 2nd Edition, Five Lines of Code, and Clean Code, and organizing what I learn in an LLM wiki.",
-        "extra3": "I am doing the groundwork for migrating all platforms to a monorepo."
+        "title": "AI creates, and I raise quality by cutting",
+        "details": "As AI enters the workflow, I keep asking how to ship better code and design—and start with what I can do now.",
+        "extra1": "Building automation skills that agents can run repeatedly.",
+        "extra2": "Reading Refactoring and Clean Code, and capturing personal code rules in an LLM wiki.",
+        "extra3": "Preparing for a platform-wide monorepo migration."
       },
       "1Q": {
         "title": "Raised work density with tooling and shared modules",

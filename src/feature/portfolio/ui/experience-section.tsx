@@ -56,21 +56,21 @@ function Item({ item }: { item: ExperienceItem }) {
     <Card className="h-full gap-0 overflow-hidden py-0">
       <CardBadge
         variant="title"
-        className="static w-fit rounded-tl-xl rounded-tr-none rounded-br-md rounded-bl-none border-t-0 border-l-0"
+        className="static w-fit rounded-tl-xl rounded-tr-none rounded-br-md rounded-bl-none border-t-0 border-l-0 px-4 py-1.5 font-mono text-xs tracking-normal"
       >
         {item.quarter}
       </CardBadge>
-      <CardHeader className="gap-2.5 px-5 pt-4 pb-0">
+      <CardHeader className="gap-2 px-5 pt-3 pb-0">
         <CardTitle className="text-base leading-snug text-pretty">
           {item.title}
         </CardTitle>
-        <CardDescription className="text-pretty leading-relaxed">
+        <CardDescription className="text-pretty text-sm leading-relaxed text-foreground/75">
           {item.details}
         </CardDescription>
       </CardHeader>
       <CardContent className="px-5 pt-3 pb-5">
         {item.extra && item.extra.length > 0 && (
-          <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+          <ul className="space-y-1.5 border-t border-border/50 pt-3 pl-4 text-[13px] leading-snug text-muted-foreground list-disc">
             {item.extra.map((e) => (
               <li key={e}>{e}</li>
             ))}
