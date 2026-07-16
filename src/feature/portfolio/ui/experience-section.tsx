@@ -2,9 +2,9 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Badge } from "@/components/ui/badge";
 import {
   Card,
+  CardBadge,
   CardContent,
   CardDescription,
   CardHeader,
@@ -53,13 +53,16 @@ type ExperienceYear = {
 
 function Item({ item }: { item: ExperienceItem }) {
   return (
-    <Card className="h-full gap-2">
+    <Card className="h-full gap-2 pt-9">
+      <CardBadge
+        variant="title"
+        className="top-0 left-0 rounded-tl-xl rounded-tr-none rounded-br-md rounded-bl-none border-t-0 border-l-0"
+      >
+        {item.quarter}
+      </CardBadge>
       <CardHeader>
-        <CardTitle className="flex flex-wrap items-center gap-2 text-base leading-snug">
-          <Badge variant="secondary" className="shrink-0 font-mono text-xs">
-            {item.quarter}
-          </Badge>
-          <span>{item.title}</span>
+        <CardTitle className="text-base leading-snug text-pretty">
+          {item.title}
         </CardTitle>
         <CardDescription className="text-pretty">
           {item.details}
