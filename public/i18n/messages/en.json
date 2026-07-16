@@ -129,6 +129,13 @@
   "Experience": {
     "subtitle": "Quarterly experiences organized as a timeline. (since 2022)",
     "2026": {
+      "2Q": {
+        "title": "AI creates, and I improve the quality by cutting",
+        "details": "As AI becomes increasingly integrated into developers' workflows, I am thinking about how to produce better code and better designs. For now, I am trying the things I can do right away.",
+        "extra1": "I am creating various skills to automate tasks and implementing them so that agents can execute them repeatedly.",
+        "extra2": "To establish my own coding rules, I am reading renowned books such as Refactoring 2nd Edition, Five Lines of Code, and Clean Code, and organizing what I learn in an LLM wiki.",
+        "extra3": "I am doing the groundwork for migrating all platforms to a monorepo."
+      },
       "1Q": {
         "title": "Raised delivery density at Coupang Play with tooling and shared modules",
         "details": "At Coupang Play I focused on team productivity, refined the dev flow with Claude Code and Cursor, then extended that with MCPs to automate more of the setup work before coding.",

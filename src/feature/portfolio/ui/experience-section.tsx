@@ -87,6 +87,16 @@ export default function ExperienceSection() {
       year: 2026,
       items: [
         {
+          quarter: "2Q",
+          title: t("2026.2Q.title"),
+          details: t("2026.2Q.details"),
+          extra: [
+            t("2026.2Q.extra1"),
+            t("2026.2Q.extra2"),
+            t("2026.2Q.extra3"),
+          ],
+        },
+        {
           quarter: "1Q",
           title: t("2026.1Q.title"),
           details: t("2026.1Q.details"),
