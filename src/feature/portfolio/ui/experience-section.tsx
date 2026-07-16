@@ -53,24 +53,24 @@ type ExperienceYear = {
 
 function Item({ item }: { item: ExperienceItem }) {
   return (
-    <Card className="h-full gap-2 pt-9">
+    <Card className="h-full gap-0 overflow-hidden py-0">
       <CardBadge
         variant="title"
-        className="top-0 left-0 rounded-tl-xl rounded-tr-none rounded-br-md rounded-bl-none border-t-0 border-l-0"
+        className="static w-fit rounded-tl-xl rounded-tr-none rounded-br-md rounded-bl-none border-t-0 border-l-0"
       >
         {item.quarter}
       </CardBadge>
-      <CardHeader>
+      <CardHeader className="gap-2.5 px-5 pt-4 pb-0">
         <CardTitle className="text-base leading-snug text-pretty">
           {item.title}
         </CardTitle>
-        <CardDescription className="text-pretty">
+        <CardDescription className="text-pretty leading-relaxed">
           {item.details}
         </CardDescription>
       </CardHeader>
-      <CardContent className="px-6 py-2">
+      <CardContent className="px-5 pt-3 pb-5">
         {item.extra && item.extra.length > 0 && (
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
             {item.extra.map((e) => (
               <li key={e}>{e}</li>
             ))}

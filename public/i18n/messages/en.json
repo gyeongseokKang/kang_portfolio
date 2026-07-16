@@ -137,20 +137,20 @@
         "extra3": "I am doing the groundwork for migrating all platforms to a monorepo."
       },
       "1Q": {
-        "title": "Raised delivery density at Coupang Play with tooling and shared modules",
-        "details": "At Coupang Play I focused on team productivity, refined the dev flow with Claude Code and Cursor, then extended that with MCPs to automate more of the setup work before coding.",
-        "extra1": "Used Claude Code and Cursor to cut review and repetitive work, and wired up MCPs to automate docs and environment prep closer to onboarding.",
-        "extra2": "Started an English study routine for smoother day-to-day work, and pushed tasks forward by aligning with PMs, ops, and other stakeholders—not only by shipping code.",
-        "extra3": "Built and shipped internal shared modules used across Coupang Play so multiple products could reuse the same foundation."
+        "title": "Raised work density with tooling and shared modules",
+        "details": "Refined the dev flow with Claude Code and Cursor, and automated prep work with MCPs.",
+        "extra1": "Cut review and onboarding busywork with Claude Code, Cursor, and MCPs.",
+        "extra2": "Started English study and aligned work with PM and ops.",
+        "extra3": "Built and shipped shared modules reused across Coupang Play products."
       }
     },
     "2025": {
       "4Q": {
-        "title": "Joined Coupang Play and started fresh as a Senior Engineer",
-        "details": "Focused on adapting to an English-speaking environment, earning team trust, and learning the work process",
-        "extra1": "Onboarded at Coupang Play as a Senior Engineer in a new environment",
-        "extra2": "Adapted to English-driven meetings, documentation, and code reviews to strengthen communication skills",
-        "extra3": "Studied the team's existing codebase and processes, working to become a trusted team member"
+        "title": "Joined Coupang Play and started fresh as a senior",
+        "details": "Focused on adapting to English work and earning trust in the team process.",
+        "extra1": "Started onboarding as a Senior Engineer.",
+        "extra2": "Adapted to English meetings, docs, and code reviews.",
+        "extra3": "Learned the codebase and processes while building trust."
       },
       "3Q": {
         "title": "Tried building an API Developer site",
