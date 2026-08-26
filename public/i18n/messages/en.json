@@ -109,7 +109,8 @@
       },
       "book": {
         "title": "리액트, Next.js로 완성하는 프론트엔드",
-        "desc": "Book publication"
+        "desc": "Book publication · 2026 Sejong Book (Academic)",
+        "badge": "2026 Sejong Book"
       }
     },
     "lecture": {
@@ -129,6 +130,11 @@
   "Experience": {
     "subtitle": "Quarterly experiences organized as a timeline. (since 2022)",
     "2026": {
+      "3Q": {
+        "title": "The book was selected as a Sejong Book",
+        "details": "Completing Frontend with React and Next.js was selected for the 2026 Sejong Book Academic category. It will go out to public libraries, so the book starts walking on its own.",
+        "extra1": "Selected by the Publication Industry Promotion Agency of Korea (KPIPA)"
+      },
       "2Q": {
         "title": "AI creates, and I raise quality by cutting",
         "details": "As AI enters the workflow, I keep asking how to ship better code and design—and start with what I can do now.",

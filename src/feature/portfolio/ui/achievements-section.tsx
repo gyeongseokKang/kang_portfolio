@@ -37,6 +37,18 @@ export default function AchievementsSection() {
     }>;
   }> = [
     {
+      year: "2026",
+      entries: [
+        {
+          name: "2026 세종도서 학술부문",
+          grade: "선정도서",
+          details:
+            "『리액트, Next.js로 완성하는 프론트엔드』(영진닷컴) — 한국출판문화산업진흥원 선정",
+          images: ["sejongBook2026.png"],
+        },
+      ],
+    },
+    {
       year: "2023",
       entries: [
         {

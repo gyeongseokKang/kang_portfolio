@@ -16,6 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 import SectionLayout from "./section-layout";
 
 const itemVariants = {
@@ -42,7 +43,13 @@ export default function ActivitySection() {
     },
   ];
 
-  const publications = [
+  const publications: Array<{
+    title: string;
+    desc: string;
+    href: string;
+    badge?: string;
+    badgeHref?: string;
+  }> = [
     {
       title: t("publication.graduation-paper.title"),
       desc: t("publication.graduation-paper.desc"),
@@ -52,6 +59,8 @@ export default function ActivitySection() {
       title: t("publication.book.title"),
       desc: t("publication.book.desc"),
       href: "https://product.kyobobook.co.kr/detail/S000218081064",
+      badge: t("publication.book.badge"),
+      badgeHref: "https://www.kpipa.or.kr/p/g1_2/2146",
     },
   ];
 
@@ -138,12 +147,26 @@ export default function ActivitySection() {
                     key={it.title}
                     className="flex items-center gap-2 text-sm"
                   >
-                    <span className="flex-1">
+                    <span className="flex flex-1 flex-wrap items-center gap-x-2 gap-y-1">
                       <span className="font-medium">{it.title}</span>
-                      <span className="mx-2">|</span>
                       <span className="text-secondary-foreground">
-                        {it.desc}
+                        | {it.desc}
                       </span>
+                      {it.badge && it.badgeHref ? (
+                        <Badge
+                          variant="secondary"
+                          asChild
+                          className="transition-transform active:scale-[0.96]"
+                        >
+                          <Link
+                            href={it.badgeHref}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {it.badge}
+                          </Link>
+                        </Badge>
+                      ) : null}
                     </span>
                     {it.href && (
                       <Link
