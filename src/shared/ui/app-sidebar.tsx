@@ -28,7 +28,6 @@ import {
 import { useMajorSectionId } from "@/hooks/use-major-section-id";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { AuroraText } from "../../components/ui/aurora-text";
 
 export const NAV_ITEMS = [
   { title: "Career", url: "#Career", icon: Briefcase },
@@ -44,6 +43,22 @@ export const FIRST_NAV_ITEM_ID = NAV_ITEMS_ID[0];
 
 const lastUpdated = process.env.NEXT_PUBLIC_LAST_UPDATED;
 
+function InkRule() {
+  return (
+    <svg
+      viewBox="0 0 200 6"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      className="mt-3 h-1.5 w-full text-foreground/40"
+    >
+      <path
+        d="M0 3 C 18 1, 42 4.5, 72 2.4 C 104 0.6, 132 4.6, 164 2.4 C 182 1.4, 192 3, 200 2.4 L 200 4 C 178 5.2, 146 3.2, 116 4.4 C 78 5.6, 36 3, 0 4.2 Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 export function AppSidebar() {
   const activeId = useMajorSectionId();
   const t = useTranslations("footer");
@@ -53,7 +68,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <div className="flex items-center gap-2 justify-evenly pt-2">
           <Image
-            className="rounded-xl"
+            className="rounded-md ring-1 ring-foreground/15"
             src="/images/intro/logo.jpeg"
             alt="Handy Kang"
             width={48}
@@ -64,22 +79,27 @@ export function AppSidebar() {
             <div className="px-2 text-xs font-semibold">Kang Gyeong Seok</div>
           </div>
         </div>
+        <InkRule />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Portfolio</SidebarGroupLabel>
+          <SidebarGroupLabel className="font-serif tracking-[0.18em] text-foreground/80">
+            <span aria-hidden className="mr-2 size-1.5 bg-seal" />
+            Portfolio
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {NAV_ITEMS.map((item) => {
                 const isActive = activeId === item.url.slice(1);
                 return (
-                  <SidebarMenuItem
-                    key={item.title}
-                    className={cn(
-                      "transition-all duration-300 ease-out will-change-transform",
-                      isActive ? "translate-x-2" : "translate-x-0",
-                    )}
-                  >
+                  <SidebarMenuItem key={item.title}>
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "pointer-events-none absolute top-1/2 left-0.5 h-3.5 w-0.5 -translate-y-1/2 rounded-full bg-seal transition-opacity duration-300",
+                        isActive ? "opacity-100" : "opacity-0",
+                      )}
+                    />
                     <SidebarMenuButton asChild>
                       <Link href={item.url}>
                         <item.icon
@@ -87,11 +107,9 @@ export function AppSidebar() {
                             isActive && "text-primary font-semibold",
                           )}
                         />
-                        {isActive ? (
-                          <AuroraText>{item.title}</AuroraText>
-                        ) : (
-                          <span>{item.title}</span>
-                        )}
+                        <span className={cn(isActive && "font-medium")}>
+                          {item.title}
+                        </span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -101,7 +119,10 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Writing</SidebarGroupLabel>
+          <SidebarGroupLabel className="font-serif tracking-[0.18em] text-foreground/80">
+            <span aria-hidden className="mr-2 size-1.5 bg-seal" />
+            Writing
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>

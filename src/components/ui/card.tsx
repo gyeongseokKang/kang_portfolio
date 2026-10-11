@@ -14,7 +14,7 @@ function CardBadge({
   return (
     <span
       className={cn(
-        "absolute rounded-md border border-border/60 bg-card font-semibold text-primary/80",
+        "hanji absolute rounded-[3px] border-[1.5px] font-semibold text-primary/80",
         variant === "title"
           ? "-top-3 left-6 px-3 py-1 text-sm tracking-wide text-primary"
           : "-top-2.5 left-6 px-2 py-0.5 text-[11px] uppercase tracking-[0.14em]",
@@ -36,7 +36,7 @@ function Card({
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground relative flex flex-col gap-3 rounded-xl border py-6 shadow-sm",
+        "hanji text-card-foreground relative flex flex-col gap-3 rounded-[3px] border-[1.5px] py-6",
         badgeTitle && "pt-9",
         className,
       )}

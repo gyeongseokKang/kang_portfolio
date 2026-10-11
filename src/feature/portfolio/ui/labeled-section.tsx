@@ -14,7 +14,7 @@ export function LabeledSection({
   return (
     <section
       className={cn(
-        "relative rounded-xl border border-border/60 bg-gradient-to-br from-muted/60 via-muted/30 to-transparent px-4 pb-4 pt-5",
+        "hanji relative rounded-[3px] border-[1.5px] px-4 pb-4 pt-5",
         className,
       )}
     >

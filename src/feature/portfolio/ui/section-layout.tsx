@@ -48,7 +48,9 @@ export default function SectionLayout({
         className={cn("space-y-2 container mx-auto")}
         variants={itemVariants}
       >
-        <h2 className="text-3xl font-bold">{title}</h2>
+        <h2 className="font-brush brush-ink text-5xl leading-tight text-foreground">
+          {title}
+        </h2>
         <p className="text-muted-foreground">{description}</p>
       </motion.div>
       <motion.div

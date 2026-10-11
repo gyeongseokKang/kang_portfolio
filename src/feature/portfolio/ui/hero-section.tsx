@@ -2,10 +2,10 @@
 
 import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
-import { AuroraText } from "@/components/ui/aurora-text";
 import { cn } from "@/lib/utils";
 import { BlogInfoItem } from "./blog-info-item";
 import { CareerBreadcrumb } from "./career-breadcrumb";
+import InkSeed from "./ink-seed";
 import ProfileSummaryCard from "./profile-summary-card";
 import TechStackCard from "./tech-stack-card";
 import TenCommandments from "./ten-commandments";
@@ -36,16 +36,12 @@ export default function HeroSection() {
         "mx-auto mb-20 flex w-full min-w-0 max-w-full flex-col items-center space-y-4",
       )}
     >
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={container}
-        className="w-full max-w-full overflow-hidden px-1 py-4 text-center text-2xl font-semibold lg:py-16 lg:text-5xl"
-      >
-        <motion.div variants={item}>
-          <AuroraText>{t("intro.title")}</AuroraText>
-        </motion.div>
-      </motion.div>
+      <div className="flex w-full max-w-full flex-col items-center gap-4 px-1 py-8 text-center lg:py-16">
+        <h1 className="text-balance text-3xl font-semibold tracking-tight lg:text-5xl">
+          {t("intro.title")}
+        </h1>
+        <InkSeed />
+      </div>
 
       <motion.div
         initial="hidden"

@@ -8,7 +8,7 @@ export const getExperiencedYear = () => {
 
   const coupangPlayDays = dayjs(new Date()).diff(dayjs("2025/10/01"), "days");
   return {
-    N년차: `${periodDurationYear + 1} Years`,
+    N년차: periodDurationYear + 1,
     N년N개월: periodDurationDay,
     coupangPlayDays: coupangPlayDays,
   };

@@ -4,7 +4,7 @@
   },
   "seo": {
     "title": "Handy Kang's Portfolio",
-    "description": "편리함을 설계하는 소프트웨어 엔지니어 강경석(Handy)의 포트폴리오. 웹·앱·백엔드를 아우르며 쿠팡플레이 시니어 엔지니어로 제품의 사용성과 성능을 책임지고, 풀스택 관점과 리더십으로 성장을 지향합니다."
+    "description": "소프트웨어 엔지니어 강경석(Handy)의 포트폴리오. 쿠팡플레이 시니어 엔지니어로 결제·구독 경험을 맡고, 웹·앱·백엔드를 아우릅니다."
   },
   "hero": {
     "carchap": "카찹",
@@ -14,7 +14,8 @@
     "current": "재직중",
     "intro": {
       "card_label": "1분 요약",
-      "title": "편리함을 설계하는 소프트웨어 엔지니어, 강경석(Handy)",
+      "title": "강경석, Handy",
+      "line": "예상 밖의 디테일 하나, 편리함을 만든다.",
       "label_1": "현재",
       "label_2": "역량",
       "label_3": "접근",
@@ -29,7 +30,7 @@
     },
     "blog": {
       "label": "블로그",
-      "title": "편리함을 추구하는 핸디의 지식 블로그"
+      "title": "핸디의 지식 블로그"
     },
     "experience": {
       "label": "경험",
@@ -38,16 +39,20 @@
     },
     "philosophy": {
       "label": "개발철학",
-      "commandment1": "편리함을 추구하고 불편함을 제거한다",
+      "commandment1": "한 번 손보면, 다음이 편해진다.",
       "commandment2": "반복되면 자동화한다.",
-      "commandment3": "모든 변경사항에 대한 책임은 나에게 있다"
+      "commandment3": "모든 변경의 책임은 나에게 있다."
     },
     "techStack": {
       "card_label": "기술 스택"
+    },
+    "inkSeed": {
+      "mark": "한",
+      "label": "이름으로 그린 산수"
     }
   },
   "Career": {
-    "subtitle": "편리함을 찾고, 불편함을 제거하는 제품을 만듭니다.",
+    "subtitle": "맡은 제품과, 그 일이 놓인 자리.",
     "coupang-play": {
       "name": "쿠팡플레이",
       "description": "Monetization 팀, OTT 결제·구독·수익화 웹/앱 프론트엔드"

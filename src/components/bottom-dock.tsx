@@ -91,7 +91,13 @@ export function BottomDock() {
                       });
                     }}
                   >
-                    <FileUser className="size-5" />
+                    <span className="relative inline-flex">
+                      <span
+                        aria-hidden="true"
+                        className="absolute -right-1 -bottom-0.5 size-2.5 bg-seal"
+                      />
+                      <FileUser className="relative size-5" />
+                    </span>
                   </Button>
                 </SimpleTooltip>
               </DropdownMenuTrigger>

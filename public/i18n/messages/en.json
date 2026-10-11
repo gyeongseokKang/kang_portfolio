@@ -4,7 +4,7 @@
   },
   "seo": {
     "title": "Handy Kang's Portfolio",
-    "description": "Portfolio of Handy Kang, a Software Engineer spanning web, app, and backend. Senior engineer at Coupang Play, responsible for product usability and performance, with a full-stack perspective and leadership mindset."
+    "description": "Portfolio of Gyeongseok Kang (Handy), a software engineer. Senior engineer at Coupang Play, owning payment and subscription experiences across web, app, and backend."
   },
   "hero": {
     "carchap": "Carchap",
@@ -14,7 +14,8 @@
     "current": "current",
     "intro": {
       "card_label": "1-Min Summary",
-      "title": "Handy Kang, a software engineer who designs for convenience",
+      "title": "Handy Kang",
+      "line": "One unexpected detail, and it creates convenience.",
       "label_1": "Now",
       "label_2": "Strengths",
       "label_3": "Approach",
@@ -29,7 +30,7 @@
     },
     "blog": {
       "label": "Blog",
-      "title": "Handy's knowledge blog pursuing convenience"
+      "title": "Handy's knowledge blog"
     },
     "experience": {
       "label": "Experience",
@@ -38,16 +39,20 @@
     },
     "philosophy": {
       "label": "Development Philosophy",
-      "commandment1": "Seeking convenience and removing inconvenience",
+      "commandment1": "Touch it once, and the next time is easier.",
       "commandment2": "When it repeats, automate it.",
       "commandment3": "I am responsible for every change."
     },
     "techStack": {
       "card_label": "Tech Stack"
+    },
+    "inkSeed": {
+      "mark": "H",
+      "label": "Landscape drawn from the name"
     }
   },
   "Career": {
-    "subtitle": "I make products that reduce inconvenience and find convenience.",
+    "subtitle": "The products I owned, and where that work sat.",
     "coupang-play": {
       "name": "Coupang Play",
       "description": "Monetization team — payment, subscription, and monetization on web and app"

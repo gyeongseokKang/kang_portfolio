@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Gowun_Batang, Nanum_Brush_Script } from "next/font/google";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next/types";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -8,12 +9,27 @@ import { ThemeProvider } from "next-themes";
 import { BottomDock } from "@/components/bottom-dock";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { ShanShuiBackground } from "@/components/shan-shui-background";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { routing } from "@/i18n/routing";
 import { AppSidebar } from "@/shared/ui/app-sidebar";
 import "../globals.css";
+
+const batang = Gowun_Batang({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-batang",
+  display: "swap",
+});
+
+const brush = Nanum_Brush_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-brush-face",
+  display: "swap",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("seo");
@@ -53,7 +69,11 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`${batang.variable} ${brush.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <meta
           name="google-site-verification"
@@ -65,6 +85,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
+        <ShanShuiBackground />
         <ThemeProvider
           storageKey="handy-portfolio-theme"
           attribute={"class"}
@@ -72,7 +93,7 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
-            <SidebarProvider open>
+            <SidebarProvider open className="relative z-10">
               <AppSidebar />
               <main className="relative min-w-0 w-full overflow-x-clip">
                 <ScrollProgress />
