@@ -103,6 +103,10 @@
   },
   "Project": {
     "subtitle": "신기술 + 좋은 옛기술을 통해 프로젝트를 만들어갑니다.",
+    "viewSite": "사이트 보기",
+    "viewGithub": "GitHub",
+    "viewDetail": "자세히 보기",
+    "detailHint": "클릭하면 화면 녹화를 크게 볼 수 있습니다.",
     "portfolio-site": {
       "name": "개인 포트폴리오 사이트",
       "description": "Next.js + shadcn/ui 기반의 다국어 포트폴리오 사이트."

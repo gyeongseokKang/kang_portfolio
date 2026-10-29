@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import CompanyDetailInfoDialog from "./company-detail-info-dialog";
 import SectionLayout from "./section-layout";
 
@@ -20,12 +19,8 @@ type CareerItem = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, easing: [0.22, 1, 0.36, 1] },
-  },
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.25 } },
 };
 
 export default function CareerSection() {
@@ -83,53 +78,62 @@ export default function CareerSection() {
   ];
   return (
     <SectionLayout id="Career" title="Career" description={t("subtitle")}>
-      <div className="space-y-6">
-        {careers.map((item, idx) => (
-          <motion.div
+      <ol className="relative m-0 list-none space-y-10 p-0 pl-6 sm:pl-8">
+        {/* 타임라인 세로선 */}
+        <span
+          aria-hidden="true"
+          className="absolute top-1 bottom-1 left-[5px] w-px bg-border sm:left-[7px]"
+        />
+        {careers.map((item) => (
+          <motion.li
             key={item.name}
-            className="space-y-4"
+            className="relative"
             variants={itemVariants}
           >
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-[220px_1fr] items-start">
-              <div className="rounded-xl border bg-card text-card-foreground overflow-hidden h-[140px] sm:h-[160px] flex items-center justify-center">
+            <span
+              aria-hidden="true"
+              className="absolute top-[0.45rem] -left-6 size-2.5 rounded-full border-2 border-background bg-primary ring-1 ring-border sm:-left-8"
+            />
+            <div className="grid grid-cols-[72px_1fr] gap-4 sm:grid-cols-[96px_1fr] sm:gap-6">
+              <div className="flex size-18 items-center justify-center overflow-hidden rounded-lg border bg-white sm:size-24">
                 {item.thumbnail ? (
                   <Image
                     unoptimized
                     priority
                     src={item.thumbnail}
                     alt={item.name}
-                    className="h-full w-full object-contain bg-white"
-                    width={220}
-                    height={140}
+                    className="h-full w-full bg-white object-contain p-2"
+                    width={96}
+                    height={96}
                   />
                 ) : (
                   <div className="text-sm text-muted-foreground">No Image</div>
                 )}
               </div>
 
-              <div className="space-y-1 flex flex-col justify-between h-full py-2">
-                <div className="flex flex-wrap items-baseline gap-2">
-                  <h3 className="text-xl font-semibold leading-none">
+              <div className="min-w-0 space-y-1.5">
+                {item.period && (
+                  <p className="m-0 text-sm text-muted-foreground tabular-nums">
+                    {item.period}
+                  </p>
+                )}
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <h3 className="m-0 text-xl font-semibold leading-tight">
                     {item.name}
                   </h3>
-                  {item.period && (
+                  {item.role && (
                     <span className="text-sm text-muted-foreground">
-                      {item.period}
+                      {Array.isArray(item.role)
+                        ? item.role.join(" · ")
+                        : item.role}
                     </span>
                   )}
                 </div>
-                {item.role && (
-                  <div className="text-sm text-muted-foreground">
-                    {Array.isArray(item.role)
-                      ? item.role.join(" · ")
-                      : item.role}
-                  </div>
-                )}
-                <p className="text-sm sm:text-base leading-relaxed">
+                <p className="m-0 text-sm leading-relaxed sm:text-base">
                   {item.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-2 mt-auto">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {item.links?.map((l) => (
                     <Button key={l.href} asChild variant="outline" size="sm">
                       <Link href={l.href} target="_blank" rel="noreferrer">
@@ -144,10 +148,9 @@ export default function CareerSection() {
                 </div>
               </div>
             </div>
-            {idx < careers.length - 1 && <Separator className="mt-6" />}
-          </motion.div>
+          </motion.li>
         ))}
-      </div>
+      </ol>
     </SectionLayout>
   );
 }

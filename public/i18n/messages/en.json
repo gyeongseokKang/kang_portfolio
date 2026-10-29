@@ -103,6 +103,10 @@
   },
   "Project": {
     "subtitle": "I create projects using new and good old technologies.",
+    "viewSite": "Visit site",
+    "viewGithub": "GitHub",
+    "viewDetail": "View detail",
+    "detailHint": "Click to watch the screen recording at full size.",
     "portfolio-site": {
       "name": "Personal Portfolio Site",
       "description": "Next.js + shadcn/ui based multilingual portfolio site."

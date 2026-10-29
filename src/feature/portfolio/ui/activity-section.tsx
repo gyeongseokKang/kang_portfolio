@@ -20,12 +20,8 @@ import { Badge } from "@/components/ui/badge";
 import SectionLayout from "./section-layout";
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, easing: [0.22, 1, 0.36, 1] },
-  },
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.25 } },
 };
 
 export default function ActivitySection() {
