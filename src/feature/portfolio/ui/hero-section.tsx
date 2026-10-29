@@ -91,7 +91,7 @@ export default function HeroSection() {
       <motion.div
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: "some" }}
         variants={container}
         className={cn(
           "grid w-full min-w-0 grid-cols-1 items-center gap-8",

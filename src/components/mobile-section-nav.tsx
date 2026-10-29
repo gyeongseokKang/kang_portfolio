@@ -17,7 +17,13 @@ export function MobileSectionNav() {
     const active = listRef.current?.querySelector<HTMLElement>(
       `a[href$="#${activeId}"]`,
     );
-    active?.scrollIntoView({ block: "nearest", inline: "center" });
+    const list = listRef.current;
+    if (!active || !list) return;
+    // 오른쪽은 테마/언어 버튼이 덮으므로 활성 칩을 왼쪽에 붙인다.
+    list.scrollTo({
+      left: Math.max(0, active.offsetLeft - 12),
+      behavior: "smooth",
+    });
   }, [activeId]);
 
   return (

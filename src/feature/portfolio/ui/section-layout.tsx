@@ -34,11 +34,11 @@ export default function SectionLayout({
   return (
     <motion.section
       id={id}
-      className={cn("space-y-8 pt-10")}
+      className={cn("scroll-mt-14 space-y-8 pt-10 md:scroll-mt-0")}
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: "some" }}
     >
       <motion.div
         className={cn("space-y-2 container mx-auto")}

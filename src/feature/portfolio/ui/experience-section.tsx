@@ -277,7 +277,7 @@ export default function ExperienceSection() {
             variants={yearListVariants}
             initial={prefersReducedMotion ? false : "hidden"}
             whileInView={prefersReducedMotion ? undefined : "show"}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: "some" }}
           >
             <span
               aria-hidden="true"
