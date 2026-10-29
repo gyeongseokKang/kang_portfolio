@@ -28,7 +28,6 @@ import {
 import { useMajorSectionId } from "@/hooks/use-major-section-id";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { AuroraText } from "../../components/ui/aurora-text";
 
 export const NAV_ITEMS = [
   { title: "Career", url: "#Career", icon: Briefcase },
@@ -73,25 +72,20 @@ export function AppSidebar() {
               {NAV_ITEMS.map((item) => {
                 const isActive = activeId === item.url.slice(1);
                 return (
-                  <SidebarMenuItem
-                    key={item.title}
-                    className={cn(
-                      "transition-all duration-300 ease-out will-change-transform",
-                      isActive ? "translate-x-2" : "translate-x-0",
-                    )}
-                  >
-                    <SidebarMenuButton asChild>
+                  <SidebarMenuItem key={item.title} className="relative">
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "pointer-events-none absolute top-1/2 left-0 z-10 h-4 w-0.5 -translate-y-1/2 rounded-full bg-primary transition-opacity duration-200",
+                        isActive ? "opacity-100" : "opacity-0",
+                      )}
+                    />
+                    <SidebarMenuButton asChild isActive={isActive}>
                       <Link href={item.url}>
-                        <item.icon
-                          className={cn(
-                            isActive && "text-primary font-semibold",
-                          )}
-                        />
-                        {isActive ? (
-                          <AuroraText>{item.title}</AuroraText>
-                        ) : (
-                          <span>{item.title}</span>
-                        )}
+                        <item.icon />
+                        <span className={cn(isActive && "font-semibold")}>
+                          {item.title}
+                        </span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
