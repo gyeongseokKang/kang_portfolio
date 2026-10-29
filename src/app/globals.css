@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-pretendard), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   /* Custom text size */
   --text-xxs: 0.625rem;
@@ -175,6 +175,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
   }
 }
 

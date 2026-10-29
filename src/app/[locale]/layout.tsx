@@ -1,5 +1,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next/types";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -14,6 +16,19 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { routing } from "@/i18n/routing";
 import { AppSidebar } from "@/shared/ui/app-sidebar";
 import "../globals.css";
+
+const pretendard = localFont({
+  src: "../../../node_modules/pretendard/dist/web/variable/woff2/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  weight: "45 920",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("seo");
@@ -53,7 +68,11 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`${pretendard.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <meta
           name="google-site-verification"

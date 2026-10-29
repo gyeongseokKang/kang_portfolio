@@ -152,6 +152,8 @@ export default function CompanyDetailInfoDialog({
                       autoPlay
                       muted
                       loop
+                      playsInline
+                      preload="metadata"
                       width={400}
                     />
                   ) : (
