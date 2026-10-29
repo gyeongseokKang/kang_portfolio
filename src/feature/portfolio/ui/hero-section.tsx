@@ -6,10 +6,10 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
-import { getExperiencedYear } from "@/lib/dayUtils";
 import { cn } from "@/lib/utils";
 import { BlogInfoItem } from "./blog-info-item";
 import { CareerBreadcrumb } from "./career-breadcrumb";
+import { HeroStats } from "./hero-stats";
 import ProfileSummaryCard from "./profile-summary-card";
 import TechStackCard from "./tech-stack-card";
 import TenCommandments from "./ten-commandments";
@@ -37,14 +37,7 @@ const LINKS = {
 function HeroHeader() {
   const t = useTranslations("hero.intro");
   const locale = useLocale();
-  const { N년차 } = getExperiencedYear();
   const resumeHref = `/resume/handykang-resume-${locale === "ko" ? "ko" : "en"}.pdf`;
-
-  const stats = [
-    t("stat_years", { years: N년차 }),
-    t("stat_blog"),
-    t("stat_book"),
-  ];
 
   return (
     <div className="flex w-full max-w-3xl flex-col items-center gap-5 px-1 py-8 text-center lg:py-14">
@@ -60,20 +53,7 @@ function HeroHeader() {
         </p>
       </div>
 
-      <ul className="m-0 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 p-0 text-sm text-muted-foreground">
-        {stats.map((stat, i) => (
-          <li key={stat} className="flex items-center gap-2">
-            {i > 0 && (
-              <span aria-hidden="true" className="text-muted-foreground/50">
-                ·
-              </span>
-            )}
-            <span className="font-medium text-foreground/80 tabular-nums">
-              {stat}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <HeroStats />
 
       <div className="flex flex-wrap items-center justify-center gap-2">
         <Button asChild size="sm">

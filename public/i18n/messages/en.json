@@ -52,6 +52,31 @@
     },
     "techStack": {
       "card_label": "Tech Stack"
+    },
+    "stats": {
+      "years": {
+        "title": "Career",
+        "cta": "Go to Career",
+        "items": [
+          "Carchap · CTO & Co-founder · 2018.12 – 2020.05",
+          "TmaxSoft · Research Engineer · 2020.02 – 2022.06",
+          "Gaudio Lab · Lead Frontend Engineer · 2022.07 – 2025.09",
+          "Coupang Play · Sr. Frontend Engineer · 2025.10 – now"
+        ],
+        "footnote": "Day {days} at Coupang Play"
+      },
+      "blog": {
+        "title": "Handy's Dev Blog",
+        "desc": "Book reviews, frontend and general engineering notes, written consistently since 2020.",
+        "meta": "700K views · 400 posts · Tistory (Korean)",
+        "cta": "Open blog"
+      },
+      "book": {
+        "title": "Frontend with React & Next.js",
+        "meta": "Youngjin.com · 2025",
+        "desc": "Selected for the 2026 Sejong Book Award (Academic), distributed to public libraries nationwide.",
+        "cta": "View on Kyobo Book"
+      }
     }
   },
   "Career": {
