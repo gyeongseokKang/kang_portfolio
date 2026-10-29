@@ -132,6 +132,35 @@ export default function ProjectSection() {
 
   const projects: ProjectItem[] = [
     {
+      id: "handy-writer",
+      title: t("handy-writer.name"),
+      description: t("handy-writer.description"),
+      poster: "/images/project/handy-writer.webp",
+      link: "https://github.com/gyeongseokKang/handy-writer",
+      stacks: [
+        "Electron",
+        "React",
+        "Typescript",
+        "Tailwind",
+        "shadcn",
+        "Github",
+      ],
+    },
+    {
+      id: "handy-tracer",
+      title: t("handy-tracer.name"),
+      description: t("handy-tracer.description"),
+      poster: "/images/project/handy-tracer.webp",
+      stacks: [
+        "ReactNative",
+        "Expo",
+        "Typescript",
+        "cplusplus",
+        "OpenCV",
+        "Supabase",
+      ],
+    },
+    {
       id: "portfolio-site",
       title: t("portfolio-site.name"),
       description: t("portfolio-site.description"),

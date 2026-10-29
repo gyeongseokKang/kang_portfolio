@@ -107,6 +107,14 @@
     "viewGithub": "GitHub",
     "viewDetail": "View detail",
     "detailHint": "Click to watch the screen recording at full size.",
+    "handy-writer": {
+      "name": "Handy Writer",
+      "description": "Local-first desktop writing app. Notes are plain Markdown that work with Obsidian and git, with wikilinks, a graph view, and AI proofreading/drafting."
+    },
+    "handy-tracer": {
+      "name": "Handy Tracer",
+      "description": "Mobile app that auto-clips swings from long golf practice videos and draws the ball flight like a shot tracer. All analysis runs on-device."
+    },
     "portfolio-site": {
       "name": "Personal Portfolio Site",
       "description": "Next.js + shadcn/ui based multilingual portfolio site."

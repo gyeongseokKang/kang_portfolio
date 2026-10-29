@@ -107,6 +107,14 @@
     "viewGithub": "GitHub",
     "viewDetail": "자세히 보기",
     "detailHint": "클릭하면 화면 녹화를 크게 볼 수 있습니다.",
+    "handy-writer": {
+      "name": "Handy Writer",
+      "description": "글쓰기를 도와주는 로컬 우선 데스크톱 앱. 마크다운으로 저장해 Obsidian·git과 그대로 함께 쓰고, 위키링크·그래프·AI 교정/초안을 지원."
+    },
+    "handy-tracer": {
+      "name": "Handy Tracer",
+      "description": "골프 연습 영상에서 스윙 구간을 자동으로 잘라내고, 공 궤적을 샷 트레이서처럼 그려 주는 모바일 앱. 분석은 전부 온디바이스."
+    },
     "portfolio-site": {
       "name": "개인 포트폴리오 사이트",
       "description": "Next.js + shadcn/ui 기반의 다국어 포트폴리오 사이트."
