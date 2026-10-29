@@ -78,23 +78,6 @@ export function HeroStats() {
       ),
     },
     {
-      key: "blog",
-      label: t("intro.stat_blog"),
-      href: BLOG_URL,
-      external: true,
-      card: (
-        <StatCardShell
-          title={t("stats.blog.title")}
-          meta={t("stats.blog.meta")}
-          cta={t("stats.blog.cta")}
-        >
-          <p className="m-0 text-xs leading-relaxed text-foreground/85">
-            {t("stats.blog.desc")}
-          </p>
-        </StatCardShell>
-      ),
-    },
-    {
       key: "book",
       label: t("intro.stat_book"),
       href: BOOK_URL,
@@ -111,17 +94,37 @@ export function HeroStats() {
         </StatCardShell>
       ),
     },
+    {
+      key: "blog",
+      label: t("intro.stat_blog"),
+      href: BLOG_URL,
+      external: true,
+      card: (
+        <StatCardShell
+          title={t("stats.blog.title")}
+          meta={t("stats.blog.meta")}
+          cta={t("stats.blog.cta")}
+        >
+          <p className="m-0 text-xs leading-relaxed text-foreground/85">
+            {t("stats.blog.desc")}
+          </p>
+        </StatCardShell>
+      ),
+    },
   ];
 
   return (
     <ul
       data-hero-stats
-      className="m-0 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 p-0 text-sm"
+      className="m-0 flex flex-col items-center gap-y-1.5 p-0 text-sm sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2"
     >
       {stats.map((stat, i) => (
         <li key={stat.key} className="flex list-none items-center gap-2">
           {i > 0 && (
-            <span aria-hidden="true" className="text-muted-foreground/50">
+            <span
+              aria-hidden="true"
+              className="hidden text-muted-foreground/50 sm:inline"
+            >
               ·
             </span>
           )}
