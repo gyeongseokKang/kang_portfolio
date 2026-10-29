@@ -18,8 +18,7 @@
       "role": "Senior Software Engineer · 쿠팡플레이 Monetization 팀",
       "tagline": "결제·구독 경험을 웹·앱·백엔드에 걸쳐 만듭니다.",
       "stat_years": "{years}년차 엔지니어",
-      "stat_domain": "결제·구독 도메인",
-      "stat_blog": "블로그 70만 뷰 · 글 400편",
+      "stat_blog": "블로그 70만 뷰 · 글 400개",
       "cta_resume": "이력서 (PDF)",
       "cta_github": "GitHub",
       "cta_linkedin": "LinkedIn",
@@ -30,7 +29,8 @@
       "description_1": "쿠팡플레이에서 시니어 소프트웨어 엔지니어로 근무하며, Monetization 팀의 원활한 결제 플로우와 수익화를 책임지고 있습니다.",
       "description_2": "레거시 프로젝트를 유지보수하며 점진적으로 개선해 나가는 데 강점이 있습니다. 원활한 협업과 팀 리딩 경험도 갖추고 있습니다.",
       "description_3": "웹·앱을 넘어 백엔드·인프라·API까지 경험 영역을 확장하며, AI를 활용해 나와 팀의 문제를 적극적으로 해결하고 있습니다.",
-      "description_4": "IC 역량을 바탕으로 서비스를 개발하며, 팀과 조직에 긍정적인 영향을 주는 데 집중하고 있습니다."
+      "description_4": "IC 역량을 바탕으로 서비스를 개발하며, 팀과 조직에 긍정적인 영향을 주는 데 집중하고 있습니다.",
+      "stat_book": "책 1권"
     },
     "careerPath": {
       "label": "커리어"

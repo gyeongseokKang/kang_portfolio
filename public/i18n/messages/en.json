@@ -18,7 +18,6 @@
       "role": "Senior Software Engineer · Coupang Play, Monetization",
       "tagline": "I build payment and subscription experiences across web, app, and backend.",
       "stat_years": "{years} years in engineering",
-      "stat_domain": "Payments & subscriptions",
       "stat_blog": "700K blog views · 400 posts",
       "cta_resume": "Resume (PDF)",
       "cta_github": "GitHub",
@@ -30,7 +29,8 @@
       "description_1": "As a Senior Software Engineer at Coupang Play, I own payment flows and monetization on the Monetization team.",
       "description_2": "I'm strong at maintaining legacy projects and improving them step by step. I also have experience leading teams and collaborating across groups.",
       "description_3": "Beyond web and apps, I'm expanding into backend, infrastructure, and APIs—and using AI to actively solve problems for myself and my team.",
-      "description_4": "As an IC, I focus on building services that create positive impact for my team and organization."
+      "description_4": "As an IC, I focus on building services that create positive impact for my team and organization.",
+      "stat_book": "1 book"
     },
     "careerPath": {
       "label": "Career"

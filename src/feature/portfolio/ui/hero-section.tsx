@@ -42,8 +42,8 @@ function HeroHeader() {
 
   const stats = [
     t("stat_years", { years: N년차 }),
-    t("stat_domain"),
     t("stat_blog"),
+    t("stat_book"),
   ];
 
   return (
