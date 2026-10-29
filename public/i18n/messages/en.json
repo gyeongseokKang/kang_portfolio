@@ -14,7 +14,14 @@
     "current": "current",
     "intro": {
       "card_label": "1-Min Summary",
-      "title": "Handy Kang, a software engineer who designs for convenience",
+      "title": "Gyeongseok Kang, Handy",
+      "role": "Senior Software Engineer · Coupang Play, Monetization",
+      "tagline": "I build payment and subscription experiences across web, app, and backend.",
+      "stat_years": "{years} years in engineering",
+      "stat_blog": "700K blog views · 400 posts",
+      "cta_resume": "Resume (PDF)",
+      "cta_github": "GitHub",
+      "cta_linkedin": "LinkedIn",
       "label_1": "Now",
       "label_2": "Strengths",
       "label_3": "Approach",
@@ -22,14 +29,15 @@
       "description_1": "As a Senior Software Engineer at Coupang Play, I own payment flows and monetization on the Monetization team.",
       "description_2": "I'm strong at maintaining legacy projects and improving them step by step. I also have experience leading teams and collaborating across groups.",
       "description_3": "Beyond web and apps, I'm expanding into backend, infrastructure, and APIs—and using AI to actively solve problems for myself and my team.",
-      "description_4": "As an IC, I focus on building services that create positive impact for my team and organization."
+      "description_4": "As an IC, I focus on building services that create positive impact for my team and organization.",
+      "stat_book": "Author, 2026 Sejong Book Award"
     },
     "careerPath": {
       "label": "Career"
     },
     "blog": {
       "label": "Blog",
-      "title": "Handy's knowledge blog pursuing convenience"
+      "title": "Handy's Dev Blog"
     },
     "experience": {
       "label": "Experience",
@@ -44,6 +52,31 @@
     },
     "techStack": {
       "card_label": "Tech Stack"
+    },
+    "stats": {
+      "years": {
+        "title": "Career",
+        "cta": "Go to Career",
+        "items": [
+          "Carchap · CTO & Co-founder · 2018.12 – 2020.05",
+          "TmaxSoft · Research Engineer · 2020.02 – 2022.06",
+          "Gaudio Lab · Lead Frontend Engineer · 2022.07 – 2025.09",
+          "Coupang Play · Sr. Frontend Engineer · 2025.10 – now"
+        ],
+        "footnote": "Day {days} at Coupang Play"
+      },
+      "blog": {
+        "title": "Handy's Dev Blog",
+        "desc": "Book reviews, frontend and general engineering notes, written consistently since 2020.",
+        "meta": "700K views · 400 posts · Tistory (Korean)",
+        "cta": "Open blog"
+      },
+      "book": {
+        "title": "Frontend with React & Next.js",
+        "meta": "Youngjin.com · 2025",
+        "desc": "Selected for the 2026 Sejong Book Award (Academic), distributed to public libraries nationwide.",
+        "cta": "View on Kyobo Book"
+      }
     }
   },
   "Career": {
@@ -70,6 +103,18 @@
   },
   "Project": {
     "subtitle": "I create projects using new and good old technologies.",
+    "viewSite": "Visit site",
+    "viewGithub": "GitHub",
+    "viewDetail": "View detail",
+    "detailHint": "Click to watch the screen recording at full size.",
+    "handy-writer": {
+      "name": "Handy Writer",
+      "description": "Local-first desktop writing app. Notes are plain Markdown that work with Obsidian and git, with wikilinks, a graph view, and AI proofreading/drafting."
+    },
+    "handy-tracer": {
+      "name": "Handy Tracer",
+      "description": "Mobile app that auto-clips swings from long golf practice videos and draws the ball flight like a shot tracer. All analysis runs on-device."
+    },
     "portfolio-site": {
       "name": "Personal Portfolio Site",
       "description": "Next.js + shadcn/ui based multilingual portfolio site."

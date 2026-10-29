@@ -80,7 +80,7 @@ function SimpleTooltip({
 }) {
   return (
     <Tooltip open={alwaysOpen}>
-      <TooltipTrigger>{children}</TooltipTrigger>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
       <TooltipContent side={side} align={align} hiddenArrow={hiddenArrow}>
         {content}
       </TooltipContent>

@@ -10,33 +10,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
 import SectionLayout from "./section-layout";
-
-const easeOut = [0.22, 1, 0.36, 1] as const;
 
 const yearListVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.04 },
+    transition: { staggerChildren: 0.05 },
   },
 };
 
 const blockVariants = {
-  hidden: { opacity: 0, y: 12 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.42, ease: easeOut },
-  },
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.25 } },
 };
 
 type ExperienceItem = {
@@ -276,59 +262,49 @@ export default function ExperienceSection() {
       id="Experience"
       title="Experience"
       description={t("subtitle")}
-      fullWidth
     >
-      <div className="flex w-full flex-col gap-12 md:gap-14">
+      <ol className="relative m-0 flex w-full list-none flex-col gap-12 p-0 pl-6 sm:pl-8 md:gap-14">
+        {/* 타임라인 세로선 (Career와 같은 축) */}
+        <span
+          aria-hidden="true"
+          className="absolute top-2 bottom-2 left-[5px] w-px bg-border sm:left-[7px]"
+        />
         {DATA.map((year) => (
-          <motion.div
+          <motion.li
             key={year.year}
-            role="group"
             aria-labelledby={`experience-year-${year.year}`}
-            className="space-y-5 md:space-y-6"
+            className="relative space-y-4"
             variants={yearListVariants}
             initial={prefersReducedMotion ? false : "hidden"}
             whileInView={prefersReducedMotion ? undefined : "show"}
-            viewport={{ once: true, amount: 0.12 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
-            <motion.div variants={blockVariants}>
-              <h3
-                id={`experience-year-${year.year}`}
-                className="text-2xl font-bold tracking-tight tabular-nums"
-              >
-                {year.year}
-              </h3>
-            </motion.div>
-
-            <motion.div
+            <span
+              aria-hidden="true"
+              className="absolute top-[0.6rem] -left-6 size-2.5 rounded-full border-2 border-background bg-primary ring-1 ring-border sm:-left-8"
+            />
+            <motion.h3
+              id={`experience-year-${year.year}`}
               variants={blockVariants}
-              className={cn("relative w-full px-4 md:px-14")}
+              className="m-0 text-2xl font-bold tracking-tight tabular-nums"
             >
-              <Carousel
-                opts={{ align: "start", slidesToScroll: 1 }}
-                className="w-full"
-                aria-label={`${year.year} experience quarters`}
-              >
-                <CarouselContent>
-                  {year.items.map((it) => (
-                    <CarouselItem
-                      key={`${year.year}-${it.quarter}`}
-                      className={
-                        year.items.length === 1
-                          ? "basis-full max-w-3xl"
-                          : "basis-[min(100%,22rem)] sm:basis-[72%] md:basis-1/2 lg:basis-[46%] xl:basis-[40%]"
-                      }
-                    >
-                      <Item item={it} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="-left-10 sm:-left-12 md:-left-14" />
-                <CarouselNext className="-right-10 sm:-right-12 md:-right-14" />
-              </Carousel>
-            </motion.div>
-          </motion.div>
+              {year.year}
+            </motion.h3>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-4">
+              {year.items.map((it) => (
+                <motion.div
+                  key={`${year.year}-${it.quarter}`}
+                  variants={blockVariants}
+                  className="min-w-0"
+                >
+                  <Item item={it} />
+                </motion.div>
+              ))}
+            </div>
+          </motion.li>
         ))}
-      </div>
+      </ol>
     </SectionLayout>
   );
 }

@@ -79,22 +79,13 @@ export function BottomDock() {
 
           <DockIcon>
             <DropdownMenu>
-              <DropdownMenuTrigger>
-                <SimpleTooltip content="Resume">
-                  <Button
-                    size="icon-sm"
-                    variant="ghost"
-                    onClick={() => {
-                      window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                      });
-                    }}
-                  >
+              <SimpleTooltip content="Resume">
+                <DropdownMenuTrigger asChild>
+                  <Button size="icon-sm" variant="ghost">
                     <FileUser className="size-5" />
                   </Button>
-                </SimpleTooltip>
-              </DropdownMenuTrigger>
+                </DropdownMenuTrigger>
+              </SimpleTooltip>
               <DropdownMenuContent>
                 <DropdownMenuItem
                   onClick={() => {

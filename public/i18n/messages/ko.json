@@ -14,7 +14,14 @@
     "current": "재직중",
     "intro": {
       "card_label": "1분 요약",
-      "title": "편리함을 설계하는 소프트웨어 엔지니어, 강경석(Handy)",
+      "title": "강경석, Handy",
+      "role": "Senior Software Engineer · 쿠팡플레이 Monetization 팀",
+      "tagline": "결제·구독 경험을 웹·앱·백엔드에 걸쳐 만듭니다.",
+      "stat_years": "{years}년차 엔지니어",
+      "stat_blog": "블로그 70만 뷰 · 글 400개",
+      "cta_resume": "이력서 (PDF)",
+      "cta_github": "GitHub",
+      "cta_linkedin": "LinkedIn",
       "label_1": "현재",
       "label_2": "역량",
       "label_3": "접근",
@@ -22,14 +29,15 @@
       "description_1": "쿠팡플레이에서 시니어 소프트웨어 엔지니어로 근무하며, Monetization 팀의 원활한 결제 플로우와 수익화를 책임지고 있습니다.",
       "description_2": "레거시 프로젝트를 유지보수하며 점진적으로 개선해 나가는 데 강점이 있습니다. 원활한 협업과 팀 리딩 경험도 갖추고 있습니다.",
       "description_3": "웹·앱을 넘어 백엔드·인프라·API까지 경험 영역을 확장하며, AI를 활용해 나와 팀의 문제를 적극적으로 해결하고 있습니다.",
-      "description_4": "IC 역량을 바탕으로 서비스를 개발하며, 팀과 조직에 긍정적인 영향을 주는 데 집중하고 있습니다."
+      "description_4": "IC 역량을 바탕으로 서비스를 개발하며, 팀과 조직에 긍정적인 영향을 주는 데 집중하고 있습니다.",
+      "stat_book": "저서 1권 (2026 세종도서)"
     },
     "careerPath": {
       "label": "커리어"
     },
     "blog": {
       "label": "블로그",
-      "title": "편리함을 추구하는 핸디의 지식 블로그"
+      "title": "핸디의 지식 블로그"
     },
     "experience": {
       "label": "경험",
@@ -44,6 +52,31 @@
     },
     "techStack": {
       "card_label": "기술 스택"
+    },
+    "stats": {
+      "years": {
+        "title": "커리어",
+        "cta": "Career 섹션으로",
+        "items": [
+          "카찹 · CTO & Co-founder · 2018.12 – 2020.05",
+          "티맥스 · Research Engineer · 2020.02 – 2022.06",
+          "가우디오랩 · Lead Frontend Engineer · 2022.07 – 2025.09",
+          "쿠팡플레이 · Sr. Frontend Engineer · 2025.10 – 현재"
+        ],
+        "footnote": "쿠팡플레이 재직 {days}일째"
+      },
+      "blog": {
+        "title": "핸디의 지식 블로그",
+        "desc": "도서 리뷰부터 프론트엔드·개발 전반까지, 2020년부터 꾸준히 쓰고 있습니다.",
+        "meta": "누적 70만 뷰 · 글 400개 · Tistory",
+        "cta": "블로그 열기"
+      },
+      "book": {
+        "title": "리액트, Next.js로 완성하는 프론트엔드",
+        "meta": "영진닷컴 · 2025",
+        "desc": "2026 세종도서 학술부문 선정 (한국출판문화산업진흥원). 전국 공공도서관에 보급됩니다.",
+        "cta": "교보문고에서 보기"
+      }
     }
   },
   "Career": {
@@ -70,6 +103,18 @@
   },
   "Project": {
     "subtitle": "신기술 + 좋은 옛기술을 통해 프로젝트를 만들어갑니다.",
+    "viewSite": "사이트 보기",
+    "viewGithub": "GitHub",
+    "viewDetail": "자세히 보기",
+    "detailHint": "클릭하면 화면 녹화를 크게 볼 수 있습니다.",
+    "handy-writer": {
+      "name": "Handy Writer",
+      "description": "글쓰기를 도와주는 로컬 우선 데스크톱 앱. 마크다운으로 저장해 Obsidian·git과 그대로 함께 쓰고, 위키링크·그래프·AI 교정/초안을 지원."
+    },
+    "handy-tracer": {
+      "name": "Handy Tracer",
+      "description": "골프 연습 영상에서 스윙 구간을 자동으로 잘라내고, 공 궤적을 샷 트레이서처럼 그려 주는 모바일 앱. 분석은 전부 온디바이스."
+    },
     "portfolio-site": {
       "name": "개인 포트폴리오 사이트",
       "description": "Next.js + shadcn/ui 기반의 다국어 포트폴리오 사이트."
