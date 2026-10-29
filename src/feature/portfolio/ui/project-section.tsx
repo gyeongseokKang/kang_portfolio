@@ -22,6 +22,8 @@ export type ProjectItem = {
   id: string;
   title: string;
   description: string;
+  /** 기간 · 역할 · 상태 같은 한 줄 요약 (선택) */
+  meta?: string;
   /** 정지 썸네일 (가볍게, 항상 보임) */
   poster: string;
   /** 화면 녹화 GIF (클릭했을 때만 로드) */
@@ -88,7 +90,7 @@ function ProjectCard({ p, labels }: { p: ProjectItem; labels: Labels }) {
             <DialogHeader>
               <DialogTitle className="text-xl">{p.title}</DialogTitle>
               <DialogDescription className="text-foreground/80">
-                {p.description}
+                {p.meta ? `${p.meta} — ${p.description}` : p.description}
               </DialogDescription>
             </DialogHeader>
             <div className="overflow-hidden rounded-md border bg-white">
@@ -108,6 +110,11 @@ function ProjectCard({ p, labels }: { p: ProjectItem; labels: Labels }) {
           </DialogContent>
         </Dialog>
 
+        {p.meta && (
+          <p className="m-0 text-xs font-medium text-muted-foreground">
+            {p.meta}
+          </p>
+        )}
         <p className="m-0 text-sm leading-relaxed text-foreground/85">
           {p.description}
         </p>
@@ -150,6 +157,7 @@ export default function ProjectSection() {
       id: "handy-tracer",
       title: t("handy-tracer.name"),
       description: t("handy-tracer.description"),
+      meta: t("handy-tracer.meta"),
       poster: "/images/project/handy-tracer.webp",
       stacks: [
         "ReactNative",

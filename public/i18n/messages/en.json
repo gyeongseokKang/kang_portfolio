@@ -113,7 +113,8 @@
     },
     "handy-tracer": {
       "name": "Handy Tracer",
-      "description": "Mobile app that auto-clips swings from long golf practice videos and draws the ball flight like a shot tracer. All analysis runs on-device."
+      "description": "Mobile app that auto-clips swings from long golf practice videos and draws the ball flight like a shot tracer. All analysis runs on-device.",
+      "meta": "Solo project · In progress"
     },
     "portfolio-site": {
       "name": "Personal Portfolio Site",
