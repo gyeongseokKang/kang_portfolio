@@ -262,7 +262,6 @@ export default function ExperienceSection() {
       id="Experience"
       title="Experience"
       description={t("subtitle")}
-      fullWidth
     >
       <ol className="relative m-0 flex w-full list-none flex-col gap-12 p-0 pl-6 sm:pl-8 md:gap-14">
         {/* 타임라인 세로선 (Career와 같은 축) */}

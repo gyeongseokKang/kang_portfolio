@@ -34,7 +34,7 @@ export function StackChip({
         {items.map((stack) => (
           <Tooltip key={stack}>
             <TooltipTrigger asChild>
-              <div className="flex items-center rounded  bg-card py-1 px-0.5 ">
+              <div className="flex items-center rounded bg-card px-0.5 py-1 dark:bg-white/90">
                 <Image
                   src={`/icons/${stack.toLowerCase()}.svg`}
                   height={size}
