@@ -45,6 +45,9 @@ function HeroHeader() {
         <h1 className="text-balance text-4xl font-bold tracking-tight lg:text-5xl">
           {t("title")}
         </h1>
+        <p className="text-sm font-medium italic tracking-wide text-primary/80 lg:text-base">
+          Building tools that make things handy.
+        </p>
         <p className="text-base font-medium text-foreground/80 lg:text-lg">
           {t("role")}
         </p>
