@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "if [ -n \"$WORKERS_CI\" ]; then STATIC_EXPORT=1 next build; else next build --turbopack; fi",
     "start": "next start",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
