@@ -1,0 +1,14 @@
+// Cloudflare Workers static assets — 포트폴리오 (portfolio.handykang.com).
+// 빌드: pnpm build:cf → out/   (배포는 대시보드 Git 연동에서만, 여기선 설정만)
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kang-portfolio",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "portfolio.handykang.com", "custom_domain": true }]
+  // www.handykang.com 은 대시보드에서 별도 Custom Domain으로 추가 (DEPLOY.md 참고).
+  // 나중에 www를 다른 곳으로 돌릴 때 이 파일은 건드리지 않음.
+}

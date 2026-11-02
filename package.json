@@ -10,7 +10,9 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "ci:lint": "biome ci --reporter=github .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prebuild": "node scripts/write-version.mjs public",
+    "build:cf": "node scripts/write-version.mjs public && STATIC_EXPORT=1 next build"
   },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,d.ts,jsx,tsx,json,jsonc,css}": [

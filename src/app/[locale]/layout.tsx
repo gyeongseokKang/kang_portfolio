@@ -30,10 +30,23 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LayoutProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await params;
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio.handykang.com";
   const t = await getTranslations("seo");
 
   return {
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      // 정적 export는 / → /ko/ 리다이렉트라 /ko/ 가 정본
+      canonical:
+        locale === "ko" && !process.env.NEXT_PUBLIC_STATIC_EXPORT
+          ? "/"
+          : `/${locale}`,
+    },
     title: t("title"),
     description: t("description"),
     openGraph: {
