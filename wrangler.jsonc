@@ -8,7 +8,10 @@
     "directory": "./out",
     "not_found_handling": "404-page"
   },
-  "routes": [{ "pattern": "portfolio.handykang.com", "custom_domain": true }]
-  // www.handykang.com 은 대시보드에서 별도 Custom Domain으로 추가 (DEPLOY.md 참고).
+  "routes": [
+    { "pattern": "portfolio.handykang.com", "custom_domain": true },
+    // www는 별도 항목: 나중에 다른 Worker로 옮기려면 이 줄만 빼면 됨
+    { "pattern": "www.handykang.com", "custom_domain": true }
+  ]
   // 나중에 www를 다른 곳으로 돌릴 때 이 파일은 건드리지 않음.
 }
